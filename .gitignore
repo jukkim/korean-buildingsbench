@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.egg-info/
+*.pt
+*.pkl
+data/
+external/
+checkpoints/
+runs/
+logs/
+archive/
+scratch/
+simulations/
+.env
+*.log

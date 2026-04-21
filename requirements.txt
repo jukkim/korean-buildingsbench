@@ -1,0 +1,25 @@
+# Korean_BB - 한국형 BuildingsBench
+# Python 3.10+
+# CRITICAL: Versions pinned (BUG-L) to prevent silent results drift
+
+# Core - pinned (numpy 2.x broke np._core path, sklearn 1.6 mismatches boxcox.pkl saved with 1.1.3)
+numpy==1.26.4
+pandas>=2.0,<2.3
+torch>=2.0,<2.8
+scipy>=1.10
+
+# BuildingsBench
+# pip install -e external/BuildingsBench/
+
+# Evaluation - pinned to match boxcox.pkl (was saved with sklearn 1.1.3)
+scikit-learn==1.1.3
+
+# Visualization
+matplotlib>=3.7
+
+# Config
+tomli>=2.0
+toml>=0.10
+
+# Monitoring
+tensorboard>=2.10
