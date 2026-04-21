@@ -489,15 +489,13 @@ def main():
     print(f"Model loaded: {args.checkpoint}")
 
     # ---- Box-Cox transform ----
-    # Use training data's boxcox (data/korean_bb/metadata/transforms/) to match
-    # the checkpoint's normalization. BB's downloaded boxcox may differ by version.
+    # Use training data's boxcox to match checkpoint normalization.
+    # BB's S3 v2.0.0 boxcox (lambda=-0.07064) differs from the checkpoint's (lambda=-0.06722).
     train_bc_path = Path(__file__).parent.parent / 'data' / 'korean_bb' / 'metadata' / 'transforms'
     if train_bc_path.exists():
         boxcox = BBBoxCoxTransform(train_bc_path)
-        print(f"  Box-Cox: {train_bc_path} (lambda={boxcox.boxcox.lambdas_[0]:.5f})")
     else:
         boxcox = BBBoxCoxTransform(BB_DATA_DIR / 'metadata' / 'transforms')
-        print(f"  Box-Cox: BB data (lambda={boxcox.boxcox.lambdas_[0]:.5f})")
 
     # ---- Parse BB buildings ----
     print("\nParsing BB test datasets...")
