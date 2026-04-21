@@ -18,7 +18,9 @@ echo "Target: $DATA_DIR"
 echo "Note: ~17 GB download. Requires AWS CLI (pip install awscli)."
 echo ""
 
-S3_BASE="s3://oedi-data-lake/buildings-bench/v1.0.0/BuildingsBench"
+# IMPORTANT: Use v2.0.0 to match the paper's evaluation (611 BDG-2 + 344 Electricity = 955 buildings)
+# v1.0.0 has fewer buildings and different Box-Cox parameters.
+S3_BASE="s3://oedi-data-lake/buildings-bench/v2.0.0/BuildingsBench"
 
 # Evaluation datasets + metadata
 for dataset in BDG-2 Electricity Sceaux Borealis IDEAL LCL SMART metadata; do
