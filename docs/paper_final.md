@@ -8,7 +8,7 @@
 
 ## Abstract
 
-BuildingsBench (NeurIPS 2023) established 13.27% median NRMSE on 955 commercial buildings by pretraining a Transformer on 900,000 synthetic U.S. buildings. We match this result with 70 EnergyPlus simulations---five per building archetype---by replacing data volume with operational diversity. Twelve operational parameters sampled via Latin Hypercube Sampling, combined with Reversible Instance Normalization (RevIN), yield 13.24% NRMSE from 70 buildings and 13.11 +/- 0.16% from 700 (five-seed mean), without geographic information. The n-scaling curve reveals a sharp transition: 14 buildings (n = 1 per archetype) score 14.72%, but 70 buildings already match the 900K-building SOTA. Controlled experiments at the 700-building scale show that data design contributes 1.5--2x the improvement of RevIN, and that applying RevIN to the full 900K corpus degrades performance to 13.89%, indicating that RevIN is most valuable when training data lacks magnitude coverage. Zero-shot evaluation on 218 real Korean convenience stores confirms sim-to-real transfer (12.30% vs. 13.14% for BuildingsBench). These findings demonstrate that a few dozen operationally diverse parametric simulations can replace million-building corpora for building load forecasting, though confounds between climate, building code, and schedule design remain to be fully disentangled.
+BuildingsBench (NeurIPS 2023) reported 13.28% median NRMSE on 955 commercial buildings (reproduced at 13.27% in this study) by pretraining a Transformer on 900,000 synthetic U.S. buildings. We match this result with 70 EnergyPlus simulations---five per building archetype---by replacing data volume with operational diversity. Twelve operational parameters sampled via Latin Hypercube Sampling, combined with Reversible Instance Normalization (RevIN), yield 13.24% NRMSE from 70 buildings and 13.11 +/- 0.16% from 700 (five-seed mean), without geographic information. The n-scaling curve reveals a sharp transition: 14 buildings (n = 1 per archetype) score 14.72%, but 70 buildings already match the 900K-building SOTA. Controlled experiments at the 700-building scale show that data design contributes 1.5--2x the improvement of RevIN, and that applying RevIN to the full 900K corpus degrades performance to 13.89%, indicating that RevIN is most valuable when training data lacks magnitude coverage. Zero-shot evaluation on 218 real Korean convenience stores confirms sim-to-real transfer (12.30% vs. 13.14% for BuildingsBench). These findings demonstrate that a few dozen operationally diverse parametric simulations can replace million-building corpora for building load forecasting, though confounds between climate, building code, and schedule design remain to be fully disentangled.
 
 **Keywords**: building energy forecasting, zero-shot learning, foundation models, parametric simulation, data-centric AI, reversible instance normalization
 
@@ -20,15 +20,15 @@ Short-term load forecasting underpins grid balancing, demand response, and real-
 
 BuildingsBench [3] operationalized this idea for the building energy domain. By assembling Buildings-900K, a synthetic corpus of roughly 900,000 residential and commercial buildings drawn from the NREL End-Use Load Profiles database [4], and training an encoder-decoder Transformer with Gaussian negative log-likelihood loss, the authors achieved 13.28% median NRMSE on 955 unseen commercial buildings (which we reproduce at 13.27%). The result established a benchmark and carried an implicit message: scale matters. More synthetic buildings, more patterns, better generalization.
 
-Recent work in the broader time series community has begun to challenge this framing. Shi et al. [6] showed that scaling laws for time series forecasting diverge from those in language modeling, with diminishing returns on out-of-distribution tasks. MOIRAI-MoE [5] demonstrated that a carefully curated, 30x smaller model can outperform its predecessor, showing that less data, properly curated, can outperform more. These findings echo the data-centric AI perspective articulated by Ng [20] and Zha et al. [19]: data quality and diversity often matter more than volume.
+Recent work in the broader time series community has begun to challenge this framing. Shi et al. [6] showed that scaling laws for time series forecasting diverge from those in language modeling, with diminishing returns on out-of-distribution tasks. MOIRAI-MoE [5] demonstrated that a carefully curated, 30x smaller model can outperform its predecessor, showing that less data, properly curated, can outperform more. These findings echo the data-centric AI perspective articulated by Ng [19] and Zha et al. [18]: data quality and diversity often matter more than volume.
 
 We test this hypothesis directly in the building load forecasting setting. Our starting observation is that Buildings-900K, despite its size, draws from a single stock-model distribution---the NREL End-Use Load Profiles for the U.S. building stock. Adding more buildings from the same distribution increases volume but not necessarily the diversity of temporal patterns a model encounters. An alternative is to construct a small training set with maximal operational diversity by design.
 
 We generate 700 EnergyPlus simulations (50 per archetype across 14 building types) with operational schedules sampled via 12-dimensional Latin Hypercube Sampling. The 12 parameters---covering operating hours, baseload levels, weekend patterns, ramp characteristics, equipment retention, and seasonal variation---span the space of plausible commercial building operations far more broadly than any stock-model sample of comparable size. Combined with Reversible Instance Normalization (RevIN) [7], which absorbs building-specific load magnitude and variability at inference time, this small but diverse training set achieves 12.93% NRMSE on the BuildingsBench evaluation protocol using the best of five seeds, and 13.11 +/- 0.16% averaged across all five. The model uses no geographic features (latitude and longitude are set to zero).
 
-Four aspects of these results warrant attention. First, controlled experiments on identical 700-building subsets---one from our parametric simulations, one from BuildingsBench---show that data design contributes roughly twice as much as RevIN to the overall improvement. Second, when RevIN is applied to the full 900K BuildingsBench corpus, performance worsens from 13.27% to 13.89%. This asymmetry---RevIN helps small diverse data but hurts large homogeneous data---provides a window into what each dataset has and has not learned. Third, the n-scaling curve reveals that as few as 70 buildings (5 per archetype) match the SOTA, and performance stabilizes from n = 10 onward. Fourth, zero-shot evaluation on 218 real Korean convenience stores suggests the model transfers from simulation to measurement, though validation on a broader set of building types is needed.
+Controlled experiments on identical 700-building subsets---one from our parametric simulations, one from BuildingsBench---show that data design contributes roughly twice as much as RevIN to the overall improvement. Applying RevIN to the full 900K BuildingsBench corpus worsens performance from 13.27% to 13.89%, an asymmetry suggesting that RevIN is most valuable when the training data lacks magnitude coverage. The n-scaling curve shows that 70 buildings already match the SOTA, and zero-shot evaluation on 218 real Korean convenience stores yields 12.30% vs. 13.14% for BuildingsBench.
 
-We note several caveats at the outset. Our parametric simulations differ from BuildingsBench not only in schedule design but also in climate (Korean weather files vs. U.S. TMY data), building codes, and envelope parameters. The 2x2 factorial design isolates data-source effects at the 700-building scale but does not fully disentangle these confounds. We also use RevIN, which BuildingsBench does not, creating an asymmetry that our control experiments address but cannot eliminate entirely. These limitations are discussed in Section 5.
+Our parametric simulations differ from BuildingsBench not only in schedule design but also in climate (Korean weather files vs. U.S. TMY data), building codes, and envelope parameters. The 2x2 factorial design isolates data-source effects at the 700-building scale but does not fully disentangle these confounds. We also use RevIN, which BuildingsBench does not, creating an asymmetry that our control experiments address but cannot eliminate entirely. These limitations are discussed in Section 5.
 
 ---
 
@@ -42,11 +42,11 @@ Building energy prediction has progressed through statistical methods (ARIMA, ex
 
 BuildingsBench [3] framed building load forecasting as a zero-shot generalization problem. The training corpus, Buildings-900K, comprises approximately 350,000 commercial (ComStock) and 550,000 residential (ResStock) synthetic buildings with hourly electricity consumption generated by the NREL EULP pipeline [4]. The model---an encoder-decoder Transformer predicting 24-hour Gaussian distributions from 168-hour context---trains for a fraction of one epoch (0.067 epochs, with each building seen roughly six times) using global Box-Cox normalization (lambda = -0.067). The reported SOTA is 13.28% median NRMSE on commercial buildings. Our work keeps the model architecture and evaluation protocol fixed while changing the training data and normalization strategy.
 
-A detail worth emphasizing is the sub-epoch training regime. BuildingsBench found that training for less than one full pass over the data was essential for generalization to real buildings; additional training degraded performance on the out-of-distribution evaluation set. This finding suggests that the model's capacity to memorize synthetic patterns outpaces its ability to learn transferable ones, and that restraint in training duration is as important as data volume.
+The sub-epoch training regime deserves attention. BuildingsBench found that training for less than one full pass over the data was essential for generalization to real buildings; additional training degraded performance on the out-of-distribution evaluation set. This finding suggests that the model's capacity to memorize synthetic patterns outpaces its ability to learn transferable ones, and that restraint in training duration is as important as data volume.
 
 ### 2.3 Scaling Laws and Their Limits in Time Series
 
-The proliferation of general-purpose time series foundation models---TimesFM [1], Chronos [16], Lag-Llama [17], MOIRAI [2]---has established that large-scale pretraining enables zero-shot forecasting across domains. These models train on millions to billions of time series from heterogeneous sources. Shi et al. [6] investigated whether the power-law scaling observed in language models transfers to time series and found that it does not: returns diminish more steeply, particularly under distribution shift. Yao et al. [18] reported scaling saturation below critical model sizes. Most relevant to our work, MOIRAI-MoE [5] showed that a mixture-of-experts architecture with careful data curation can beat a monolithic predecessor at a fraction of the size. These findings collectively suggest that the relationship between data volume and generalization in time series is more complex than in language modeling, where each additional token carries novel combinatorial information.
+The proliferation of general-purpose time series foundation models---TimesFM [1], Chronos [15], Lag-Llama [16], MOIRAI [2]---has established that large-scale pretraining enables zero-shot forecasting across domains. These models train on millions to billions of time series from heterogeneous sources. Shi et al. [6] investigated whether the power-law scaling observed in language models transfers to time series and found that it does not: returns diminish more steeply, particularly under distribution shift. Yao et al. [17] reported scaling saturation below critical model sizes. Most relevant to our work, MOIRAI-MoE [5] showed that a mixture-of-experts architecture with careful data curation can beat a monolithic predecessor at a fraction of the size. The relationship between data volume and generalization in time series is more complex than in language modeling, where each additional token carries novel combinatorial information.
 
 ### 2.4 Data-Centric AI and Reversible Instance Normalization
 
@@ -60,7 +60,7 @@ RevIN [7] complements this approach from the normalization side. By subtracting 
 
 ### 3.1 Parametric Building Simulation
 
-Training data are generated through EnergyPlus [21] simulation of Korean commercial buildings with parametrically varied operational schedules.
+Training data are generated through EnergyPlus [20] simulation of Korean commercial buildings with parametrically varied operational schedules.
 
 **Building archetypes.** We use 14 DOE reference building types adapted to Korean building codes and climate zones: office, retail, school, hotel, hospital, apartment (midrise and highrise), small office, large office, warehouse, strip mall, restaurant (full-service and quick-service), and university. Each archetype begins from a DOE reference model with Korean-code-compliant envelope thermal properties, HVAC system sizing, and internal load densities.
 
@@ -150,7 +150,7 @@ Table 3 presents the primary comparison (visualized in Fig. 2). All models use t
 
 The five-seed mean of Korean-700 with RevIN is 13.11 +/- 0.16%, with the best seed reaching 12.93%. This represents the first time, to our knowledge, that a model trained on fewer than 1,000 buildings has matched or exceeded the BuildingsBench SOTA on its own evaluation protocol. Without RevIN, performance drops to 14.72 +/- 0.28%, above the SOTA but still well below the Persistence Ensemble baseline (16.68%). The BB-700 control---the same architecture trained on 700 randomly sampled BuildingsBench buildings---achieves only 15.28% with RevIN and 16.44% without, indicating that the data source matters independently of the normalization strategy.
 
-The BB 900K + RevIN result is perhaps the most unexpected entry in Table 3. Adding RevIN to the full BuildingsBench training pipeline degrades performance from 13.27% to 13.89%, a 0.62 percentage-point increase. RevIN helps small data (Korean-700: 14.72% to 13.11%, a 1.61 pp improvement in five-seed mean) but hurts large data (BB 900K: 13.27% to 13.89%, a 0.62 pp degradation). We return to this asymmetry in Section 5.1.
+Adding RevIN to the full BuildingsBench training pipeline degrades performance from 13.27% to 13.89%, a 0.62 percentage-point increase. RevIN helps small data (Korean-700: 14.72% to 13.11%, a 1.61 pp improvement in five-seed mean) but hurts large data (BB 900K: 13.27% to 13.89%, a 0.62 pp degradation). We return to this asymmetry in Section 5.1.
 
 ### 4.2 Decomposing the Improvement
 
@@ -175,9 +175,9 @@ Table 4 and Fig. 3 show how NRMSE varies with the number of buildings per archet
 
 **Table 4.** N-scaling results (M-size model, RevIN ON, seed = 42, s = 18,000 steps). Fig. 3 shows the full 17-point curve including intermediate values (n = 2, 4, 6--9, 30, 40, 60).
 
-Two patterns are visible. Performance improves sharply from n = 1 to n = 5 (14.72% to 13.24%). By n = 3 (42 buildings), performance reaches 13.47%, within 0.20 pp of the SOTA. At n = 5 (70 buildings), the model matches the SOTA within 0.03 pp. From n = 5 onward, NRMSE stabilizes within a 0.31 pp band (12.93--13.24%) with no clear monotonic trend---additional parametric simulations beyond roughly 70 buildings yield diminishing gains.
+Performance improves sharply from n = 1 to n = 5 (14.72% to 13.24%). By n = 3 (42 buildings), performance reaches 13.47%, within 0.20 pp of the SOTA. At n = 5 (70 buildings), the model matches the SOTA within 0.03 pp. From n = 5 onward, NRMSE stabilizes within a 0.31 pp band (12.93--13.24%) with no clear monotonic trend---additional parametric simulations beyond roughly 70 buildings yield diminishing gains.
 
-These are single-seed results, and the 0.31 pp spread across n = 5--80 lies within the noise band observed in our multi-seed experiments (five-seed standard deviation of 0.16%). The practical implication is that as few as 70 buildings (5 per archetype) suffice to match the SOTA, and 140 buildings reliably surpass it. What is clear is that the scaling behavior is qualitatively different from the monotonic improvement typically assumed in large-scale pretraining. Adding a 10x or 100x multiplier to the training set size, while keeping the same LHS design, would be unlikely to produce meaningful gains.
+These are single-seed results, and the 0.31 pp spread across n = 5--80 lies within the noise band observed in our multi-seed experiments (five-seed standard deviation of 0.16%). The practical implication is that as few as 70 buildings (5 per archetype) suffice to match the SOTA, and 140 buildings reliably surpass it. The scaling behavior is qualitatively different from the monotonic improvement typically assumed in large-scale pretraining. Adding a 10x or 100x multiplier to the training set size, while keeping the same LHS design, would be unlikely to produce meaningful gains.
 
 This saturation is also visible at the opposite extreme. The BuildingsBench scaling experiment (BB-700 vs. BB-7K) shows that increasing from 700 to 7,000 randomly sampled BuildingsBench buildings barely changes performance when RevIN is active (15.28% vs. 14.50% with RevIN; 16.44% vs. 15.41% without). The marginal value of additional buildings from a stock-model distribution is small in both the Korean and BB settings.
 
@@ -190,19 +190,19 @@ Table 5 summarizes ablation experiments. Each row modifies one aspect of the bes
 | Korean-700 RevIN ON (baseline) | 12.93 | --- | Best configuration (seed 42) |
 | RevIN OFF (3-seed mean) | 14.72 | +1.79 | RevIN contributes 1.79 pp |
 | BB Box-Cox (lambda = -0.067) for training | 16.24 | +3.31 | Box-Cox must match training distribution |
-| 4x training tokens (168K steps, ~1.12 epochs) | 16.02 | +3.09 | Severe overfitting to synthetic artifacts |
+| 4x training tokens (168K steps, ~84 epochs) | 16.02 | +3.09 | Severe overfitting to synthetic artifacts |
 | 5K cap per archetype (70K buildings) | 15.35 | +2.42 | More simulations degrade performance |
 | Seasonal decomposition + RevIN | 16.65 | +3.72 | Trend-seasonal separation hurts OOD |
 
 **Table 5.** Ablation results. Baseline uses seed = 42; RevIN OFF reports three-seed mean. Setting latitude and longitude to zero produced identical results to actual coordinates, confirming geographic features are unnecessary with RevIN.
 
-Several of these results deserve comment. Using Box-Cox parameters fitted on BuildingsBench data rather than on our own training data degrades performance by 3.34 pp, confirming that the normalization transform must match the training distribution. The distributions of hourly loads in Korean parametric simulations and in the U.S. stock-model corpus differ enough that a mismatched Box-Cox lambda produces systematically biased predictions.
+Using Box-Cox parameters fitted on BuildingsBench data rather than on our own training data degrades performance by 3.31 pp, confirming that the normalization transform must match the training distribution. The distributions of hourly loads in Korean parametric simulations and in the U.S. stock-model corpus differ enough that a mismatched Box-Cox lambda produces systematically biased predictions.
 
-Extending training from 18,000 to 168,000 steps (approximately 84 epochs over 700 buildings, compared to 9 epochs at the default 18,000 steps) causes severe degradation, consistent with the sub-epoch insight from BuildingsBench. With prolonged training, the model memorizes simulation-specific artifacts that do not transfer to real buildings. The phenomenon is consistent with the double-descent framework [22], where additional training initially helps, then hurts as the model overfits to in-distribution noise, and would presumably help again only with orders of magnitude more capacity.
+Extending training from 18,000 to 168,000 steps (approximately 84 epochs over 700 buildings, compared to 9 epochs at the default 18,000 steps) causes severe degradation, consistent with the sub-epoch insight from BuildingsBench. With prolonged training, the model memorizes simulation-specific artifacts that do not transfer to real buildings. The phenomenon is consistent with the double-descent framework [21], where additional training initially helps, then hurts as the model overfits to in-distribution noise, and would presumably help again only with orders of magnitude more capacity.
 
 Increasing the number of buildings per archetype from 50 to 5,000 (total 700 to 70,000) also worsens results. This is not paradoxical: with a fixed LHS parameter space, additional samples provide diminishing marginal diversity. Each new building is more similar to existing ones than the early samples were. The model begins overfitting to simulation-specific correlations (HVAC sizing artifacts, EnergyPlus solver behaviors) rather than learning transferable temporal patterns.
 
-The geographic ablation is informative. Setting latitude and longitude to zero produces identical results to using the actual Korean coordinates. In the presence of RevIN, the model does not rely on spatial features---RevIN absorbs the distributional shifts that geographic information would otherwise encode. This finding has practical value: building operators need provide only hourly load data, with no location metadata required.
+The geographic ablation is informative. Setting latitude and longitude to zero produces identical results to using the actual Korean coordinates. In the presence of RevIN, the model does not rely on spatial features---RevIN absorbs the distributional shifts that geographic information would otherwise encode. Building operators need provide only hourly load data, with no location metadata required.
 
 ### 4.5 Real-World Validation: Korean Convenience Stores
 
@@ -219,11 +219,9 @@ The Korean-700 model achieves 12.30% overall NRMSE compared to 13.14% for the BB
 
 These results are suggestive but require cautious interpretation. The evaluation covers only one building type (convenience stores, a subset of the retail archetype). The Korean-700 model may benefit from having been trained on Korean climate data that matches these buildings, while the BB SOTA-M was trained on U.S. weather. We cannot separate the contribution of climate alignment from that of schedule diversity based on this experiment alone. Broader validation across hospitals, schools, offices, and other Korean building types is needed before drawing firm conclusions about sim-to-real transfer.
 
-### 4.6 BuildingsBench SOTA Reproduction
+### 4.6 BB 900K + RevIN
 
-Reproducing the official BuildingsBench results required resolving two issues in the public codebase (v2.0.0). The DatasetMetricsManager stores both SCALAR and HOUR_OF_DAY metrics with the same dictionary key, causing the SCALAR NRMSE to be overwritten; we resolved this by appending a suffix to HOUR_OF_DAY metrics. The --benchmark bdg-2 electricity flag evaluates only BDG-2 datasets due to a conditional that replaces the full argument list when the first element is "bdg-2." After these fixes, our reproduction yields 13.27% NRMSE (reported: 13.28%), confirming pipeline equivalence within rounding.
-
-For the BB 900K + RevIN experiment, we retrained the BuildingsBench model from scratch on the same 900K dataset with RevIN enabled, using the same architecture, optimizer, and training duration as the original. The only modification was the addition of the RevIN pre/post-processing layer. This produced 13.89% NRMSE, 0.62 pp worse than the original 13.27%.
+For the BB 900K + RevIN experiment, we retrained the BuildingsBench model from scratch on the same 900K dataset with RevIN enabled, using the same architecture, optimizer, and training duration as the original. The only modification was the addition of the RevIN pre/post-processing layer. This produced 13.89% NRMSE, 0.62 pp worse than the original 13.27%. Reproduction details for the BB SOTA baseline are given in Section 3.4.
 
 ---
 
@@ -297,11 +295,11 @@ Checkpoints are selected by validation loss on a held-out split of our Korean si
 
 ## 6. Conclusion
 
-This paper has demonstrated that 700 parametric building simulations, designed through 12-dimensional Latin Hypercube Sampling and paired with Reversible Instance Normalization, achieve zero-shot load forecasting performance that matches or exceeds the BuildingsBench SOTA trained on 900,000 buildings (12.93% vs. 13.27% NRMSE, best seed; 13.11 +/- 0.16% over five seeds). Controlled experiments at the 700-building scale indicate that data design contributes 1.5--2x as much as RevIN to the improvement over BuildingsBench subsets.
+We have shown that 700 parametric building simulations, designed through 12-dimensional Latin Hypercube Sampling and paired with Reversible Instance Normalization, achieve zero-shot load forecasting performance that matches or exceeds the BuildingsBench SOTA trained on 900,000 buildings (12.93% vs. 13.27% NRMSE, best seed; 13.11 +/- 0.16% over five seeds). Controlled experiments at the 700-building scale indicate that data design contributes 1.5--2x as much as RevIN to the improvement over BuildingsBench subsets.
 
-Two findings stand out beyond the headline result. The n-scaling analysis reveals that as few as 70 buildings (5 per archetype) match the SOTA, and performance stabilizes from 140 buildings onward. This challenges the assumption that building energy foundation models require massive training corpora. And the discovery that RevIN degrades performance when applied to the full 900K BuildingsBench corpus (13.27% to 13.89%) reveals a non-trivial interaction between normalization strategy and dataset structure. RevIN is most valuable when the training data lacks magnitude coverage---precisely the situation created by a small, shape-diverse training set.
+The n-scaling analysis reveals that as few as 70 buildings (5 per archetype) match the SOTA, and performance stabilizes from 140 buildings onward. This challenges the assumption that building energy foundation models require massive training corpora. And the discovery that RevIN degrades performance when applied to the full 900K BuildingsBench corpus (13.27% to 13.89%) reveals a non-trivial interaction between normalization strategy and dataset structure. RevIN is most valuable when the training data lacks magnitude coverage---precisely the situation created by a small, shape-diverse training set.
 
-These results carry a practical message: for organizations seeking to deploy zero-shot building load forecasting in new regions, investing in fewer than a hundred diverse parametric simulations may be sufficient to match or exceed models trained on million-building databases. The finding that no geographic features are needed further lowers the barrier to deployment. Whether this conclusion generalizes beyond the specific building types, climates, and evaluation protocols studied here remains to be tested. The confounding between schedule diversity and climate origin, the limitation to commercial buildings, and the modest size of the real-world validation set all call for follow-up work. We release the simulation pipeline and model checkpoints to support such efforts.
+For organizations seeking to deploy zero-shot building load forecasting in new regions, investing in fewer than a hundred diverse parametric simulations may be sufficient to match or exceed models trained on million-building databases. The finding that no geographic features are needed further lowers the barrier to deployment. Whether this conclusion generalizes beyond the specific building types, climates, and evaluation protocols studied here remains to be tested. The confounding between schedule diversity and climate origin, the limitation to commercial buildings, and the modest size of the real-world validation set all call for follow-up work. We release the simulation pipeline and model checkpoints to support such efforts.
 
 ---
 
@@ -353,21 +351,19 @@ The author declares no known competing financial interests or personal relations
 
 [14] Spencer, R. et al. "Transfer Learning on Transformers for Building Energy Consumption Forecasting." Energy and Buildings, 2025. arXiv:2410.14107.
 
-[15] CCL-TSFM. "Contrastive Curriculum Learning for STLF." arXiv:2412.17285, 2024.
+[15] Ansari, A.F. et al. "Chronos: Learning the Language of Time Series." arXiv:2403.07815, 2024.
 
-[16] Ansari, A.F. et al. "Chronos: Learning the Language of Time Series." arXiv:2403.07815, 2024.
+[16] Rasul, K. et al. "Lag-Llama: Towards Foundation Models for Probabilistic Time Series Forecasting." arXiv:2310.08278, 2023.
 
-[17] Rasul, K. et al. "Lag-Llama: Towards Foundation Models for Probabilistic Time Series Forecasting." arXiv:2310.08278, 2023.
+[17] Yao, Q. et al. "Towards Neural Scaling Laws for Time Series Foundation Models." ICLR 2025. arXiv:2410.12360.
 
-[18] Yao, Q. et al. "Towards Neural Scaling Laws for Time Series Foundation Models." ICLR 2025. arXiv:2410.12360.
+[18] Zha, D. et al. "Data-centric AI: Perspectives and Challenges." SDM 2023.
 
-[19] Zha, D. et al. "Data-centric AI: Perspectives and Challenges." SDM 2023.
+[19] Ng, A. "Unbiggen AI." IEEE Spectrum, 2022.
 
-[20] Ng, A. "Unbiggen AI." IEEE Spectrum, 2022.
+[20] Crawley, D.B. et al. "EnergyPlus: creating a new-generation building energy simulation program." Energy and Buildings, 2001.
 
-[21] Crawley, D.B. et al. "EnergyPlus: creating a new-generation building energy simulation program." Energy and Buildings, 2001.
-
-[22] Nakkiran, P. et al. "Deep Double Descent: Where Bigger Models and More Data Can Hurt." ICLR 2020.
+[21] Nakkiran, P. et al. "Deep Double Descent: Where Bigger Models and More Data Can Hurt." ICLR 2020.
 
 ---
 
@@ -419,6 +415,6 @@ The BuildingsBench 900K model was retrained from scratch with RevIN enabled (ide
 | BB-7K | 7,000 | ON | 14.50 |
 | BB-7K | 7,000 | OFF | 15.41 |
 
-A 10x increase in BuildingsBench buildings (700 to 7,000) reduces NRMSE by 0.78 pp with RevIN and 1.03 pp without. Both remain well above the Korean-700 result (12.90%), indicating that scaling within the stock-model distribution converges slowly and does not approach the performance achieved by 700 LHS-designed buildings.
+A 10x increase in BuildingsBench buildings (700 to 7,000) reduces NRMSE by 0.78 pp with RevIN and 1.03 pp without. Both remain well above the Korean-700 result (12.93%), indicating that scaling within the stock-model distribution converges slowly and does not approach the performance achieved by 700 LHS-designed buildings.
 
 All results verified through unified evaluation (torch 2.0.1, autocast, identical protocol as BB SOTA reproduction).
