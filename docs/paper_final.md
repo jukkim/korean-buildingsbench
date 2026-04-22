@@ -12,6 +12,13 @@ BuildingsBench (NeurIPS 2023) reported 13.28% median NRMSE on 955 commercial bui
 
 **Keywords**: building energy forecasting, zero-shot learning, foundation models, parametric simulation, data-centric AI, reversible instance normalization
 
+**Highlights**:
+- 70 EnergyPlus simulations match a 900,000-building foundation model in zero-shot load forecasting
+- 12-dimensional Latin Hypercube Sampling generates operationally diverse training data
+- RevIN helps small diverse data but degrades performance on large homogeneous corpora
+- No geographic information required: latitude and longitude set to zero with no accuracy loss
+- Korean-climate-trained model predicts U.S. buildings better than U.S.-climate-trained baseline
+
 ---
 
 ## 1. Introduction
