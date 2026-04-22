@@ -154,43 +154,28 @@ The BB 900K + RevIN result is perhaps the most unexpected entry in Table 3. Addi
 
 ### 4.2 Decomposing the Improvement
 
-The 2x2 factorial design (Korean vs. BB data, RevIN on vs. off, both at n = 700) allows partial decomposition of the improvement sources (Table 4).
+The 2x2 factorial design (Korean vs. BB data, RevIN on vs. off, both at n = 700) allows partial decomposition. With RevIN on, Korean-700 (13.11%) outperforms BB-700 (15.28%) by 2.17 pp; with RevIN off, the gap is 1.72 pp (14.72% vs. 16.44%). The RevIN effect itself is 1.61 pp on Korean data and 1.16 pp on BB data. Data design thus contributes 1.5--2x the improvement of RevIN. Even without RevIN, the Korean simulations outperform the BB subset at the same scale by a wide margin. RevIN amplifies the advantage but does not create it.
 
-| Comparison | RevIN ON | RevIN OFF | RevIN Effect |
-|------------|:--------:|:---------:|:------------:|
-| Korean-700 | 13.11% | 14.72% | -1.61 pp |
-| BB-700 | 15.28% | 16.44% | -1.16 pp |
-| **Data Design Effect** | **-2.17 pp** | **-1.72 pp** | --- |
-
-**Table 4.** Decomposition of improvement into data design and RevIN contributions at the 700-building scale. Data design contributes approximately 1.5--2x the improvement of RevIN.
-
-The data design effect (1.7--2.2 pp) exceeds the RevIN effect (1.2--1.6 pp). Even without RevIN, the Korean simulations outperform the BB subset at the same scale by a wide margin (14.72% vs. 16.44%). RevIN amplifies the advantage but does not create it.
-
-We stress that "data design effect" in this decomposition conflates several factors: the 12D LHS schedule design, Korean climate and building codes, and EnergyPlus model parameterization. A future experiment using U.S. weather files with Korean-style LHS schedules would be needed to isolate the schedule diversity contribution from these other differences. The decomposition is informative about the relative magnitudes of the two mechanisms but should not be interpreted as a clean causal estimate.
+We stress that "data design effect" conflates several factors: the 12D LHS schedule design, Korean climate and building codes, and EnergyPlus model parameterization. A future experiment using U.S. weather files with Korean-style LHS schedules would be needed to isolate the schedule diversity contribution. The decomposition is informative about relative magnitudes but should not be interpreted as a clean causal estimate.
 
 ### 4.3 N-Scaling Analysis
 
-Table 5 and Fig. 3 show how NRMSE varies with the number of buildings per archetype (n), where total buildings = 14n. All runs use the M-size model with RevIN on and a fixed training budget of 18,000 steps.
+Table 4 and Fig. 3 show how NRMSE varies with the number of buildings per archetype (n), where total buildings = 14n. All runs use the M-size model with RevIN on and a fixed training budget of 18,000 steps.
 
 | n | Total Buildings | NRMSE (%) | vs SOTA |
 |:-:|:---------------:|:----------:|:-------:|
 | 1 | 14 | 14.72 | +1.45 |
-| 2 | 28 | 14.08 | +0.81 |
 | 3 | 42 | 13.47 | +0.20 |
-| 4 | 56 | 13.45 | +0.18 |
 | 5 | 70 | 13.24 | -0.03 |
 | 10 | 140 | 13.18 | -0.09 |
 | 20 | 280 | 13.23 | -0.04 |
-| 30 | 420 | 13.13 | -0.14 |
-| 40 | 560 | 13.23 | -0.04 |
 | 50 | 700 | 12.93 | -0.34 |
-| 60 | 840 | 13.18 | -0.09 |
 | 70 | 980 | 13.20 | -0.07 |
 | 80 | 1,120 | 13.15 | -0.12 |
 
-**Table 5.** N-scaling results (M-size model, RevIN ON, single seed per cell, s = 18,000 steps). The n = 50 result (12.93%) matches the Table 3 best seed.
+**Table 4.** N-scaling results (M-size model, RevIN ON, seed = 42, s = 18,000 steps). Fig. 3 shows the full 17-point curve including intermediate values (n = 2, 4, 6--9, 30, 40, 60).
 
-Two patterns are visible. Performance improves rapidly from n = 1 to n = 5 (14.72% to 13.24%), with the steepest gain between n = 1 and n = 2 (14.72% to 14.08%). By n = 3 (42 buildings), performance reaches 13.47%, within 0.20 pp of the SOTA. At n = 5 (70 buildings), the model matches the SOTA within 0.03 pp. From n = 5 onward, NRMSE stabilizes within a 0.31 pp band (12.93--13.24%) with no clear monotonic trend. The curve is flat, not declining---additional parametric simulations beyond roughly 70 buildings yield diminishing gains on average.
+Two patterns are visible. Performance improves sharply from n = 1 to n = 5 (14.72% to 13.24%). By n = 3 (42 buildings), performance reaches 13.47%, within 0.20 pp of the SOTA. At n = 5 (70 buildings), the model matches the SOTA within 0.03 pp. From n = 5 onward, NRMSE stabilizes within a 0.31 pp band (12.93--13.24%) with no clear monotonic trend---additional parametric simulations beyond roughly 70 buildings yield diminishing gains.
 
 These are single-seed results, and the 0.31 pp spread across n = 5--80 lies within the noise band observed in our multi-seed experiments (five-seed standard deviation of 0.16%). The practical implication is that as few as 70 buildings (5 per archetype) suffice to match the SOTA, and 140 buildings reliably surpass it. What is clear is that the scaling behavior is qualitatively different from the monotonic improvement typically assumed in large-scale pretraining. Adding a 10x or 100x multiplier to the training set size, while keeping the same LHS design, would be unlikely to produce meaningful gains.
 
@@ -198,7 +183,7 @@ This saturation is also visible at the opposite extreme. The BuildingsBench scal
 
 ### 4.4 Ablation Studies
 
-Table 6 summarizes ablation experiments. Each row modifies one aspect of the best configuration (Korean-700, RevIN ON, seed = 42).
+Table 5 summarizes ablation experiments. Each row modifies one aspect of the best configuration (Korean-700, RevIN ON, seed = 42).
 
 | Experiment | NRMSE (%) | Delta | Interpretation |
 |------------|:----------:|:-----:|----------------|
@@ -208,10 +193,8 @@ Table 6 summarizes ablation experiments. Each row modifies one aspect of the bes
 | 4x training tokens (168K steps, ~1.12 epochs) | 16.02 | +3.09 | Severe overfitting to synthetic artifacts |
 | 5K cap per archetype (70K buildings) | 15.35 | +2.42 | More simulations degrade performance |
 | Seasonal decomposition + RevIN | 16.65 | +3.72 | Trend-seasonal separation hurts OOD |
-| Context 336h (2-week) | 13.29 | +0.36 | 168h context is sufficient |
-| lat/lon = 0 (no geography) | 12.93 | 0.00 | Geographic features unnecessary with RevIN |
 
-**Table 6.** Ablation results. All values use seed = 42 except where noted.
+**Table 5.** Ablation results. Baseline uses seed = 42; RevIN OFF reports three-seed mean. Setting latitude and longitude to zero produced identical results to actual coordinates, confirming geographic features are unnecessary with RevIN.
 
 Several of these results deserve comment. Using Box-Cox parameters fitted on BuildingsBench data rather than on our own training data degrades performance by 3.34 pp, confirming that the normalization transform must match the training distribution. The distributions of hourly loads in Korean parametric simulations and in the U.S. stock-model corpus differ enough that a mismatched Box-Cox lambda produces systematically biased predictions.
 
@@ -230,7 +213,7 @@ As a preliminary test of sim-to-real transfer, we perform zero-shot inference on
 | Korean-700 (ours) | 17.42% | 10.22% | 12.30% |
 | BB SOTA-M | --- | --- | 13.14% |
 
-**Table 7.** Zero-shot evaluation on Korean convenience stores. The 100-store subset covers a 289-day period in 2022; the 120-store subset covers a full year in 2024--2025.
+**Table 6.** Zero-shot evaluation on Korean convenience stores. The 100-store subset covers a 289-day period in 2022; the 120-store subset covers a full year in 2024--2025.
 
 The Korean-700 model achieves 12.30% overall NRMSE compared to 13.14% for the BB SOTA-M. The discrepancy between the two subsets (17.42% vs. 10.22%) likely reflects data quality differences: the 100-store 2022 set covers only 289 days and contains more gaps and anomalies, while the 120-store 2024--2025 set provides clean full-year data.
 
@@ -272,7 +255,7 @@ Our 12D LHS design takes a different approach. By sampling operational parameter
 
 From a scaling-law perspective, this result aligns with the findings of Shi et al. [6] that scaling in time series does not follow language-model power laws. In language, each additional token adds a novel word combination; in building load time series, each additional building from the same stock model adds a variation on patterns already in the training set. The marginal information content decreases rapidly.
 
-The n-scaling analysis (Table 5) provides direct evidence. Performance matches the SOTA from just 70 buildings (n = 5 per archetype) and saturates by 140 buildings (n = 10). Beyond this point, the LHS parameter space is sufficiently covered that additional samples provide negligible new information. This is the opposite of what a power-law relationship would predict and is consistent with a model of learning where the number of distinct temporal patterns, not the number of examples, determines generalization.
+The n-scaling analysis (Table 4) provides direct evidence. Performance matches the SOTA from just 70 buildings (n = 5 per archetype) and saturates by 140 buildings (n = 10). Beyond this point, the LHS parameter space is sufficiently covered that additional samples provide negligible new information. This is the opposite of what a power-law relationship would predict and is consistent with a model of learning where the number of distinct temporal patterns, not the number of examples, determines generalization.
 
 ### 5.3 Practical Implications
 
