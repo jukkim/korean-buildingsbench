@@ -8,7 +8,7 @@
 
 ## Abstract
 
-BuildingsBench (NeurIPS 2023) reported 13.28% median NRMSE on 955 commercial buildings (reproduced at 13.27% in this study) by pretraining a Transformer on 900,000 synthetic U.S. buildings. We match this result with 70 EnergyPlus simulations---five per building archetype---by replacing data volume with operational diversity. Twelve operational parameters sampled via Latin Hypercube Sampling, combined with Reversible Instance Normalization (RevIN), yield 13.24% NRMSE from 70 buildings and 13.11 +/- 0.16% from 700 (five-seed mean), without geographic information. The n-scaling curve reveals a sharp transition: 14 buildings (n = 1 per archetype) score 14.72%, but 70 buildings already match the 900K-building SOTA. Controlled experiments at the 700-building scale show that data design contributes approximately 1.3--1.5x the improvement of RevIN, and that applying RevIN to the full 900K corpus degrades performance to 13.89%, indicating that RevIN is most valuable when training data lacks magnitude coverage. Zero-shot evaluation on 218 real Korean convenience stores confirms sim-to-real transfer (12.30% vs. 13.14% for BuildingsBench). These findings demonstrate that a few dozen operationally diverse parametric simulations can replace million-building corpora for building load forecasting, though confounds between climate, building code, and schedule design remain to be fully disentangled.
+BuildingsBench (NeurIPS 2023) reported 13.28% median NRMSE on 955 commercial buildings (reproduced at 13.27% in this study) by pretraining a Transformer on 900,000 synthetic U.S. buildings. We match this result with 70 EnergyPlus simulations---five per building archetype---by replacing data volume with operational diversity. Twelve operational parameters sampled via Latin Hypercube Sampling, combined with Reversible Instance Normalization (RevIN), yield 13.28 +/- 0.12% NRMSE from 70 buildings (five-seed mean) and 13.11 +/- 0.16% from 700, without geographic information. The n-scaling curve reveals a sharp transition: 14 buildings (n = 1 per archetype) score 14.72%, but 70 buildings already match the 900K-building SOTA across five seeds. Controlled experiments at the 700-building scale show that data design contributes approximately 1.3--1.5x the improvement of RevIN, and that applying RevIN to the full 900K corpus degrades performance to 13.89%, indicating that RevIN is most valuable when training data lacks magnitude coverage. Zero-shot evaluation on 218 real Korean convenience stores confirms sim-to-real transfer (12.30% vs. 13.14% for BuildingsBench). These findings demonstrate that a few dozen operationally diverse parametric simulations can replace million-building corpora for building load forecasting, though confounds between climate, building code, and schedule design remain to be fully disentangled.
 
 **Keywords**: building energy forecasting, zero-shot learning, foundation models, parametric simulation, data-centric AI, reversible instance normalization
 
@@ -166,18 +166,18 @@ Table 4 and Fig. 3 show how NRMSE varies with the number of buildings per archet
 |:-:|:---------------:|:----------:|:-------:|
 | 1 | 14 | 14.72 | +1.45 |
 | 3 | 42 | 13.47 | +0.20 |
-| 5 | 70 | 13.24 | -0.03 |
+| 5 | 70 | 13.28 +/- 0.12 | +0.01 |
 | 10 | 140 | 13.18 | -0.09 |
 | 20 | 280 | 13.23 | -0.04 |
 | 50 | 700 | 12.93 | -0.34 |
 | 70 | 980 | 13.20 | -0.07 |
 | 80 | 1,120 | 13.15 | -0.12 |
 
-**Table 4.** N-scaling results (M-size model, RevIN ON, seed = 42, s = 18,000 steps). Fig. 3 shows the full 17-point curve including intermediate values (n = 2, 4, 6--9, 30, 40, 60).
+**Table 4.** N-scaling results (M-size model, RevIN ON, s = 18,000 steps). All rows use seed = 42 except n = 5, which reports five-seed mean +/- std, and n = 50, which matches the Table 3 best seed. Fig. 3 shows the full 17-point curve including intermediate values (n = 2, 4, 6--9, 30, 40, 60).
 
-Performance improves sharply from n = 1 to n = 5 (14.72% to 13.24%). By n = 3 (42 buildings), performance reaches 13.47%, within 0.20 pp of the SOTA. At n = 5 (70 buildings), the model matches the SOTA within 0.03 pp. From n = 5 onward, NRMSE stabilizes within a 0.31 pp band (12.93--13.24%) with no clear monotonic trend---additional parametric simulations beyond roughly 70 buildings yield diminishing gains.
+Performance improves sharply from n = 1 to n = 5 (14.72% to 13.28%). By n = 3 (42 buildings), performance reaches 13.47%, within 0.20 pp of the SOTA. At n = 5 (70 buildings), the five-seed mean of 13.28 +/- 0.12% matches the SOTA (13.27%) within 0.01 pp. From n = 5 onward, NRMSE stabilizes---additional parametric simulations beyond roughly 70 buildings yield diminishing gains.
 
-These are single-seed results, and the 0.31 pp spread across n = 5--80 lies within the noise band observed in our multi-seed experiments (five-seed standard deviation of 0.16%). The practical implication is that as few as 70 buildings (5 per archetype) suffice to match the SOTA, and 140 buildings reliably surpass it. The scaling behavior is qualitatively different from the monotonic improvement typically assumed in large-scale pretraining. Adding a 10x or 100x multiplier to the training set size, while keeping the same LHS design, would be unlikely to produce meaningful gains.
+The n = 5 multi-seed result (13.28 +/- 0.12%) confirms that the "seventy suffice" finding is not a single-seed artifact. At n = 50, the five-seed mean drops further to 13.11 +/- 0.16%, reliably surpassing the SOTA. The scaling behavior is qualitatively different from the monotonic improvement typically assumed in large-scale pretraining. Adding a 10x or 100x multiplier to the training set size, while keeping the same LHS design, would be unlikely to produce meaningful gains.
 
 This saturation is also visible at the opposite extreme. The BuildingsBench scaling experiment (BB-700 vs. BB-7K) shows that increasing from 700 to 7,000 randomly sampled BuildingsBench buildings barely changes performance when RevIN is active (15.28% vs. 14.50% with RevIN; 16.44% vs. 15.41% without). The marginal value of additional buildings from a stock-model distribution is small in both the Korean and BB settings.
 
