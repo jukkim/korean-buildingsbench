@@ -175,6 +175,9 @@ Table 5 and Fig. 3 show how NRMSE varies with the number of buildings per archet
 | n | Total Buildings | NRMSE (%) | vs SOTA |
 |:-:|:---------------:|:----------:|:-------:|
 | 1 | 14 | 14.72 | +1.45 |
+| 2 | 28 | 14.08 | +0.81 |
+| 3 | 42 | 13.47 | +0.20 |
+| 4 | 56 | 13.45 | +0.18 |
 | 5 | 70 | 13.24 | -0.03 |
 | 10 | 140 | 13.18 | -0.09 |
 | 20 | 280 | 13.23 | -0.04 |
@@ -187,7 +190,7 @@ Table 5 and Fig. 3 show how NRMSE varies with the number of buildings per archet
 
 **Table 5.** N-scaling results (M-size model, RevIN ON, single seed per cell, s = 18,000 steps). The n = 50 result (12.93%) matches the Table 3 best seed.
 
-Two patterns are visible. Performance improves sharply from n = 1 to n = 5 (14.72% to 13.24%, a 1.48 pp reduction), with n = 5 (70 buildings) already matching the SOTA within 0.03 pp. From n = 5 onward, NRMSE stabilizes within a 0.31 pp band (12.93--13.24%) with no clear monotonic trend. The curve is flat, not declining---additional parametric simulations beyond roughly 70 buildings yield diminishing gains on average.
+Two patterns are visible. Performance improves rapidly from n = 1 to n = 5 (14.72% to 13.24%), with the steepest gain between n = 1 and n = 2 (14.72% to 14.08%). By n = 3 (42 buildings), performance reaches 13.47%, within 0.20 pp of the SOTA. At n = 5 (70 buildings), the model matches the SOTA within 0.03 pp. From n = 5 onward, NRMSE stabilizes within a 0.31 pp band (12.93--13.24%) with no clear monotonic trend. The curve is flat, not declining---additional parametric simulations beyond roughly 70 buildings yield diminishing gains on average.
 
 These are single-seed results, and the 0.31 pp spread across n = 5--80 lies within the noise band observed in our multi-seed experiments (five-seed standard deviation of 0.16%). The practical implication is that as few as 70 buildings (5 per archetype) suffice to match the SOTA, and 140 buildings reliably surpass it. What is clear is that the scaling behavior is qualitatively different from the monotonic improvement typically assumed in large-scale pretraining. Adding a 10x or 100x multiplier to the training set size, while keeping the same LHS design, would be unlikely to produce meaningful gains.
 
