@@ -67,37 +67,42 @@ grep "Best BB Commercial CVRMSE" logs/<실험명>.log
 | 예외 eval | 인라인 소실 시만 | BDG-2 611건 | `--bdg2_only` | 결측 셀 채우기 |
 | 최종 full eval | 전체 실험 완료 후 best 1개만 | **전체 1908건** (commercial+residential) | (플래그 없음) | 논문 보고 |
 
-## 현재 상태 (2026-04-13)
+## 현재 상태 (2026-04-23)
 
 | 항목 | 상태 |
 |------|------|
 | v1 시뮬 (5,750건) | ✅ 완료 |
 | v2 파라메트릭 시뮬 (2,097건) | ✅ 완료 |
 | v3 시뮬 (3K~7K 건물, 14 archetypes) | ✅ 완료 |
-| **M 모델 n×steps 스윕** | ✅ n=1k extended sweep 완료 + n=100 sweep 진행 중 (4090) |
-| **L 모델 n×steps 스윕** | 🔄 n=4k 완료, n=500 완료, n=250 진행 중 (5090) |
-| **M BEST 결과 (val_best)** | **12.93%** (n=50 s=18000 seed42, SOTA -0.34%p) |
-| **M 5-seed mean** | **13.11±0.16%** (SOTA -0.16%p) |
-| **M n sweep** | ✅ n=1~80 완료 (val_best, unbiased) — n=5(70bldg)에서 SOTA match |
-| 논문 | 🔄 수치 업데이트 완료, steps sweep 진행 중 |
+| **M 모델 n×steps 스윕** | ✅ n=1~80 + steps sweep 완료 |
+| **L 모델 n×steps 스윕** | ✅ n=4k 완료, n=500 완료 |
+| **M BEST 결과 (val_best)** | **12.93%** (n=50 s=18000 seed42, SOTA 13.27% 대비 -0.34%p) |
+| **M 5-seed mean** | **13.11 ± 0.17%** (SOTA -0.16%p) |
+| **M OFF 3-seed mean** | 14.72 ± 0.28% |
+| **BB-700 ON (aug-matched) / OFF** | **14.26%** / 16.44% (NCRPS: 7.80%) |
+| **BB 900K + RevIN** | 13.89% (OFF 13.27% 대비 악화) |
+| **편의점 218건** | Korean-700 **12.30%** vs BB SOTA-M 13.14% |
+| 논문 (Applied Energy) | ✅ 본문 완성, Figure 4개, Graphical Abstract, References 30개, 특허 초안 완성 |
+| 폴더 정리 | ✅ 2026-04-23 — MANIFEST 작성, 48 체크포인트·386 run·scratch·validation_test → archive |
+| **다음** | 특허 출원 → 저널 포맷 변환 → Applied Energy 투고 |
 
-### BB SOTA 비교 (최신 — 955건 기준)
-*BB 평가 기준: Commercial 955건(BDG-2:611 + Electricity:344) + Residential 953건 = **1,908건***
-*로딩: per-year 독립 로딩 (10-cap 미사용, BB README: "eval over all real buildings for all available years")*
+### BB SOTA 비교 (논문 공식 — 955건 Commercial 기준, val_best, s=18000)
+*평가 기준: Commercial 955건(BDG-2:611 + Electricity:344). Residential 953건은 보조.*
+*체크포인트 선택: `_best.pt` (val_loss on Korean split). 수치 출처: `results/RESULTS_REGISTRY.md`.*
 
 | Model | N Buildings | Commercial | 갭 | 비고 |
 |-------|:---:|:---:|:---:|------|
-| **BB Transformer-M (SOTA)** | 900K | **13.28%** | — | GitHub 공식 |
-| BB Transformer-L | 900K | 13.31% | — | |
+| **BB Transformer-M (SOTA, 재현)** | 900K | **13.27%** | — | 논문 기준값 (원본 13.28%) |
+| BB Transformer-M + RevIN | 900K | 13.89% | +0.62%p | RevIN asymmetry |
+| BB Transformer-L | 900K | 13.31% | — | GitHub 공식 |
 | Persistence Ensemble | 900K | 16.68% | — | BB baseline |
-| Korean_BB v2.1 | 2,097 | 19.31% | +6.03%p | |
-| Korean_BB v3 S4 (EXP-024) | 7K | 14.16% | +0.88%p | 구 BEST |
-| **Korean_BB M (n=50)** | **700** | **12.87%** | **-0.41%p** | **M BEST (s=16000)** |
-| **Korean_BB M (n=1k)** | **14K** | **12.98%** | **-0.30%p** | M (s=15500) |
-| **Korean_BB M (n=100)** | **1.4K** | **12.98%** | **-0.30%p** | n=100 동등 |
-| **Korean_BB L (n=4k)** | **56K** | **13.11%** | **-0.20%p** | **L BEST (s=18K)** |
-| **Korean_BB L (n=500)** | **7K** | **13.23%** | **-0.05%p** | L n=500 (s=17K) |
-| Korean_BB L (n=250) | 3.5K | 13.30% | +0.02%p | L n=250 (s=20K) |
+| **Korean-700 ON (5-seed)** | **700** | **13.11 ± 0.17%** | **-0.16%p** | **논문 공식 (최고 시드 12.93%)** |
+| Korean-700 OFF (3-seed) | 700 | 14.72 ± 0.28% | +1.45%p | RevIN 미적용 |
+| BB-700 ON (aug-matched) | 700 | **14.26%** | +0.99%p | **논문 공식** (NCRPS 7.80%, seed42) |
+| BB-700 ON (no aug) | 700 | 15.28% | +2.01%p | aug 미포함 이전 참고값 |
+| BB-700 OFF | 700 | 16.44% | +3.17%p | aug 없음 |
+
+> **과거 실험 수치 (v2.1/v3/n=100/L 등 비교)** 는 `docs/EXPERIMENT_LOG.md`로 이관. 여기는 논문 공식 수치만 유지.
 
 ### v2 시뮬레이션 결과
 | 아키타입 | OK | FAIL | 비고 |
@@ -302,14 +307,29 @@ python scripts/evaluate_bb.py --checkpoint <ckpt> --config configs/model/Transfo
 ## 문서
 | 문서 | 내용 |
 |------|------|
-| **[docs/IMPROVEMENT_ROADMAP.md](docs/IMPROVEMENT_ROADMAP.md)** | **현재 전략 방향 SSOT — 성능 갭 분해·실험 트래킹·의사결정 트리 (2026-03-16~)** |
-| **[docs/SIMULATION_REVIEW_v3.md](docs/SIMULATION_REVIEW_v3.md)** | **2026-02-24 표준 재검토 — sim_id·Tier A·LHS풀·마이그레이션** |
-| [docs/STATUS.md](docs/STATUS.md) | 10-cap 검증 결과 |
-| [docs/DATA_STATUS.md](docs/DATA_STATUS.md) | QA/QB 데이터 현황 |
-| [docs/STRATEGY.md](docs/STRATEGY.md) | CFEE 등 전략 비교 |
-| [docs/EXPERIMENT_LOG.md](docs/EXPERIMENT_LOG.md) | 실험 기록 |
-| [docs/AI_COMPETITION_BRIEF.md](docs/AI_COMPETITION_BRIEF.md) | AI 경진대회/논문 브리프 — Korean_BB + ems_transformer + mcp_model 통합 |
+| **[docs/PAPER_FILES_MANIFEST.md](docs/PAPER_FILES_MANIFEST.md)** | **⭐ 논문 재현 파일 지도 SSOT — 체크포인트·데이터·스크립트 위치 (2026-04-23)** |
+| **[results/RESULTS_REGISTRY.md](results/RESULTS_REGISTRY.md)** | **⭐ 논문 수치 출처 SSOT — Table별 체크포인트·재현 로그** |
 | **[docs/PAPER_PLAN.md](docs/PAPER_PLAN.md)** | **Applied Energy 논문 작성 SSOT — 실험 계획·구조·방어 전략·일정** |
+| **[docs/IMPROVEMENT_ROADMAP.md](docs/IMPROVEMENT_ROADMAP.md)** | 전략 방향 SSOT — 성능 갭 분해·의사결정 트리 (2026-03-16~) |
+| **[docs/SIMULATION_REVIEW_v3.md](docs/SIMULATION_REVIEW_v3.md)** | 2026-02-24 표준 재검토 — sim_id·Tier A·LHS풀·마이그레이션 |
+| [docs/STATUS.md](docs/STATUS.md) | (2026-02 시점, 논문 공식 수치는 RESULTS_REGISTRY 참조) |
+| [docs/EXPERIMENT_LOG.md](docs/EXPERIMENT_LOG.md) | 실험 기록 (EXP-001~038) |
+| [docs/SIMULATION_DESIGN.md](docs/SIMULATION_DESIGN.md) | 시뮬레이션 설계 문서 (2026-02) |
+| [archive/docs/AI_COMPETITION_BRIEF.md](archive/docs/AI_COMPETITION_BRIEF.md) | AI 경진대회/논문 브리프 (archived) |
+
+## 폴더 정리 이력 (2026-04-23)
+
+논문 완성 후 대규모 정리 수행. **필요 파일은 `docs/PAPER_FILES_MANIFEST.md` 참조**.
+
+| 이동 | From | To | 파일 수 |
+|------|------|-----|:------:|
+| 재개용 체크포인트 | `checkpoints/*_last.pt` | `archive/checkpoints_redundant_20260423/` | 31 |
+| deprecated 체크포인트 | `checkpoints/*_bb_best.pt` | 〃 | 17 |
+| TensorBoard 로그 | `runs/` (폴더 제거) | `archive/runs_tensorboard_20260423/` | 386 |
+| WSL/cloud 중간 | `scratch/` (폴더 제거) | `archive/scratch_wsl_20260423/` | - |
+| Smoke test | `simulations/validation_test/` | `archive/simulations_validation_test_20260423/` | 65MB |
+
+**결과**: checkpoints 80→32개 (-8.5GB), 루트 19→17 폴더. 논문 재현에 필요한 48개 `_best.pt` + `bb900k_revin_step590000.pt` 모두 유지.
 
 ## 관련 프로젝트
 | 프로젝트 | 경로 | 관계 |

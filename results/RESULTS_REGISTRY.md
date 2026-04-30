@@ -20,32 +20,55 @@
 
 ## Table 3: Main Comparison
 
-| Model | NRMSE | Seeds | Checkpoint | Config | 재현 로그 |
-|-------|:---:|:---:|----------|--------|---------|
-| BB SOTA-M | 13.27% | 공식 | BB 공식 체크포인트 | — | `archive/logs/bb_sota_repro_M.log` |
-| BB 900K+RevIN | 13.89% | 1 | `bb900k_revin_step590000.pt` | M-v3-3k.toml | `archive/logs/bb900k_revin_evaluate_bb.log` |
-| Korean-700 ON | 13.11±0.16% | 42-46 | `*_s18000_revin_on_seed{42-46}_best.pt` | M-v3-3k.toml | `logs/valbest_all.log` |
-| Korean-700 OFF | 14.72±0.28% | 42-44 | `*_s18000_revin_off_seed{42-44}_best.pt` (42,43 retrained) | M-v3-3k-norevin.toml | `logs/retrain_broken_main.log` |
-| BB-700 ON | 15.28% | 42 | `*_bb700_s18000_revin_on_best.pt` | M-v3-3k.toml | `archive/logs/bb700_evaluate_bb.log` |
-| BB-700 OFF | 16.44% | 42 | `*_bb700_s18000_revin_off_best.pt` | M-v3-3k-norevin.toml | `archive/logs/bb700_off_evaluate_bb.log` |
+| Model | NRMSE | NCRPS | Seeds | Checkpoint | Config | 재현 로그 |
+|-------|:---:|:---:|:---:|----------|--------|---------|
+| BB SOTA-M | 13.27% | —† | 공식 | `external/BuildingsBench_data/checkpoints/Transformer_Gaussian_M.pt` | — | `archive/logs/bb_sota_repro_M.log` |
+| BB 900K+RevIN | 13.89% | 7.76% | 1 | `bb900k_revin_step590000.pt` | M-v3-3k.toml | 5090: `logs/ncrps_bb900k_revin.log` |
+| Korean-700 ON | 13.11±0.17% | 7.14±0.03%‡ | 42-46 | `*_s18000_revin_on_seed{42-46}_best.pt` | M-v3-3k.toml | 5090: `logs/ncrps_on_seed{42-46}.log` |
+| Korean-700 OFF | 14.72±0.28% | 8.29%§ | 42-44 | `*_s18000_revin_off_seed{42-44}_best.pt` (42,43 retrained) | M-v3-3k-norevin.toml | 5090: `logs/ncrps_off_seed{42,44}.log` |
+| BB-700 (aug-matched) ON | 14.26% | 7.80% | 42 | `*_bb700_aug_s18000_seed42_best.pt` | M-v3-3k-bb.toml | 5090: `logs/ncrps_bb700_aug_seed42.log` |
+| BB-700 (no-aug) ON | 15.28% | — | 42 | `*_bb700_s18000_revin_on_best.pt` | M-v3-3k.toml | `archive/logs/bb700_evaluate_bb.log` |
+| BB-700 OFF | 16.44% | — | 42 | `*_bb700_s18000_revin_off_best.pt` | M-v3-3k-norevin.toml | `archive/logs/bb700_off_evaluate_bb.log` |
+| Persistence Ensemble | 16.68% | — | — | — | — | **출처: BB 원 논문 Table 5** (Emami et al., NeurIPS 2023). 자체 실험값 아님. |
+
+†BB SOTA-M NCRPS는 BC protocol 불일치로 보고 불가. 우리 BC로 평가 시 CVRMSE=15.05%, NCRPS=8.32% (5090: `logs/ncrps_bb_sota.log`).
+‡4-seed mean (42,43,44,46). seed45는 retrained checkpoint NCRPS 미평가.
+§2-seed mean (42,44). seed43은 broken checkpoint NCRPS 미평가.
+
+### NCRPS 평가 조건
+- 평가 스크립트: `scripts/evaluate_bb.py` (NCRPS 지원 버전, 2026-04-29)
+- Box-Cox: Korean lambda=-0.067, `data/korean_bb/metadata/transforms/boxcox.pkl`
+- Delta method: σ_orig ≈ scale_ × |λμ_unstd+1|^(1/λ-1) × σ_bc
+- 정규화: CRPS / |actual_kWh|, building별 median 집계
+
+### No-aug Ablation (Korean-700, seed 42-44)
+
+| Seed | NRMSE | NCRPS | Checkpoint | 로그 |
+|:---:|:---:|:---:|----------|------|
+| 42 | 13.48% | 7.95% | `*_korean700_noaug_s18000_seed42_best.pt` | 5090: `logs/ncrps_noaug_seed42.log` |
+| 43 | 13.89% | 8.21% | `*_korean700_noaug_s18000_seed43_best.pt` | 5090: `logs/ncrps_noaug_seed43.log` |
+| 44 | 13.65% | 8.31% | `*_korean700_noaug_s18000_seed44_best.pt` | 5090: `logs/ncrps_noaug_seed44.log` |
+| **Mean** | **13.67%** | **8.16%** | — | — |
+
+→ aug 효과: NRMSE -0.56pp (13.67→13.11%), NCRPS -1.02pp (8.16→7.14%)
 
 ### Korean-700 ON 개별 seed (Appendix A.1)
 
-| Seed | NRMSE | Checkpoint | 비고 |
-|:---:|:---:|----------|------|
-| 42 | 12.93% | `*_s18000_revin_on_seed42_best.pt` | 정상 (epoch 9) |
-| 43 | 13.06% | `*_s18000_revin_on_seed43_best.pt` | 정상 (epoch 9) |
-| 44 | 13.10% | `*_s18000_revin_on_seed44_best.pt` | 정상 (epoch 9) |
-| 45 | 13.39% | `*_retrain_on_45_best.pt` | 재학습 (원본 epoch 2에서 중단) |
-| 46 | 13.07% | `*_s18000_revin_on_seed46_best.pt` | 정상 (epoch 9) |
+| Seed | NRMSE | NCRPS | Checkpoint | 비고 |
+|:---:|:---:|:---:|----------|------|
+| 42 | 12.93% | 7.10% | `*_s18000_revin_on_seed42_best.pt` | 정상 (epoch 9) |
+| 43 | 13.06% | 7.16% | `*_s18000_revin_on_seed43_best.pt` | 정상 (epoch 9) |
+| 44 | 13.10% | 7.16% | `*_s18000_revin_on_seed44_best.pt` | 정상 (epoch 9) |
+| 45 | 13.39% | n.e. | `*_retrain_on_45_best.pt` | 재학습 (원본 epoch 2에서 중단); NCRPS는 retrained ckpt 미평가 |
+| 46 | 13.07% | 7.14% | `*_s18000_revin_on_seed46_best.pt` | 정상 (epoch 9) |
 
 ### Korean-700 OFF 개별 seed (Appendix A.2)
 
-| Seed | NRMSE | Checkpoint | 비고 |
-|:---:|:---:|----------|------|
-| 42 | 14.81% | `*_retrain_off_42_best.pt` | 재학습 (원본 epoch 6에서 중단) |
-| 43 | 14.94% | `*_retrain_off_43_best.pt` | 재학습 (원본 epoch 0에서 중단) |
-| 44 | 14.40% | `*_s18000_revin_off_seed44_best.pt` | 정상 (epoch 9) |
+| Seed | NRMSE | NCRPS | Checkpoint | 비고 |
+|:---:|:---:|:---:|----------|------|
+| 42 | 14.81% | 8.17% | `*_retrain_off_42_best.pt` | 재학습 (원본 epoch 6에서 중단) |
+| 43 | 14.94% | n.e. | `*_retrain_off_43_best.pt` | 재학습 (원본 epoch 0에서 중단); NCRPS는 broken ckpt 미평가 |
+| 44 | 14.40% | 8.40% | `*_s18000_revin_off_seed44_best.pt` | 정상 (epoch 9) |
 
 ---
 
@@ -122,12 +145,14 @@ python scripts/evaluate_bb.py \
 
 ## Table 6: Convenience Stores
 
-| Model | All 218 | 로그 |
-|-------|:---:|------|
-| Korean-700 | 12.30% | `logs/korean_stores_valbest.log` |
-| BB SOTA-M | 13.14% | 〃 |
+| Model | All 218 | 100-store subset (2022, 289days) | 120-store subset (2024-25, 1yr) | 로그 |
+|-------|:---:|:---:|:---:|------|
+| Korean-700 | 12.30% | 17.42% | 10.22% | `logs/korean_stores_valbest.log` |
+| BB SOTA-M | 13.14% | — | — | 〃 |
 
 체크포인트: `*_s18000_revin_on_seed42_best.pt` (val_best)
+
+> 100-store(17.42%) vs 120-store(10.22%) 편차는 데이터 품질 차이: 2022년 100개는 289일 부분 기간+갭 존재, 2024-25년 120개는 완전한 1년 데이터.
 
 ---
 
@@ -157,4 +182,14 @@ python scripts/evaluate_bb.py \
 
 ---
 
-*생성: 2026-04-23 | 마지막 수정: 2026-04-23*
+---
+
+## BB-700 aug-matched 체크포인트 (2026-04-29 추가)
+
+| 파일 | NRMSE | NCRPS | 위치 |
+|------|:---:|:---:|------|
+| `TransformerWithGaussian-M-v3-3k-bb_bb700_aug_s18000_seed42_best.pt` | 14.26% | 7.80% | 5090: `C:\Korean_BB\checkpoints\` |
+
+학습 조건: `--augment --bb_eval_interval 0 --seed 42 --max_steps 18000`, BB-700 index (stride=24, 245K windows), config `M-v3-3k-bb.toml` (RevIN ON)
+
+*생성: 2026-04-23 | 마지막 수정: 2026-04-29 (NCRPS 평가 완료 + BB-700+aug 추가)*
