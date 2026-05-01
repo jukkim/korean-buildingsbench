@@ -143,13 +143,13 @@
 | `data/korean_bb/metadata/encoding_maps.json` | 카테고리 인코딩 | - | ⭐ |
 | `data/korean_bb/metadata/train_weekly_{N}.csv` | n별 학습 인덱스 (n=1~90, 100~10k) | - | ⭐ |
 | `data/korean_bb/metadata/val_weekly_{N}.csv` | n별 검증 인덱스 | - | ⭐ |
-| `data/korean_bb/individual/*.parquet` | 198K parquet (전체 시뮬 데이터) | ~40GB | ⭐ |
-| `simulations/npy_tier_a/` | NPY Tier A (17채널, 146K 건물) | ~80GB | ⭐ |
+| `data/korean_bb/individual/*.parquet` | 700 training buildings (로컬 전용, GitHub 미포함 — 파이프라인으로 재생성 또는 저자 요청) | ~수GB | ⭐ |
+| `simulations/npy_tier_a/` | NPY Tier A (17채널, 146K 건물, 로컬 전용) | ~80GB | ⭐ |
 
 ### 4.2 BB-700 평가용 subset
 | 경로 | 내용 | 보존 |
 |------|------|:----:|
-| `data/bb_subset/seed42_n700/` | BB ComStock 700-building subset | ⭐ |
+| `data/bb_subset/seed42_n700/` | BB ComStock 700-building subset (로컬 전용, .gitignore) | ⭐ |
 
 ### 4.3 BB 평가 데이터 (외부)
 | 경로 | 내용 | 보존 |
