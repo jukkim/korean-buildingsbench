@@ -20,12 +20,12 @@ FONT = "DejaVu Sans"
 # ── shared style ──────────────────────────────────────────────────────────────
 plt.rcParams.update({
     "font.family": FONT,
-    "font.size": 16,
-    "axes.titlesize": 20,
-    "axes.labelsize": 18,
-    "xtick.labelsize": 16,
-    "ytick.labelsize": 16,
-    "legend.fontsize": 15,
+    "font.size": 18,
+    "axes.titlesize": 22,
+    "axes.labelsize": 20,
+    "xtick.labelsize": 18,
+    "ytick.labelsize": 18,
+    "legend.fontsize": 17,
 })
 
 
@@ -120,170 +120,176 @@ def fig1_system():
 
 # ── Fig. 2: LHS Parameter Generation ─────────────────────────────────────────
 def fig2_lhs():
-    fig = plt.figure(figsize=(16, 12))
+    fig = plt.figure(figsize=(20, 14))
+    fig.patch.set_facecolor("white")
 
-    # Left: flowchart (65% width)
-    ax_flow = fig.add_axes([0.02, 0.02, 0.60, 0.90])
+    # Title
+    fig.text(0.5, 0.97, "Fig. 2  Parameter Generation by 12D LHS",
+             ha="center", va="top", fontsize=24, fontweight="bold")
+
+    # Left: flowchart (60% width)
+    ax_flow = fig.add_axes([0.02, 0.03, 0.55, 0.90])
     ax_flow.set_xlim(0, 6)
-    ax_flow.set_ylim(0, 12)
+    ax_flow.set_ylim(-0.5, 12)
     ax_flow.axis("off")
-    ax_flow.set_title("Fig. 2  Parameter Generation by 12D LHS",
-                       fontsize=20, fontweight="bold", x=0.8, y=1.01)
 
     steps = [
-        (3, 10.5, "Define Building Archetypes",    "14 types: office, retail,\nschool, hotel, hospital ...", "#cce5ff"),
+        (3, 10.5, "Define Building Archetypes",   "14 types: office, retail,\nschool, hotel, hospital ...", "#cce5ff"),
         (3,  7.8, "Define 12D Parameter Space",   "op_start, baseload_pct,\nnight_equip_frac ...",          "#ffd6cc"),
         (3,  5.1, "Latin Hypercube Sampling",      "N=50 samples/archetype\nspace-filling design",           "#d4edda"),
         (3,  2.4, "Modify EnergyPlus IDF Files",  "envelope + HVAC +\nschedules per parameter set",        "#fff3cd"),
-        (3,  0.1, "Output: 700 IDF Files",         "14 archetypes × 50 × 5 cities",                         "#f3e5f5"),
+        (3, -0.2, "Output: 700 IDF Files",         "14 archetypes × 50 × 5 cities",                         "#f3e5f5"),
     ]
-    bw, bh = 5.0, 1.7
+    bw, bh = 5.2, 1.85
     for x, y, lbl, sub, col in steps:
-        draw_box(ax_flow, x, y, bw, bh, lbl, sub, facecolor=col, fontsize=16, subfontsize=13)
+        draw_box(ax_flow, x, y, bw, bh, lbl, sub, facecolor=col, fontsize=18, subfontsize=15)
 
     for i in range(len(steps) - 1):
         y_top = steps[i][1] - bh/2
         y_bot = steps[i+1][1] + bh/2
         arrow(ax_flow, 3, y_top, 3, y_bot)
 
-    # Right: scatter plot
-    ax_sc = fig.add_axes([0.65, 0.38, 0.32, 0.45])
+    # Right top: scatter plot
+    ax_sc = fig.add_axes([0.60, 0.50, 0.37, 0.42])
     np.random.seed(0)
     n = 50
-    # LHS sampling simulation
     x_lhs = (np.random.permutation(n) + np.random.uniform(0, 1, n)) / n
     y_lhs = (np.random.permutation(n) + np.random.uniform(0, 1, n)) / n
-    ax_sc.scatter(x_lhs * 12, y_lhs * 0.9 + 0.05, c="#1f77b4", s=60, alpha=0.8)
-    ax_sc.set_xlabel("op_start (h)", fontsize=14)
-    ax_sc.set_ylabel("baseload_pct", fontsize=14)
-    ax_sc.set_title("2D Projection of LHS\n(50 samples)", fontsize=15, fontweight="bold")
-    ax_sc.tick_params(labelsize=13)
+    ax_sc.scatter(x_lhs * 12, y_lhs * 0.9 + 0.05, c="#1f77b4", s=80, alpha=0.8)
+    ax_sc.set_xlabel("op_start (h)", fontsize=18)
+    ax_sc.set_ylabel("baseload_pct", fontsize=18)
+    ax_sc.set_title("2D Projection of LHS (50 samples)", fontsize=18, fontweight="bold")
+    ax_sc.tick_params(labelsize=16)
     ax_sc.set_xlim(-0.5, 12.5)
     ax_sc.set_ylim(0, 1.0)
 
-    # Key properties text
-    ax_txt = fig.add_axes([0.65, 0.05, 0.32, 0.30])
+    # Right bottom: Key Properties
+    ax_txt = fig.add_axes([0.60, 0.05, 0.37, 0.40])
     ax_txt.axis("off")
-    props = "Key Properties:\n\n• Space-filling coverage\n• Each dimension sampled\n  evenly\n• No clustering or gaps\n• 700 buildings cover\n  12D space"
-    ax_txt.text(0.1, 0.95, props, va="top", fontsize=14, linespacing=1.6,
-                bbox=dict(boxstyle="round,pad=0.5", facecolor="#f8f9fa", edgecolor="#ccc"))
+    props = (
+        "Key Properties:\n\n"
+        "•  Space-filling coverage\n"
+        "•  Each dimension sampled evenly\n"
+        "•  No clustering or gaps\n"
+        "•  700 buildings cover 12D space"
+    )
+    ax_txt.text(0.05, 0.95, props, va="top", fontsize=17, linespacing=1.9,
+                bbox=dict(boxstyle="round,pad=0.6", facecolor="#f8f9fa", edgecolor="#bbb", lw=1.5))
 
     save(fig, "patent_fig2_lhs.png")
 
 
 # ── Fig. 3: RevIN + Transformer Model ────────────────────────────────────────
 def fig3_revin():
-    fig, axes = plt.subplots(2, 1, figsize=(18, 13))
-    fig.suptitle("Fig. 3  Model Training Process with Reversible Instance Normalization",
-                 fontsize=21, fontweight="bold", y=0.99)
+    fig = plt.figure(figsize=(22, 14))
+    fig.patch.set_facecolor("white")
+    fig.text(0.5, 0.98, "Fig. 3  Model Training Process with Reversible Instance Normalization",
+             ha="center", va="top", fontsize=24, fontweight="bold")
 
-    labels = [
-        ["Training Phase", "#2196F3"],
-        ["Inference Phase (Zero-Shot)", "#E91E63"],
+    phases = [
+        ("Training Phase",           "#1565C0",
+         [("Simulation Data\n700 buildings\n8760h each",   "#cce5ff"),
+          ("Sliding Window\n168h context\n+ 24h target",   "#ffd6cc"),
+          ("RevIN Normalize\nx_norm =\n(x−μ)/σ",          "#d4edda"),
+          ("Transformer\nEncoder-Decoder\n15.8M params",   "#fff3cd"),
+          ("Gaussian\nNLL Loss",                            "#f3e5f5")],
+         None),
+        ("Inference Phase (Zero-Shot)", "#C62828",
+         [("Target Building\nHistory (168h)\nNO location", "#d4edda"),
+          ("Compute\nμ_ctx, σ_ctx\nfrom 168h",            "#cce5ff"),
+          ("RevIN Normalize\n(x−μ_ctx)/σ_ctx",            "#d4edda"),
+          ("Trained\nTransformer\n(frozen)",               "#fff3cd"),
+          ("RevIN Denorm\nŷ·σ_ctx + μ_ctx",               "#f3e5f5")],
+         ("Predicted\n24h Energy\n(kWh)", "#c8e6c9", "#2e7d32")),
     ]
 
-    # Training row boxes
-    train_boxes = [
-        ("Simulation Data\n700 buildings\n8760h each",         "#cce5ff"),
-        ("Sliding Window\n168h context\n+ 24h target",        "#ffd6cc"),
-        ("RevIN Normalize\nx_norm =\n(x−μ)/σ",               "#d4edda"),
-        ("Transformer\nEncoder-Decoder\n15.8M params",        "#fff3cd"),
-        ("Gaussian\nNLL Loss",                                  "#f3e5f5"),
-    ]
-    # Inference row boxes
-    infer_boxes = [
-        ("Target Building\nHistory (168h)\nNO location",       "#d4edda"),
-        ("Compute\nμ_ctx, σ_ctx\nfrom 168h",                  "#cce5ff"),
-        ("RevIN Normalize\n(x−μ_ctx)/σ_ctx",                  "#d4edda"),
-        ("Trained\nTransformer\n(frozen)",                     "#fff3cd"),
-        ("RevIN Denorm\nŷ·σ_ctx + μ_ctx\n→ Predicted kWh",    "#f3e5f5"),
-    ]
+    row_tops = [0.90, 0.42]
+    row_h    = 0.44
 
-    for ax_idx, (ax, (phase_label, phase_color), boxes) in enumerate(
-        zip(axes, labels, [train_boxes, infer_boxes])
-    ):
-        ax.set_xlim(0, 18)
+    for row_idx, (phase_label, phase_color, boxes, output) in enumerate(phases):
+        top = row_tops[row_idx]
+        ax = fig.add_axes([0.02, top - row_h + 0.03, 0.96, row_h])
+        ax.set_xlim(0, 22)
         ax.set_ylim(0, 5)
         ax.axis("off")
 
-        # Phase label
-        ax.text(0.3, 4.5, phase_label, fontsize=19, fontweight="bold",
-                color=phase_color)
+        ax.text(0.4, 4.5, phase_label, fontsize=21, fontweight="bold", color=phase_color)
 
-        # Draw boxes
-        xs = [2, 5, 8, 11, 14]
-        bw, bh = 2.6, 3.0
+        xs = [2.3, 6.0, 9.7, 13.4, 17.1]
+        bw, bh = 3.2, 3.2
         for i, (x, (lbl, col)) in enumerate(zip(xs, boxes)):
-            draw_box(ax, x, 2.3, bw, bh, lbl, facecolor=col,
-                     fontsize=14, subfontsize=12)
+            draw_box(ax, x, 2.2, bw, bh, lbl, facecolor=col, fontsize=16, subfontsize=14)
             if i < len(xs) - 1:
-                arrow(ax, x + bw/2, 2.3, xs[i+1] - bw/2, 2.3)
+                arrow(ax, x + bw/2, 2.2, xs[i+1] - bw/2, 2.2)
 
-        # Final output
-        if ax_idx == 1:
-            draw_box(ax, 17.0, 2.3, 2.4, 1.4, "Predicted\n24h Energy\n(kWh)",
-                     facecolor="#c8e6c9", edgecolor="#2e7d32", fontsize=13)
-            arrow(ax, 15.3, 2.3, 15.7, 2.3)
+        if output:
+            olbl, ofc, oec = output
+            draw_box(ax, 20.6, 2.2, 2.6, 1.8, olbl,
+                     facecolor=ofc, edgecolor=oec, fontsize=15)
+            arrow(ax, xs[-1] + bw/2, 2.2, 20.6 - 1.3, 2.2)
 
-    # Note at bottom
-    axes[1].text(9, 0.3,
-        "RevIN removes building-specific scale  →  model learns only temporal patterns  →  no location info needed",
-        ha="center", fontsize=14, color="#555", style="italic")
+    # Bottom note
+    fig.text(0.5, 0.02,
+             "RevIN removes building-specific scale  →  model learns only temporal patterns"
+             "  →  no location info needed",
+             ha="center", fontsize=17, color="#444", style="italic")
 
-    plt.tight_layout(rect=[0, 0, 1, 0.97])
     save(fig, "patent_fig3_revin.png")
 
 
 # ── Fig. 4: N-Scaling Curve ───────────────────────────────────────────────────
 def fig4_nscaling():
-    # Data from Table 4
-    n_vals  = [1,   3,    5,    10,   20,   50,   70,   80]
-    n_bldgs = [14,  42,   70,   140,  280,  700,  980,  1120]
+    n_vals  = [1,     3,     5,     10,    20,    50,    70,    80]
+    n_bldgs = [14,    42,    70,    140,   280,   700,   980,   1120]
     nrmse   = [14.72, 13.47, 13.28, 13.18, 13.23, 12.93, 13.20, 13.15]
 
-    fig, ax = plt.subplots(figsize=(14, 9))
-    ax.set_title("Fig. 4  Prediction Performance vs. Number of Training Buildings (N-Scaling)",
-                 fontsize=20, fontweight="bold", pad=16)
+    fig, ax = plt.subplots(figsize=(16, 10))
+    ax.set_title(
+        "Fig. 4  Prediction Performance vs. Number of Training Buildings",
+        fontsize=22, fontweight="bold", pad=20)
 
-    ax.plot(n_bldgs, nrmse, "o-", color="#1565C0", lw=2.5, ms=10,
+    ax.plot(n_bldgs, nrmse, "o-", color="#1565C0", lw=3, ms=12,
             label="Korean Parametric (RevIN ON)", zorder=5)
 
     sota = 13.27
-    ax.axhline(sota, color="red", ls="--", lw=2,
+    ax.axhline(sota, color="red",    ls="--", lw=2.5,
                label=f"BB SOTA-M (900K buildings): {sota}%")
-    ax.axhline(15.28, color="orange", ls=":", lw=2,
-               label="BB-700 (RevIN ON): 15.28%")
+    ax.axhline(15.28, color="darkorange", ls=":",  lw=2.5,
+               label="BB-700 (RevIN ON, no aug): 15.28%")
+    ax.axvspan(140, 1200, alpha=0.08, color="green")
+    ax.text(650, 15.45, "Saturation zone  (n ≥ 10)",
+            fontsize=17, color="#2e7d32", fontweight="bold")
 
-    # Saturation shading
-    ax.axvspan(140, 1200, alpha=0.08, color="green", label="Saturation zone (n ≥ 10)")
+    # Annotation: n=5
+    ax.annotate("n=5  (70 bldgs)\n13.28% ≈ SOTA",
+                xy=(70, 13.28), xytext=(220, 13.75),
+                fontsize=16, ha="left",
+                arrowprops=dict(arrowstyle="-|>", color="#333", lw=2),
+                bbox=dict(boxstyle="round,pad=0.4", fc="white", ec="#888", lw=1.5))
 
-    # Annotation: n=5 matching SOTA
-    ax.annotate(f"n=5 (70 bldgs): 13.28%\n≈ SOTA within 0.01 pp",
-                xy=(70, 13.28), xytext=(200, 13.65),
-                fontsize=14, ha="left",
-                arrowprops=dict(arrowstyle="-|>", color="#333", lw=1.5),
-                bbox=dict(boxstyle="round,pad=0.35", fc="white", ec="#888"))
+    # Annotation: n=50 best
+    ax.annotate("n=50  (700 bldgs)\nbest: 12.93%",
+                xy=(700, 12.93), xytext=(480, 12.50),
+                fontsize=16, ha="left",
+                arrowprops=dict(arrowstyle="-|>", color="#1565C0", lw=2),
+                bbox=dict(boxstyle="round,pad=0.4", fc="#e3f2fd", ec="#1565C0", lw=1.5))
 
-    # Annotation: best at n=50
-    ax.annotate("n=50 (700 bldgs)\nbest: 12.93%",
-                xy=(700, 12.93), xytext=(480, 12.60),
-                fontsize=14, ha="left",
-                arrowprops=dict(arrowstyle="-|>", color="#333", lw=1.5),
-                bbox=dict(boxstyle="round,pad=0.35", fc="#e3f2fd", ec="#1565C0"))
-
-    # Secondary x-axis for n values
+    # Secondary x-axis: only label non-crowded points
     ax2 = ax.twiny()
     ax2.set_xlim(ax.get_xlim())
-    ax2.set_xticks(n_bldgs)
-    ax2.set_xticklabels([f"n={n}" for n in n_vals], fontsize=13)
-    ax2.set_xlabel("n (samples per archetype)", fontsize=16)
+    # Skip n=1,3 (too close to n=5 at the left edge) — label only key breakpoints
+    key_n   = [5,   10,  20,  50,  70,  80]
+    key_x   = [70, 140, 280, 700, 980, 1120]
+    ax2.set_xticks(key_x)
+    ax2.set_xticklabels([f"n={n}" for n in key_n], fontsize=17)
+    ax2.set_xlabel("n (samples per archetype)", fontsize=19, labelpad=10)
 
-    ax.set_xlabel("Number of Training Buildings", fontsize=17)
-    ax.set_ylabel("NRMSE (%)", fontsize=17)
-    ax.set_ylim(12.2, 15.8)
-    ax.legend(loc="upper right", fontsize=14, framealpha=0.9)
+    ax.set_xlabel("Number of Training Buildings", fontsize=19)
+    ax.set_ylabel("NRMSE (%)", fontsize=19)
+    ax.set_ylim(12.1, 15.9)
+    ax.legend(loc="upper right", fontsize=16, framealpha=0.95)
     ax.grid(axis="y", alpha=0.4)
-    ax.tick_params(labelsize=15)
+    ax.tick_params(labelsize=17)
 
     save(fig, "patent_fig4_nscaling.png")
 
