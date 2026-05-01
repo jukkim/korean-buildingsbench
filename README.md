@@ -52,7 +52,23 @@ The BuildingsBench evaluation data (CC-BY 4.0, NREL) will be downloaded to `exte
 
 ## Data Availability
 
-The 700-building Korean EnergyPlus simulation dataset (Parquet format) is included in this repository under `data/korean_bb/individual/`. Checkpoints (`.pt` files) exceed GitHub's file-size limits and must be reproduced via the training command below, or requested from the corresponding author.
+The Korean EnergyPlus simulation training data and model checkpoints (`.pt`) are not distributed in this repository. Both can be regenerated from the provided simulation pipeline:
+
+```bash
+# 1. Generate parametric IDFs (12D LHS, 14 archetypes × 50 schedules)
+python scripts/generate_parametric_idfs.py --version v3 --archetype office \
+  --n-schedules 50 --cities seoul,busan,daegu,gangneung,jeju --vintages all \
+  --use-pool --output-dir simulations/idfs_v3
+
+# 2. Run EnergyPlus simulations
+python scripts/run_simulations.py --idf-dir simulations/idfs_v3 \
+  --result-dir simulations/results_v3 --workers 8
+
+# 3. Post-process to Parquet + fit Box-Cox + build index
+python scripts/postprocess.py --version v3 --append --fit-only --index-only
+```
+
+Requires EnergyPlus ≥ 9.6 installed and available on PATH.
 
 ## Training
 
