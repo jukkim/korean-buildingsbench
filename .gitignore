@@ -21,6 +21,7 @@ data/korean_bb/metadata/train_weekly.idx
 data/korean_bb/metadata/val_weekly.csv
 data/korean_bb/metadata/val_weekly.idx
 data/korean_bb/metadata/train_weekly_500.csv
+data/korean_bb/metadata/train_weekly_750.csv
 data/korean_bb/metadata/train_weekly_1k.csv
 data/korean_bb/metadata/train_weekly_1k5.csv
 data/korean_bb/metadata/train_weekly_2k.csv
@@ -32,4 +33,9 @@ data/korean_bb/metadata/val_weekly_1k5.csv
 data/korean_bb/metadata/val_weekly_2k.csv
 data/korean_bb/metadata/val_weekly_3k.csv
 data/korean_bb/metadata/val_weekly_4k.csv
+data/korean_bb/metadata/val_weekly_6k.csv
+data/korean_bb/metadata/val_weekly_8k.csv
+data/korean_bb/metadata/val_weekly_10k.csv
+data/korean_bb/metadata/val_weekly_0k.csv
+data/korean_bb/metadata/train_weekly_10k.csv
 simulations/npy_tier_a/
