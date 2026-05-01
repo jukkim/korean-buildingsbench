@@ -118,121 +118,124 @@ def fig1_system():
     save(fig, "patent_fig1_system.png")
 
 
-# ── Fig. 2: LHS Parameter Generation ─────────────────────────────────────────
+# ── Fig. 2: LHS Parameter Generation  (portrait, A4-friendly) ────────────────
 def fig2_lhs():
-    fig = plt.figure(figsize=(20, 14))
+    # Portrait: 10" wide × 16" tall → fits A4 with minimal scale-down
+    fig = plt.figure(figsize=(10, 16))
     fig.patch.set_facecolor("white")
+    fig.text(0.5, 0.975, "Fig. 2  Parameter Generation by 12D LHS",
+             ha="center", va="top", fontsize=22, fontweight="bold")
 
-    # Title
-    fig.text(0.5, 0.97, "Fig. 2  Parameter Generation by 12D LHS",
-             ha="center", va="top", fontsize=24, fontweight="bold")
-
-    # Left: flowchart (60% width)
-    ax_flow = fig.add_axes([0.02, 0.03, 0.55, 0.90])
-    ax_flow.set_xlim(0, 6)
-    ax_flow.set_ylim(-0.5, 12)
-    ax_flow.axis("off")
+    # ── Flowchart (top 60%) ───────────────────────────────────────────
+    ax = fig.add_axes([0.08, 0.38, 0.84, 0.58])
+    ax.set_xlim(0, 10)
+    ax.set_ylim(0, 10)
+    ax.axis("off")
 
     steps = [
-        (3, 10.5, "Define Building Archetypes",   "14 types: office, retail,\nschool, hotel, hospital ...", "#cce5ff"),
-        (3,  7.8, "Define 12D Parameter Space",   "op_start, baseload_pct,\nnight_equip_frac ...",          "#ffd6cc"),
-        (3,  5.1, "Latin Hypercube Sampling",      "N=50 samples/archetype\nspace-filling design",           "#d4edda"),
-        (3,  2.4, "Modify EnergyPlus IDF Files",  "envelope + HVAC +\nschedules per parameter set",        "#fff3cd"),
-        (3, -0.2, "Output: 700 IDF Files",         "14 archetypes × 50 × 5 cities",                         "#f3e5f5"),
+        (5, 9.0, "Define Building Archetypes",  "14 types: office, retail, school,\nhotel, hospital, warehouse ...", "#cce5ff"),
+        (5, 7.0, "Define 12D Parameter Space",  "op_start, baseload_pct, ramp_hours,\nnight_equip_frac, process_load_frac ...", "#ffd6cc"),
+        (5, 5.0, "Latin Hypercube Sampling",     "N=50 samples per archetype\n→ space-filling, no clustering",      "#d4edda"),
+        (5, 3.0, "Modify EnergyPlus IDF Files", "Adjust schedules, equipment density,\noccupancy per parameter set", "#fff3cd"),
+        (5, 1.0, "Output: 700 IDF Files",        "14 archetypes × 50 samples × 5 cities",                           "#f3e5f5"),
     ]
-    bw, bh = 5.2, 1.85
+    bw, bh = 8.5, 1.55
     for x, y, lbl, sub, col in steps:
-        draw_box(ax_flow, x, y, bw, bh, lbl, sub, facecolor=col, fontsize=18, subfontsize=15)
-
+        draw_box(ax, x, y, bw, bh, lbl, sub, facecolor=col, fontsize=18, subfontsize=15)
     for i in range(len(steps) - 1):
-        y_top = steps[i][1] - bh/2
-        y_bot = steps[i+1][1] + bh/2
-        arrow(ax_flow, 3, y_top, 3, y_bot)
+        arrow(ax, 5, steps[i][1] - bh/2, 5, steps[i+1][1] + bh/2)
 
-    # Right top: scatter plot
-    ax_sc = fig.add_axes([0.60, 0.50, 0.37, 0.42])
+    # ── Bottom panel: scatter + key properties side by side ───────────
+    ax_sc = fig.add_axes([0.08, 0.13, 0.44, 0.22])
     np.random.seed(0)
     n = 50
-    x_lhs = (np.random.permutation(n) + np.random.uniform(0, 1, n)) / n
-    y_lhs = (np.random.permutation(n) + np.random.uniform(0, 1, n)) / n
-    ax_sc.scatter(x_lhs * 12, y_lhs * 0.9 + 0.05, c="#1f77b4", s=80, alpha=0.8)
-    ax_sc.set_xlabel("op_start (h)", fontsize=18)
-    ax_sc.set_ylabel("baseload_pct", fontsize=18)
-    ax_sc.set_title("2D Projection of LHS (50 samples)", fontsize=18, fontweight="bold")
-    ax_sc.tick_params(labelsize=16)
-    ax_sc.set_xlim(-0.5, 12.5)
-    ax_sc.set_ylim(0, 1.0)
+    xl = (np.random.permutation(n) + np.random.uniform(0, 1, n)) / n
+    yl = (np.random.permutation(n) + np.random.uniform(0, 1, n)) / n
+    ax_sc.scatter(xl * 12, yl, c="#1f77b4", s=60, alpha=0.8)
+    ax_sc.set_xlabel("op_start (h)", fontsize=15)
+    ax_sc.set_ylabel("baseload_pct", fontsize=15)
+    ax_sc.set_title("2D LHS Projection (50 samples)", fontsize=15, fontweight="bold")
+    ax_sc.tick_params(labelsize=13)
 
-    # Right bottom: Key Properties
-    ax_txt = fig.add_axes([0.60, 0.05, 0.37, 0.40])
-    ax_txt.axis("off")
-    props = (
+    ax_kp = fig.add_axes([0.56, 0.10, 0.40, 0.26])
+    ax_kp.axis("off")
+    ax_kp.text(0.05, 0.95,
         "Key Properties:\n\n"
         "•  Space-filling coverage\n"
-        "•  Each dimension sampled evenly\n"
+        "•  Each axis sampled evenly\n"
         "•  No clustering or gaps\n"
-        "•  700 buildings cover 12D space"
-    )
-    ax_txt.text(0.05, 0.95, props, va="top", fontsize=17, linespacing=1.9,
-                bbox=dict(boxstyle="round,pad=0.6", facecolor="#f8f9fa", edgecolor="#bbb", lw=1.5))
+        "•  700 buildings cover 12D space",
+        va="top", fontsize=15, linespacing=1.8,
+        bbox=dict(boxstyle="round,pad=0.5", facecolor="#f8f9fa", edgecolor="#bbb", lw=1.5))
 
     save(fig, "patent_fig2_lhs.png")
 
 
-# ── Fig. 3: RevIN + Transformer Model ────────────────────────────────────────
+# ── Fig. 3: RevIN + Transformer Model (portrait, A4-friendly) ────────────────
 def fig3_revin():
-    fig = plt.figure(figsize=(22, 14))
+    # Portrait 10" × 16" — 3 boxes per row, 2 rows per phase → compact & readable
+    fig = plt.figure(figsize=(10, 18))
     fig.patch.set_facecolor("white")
-    fig.text(0.5, 0.98, "Fig. 3  Model Training Process with Reversible Instance Normalization",
-             ha="center", va="top", fontsize=24, fontweight="bold")
+    fig.text(0.5, 0.975,
+             "Fig. 3  RevIN + Transformer: Training & Inference",
+             ha="center", va="top", fontsize=21, fontweight="bold")
 
-    phases = [
-        ("Training Phase",           "#1565C0",
-         [("Simulation Data\n700 buildings\n8760h each",   "#cce5ff"),
-          ("Sliding Window\n168h context\n+ 24h target",   "#ffd6cc"),
-          ("RevIN Normalize\nx_norm =\n(x−μ)/σ",          "#d4edda"),
-          ("Transformer\nEncoder-Decoder\n15.8M params",   "#fff3cd"),
-          ("Gaussian\nNLL Loss",                            "#f3e5f5")],
-         None),
-        ("Inference Phase (Zero-Shot)", "#C62828",
-         [("Target Building\nHistory (168h)\nNO location", "#d4edda"),
-          ("Compute\nμ_ctx, σ_ctx\nfrom 168h",            "#cce5ff"),
-          ("RevIN Normalize\n(x−μ_ctx)/σ_ctx",            "#d4edda"),
-          ("Trained\nTransformer\n(frozen)",               "#fff3cd"),
-          ("RevIN Denorm\nŷ·σ_ctx + μ_ctx",               "#f3e5f5")],
-         ("Predicted\n24h Energy\n(kWh)", "#c8e6c9", "#2e7d32")),
+    # ── Phase definitions ─────────────────────────────────────────────
+    # Training: 5 steps → row1(3) + row2(2)
+    # Inference: 5 steps + output → row1(3) + row2(3)
+    train_r1 = [
+        ("Simulation Data\n700 buildings\n8760 h each",   "#cce5ff"),
+        ("Sliding Window\n168h context\n+ 24h target",    "#ffd6cc"),
+        ("RevIN Normalize\nx_norm =\n(x − μ) / σ",       "#d4edda"),
+    ]
+    train_r2 = [
+        ("Transformer\nEncoder-Decoder\n15.8M params",    "#fff3cd"),
+        ("Gaussian NLL Loss\n→ minimize\nper-batch",      "#f3e5f5"),
+    ]
+    infer_r1 = [
+        ("Target Building\nHistory (168h)\nNO location",  "#d4edda"),
+        ("Compute\nμ_ctx, σ_ctx\nfrom 168h",             "#cce5ff"),
+        ("RevIN Normalize\n(x − μ_ctx)\n/ σ_ctx",        "#d4edda"),
+    ]
+    infer_r2 = [
+        ("Trained\nTransformer\n(frozen weights)",        "#fff3cd"),
+        ("RevIN Denorm\nŷ · σ_ctx + μ_ctx\n→ kWh",       "#f3e5f5"),
+        ("Predicted\n24h Energy\n(kWh)",                  "#c8e6c9"),
     ]
 
-    row_tops = [0.90, 0.42]
-    row_h    = 0.44
+    def draw_phase(fig, y_top, phase_label, phase_color, row1, row2, output_col=None):
+        H = 0.22   # height fraction per phase block
+        ax = fig.add_axes([0.04, y_top - H, 0.92, H])
+        ax.set_xlim(0, 10); ax.set_ylim(0, 10); ax.axis("off")
+        ax.text(0.1, 9.5, phase_label, fontsize=18, fontweight="bold", color=phase_color)
 
-    for row_idx, (phase_label, phase_color, boxes, output) in enumerate(phases):
-        top = row_tops[row_idx]
-        ax = fig.add_axes([0.02, top - row_h + 0.03, 0.96, row_h])
-        ax.set_xlim(0, 22)
-        ax.set_ylim(0, 5)
-        ax.axis("off")
+        # Row 1
+        xs1 = [1.4, 5.0, 8.6]
+        for xi, (lbl, col) in zip(xs1, row1):
+            draw_box(ax, xi, 7.5, 2.8, 3.5, lbl, facecolor=col, fontsize=15)
+        for i in range(len(xs1)-1):
+            arrow(ax, xs1[i]+1.4, 7.5, xs1[i+1]-1.4, 7.5)
 
-        ax.text(0.4, 4.5, phase_label, fontsize=21, fontweight="bold", color=phase_color)
+        # Arrow from row1-end down to row2-start
+        arrow(ax, xs1[-1], 7.5-1.75, xs1[-1], 4.5+1.75)
 
-        xs = [2.3, 6.0, 9.7, 13.4, 17.1]
-        bw, bh = 3.2, 3.2
-        for i, (x, (lbl, col)) in enumerate(zip(xs, boxes)):
-            draw_box(ax, x, 2.2, bw, bh, lbl, facecolor=col, fontsize=16, subfontsize=14)
-            if i < len(xs) - 1:
-                arrow(ax, x + bw/2, 2.2, xs[i+1] - bw/2, 2.2)
+        # Row 2
+        xs2 = [8.6, 5.0] if len(row2) == 2 else [8.6, 5.0, 1.4]
+        for xi, (lbl, col) in zip(xs2, row2):
+            fc = "#c8e6c9" if (output_col and xi == xs2[-1]) else col
+            ec = "#2e7d32" if (output_col and xi == xs2[-1]) else "#333"
+            draw_box(ax, xi, 2.8, 2.8, 3.5, lbl, facecolor=fc, edgecolor=ec, fontsize=15)
+        for i in range(len(xs2)-1):
+            # arrows go right-to-left on row 2
+            arrow(ax, xs2[i]-1.4, 2.8, xs2[i+1]+1.4, 2.8)
 
-        if output:
-            olbl, ofc, oec = output
-            draw_box(ax, 20.6, 2.2, 2.6, 1.8, olbl,
-                     facecolor=ofc, edgecolor=oec, fontsize=15)
-            arrow(ax, xs[-1] + bw/2, 2.2, 20.6 - 1.3, 2.2)
+    draw_phase(fig, 0.94, "① Training Phase",              "#1565C0", train_r1, train_r2)
+    draw_phase(fig, 0.68, "② Inference Phase (Zero-Shot)", "#C62828", infer_r1, infer_r2, output_col=True)
 
-    # Bottom note
-    fig.text(0.5, 0.02,
-             "RevIN removes building-specific scale  →  model learns only temporal patterns"
-             "  →  no location info needed",
-             ha="center", fontsize=17, color="#444", style="italic")
+    fig.text(0.5, 0.04,
+             "RevIN removes per-building magnitude  →  model learns temporal shape only"
+             "  →  no location metadata needed",
+             ha="center", fontsize=14, color="#444", style="italic")
 
     save(fig, "patent_fig3_revin.png")
 
@@ -257,8 +260,10 @@ def fig4_nscaling():
     ax.axhline(15.28, color="darkorange", ls=":",  lw=2.5,
                label="BB-700 (RevIN ON, no aug): 15.28%")
     ax.axvspan(140, 1200, alpha=0.08, color="green")
-    ax.text(650, 15.45, "Saturation zone  (n ≥ 10)",
-            fontsize=17, color="#2e7d32", fontweight="bold")
+    ax.text(0.20, 0.91, "Saturation zone  (n ≥ 10)",
+            transform=ax.transAxes,
+            fontsize=16, color="#2e7d32", fontweight="bold", ha="left",
+            bbox=dict(boxstyle="round,pad=0.2", facecolor="white", alpha=0.7, edgecolor="none"))
 
     # Annotation: n=5
     ax.annotate("n=5  (70 bldgs)\n13.28% ≈ SOTA",
@@ -286,7 +291,7 @@ def fig4_nscaling():
 
     ax.set_xlabel("Number of Training Buildings", fontsize=19)
     ax.set_ylabel("NRMSE (%)", fontsize=19)
-    ax.set_ylim(12.1, 15.9)
+    ax.set_ylim(12.1, 16.2)
     ax.legend(loc="upper right", fontsize=16, framealpha=0.95)
     ax.grid(axis="y", alpha=0.4)
     ax.tick_params(labelsize=17)
