@@ -1,0 +1,1909 @@
+building_id,dataset,building_type,metric,value,mean_actual,n_windows
+Bear_assembly_Angel,BDG-2,commercial,cvrmse,0.17231422662734985,471.1126403808594,358
+Bear_assembly_Beatrice,BDG-2,commercial,cvrmse,0.32033562660217285,42.99738693237305,724
+Bear_assembly_Danial,BDG-2,commercial,cvrmse,0.0983501523733139,160.90548706054688,358
+Bear_assembly_Diana,BDG-2,commercial,cvrmse,0.28652846813201904,0.8576714992523193,358
+Bear_assembly_Genia,BDG-2,commercial,cvrmse,0.18879826366901398,263.7848205566406,724
+Bear_assembly_Harry,BDG-2,commercial,cvrmse,0.31253519654273987,17.49002456665039,358
+Bear_assembly_Jose,BDG-2,commercial,cvrmse,0.1047181561589241,258.0723571777344,724
+Bear_assembly_Roxy,BDG-2,commercial,cvrmse,0.6188197731971741,17.174842834472656,724
+Bear_assembly_Ruby,BDG-2,commercial,cvrmse,0.10462601482868195,69.42938995361328,724
+Bear_education_Alfredo,BDG-2,commercial,cvrmse,0.37731844186782837,0.18151037395000458,724
+Bear_education_Alvaro,BDG-2,commercial,cvrmse,0.05760439857840538,419.90606689453125,724
+Bear_education_Arnold,BDG-2,commercial,cvrmse,0.6621267199516296,0.5585451722145081,724
+Bear_education_Augusta,BDG-2,commercial,cvrmse,0.23558245599269867,115.35000610351562,724
+Bear_education_Austin,BDG-2,commercial,cvrmse,0.3184017539024353,21.09602165222168,724
+Bear_education_Babara,BDG-2,commercial,cvrmse,0.06458443403244019,374.62432861328125,724
+Bear_education_Benita,BDG-2,commercial,cvrmse,0.049362506717443466,521.9968872070312,724
+Bear_education_Benjamin,BDG-2,commercial,cvrmse,0.5093071460723877,1.0812991857528687,358
+Bear_education_Bob,BDG-2,commercial,cvrmse,0.19569425284862518,128.70396423339844,724
+Bear_education_Bonita,BDG-2,commercial,cvrmse,0.4776320159435272,0.1915164589881897,724
+Bear_education_Bulah,BDG-2,commercial,cvrmse,0.056206367909908295,1334.9393310546875,724
+Bear_education_Carlo,BDG-2,commercial,cvrmse,0.3097887337207794,3.9573185443878174,358
+Bear_education_Chad,BDG-2,commercial,cvrmse,0.07550477236509323,1003.3435668945312,724
+Bear_education_Chana,BDG-2,commercial,cvrmse,0.15271501243114471,21.418455123901367,724
+Bear_education_Chun,BDG-2,commercial,cvrmse,0.12803058326244354,101.34169006347656,724
+Bear_education_Clint,BDG-2,commercial,cvrmse,0.10939939320087433,56.8123893737793,724
+Bear_education_Curtis,BDG-2,commercial,cvrmse,0.0868440568447113,69.04743957519531,724
+Bear_education_Danna,BDG-2,commercial,cvrmse,0.34436312317848206,103.26565551757812,724
+Bear_education_Darrell,BDG-2,commercial,cvrmse,0.4306349754333496,39.17181396484375,724
+Bear_education_Deena,BDG-2,commercial,cvrmse,0.33133912086486816,8.570472717285156,724
+Bear_education_Derek,BDG-2,commercial,cvrmse,0.10397544503211975,184.26446533203125,724
+Bear_education_Destiny,BDG-2,commercial,cvrmse,0.1590612679719925,112.75078582763672,358
+Bear_education_Elise,BDG-2,commercial,cvrmse,0.21019940078258514,145.561767578125,724
+Bear_education_Fannie,BDG-2,commercial,cvrmse,0.0988701805472374,436.4977722167969,724
+Bear_education_Gavin,BDG-2,commercial,cvrmse,0.060952991247177124,90.0797119140625,724
+Bear_education_Herb,BDG-2,commercial,cvrmse,0.1887563019990921,12.927227973937988,724
+Bear_education_Herman,BDG-2,commercial,cvrmse,0.367226779460907,0.28519248962402344,724
+Bear_education_Holly,BDG-2,commercial,cvrmse,0.3182886242866516,1.2442386150360107,724
+Bear_education_Irene,BDG-2,commercial,cvrmse,0.33227643370628357,88.96099853515625,724
+Bear_education_Iris,BDG-2,commercial,cvrmse,0.26025351881980896,45.50922393798828,724
+Bear_education_Katy,BDG-2,commercial,cvrmse,0.1672220528125763,124.68230438232422,724
+Bear_education_Lashanda,BDG-2,commercial,cvrmse,0.18242064118385315,74.12354278564453,724
+Bear_education_Laurette,BDG-2,commercial,cvrmse,0.05808483064174652,50.94800567626953,724
+Bear_education_Leonel,BDG-2,commercial,cvrmse,0.31348085403442383,119.04076385498047,724
+Bear_education_Lewis,BDG-2,commercial,cvrmse,0.21719178557395935,23.52007293701172,724
+Bear_education_Lidia,BDG-2,commercial,cvrmse,0.2608661353588104,12.814207077026367,724
+Bear_education_Lila,BDG-2,commercial,cvrmse,0.06115240231156349,214.5517578125,724
+Bear_education_Liliana,BDG-2,commercial,cvrmse,0.04985086992383003,467.41864013671875,358
+Bear_education_Lorie,BDG-2,commercial,cvrmse,0.06383107602596283,401.4078063964844,724
+Bear_education_Mara,BDG-2,commercial,cvrmse,0.041856516152620316,509.414306640625,724
+Bear_education_Marie,BDG-2,commercial,cvrmse,0.2680184841156006,23.761871337890625,724
+Bear_education_Marsha,BDG-2,commercial,cvrmse,0.146602064371109,88.05345916748047,724
+Bear_education_Marta,BDG-2,commercial,cvrmse,0.2736620008945465,42.01968765258789,724
+Bear_education_Maryjane,BDG-2,commercial,cvrmse,0.12427268922328949,330.82000732421875,724
+Bear_education_Merrill,BDG-2,commercial,cvrmse,0.21025754511356354,22.139787673950195,358
+Bear_education_Millie,BDG-2,commercial,cvrmse,0.13206379115581512,3.4350483417510986,724
+Bear_education_Nanette,BDG-2,commercial,cvrmse,0.1607990264892578,113.58599853515625,358
+Bear_education_Oscar,BDG-2,commercial,cvrmse,0.17967671155929565,11.717812538146973,724
+Bear_education_Owen,BDG-2,commercial,cvrmse,0.169443741440773,149.95533752441406,724
+Bear_education_Paola,BDG-2,commercial,cvrmse,0.18032948672771454,149.52281188964844,724
+Bear_education_Patricia,BDG-2,commercial,cvrmse,0.05413020774722099,633.5635375976562,724
+Bear_education_Pattie,BDG-2,commercial,cvrmse,0.08091463148593903,173.43177795410156,724
+Bear_education_Rebecca,BDG-2,commercial,cvrmse,0.04647325351834297,782.13427734375,724
+Bear_education_Sandy,BDG-2,commercial,cvrmse,0.15285462141036987,6.705957412719727,724
+Bear_education_Santos,BDG-2,commercial,cvrmse,0.7066380381584167,8.594917297363281,724
+Bear_education_Sharon,BDG-2,commercial,cvrmse,0.06560483574867249,112.30770111083984,724
+Bear_education_Shelley,BDG-2,commercial,cvrmse,0.14814922213554382,162.6243133544922,724
+Bear_education_Tara,BDG-2,commercial,cvrmse,0.24517230689525604,3.3994574546813965,724
+Bear_education_Thuy,BDG-2,commercial,cvrmse,0.17974114418029785,230.9322509765625,724
+Bear_education_Val,BDG-2,commercial,cvrmse,0.06013740599155426,374.45098876953125,724
+Bear_education_Wade,BDG-2,commercial,cvrmse,0.26888641715049744,54.035797119140625,724
+Bear_education_Wilton,BDG-2,commercial,cvrmse,0.05920352786779404,1566.0810546875,724
+Bear_education_Wm,BDG-2,commercial,cvrmse,0.13683092594146729,50.36476516723633,724
+Bear_education_Yuri,BDG-2,commercial,cvrmse,0.31408965587615967,17.985137939453125,724
+Bear_education_Yvette,BDG-2,commercial,cvrmse,0.2890002429485321,10.993597030639648,724
+Bear_education_Zandra,BDG-2,commercial,cvrmse,0.03974922373890877,981.1455078125,724
+Bear_lodging_Dannie,BDG-2,commercial,cvrmse,0.2211807519197464,8.687925338745117,724
+Bear_lodging_Erick,BDG-2,commercial,cvrmse,0.14240403473377228,48.47105026245117,724
+Bear_lodging_Esperanza,BDG-2,commercial,cvrmse,0.1442764401435852,28.975730895996094,358
+Bear_lodging_Evan,BDG-2,commercial,cvrmse,0.08215082436800003,175.89662170410156,724
+Bear_parking_Bridget,BDG-2,commercial,cvrmse,0.24497370421886444,16.703784942626953,358
+Bear_parking_Bruce,BDG-2,commercial,cvrmse,0.062310900539159775,42.13602066040039,724
+Bear_parking_Gordon,BDG-2,commercial,cvrmse,0.013706257566809654,27.76262664794922,724
+Bear_public_Arlean,BDG-2,commercial,cvrmse,0.19088493287563324,163.82025146484375,358
+Bear_public_Jocelyn,BDG-2,commercial,cvrmse,0.13113610446453094,48.615177154541016,724
+Bear_public_Lowell,BDG-2,commercial,cvrmse,0.10020016878843307,205.64866638183594,724
+Bear_public_Orville,BDG-2,commercial,cvrmse,0.20639236271381378,37.39371871948242,724
+Bear_public_Rayna,BDG-2,commercial,cvrmse,0.30919498205184937,111.28591918945312,724
+Bear_public_Valorie,BDG-2,commercial,cvrmse,0.18319684267044067,195.00946044921875,724
+Bear_science_Alison,BDG-2,commercial,cvrmse,0.04316519573330879,103.69091796875,724
+Bear_science_Eleanor,BDG-2,commercial,cvrmse,0.18701022863388062,36.4182014465332,724
+Bear_utility_Sidney,BDG-2,commercial,cvrmse,0.03440660610795021,52.22809982299805,724
+Fox_assembly_Adrianne,BDG-2,commercial,cvrmse,0.2981680631637573,233.17100524902344,724
+Fox_assembly_Audrey,BDG-2,commercial,cvrmse,0.19766029715538025,13.034924507141113,724
+Fox_assembly_Boyce,BDG-2,commercial,cvrmse,3.8289408683776855,345.1589050292969,724
+Fox_assembly_Bradley,BDG-2,commercial,cvrmse,4.79509973526001,158.3174285888672,724
+Fox_assembly_Carlos,BDG-2,commercial,cvrmse,0.21612420678138733,112.60237884521484,724
+Fox_assembly_Cathy,BDG-2,commercial,cvrmse,0.1369018405675888,57.384971618652344,724
+Fox_assembly_Cecelia,BDG-2,commercial,cvrmse,0.16410337388515472,16.84462547302246,724
+Fox_assembly_Christie,BDG-2,commercial,cvrmse,0.37412795424461365,20.873815536499023,724
+Fox_assembly_Cindy,BDG-2,commercial,cvrmse,0.12342333048582077,49.44368362426758,724
+Fox_assembly_Dixie,BDG-2,commercial,cvrmse,0.45239654183387756,73.30764770507812,724
+Fox_assembly_Emma,BDG-2,commercial,cvrmse,0.12089309841394424,171.02792358398438,724
+Fox_assembly_Gary,BDG-2,commercial,cvrmse,0.0795459896326065,91.8833999633789,724
+Fox_assembly_Jerrod,BDG-2,commercial,cvrmse,2.2392194271087646,2.557431936264038,724
+Fox_assembly_Johnnie,BDG-2,commercial,cvrmse,0.16217122972011566,336.354736328125,724
+Fox_assembly_Kathie,BDG-2,commercial,cvrmse,0.4881812036037445,12.48863697052002,724
+Fox_assembly_Lakeisha,BDG-2,commercial,cvrmse,0.33573293685913086,17.72138786315918,724
+Fox_assembly_Leeanne,BDG-2,commercial,cvrmse,0.1893557608127594,18.27269744873047,724
+Fox_assembly_Renna,BDG-2,commercial,cvrmse,0.04772251844406128,376.24847412109375,724
+Fox_assembly_Sheldon,BDG-2,commercial,cvrmse,0.0930936262011528,99.42620849609375,724
+Fox_assembly_Terrell,BDG-2,commercial,cvrmse,0.28140589594841003,49.31959533691406,724
+Fox_assembly_Tony,BDG-2,commercial,cvrmse,0.14340560138225555,81.96187591552734,724
+Fox_education_Andre,BDG-2,commercial,cvrmse,0.06198688969016075,454.4602966308594,724
+Fox_education_Ashli,BDG-2,commercial,cvrmse,0.12841494381427765,28.927305221557617,724
+Fox_education_Burton,BDG-2,commercial,cvrmse,0.19380301237106323,47.81435775756836,724
+Fox_education_Carleen,BDG-2,commercial,cvrmse,0.16035039722919464,105.99573516845703,724
+Fox_education_Charles,BDG-2,commercial,cvrmse,0.19824640452861786,15.875493049621582,724
+Fox_education_Claire,BDG-2,commercial,cvrmse,0.20945222675800323,60.79774475097656,724
+Fox_education_Claude,BDG-2,commercial,cvrmse,0.028631700202822685,972.388671875,724
+Fox_education_Cynthia,BDG-2,commercial,cvrmse,0.12919072806835175,210.1257781982422,724
+Fox_education_Delma,BDG-2,commercial,cvrmse,0.3158230185508728,92.1851577758789,724
+Fox_education_Dewayne,BDG-2,commercial,cvrmse,0.19297634065151215,77.6397705078125,724
+Fox_education_Dominique,BDG-2,commercial,cvrmse,0.051581304520368576,184.53233337402344,724
+Fox_education_Eddy,BDG-2,commercial,cvrmse,0.17555424571037292,296.05340576171875,724
+Fox_education_Eldon,BDG-2,commercial,cvrmse,0.03655413165688515,195.51524353027344,724
+Fox_education_Elizabeth,BDG-2,commercial,cvrmse,0.11409416049718857,490.2446594238281,359
+Fox_education_Elois,BDG-2,commercial,cvrmse,0.2402469962835312,11.24744987487793,724
+Fox_education_Elvira,BDG-2,commercial,cvrmse,0.1407150775194168,189.0741729736328,724
+Fox_education_Etta,BDG-2,commercial,cvrmse,0.10499531030654907,198.88380432128906,724
+Fox_education_Gayla,BDG-2,commercial,cvrmse,0.2055051624774933,61.403507232666016,359
+Fox_education_Geoffrey,BDG-2,commercial,cvrmse,0.06999120116233826,120.09916687011719,724
+Fox_education_Gloria,BDG-2,commercial,cvrmse,0.04056507349014282,660.7455444335938,724
+Fox_education_Henrietta,BDG-2,commercial,cvrmse,0.3536744713783264,29.60343360900879,724
+Fox_education_Heriberto,BDG-2,commercial,cvrmse,0.19053006172180176,37.12324142456055,724
+Fox_education_Jaclyn,BDG-2,commercial,cvrmse,0.08273780345916748,193.17013549804688,724
+Fox_education_Janina,BDG-2,commercial,cvrmse,0.16555799543857574,126.23015594482422,724
+Fox_education_John,BDG-2,commercial,cvrmse,0.19245891273021698,56.487911224365234,724
+Fox_education_Kendrick,BDG-2,commercial,cvrmse,0.3923821747303009,12.424074172973633,724
+Fox_education_Kim,BDG-2,commercial,cvrmse,0.1748879998922348,57.649261474609375,724
+Fox_education_Kris,BDG-2,commercial,cvrmse,0.1672094166278839,107.38774108886719,724
+Fox_education_Leona,BDG-2,commercial,cvrmse,0.10790695995092392,271.6045227050781,724
+Fox_education_Leota,BDG-2,commercial,cvrmse,0.1121538057923317,216.10963439941406,724
+Fox_education_Lesley,BDG-2,commercial,cvrmse,0.4035266935825348,13.360386848449707,724
+Fox_education_Lilly,BDG-2,commercial,cvrmse,0.12507463991641998,186.85862731933594,724
+Fox_education_Long,BDG-2,commercial,cvrmse,0.18369583785533905,147.21871948242188,724
+Fox_education_Louie,BDG-2,commercial,cvrmse,0.1321173757314682,77.73657989501953,724
+Fox_education_Marcelina,BDG-2,commercial,cvrmse,0.5293453335762024,4.102189540863037,724
+Fox_education_Maris,BDG-2,commercial,cvrmse,0.08703820407390594,22.496028900146484,358
+Fox_education_Marlana,BDG-2,commercial,cvrmse,0.07433773577213287,177.96336364746094,724
+Fox_education_Maureen,BDG-2,commercial,cvrmse,0.055719926953315735,292.6009521484375,358
+Fox_education_Melinda,BDG-2,commercial,cvrmse,0.06688586622476578,407.6931457519531,724
+Fox_education_Melvin,BDG-2,commercial,cvrmse,0.2544853091239929,60.593929290771484,724
+Fox_education_Miguelina,BDG-2,commercial,cvrmse,0.2501649558544159,94.29196166992188,724
+Fox_education_Nilda,BDG-2,commercial,cvrmse,0.12777435779571533,136.16012573242188,724
+Fox_education_Ollie,BDG-2,commercial,cvrmse,0.11010201275348663,108.09954833984375,724
+Fox_education_Otilia,BDG-2,commercial,cvrmse,0.03524741530418396,932.6431274414062,724
+Fox_education_Ray,BDG-2,commercial,cvrmse,0.1174677386879921,47.45331954956055,724
+Fox_education_Rosie,BDG-2,commercial,cvrmse,0.07552329450845718,128.6846160888672,724
+Fox_education_Rudolph,BDG-2,commercial,cvrmse,0.21881695091724396,23.48292350769043,724
+Fox_education_Shaun,BDG-2,commercial,cvrmse,0.2540305256843567,85.60720825195312,358
+Fox_education_Shawanda,BDG-2,commercial,cvrmse,0.39847275614738464,11.494516372680664,724
+Fox_education_Shirley,BDG-2,commercial,cvrmse,0.24894176423549652,100.76789855957031,724
+Fox_education_Stacia,BDG-2,commercial,cvrmse,0.08998902887105942,76.29377746582031,724
+Fox_education_Sterling,BDG-2,commercial,cvrmse,0.28944581747055054,22.414522171020508,724
+Fox_education_Suzan,BDG-2,commercial,cvrmse,0.21156655251979828,41.07484436035156,724
+Fox_education_Tamika,BDG-2,commercial,cvrmse,0.16344714164733887,151.28688049316406,724
+Fox_education_Theodore,BDG-2,commercial,cvrmse,0.03838241845369339,270.67498779296875,724
+Fox_education_Tonya,BDG-2,commercial,cvrmse,0.07000436633825302,169.96376037597656,724
+Fox_education_Virgil,BDG-2,commercial,cvrmse,0.06680022925138474,89.70760345458984,724
+Fox_education_Virginia,BDG-2,commercial,cvrmse,0.512369692325592,10.180533409118652,724
+Fox_education_Wendell,BDG-2,commercial,cvrmse,0.03687018156051636,532.6544799804688,724
+Fox_education_Willis,BDG-2,commercial,cvrmse,0.030505510047078133,2438.18896484375,724
+Fox_education_Yolande,BDG-2,commercial,cvrmse,0.05063238739967346,522.8424682617188,724
+Fox_food_Francesco,BDG-2,commercial,cvrmse,0.22316846251487732,60.91117858886719,724
+Fox_food_Scott,BDG-2,commercial,cvrmse,0.15857602655887604,73.78437042236328,724
+Fox_health_Lorena,BDG-2,commercial,cvrmse,0.15113705396652222,41.82889938354492,724
+Fox_lodging_Alana,BDG-2,commercial,cvrmse,0.07525262981653214,202.29132080078125,724
+Fox_lodging_Angla,BDG-2,commercial,cvrmse,0.14523066580295563,118.28466033935547,724
+Fox_lodging_Frances,BDG-2,commercial,cvrmse,0.09549779444932938,99.14984893798828,724
+Fox_lodging_Helen,BDG-2,commercial,cvrmse,0.0858464390039444,354.583740234375,724
+Fox_lodging_Isabell,BDG-2,commercial,cvrmse,0.07957424968481064,27.750085830688477,724
+Fox_lodging_Jina,BDG-2,commercial,cvrmse,0.06319361925125122,142.21055603027344,724
+Fox_lodging_Morris,BDG-2,commercial,cvrmse,0.08766136318445206,23.415210723876953,724
+Fox_lodging_Stephan,BDG-2,commercial,cvrmse,0.08950844407081604,30.518163681030273,724
+Fox_lodging_Stephen,BDG-2,commercial,cvrmse,0.0845196321606636,82.42680358886719,724
+Fox_lodging_Wallace,BDG-2,commercial,cvrmse,0.06995858252048492,351.7767639160156,724
+Fox_lodging_Warren,BDG-2,commercial,cvrmse,0.09555947780609131,36.332279205322266,724
+Fox_lodging_Winifred,BDG-2,commercial,cvrmse,0.05936194583773613,84.25464630126953,724
+Fox_office_Alice,BDG-2,commercial,cvrmse,0.05406991019845009,361.155029296875,724
+Fox_office_Bernard,BDG-2,commercial,cvrmse,0.07285185903310776,132.38638305664062,724
+Fox_office_Berniece,BDG-2,commercial,cvrmse,0.21125449240207672,27.77756118774414,724
+Fox_office_Brandy,BDG-2,commercial,cvrmse,0.26921525597572327,32.2728385925293,724
+Fox_office_Carson,BDG-2,commercial,cvrmse,0.1608758568763733,51.69484329223633,724
+Fox_office_Clayton,BDG-2,commercial,cvrmse,0.15547746419906616,88.072998046875,724
+Fox_office_Demetrius,BDG-2,commercial,cvrmse,0.2429547756910324,122.14005279541016,724
+Fox_office_Easter,BDG-2,commercial,cvrmse,0.2434660643339157,23.008743286132812,724
+Fox_office_Edythe,BDG-2,commercial,cvrmse,0.12599138915538788,113.39568328857422,724
+Fox_office_Essie,BDG-2,commercial,cvrmse,0.3654518723487854,34.31966781616211,724
+Fox_office_Gaylord,BDG-2,commercial,cvrmse,0.2080325484275818,161.8257293701172,724
+Fox_office_Israel,BDG-2,commercial,cvrmse,0.14203105866909027,121.31116485595703,724
+Fox_office_Joy,BDG-2,commercial,cvrmse,0.08315178751945496,182.33189392089844,724
+Fox_office_Juana,BDG-2,commercial,cvrmse,0.29935750365257263,19.26224136352539,724
+Fox_office_Karima,BDG-2,commercial,cvrmse,0.30065685510635376,71.036865234375,724
+Fox_office_Margarita,BDG-2,commercial,cvrmse,0.13955716788768768,19.07785415649414,724
+Fox_office_Molly,BDG-2,commercial,cvrmse,0.39559221267700195,7.2185258865356445,724
+Fox_office_Rowena,BDG-2,commercial,cvrmse,0.20668244361877441,36.967777252197266,724
+Fox_office_Sheila,BDG-2,commercial,cvrmse,0.2241738885641098,9.338700294494629,724
+Fox_office_Susanne,BDG-2,commercial,cvrmse,0.285376638174057,17.685943603515625,724
+Fox_office_Thelma,BDG-2,commercial,cvrmse,0.2051158994436264,124.39924621582031,724
+Fox_office_Vicki,BDG-2,commercial,cvrmse,0.10734381526708603,147.13404846191406,724
+Fox_office_Yong,BDG-2,commercial,cvrmse,0.18613527715206146,134.82569885253906,724
+Fox_office_Zachary,BDG-2,commercial,cvrmse,0.19204841554164886,167.30679321289062,724
+Fox_parking_Felipa,BDG-2,commercial,cvrmse,0.07676903903484344,61.672386169433594,724
+Fox_parking_Lynelle,BDG-2,commercial,cvrmse,0.09189455211162567,13.049701690673828,724
+Fox_parking_Tommie,BDG-2,commercial,cvrmse,0.038563184440135956,87.2723159790039,724
+Fox_public_Bart,BDG-2,commercial,cvrmse,0.2174742966890335,132.39443969726562,724
+Fox_public_Belle,BDG-2,commercial,cvrmse,0.17183171212673187,121.251220703125,724
+Fox_public_Denny,BDG-2,commercial,cvrmse,0.0754343718290329,142.7644805908203,724
+Fox_public_Lauren,BDG-2,commercial,cvrmse,0.09332726895809174,122.3600082397461,724
+Fox_public_Martin,BDG-2,commercial,cvrmse,0.0689760074019432,183.96240234375,724
+Fox_public_Rhonda,BDG-2,commercial,cvrmse,0.22907401621341705,107.577880859375,724
+Fox_religion_Maurice,BDG-2,commercial,cvrmse,0.46053218841552734,1.7579264640808105,724
+Fox_retail_Manie,BDG-2,commercial,cvrmse,0.25261417031288147,64.58723449707031,724
+Fox_utility_Marian,BDG-2,commercial,cvrmse,0.3837963938713074,469.988037109375,724
+Fox_warehouse_Lorretta,BDG-2,commercial,cvrmse,1.4201936721801758,17.834741592407227,724
+Fox_warehouse_Pearl,BDG-2,commercial,cvrmse,0.26722174882888794,33.097801208496094,724
+Panther_assembly_Carrol,BDG-2,commercial,cvrmse,0.454312801361084,26.496252059936523,358
+Panther_assembly_David,BDG-2,commercial,cvrmse,0.695769190788269,67.07813262939453,358
+Panther_assembly_Denice,BDG-2,commercial,cvrmse,0.13000480830669403,476.2304992675781,358
+Panther_assembly_Gwyneth,BDG-2,commercial,cvrmse,0.15049198269844055,239.46124267578125,358
+Panther_assembly_Pamella,BDG-2,commercial,cvrmse,0.4036446809768677,104.38455963134766,358
+Panther_education_Alecia,BDG-2,commercial,cvrmse,0.09535744786262512,208.20071411132812,358
+Panther_education_Annetta,BDG-2,commercial,cvrmse,0.14076872169971466,107.38088989257812,358
+Panther_education_Aurora,BDG-2,commercial,cvrmse,0.18258033692836761,124.85958099365234,358
+Panther_education_Cleopatra,BDG-2,commercial,cvrmse,0.19885972142219543,27.570470809936523,358
+Panther_education_Diann,BDG-2,commercial,cvrmse,0.2702406942844391,75.52731323242188,358
+Panther_education_Edna,BDG-2,commercial,cvrmse,0.10777439177036285,134.03367614746094,358
+Panther_education_Emily,BDG-2,commercial,cvrmse,0.16335614025592804,133.21780395507812,358
+Panther_education_Enriqueta,BDG-2,commercial,cvrmse,0.16925793886184692,98.65711212158203,358
+Panther_education_Genevieve,BDG-2,commercial,cvrmse,0.06954770535230637,257.1848449707031,358
+Panther_education_Gina,BDG-2,commercial,cvrmse,0.040916647762060165,388.9461364746094,358
+Panther_education_Hugh,BDG-2,commercial,cvrmse,0.039213940501213074,607.0150756835938,358
+Panther_education_Ivan,BDG-2,commercial,cvrmse,0.10762082785367966,129.8259735107422,358
+Panther_education_Janis,BDG-2,commercial,cvrmse,0.26914456486701965,27.398086547851562,358
+Panther_education_Jerome,BDG-2,commercial,cvrmse,0.047865014523267746,489.2621765136719,358
+Panther_education_Jonathan,BDG-2,commercial,cvrmse,0.17991332709789276,7.516835689544678,358
+Panther_education_Karri,BDG-2,commercial,cvrmse,0.11926492303609848,380.5451354980469,358
+Panther_education_Mattie,BDG-2,commercial,cvrmse,0.3455859124660492,6.608558177947998,358
+Panther_education_Misty,BDG-2,commercial,cvrmse,0.15291926264762878,32.64129638671875,358
+Panther_education_Mohammad,BDG-2,commercial,cvrmse,0.10876663029193878,146.53274536132812,358
+Panther_education_Neal,BDG-2,commercial,cvrmse,0.26004558801651,235.36851501464844,358
+Panther_education_Quintin,BDG-2,commercial,cvrmse,0.11555931717157364,305.4963684082031,358
+Panther_education_Rosalie,BDG-2,commercial,cvrmse,0.1389869749546051,62.1352424621582,358
+Panther_education_Scarlett,BDG-2,commercial,cvrmse,0.24982039630413055,21.717750549316406,358
+Panther_education_Shelton,BDG-2,commercial,cvrmse,0.07953279465436935,121.43318939208984,358
+Panther_education_Sophia,BDG-2,commercial,cvrmse,0.04555964469909668,141.94871520996094,358
+Panther_education_Teofila,BDG-2,commercial,cvrmse,0.1280009001493454,157.49183654785156,358
+Panther_education_Tina,BDG-2,commercial,cvrmse,0.3500470817089081,6.972461223602295,358
+Panther_education_Vincent,BDG-2,commercial,cvrmse,0.12869852781295776,142.0934600830078,358
+Panther_education_Violet,BDG-2,commercial,cvrmse,0.09473761916160583,147.2025909423828,358
+Panther_education_Zelda,BDG-2,commercial,cvrmse,0.13215847313404083,82.37632751464844,358
+Panther_lodging_Alita,BDG-2,commercial,cvrmse,0.10850583016872406,75.2909927368164,358
+Panther_lodging_Anastasia,BDG-2,commercial,cvrmse,0.15524844825267792,52.3422737121582,358
+Panther_lodging_Awilda,BDG-2,commercial,cvrmse,0.08924997597932816,95.10956573486328,358
+Panther_lodging_Blaine,BDG-2,commercial,cvrmse,0.14411982893943787,75.96495056152344,358
+Panther_lodging_Cora,BDG-2,commercial,cvrmse,0.08050691336393356,138.51515197753906,358
+Panther_lodging_Cornelia,BDG-2,commercial,cvrmse,0.16705799102783203,42.46047592163086,358
+Panther_lodging_Dianna,BDG-2,commercial,cvrmse,0.11850618571043015,54.63234329223633,358
+Panther_lodging_Edison,BDG-2,commercial,cvrmse,0.1180533841252327,103.08596801757812,358
+Panther_lodging_Edmond,BDG-2,commercial,cvrmse,0.16686812043190002,42.27438735961914,358
+Panther_lodging_Else,BDG-2,commercial,cvrmse,0.14338868856430054,43.933021545410156,358
+Panther_lodging_Fausto,BDG-2,commercial,cvrmse,0.15037962794303894,50.99022674560547,358
+Panther_lodging_Floyd,BDG-2,commercial,cvrmse,0.09811057895421982,160.72027587890625,358
+Panther_lodging_Gale,BDG-2,commercial,cvrmse,0.07400459051132202,106.59211730957031,358
+Panther_lodging_Hattie,BDG-2,commercial,cvrmse,0.0857444778084755,135.3463134765625,358
+Panther_lodging_Jana,BDG-2,commercial,cvrmse,0.12637245655059814,81.27986907958984,358
+Panther_lodging_Janice,BDG-2,commercial,cvrmse,0.13925835490226746,54.825923919677734,358
+Panther_lodging_Jorge,BDG-2,commercial,cvrmse,0.10926666855812073,67.22720336914062,358
+Panther_lodging_Kaitlin,BDG-2,commercial,cvrmse,0.16311298310756683,47.98907470703125,358
+Panther_lodging_Kara,BDG-2,commercial,cvrmse,0.08255863934755325,174.6691436767578,358
+Panther_lodging_Kirk,BDG-2,commercial,cvrmse,0.08243369311094284,155.8625030517578,358
+Panther_lodging_Marisol,BDG-2,commercial,cvrmse,0.0819784477353096,162.03421020507812,358
+Panther_lodging_Myrtle,BDG-2,commercial,cvrmse,0.16948823630809784,53.22769546508789,358
+Panther_lodging_Russell,BDG-2,commercial,cvrmse,0.12875497341156006,39.42977523803711,358
+Panther_lodging_Sonja,BDG-2,commercial,cvrmse,0.10957738012075424,115.10279083251953,358
+Panther_lodging_Teresita,BDG-2,commercial,cvrmse,0.10593727231025696,64.17317962646484,358
+Panther_lodging_Tracie,BDG-2,commercial,cvrmse,0.14603173732757568,54.64551544189453,358
+Panther_lodging_Willa,BDG-2,commercial,cvrmse,0.09021347761154175,72.42710876464844,358
+Panther_office_Antonette,BDG-2,commercial,cvrmse,0.1282612681388855,32.91990280151367,358
+Panther_office_Brent,BDG-2,commercial,cvrmse,0.43648606538772583,12.035679817199707,358
+Panther_office_Catherine,BDG-2,commercial,cvrmse,0.18559686839580536,41.77898406982422,358
+Panther_office_Christian,BDG-2,commercial,cvrmse,0.24977067112922668,35.04313659667969,358
+Panther_office_Christin,BDG-2,commercial,cvrmse,0.4001258611679077,4.514724254608154,358
+Panther_office_Clementine,BDG-2,commercial,cvrmse,0.12287925183773041,46.50450134277344,358
+Panther_office_Danica,BDG-2,commercial,cvrmse,0.32472965121269226,5.027521133422852,358
+Panther_office_Garth,BDG-2,commercial,cvrmse,0.11896370351314545,57.50959396362305,358
+Panther_office_Graham,BDG-2,commercial,cvrmse,0.13197074830532074,72.17314910888672,358
+Panther_office_Hannah,BDG-2,commercial,cvrmse,0.40925005078315735,6.0101165771484375,358
+Panther_office_Jeane,BDG-2,commercial,cvrmse,0.29455238580703735,19.557424545288086,358
+Panther_office_Jesus,BDG-2,commercial,cvrmse,0.14671579003334045,96.70033264160156,358
+Panther_office_Karla,BDG-2,commercial,cvrmse,0.1915328949689865,35.62020492553711,358
+Panther_office_Kristen,BDG-2,commercial,cvrmse,0.1677774041891098,45.85306930541992,358
+Panther_office_Larry,BDG-2,commercial,cvrmse,0.13021209836006165,47.60849380493164,358
+Panther_office_Lauretta,BDG-2,commercial,cvrmse,0.07950932532548904,171.0491180419922,358
+Panther_office_Lavinia,BDG-2,commercial,cvrmse,0.11301958560943604,22.443452835083008,358
+Panther_office_Lois,BDG-2,commercial,cvrmse,0.04608369246125221,149.0137176513672,358
+Panther_office_Otto,BDG-2,commercial,cvrmse,0.07520143687725067,218.0911102294922,358
+Panther_office_Patti,BDG-2,commercial,cvrmse,0.08219585567712784,467.14837646484375,358
+Panther_office_Ruthie,BDG-2,commercial,cvrmse,0.07863496243953705,119.22663116455078,358
+Panther_office_Shauna,BDG-2,commercial,cvrmse,0.16488014161586761,94.81770324707031,358
+Panther_office_Taryn,BDG-2,commercial,cvrmse,0.09319812059402466,89.90447235107422,358
+Panther_office_Valarie,BDG-2,commercial,cvrmse,0.1577710062265396,35.41349792480469,358
+Panther_other_Bethel,BDG-2,commercial,cvrmse,0.09508919715881348,3.9992425441741943,358
+Panther_other_Bettie,BDG-2,commercial,cvrmse,0.06872588396072388,14.584400177001953,358
+Panther_other_Lucina,BDG-2,commercial,cvrmse,0.07036001235246658,365.7294006347656,358
+Panther_other_Lula,BDG-2,commercial,cvrmse,0.3190315365791321,1.1199455261230469,358
+Panther_other_Tyrone,BDG-2,commercial,cvrmse,0.18466420471668243,25.537790298461914,358
+Panther_parking_Adela,BDG-2,commercial,cvrmse,0.06965639442205429,46.95608901977539,358
+Panther_parking_Alaina,BDG-2,commercial,cvrmse,0.04937064275145531,37.09144973754883,358
+Panther_parking_Asia,BDG-2,commercial,cvrmse,0.07143428176641464,26.862342834472656,358
+Panther_parking_Charlene,BDG-2,commercial,cvrmse,0.07586206495761871,42.90633010864258,358
+Panther_parking_Jody,BDG-2,commercial,cvrmse,0.20432016253471375,29.854862213134766,358
+Panther_parking_Lorriane,BDG-2,commercial,cvrmse,0.12956102192401886,10.209113121032715,358
+Panther_parking_Mellissa,BDG-2,commercial,cvrmse,0.07676934450864792,15.22376823425293,358
+Panther_parking_Stanley,BDG-2,commercial,cvrmse,0.036703407764434814,44.39007568359375,358
+Panther_retail_Felix,BDG-2,commercial,cvrmse,0.14413878321647644,113.37948608398438,358
+Panther_retail_Gilbert,BDG-2,commercial,cvrmse,0.07763370126485825,0.7048826217651367,358
+Panther_retail_Kristina,BDG-2,commercial,cvrmse,0.2581326365470886,32.4570426940918,358
+Panther_retail_Lester,BDG-2,commercial,cvrmse,0.2746289074420929,6.80741024017334,358
+Panther_retail_Rachel,BDG-2,commercial,cvrmse,0.3317723274230957,3.5593323707580566,358
+Panther_retail_Romeo,BDG-2,commercial,cvrmse,0.06290482729673386,438.3846740722656,358
+Rat_assembly_Adolfo,BDG-2,commercial,cvrmse,0.2627924680709839,35.04831314086914,724
+Rat_assembly_Aisha,BDG-2,commercial,cvrmse,0.1603647917509079,81.38721466064453,724
+Rat_assembly_Alex,BDG-2,commercial,cvrmse,0.3142004609107971,6.375966548919678,724
+Rat_assembly_Archie,BDG-2,commercial,cvrmse,0.2796584665775299,3.095874786376953,724
+Rat_assembly_Aubrey,BDG-2,commercial,cvrmse,0.45959189534187317,17.136756896972656,724
+Rat_assembly_Cristina,BDG-2,commercial,cvrmse,0.28593385219573975,51.456146240234375,724
+Rat_assembly_Damaris,BDG-2,commercial,cvrmse,0.06709105521440506,4.859026908874512,724
+Rat_assembly_Deandre,BDG-2,commercial,cvrmse,0.1046392098069191,29.116172790527344,724
+Rat_assembly_Donny,BDG-2,commercial,cvrmse,0.3301416337490082,2.4820964336395264,724
+Rat_assembly_Dovie,BDG-2,commercial,cvrmse,0.26493406295776367,23.941999435424805,724
+Rat_assembly_Erwin,BDG-2,commercial,cvrmse,0.3126772940158844,16.61182403564453,724
+Rat_assembly_Ezequiel,BDG-2,commercial,cvrmse,0.3699869215488434,40.47926712036133,724
+Rat_assembly_Francine,BDG-2,commercial,cvrmse,0.1790364384651184,39.822731018066406,724
+Rat_assembly_Frieda,BDG-2,commercial,cvrmse,0.17738354206085205,124.08039855957031,724
+Rat_assembly_Gerald,BDG-2,commercial,cvrmse,0.22869744896888733,5.663163185119629,359
+Rat_assembly_Gwen,BDG-2,commercial,cvrmse,0.21580903232097626,5.523181438446045,724
+Rat_assembly_Horace,BDG-2,commercial,cvrmse,0.26453840732574463,26.439599990844727,724
+Rat_assembly_Ida,BDG-2,commercial,cvrmse,0.18317285180091858,26.1779842376709,724
+Rat_assembly_Jamie,BDG-2,commercial,cvrmse,0.33260494470596313,28.367366790771484,724
+Rat_assembly_Jannie,BDG-2,commercial,cvrmse,1.423169732093811,0.8256149291992188,724
+Rat_assembly_Jennie,BDG-2,commercial,cvrmse,0.35944822430610657,2.5923147201538086,724
+Rat_assembly_Kaitlyn,BDG-2,commercial,cvrmse,0.12192341685295105,99.26681518554688,724
+Rat_assembly_Karen,BDG-2,commercial,cvrmse,0.18432395160198212,162.910400390625,359
+Rat_assembly_Kelley,BDG-2,commercial,cvrmse,0.3340737819671631,2.7296316623687744,724
+Rat_assembly_Kenya,BDG-2,commercial,cvrmse,0.20957481861114502,64.43270111083984,724
+Rat_assembly_Kimberley,BDG-2,commercial,cvrmse,0.12825584411621094,66.20042419433594,724
+Rat_assembly_Kristine,BDG-2,commercial,cvrmse,0.15870067477226257,24.027183532714844,724
+Rat_assembly_Kristy,BDG-2,commercial,cvrmse,0.3823662996292114,49.363121032714844,724
+Rat_assembly_Lillie,BDG-2,commercial,cvrmse,0.29815107583999634,13.294136047363281,724
+Rat_assembly_Michel,BDG-2,commercial,cvrmse,0.15770533680915833,14.886096954345703,724
+Rat_assembly_Mirta,BDG-2,commercial,cvrmse,0.20466454327106476,169.1469268798828,724
+Rat_assembly_Monica,BDG-2,commercial,cvrmse,0.16748900711536407,65.7087173461914,724
+Rat_assembly_Pam,BDG-2,commercial,cvrmse,0.23380090296268463,8.505674362182617,724
+Rat_assembly_Pauline,BDG-2,commercial,cvrmse,0.533141016960144,1.7638177871704102,724
+Rat_assembly_Rolland,BDG-2,commercial,cvrmse,0.25415706634521484,40.8963508605957,724
+Rat_assembly_Rosemarie,BDG-2,commercial,cvrmse,0.17208623886108398,11.364017486572266,724
+Rat_assembly_Ruth,BDG-2,commercial,cvrmse,0.31229403614997864,6.239401817321777,724
+Rat_assembly_Silvia,BDG-2,commercial,cvrmse,0.2628200352191925,11.34794807434082,724
+Rat_assembly_Suzanne,BDG-2,commercial,cvrmse,0.25206178426742554,3.1194095611572266,724
+Rat_assembly_Teddy,BDG-2,commercial,cvrmse,0.1653609722852707,85.07333374023438,724
+Rat_assembly_Teodoro,BDG-2,commercial,cvrmse,0.14404593408107758,25.697002410888672,724
+Rat_assembly_Trent,BDG-2,commercial,cvrmse,0.2492496520280838,22.593412399291992,724
+Rat_assembly_Trudy,BDG-2,commercial,cvrmse,0.30706045031547546,37.81700897216797,724
+Rat_assembly_Victorina,BDG-2,commercial,cvrmse,0.4383053183555603,1.744943618774414,724
+Rat_assembly_Viola,BDG-2,commercial,cvrmse,0.190448597073555,54.12450408935547,724
+Rat_education_Adell,BDG-2,commercial,cvrmse,0.27566689252853394,148.43873596191406,724
+Rat_education_Adrian,BDG-2,commercial,cvrmse,0.22617633640766144,78.03739929199219,724
+Rat_education_Alfonso,BDG-2,commercial,cvrmse,0.1888243556022644,333.4775085449219,724
+Rat_education_Alfred,BDG-2,commercial,cvrmse,0.1731559932231903,356.3720397949219,724
+Rat_education_Alyson,BDG-2,commercial,cvrmse,0.1113981157541275,49.03601837158203,359
+Rat_education_Barbara,BDG-2,commercial,cvrmse,0.18766991794109344,1.451573371887207,724
+Rat_education_Barney,BDG-2,commercial,cvrmse,0.2257138043642044,28.531063079833984,724
+Rat_education_Beverly,BDG-2,commercial,cvrmse,0.27642735838890076,661.6239624023438,724
+Rat_education_Brett,BDG-2,commercial,cvrmse,0.4080764055252075,65.04467010498047,724
+Rat_education_Bryant,BDG-2,commercial,cvrmse,0.1447235494852066,55.817501068115234,724
+Rat_education_Calvin,BDG-2,commercial,cvrmse,0.2018575668334961,37.08808898925781,724
+Rat_education_Candida,BDG-2,commercial,cvrmse,0.16704493761062622,139.8524932861328,724
+Rat_education_Carmela,BDG-2,commercial,cvrmse,0.22803722321987152,86.10372161865234,724
+Rat_education_Cecil,BDG-2,commercial,cvrmse,0.16025249660015106,62.48845291137695,724
+Rat_education_Cedric,BDG-2,commercial,cvrmse,0.1783064901828766,93.14327239990234,724
+Rat_education_Cinthia,BDG-2,commercial,cvrmse,0.3245871365070343,40.62687683105469,359
+Rat_education_Colin,BDG-2,commercial,cvrmse,0.2481718808412552,54.79511642456055,724
+Rat_education_Conrad,BDG-2,commercial,cvrmse,0.6527221202850342,164.56724548339844,724
+Rat_education_Dana,BDG-2,commercial,cvrmse,0.2236941009759903,97.85513305664062,724
+Rat_education_Dann,BDG-2,commercial,cvrmse,0.1157340407371521,195.2686767578125,724
+Rat_education_Davis,BDG-2,commercial,cvrmse,0.15012376010417938,78.46512603759766,724
+Rat_education_Deanna,BDG-2,commercial,cvrmse,0.13449989259243011,88.44619750976562,724
+Rat_education_Debra,BDG-2,commercial,cvrmse,0.1663147211074829,105.70687866210938,724
+Rat_education_Denise,BDG-2,commercial,cvrmse,0.21382944285869598,79.58595275878906,359
+Rat_education_Dianne,BDG-2,commercial,cvrmse,0.17118895053863525,131.6084442138672,359
+Rat_education_Donnell,BDG-2,commercial,cvrmse,0.4346335232257843,59.501094818115234,359
+Rat_education_Dreama,BDG-2,commercial,cvrmse,0.21423625946044922,92.01459503173828,724
+Rat_education_Earl,BDG-2,commercial,cvrmse,0.18663878738880157,159.40638732910156,724
+Rat_education_Earnest,BDG-2,commercial,cvrmse,0.2187759280204773,60.52174758911133,724
+Rat_education_Eleonora,BDG-2,commercial,cvrmse,0.21640950441360474,214.49302673339844,359
+Rat_education_Elisa,BDG-2,commercial,cvrmse,0.3648366630077362,39.61857604980469,724
+Rat_education_Elsie,BDG-2,commercial,cvrmse,0.5427650213241577,115.61278533935547,724
+Rat_education_Esther,BDG-2,commercial,cvrmse,0.200107604265213,94.80229187011719,724
+Rat_education_Everett,BDG-2,commercial,cvrmse,0.20466966927051544,177.02378845214844,724
+Rat_education_Fernando,BDG-2,commercial,cvrmse,0.24034374952316284,62.40904998779297,724
+Rat_education_Francisca,BDG-2,commercial,cvrmse,0.38683557510375977,36.176212310791016,724
+Rat_education_Gricelda,BDG-2,commercial,cvrmse,0.22976747155189514,31.866710662841797,358
+Rat_education_Guillermo,BDG-2,commercial,cvrmse,0.12782467901706696,108.8022689819336,724
+Rat_education_Humberto,BDG-2,commercial,cvrmse,0.2591654360294342,172.68711853027344,724
+Rat_education_Imelda,BDG-2,commercial,cvrmse,0.03189943730831146,2.882045269012451,724
+Rat_education_Irma,BDG-2,commercial,cvrmse,0.2005443274974823,74.59678649902344,724
+Rat_education_Jacob,BDG-2,commercial,cvrmse,0.11164619773626328,55.399192810058594,724
+Rat_education_Jame,BDG-2,commercial,cvrmse,0.18015773594379425,64.69348907470703,724
+Rat_education_Jeanne,BDG-2,commercial,cvrmse,0.15432950854301453,56.52301025390625,358
+Rat_education_Jena,BDG-2,commercial,cvrmse,0.16001276671886444,163.3695526123047,724
+Rat_education_Jesse,BDG-2,commercial,cvrmse,0.17712940275669098,29.490001678466797,724
+Rat_education_Kandice,BDG-2,commercial,cvrmse,0.43520402908325195,66.77838897705078,724
+Rat_education_Kathryn,BDG-2,commercial,cvrmse,0.2414853572845459,517.179931640625,724
+Rat_education_Keith,BDG-2,commercial,cvrmse,0.16242745518684387,104.81673431396484,724
+Rat_education_Kelsey,BDG-2,commercial,cvrmse,0.16866202652454376,157.83743286132812,724
+Rat_education_Lee,BDG-2,commercial,cvrmse,0.17520342767238617,403.3044128417969,724
+Rat_education_Leonardo,BDG-2,commercial,cvrmse,1.875456690788269,48.76261520385742,724
+Rat_education_Lincoln,BDG-2,commercial,cvrmse,0.23064936697483063,161.27203369140625,724
+Rat_education_Liz,BDG-2,commercial,cvrmse,0.2950526773929596,91.02222442626953,724
+Rat_education_Lonnie,BDG-2,commercial,cvrmse,0.31577184796333313,60.53953170776367,724
+Rat_education_Lynn,BDG-2,commercial,cvrmse,0.17759796977043152,105.92941284179688,724
+Rat_education_Marcos,BDG-2,commercial,cvrmse,0.11233678460121155,365.524169921875,724
+Rat_education_Marianna,BDG-2,commercial,cvrmse,0.2214103788137436,79.95478057861328,724
+Rat_education_Maricela,BDG-2,commercial,cvrmse,0.36407583951950073,144.1239776611328,724
+Rat_education_Marvin,BDG-2,commercial,cvrmse,0.318447470664978,53.708988189697266,724
+Rat_education_Matt,BDG-2,commercial,cvrmse,0.2167649269104004,149.8156280517578,359
+Rat_education_Meghan,BDG-2,commercial,cvrmse,0.27408406138420105,53.67708206176758,724
+Rat_education_Milagros,BDG-2,commercial,cvrmse,0.20832888782024384,108.01773834228516,724
+Rat_education_Mona,BDG-2,commercial,cvrmse,0.18708869814872742,77.8762435913086,724
+Rat_education_Morton,BDG-2,commercial,cvrmse,0.20931702852249146,150.899658203125,724
+Rat_education_Mose,BDG-2,commercial,cvrmse,0.2217894047498703,83.0826644897461,724
+Rat_education_Nellie,BDG-2,commercial,cvrmse,0.18268324434757233,434.77947998046875,724
+Rat_education_Nona,BDG-2,commercial,cvrmse,0.33361661434173584,97.86216735839844,724
+Rat_education_Nydia,BDG-2,commercial,cvrmse,0.17945817112922668,151.6258544921875,724
+Rat_education_Pat,BDG-2,commercial,cvrmse,0.18489614129066467,159.19570922851562,724
+Rat_education_Patty,BDG-2,commercial,cvrmse,0.1411367803812027,136.96788024902344,724
+Rat_education_Paula,BDG-2,commercial,cvrmse,0.17815004289150238,123.63990783691406,724
+Rat_education_Renee,BDG-2,commercial,cvrmse,0.12186134606599808,34.37055587768555,724
+Rat_education_Robyn,BDG-2,commercial,cvrmse,0.17424844205379486,155.61178588867188,724
+Rat_education_Rogelio,BDG-2,commercial,cvrmse,0.15122263133525848,125.92430877685547,724
+Rat_education_Rosalyn,BDG-2,commercial,cvrmse,0.18174046277999878,71.39363098144531,724
+Rat_education_Royal,BDG-2,commercial,cvrmse,0.1392776370048523,72.96009826660156,724
+Rat_education_Salvatore,BDG-2,commercial,cvrmse,0.15670035779476166,78.92005157470703,724
+Rat_education_Shellie,BDG-2,commercial,cvrmse,0.1714312881231308,75.00730895996094,724
+Rat_education_Sherwood,BDG-2,commercial,cvrmse,0.196245014667511,102.90592193603516,724
+Rat_education_Sina,BDG-2,commercial,cvrmse,0.1548413336277008,166.94821166992188,724
+Rat_education_Stuart,BDG-2,commercial,cvrmse,0.24035483598709106,47.28030776977539,724
+Rat_education_Susana,BDG-2,commercial,cvrmse,0.1529703438282013,9.408414840698242,359
+Rat_education_Tania,BDG-2,commercial,cvrmse,0.22564931213855743,308.0784912109375,724
+Rat_education_Terese,BDG-2,commercial,cvrmse,0.17070448398590088,116.43230438232422,724
+Rat_education_Theo,BDG-2,commercial,cvrmse,0.27695250511169434,553.7628784179688,724
+Rat_education_Tim,BDG-2,commercial,cvrmse,0.18980540335178375,62.30885314941406,724
+Rat_education_Tristan,BDG-2,commercial,cvrmse,0.2232426404953003,30.658180236816406,359
+Rat_education_Ulrike,BDG-2,commercial,cvrmse,0.16928158700466156,103.64529418945312,724
+Rat_education_Verna,BDG-2,commercial,cvrmse,0.19378647208213806,83.28497314453125,724
+Rat_education_Vicky,BDG-2,commercial,cvrmse,0.25582531094551086,186.49508666992188,724
+Rat_education_Willie,BDG-2,commercial,cvrmse,0.24139274656772614,239.4454345703125,724
+Rat_education_Wilmer,BDG-2,commercial,cvrmse,0.18715280294418335,101.94959259033203,724
+Rat_education_Winnie,BDG-2,commercial,cvrmse,0.2610318958759308,55.21793746948242,724
+Rat_education_Yu,BDG-2,commercial,cvrmse,3.6785213947296143,80.01840209960938,724
+Rat_education_Zina,BDG-2,commercial,cvrmse,0.32981422543525696,49.13357162475586,724
+Rat_education_Zoe,BDG-2,commercial,cvrmse,0.18742665648460388,93.31122589111328,724
+Rat_health_Gaye,BDG-2,commercial,cvrmse,0.20302873849868774,38.017066955566406,724
+Rat_health_Guy,BDG-2,commercial,cvrmse,0.06663283705711365,1467.2420654296875,724
+Rat_health_Mildred,BDG-2,commercial,cvrmse,0.27121224999427795,17.99813461303711,724
+Rat_health_Rosaria,BDG-2,commercial,cvrmse,0.24960771203041077,31.0049991607666,724
+Rat_health_Shane,BDG-2,commercial,cvrmse,0.0768858790397644,1146.786376953125,724
+Rat_health_Tanya,BDG-2,commercial,cvrmse,0.14820457994937897,51.7752571105957,724
+Rat_lodging_Ardell,BDG-2,commercial,cvrmse,0.17597375810146332,15.898029327392578,724
+Rat_lodging_Ben,BDG-2,commercial,cvrmse,0.12809652090072632,329.6199951171875,724
+Rat_lodging_Christine,BDG-2,commercial,cvrmse,0.1513785421848297,62.30137252807617,724
+Rat_lodging_Dwight,BDG-2,commercial,cvrmse,0.31166547536849976,23.898332595825195,724
+Rat_lodging_Jeannette,BDG-2,commercial,cvrmse,0.28722870349884033,5.147009372711182,724
+Rat_lodging_Lakisha,BDG-2,commercial,cvrmse,0.6368404030799866,0.7248793244361877,359
+Rat_lodging_Lorenzo,BDG-2,commercial,cvrmse,0.3960535526275635,2.921966075897217,724
+Rat_lodging_Lucille,BDG-2,commercial,cvrmse,0.37849098443984985,3.6569173336029053,359
+Rat_lodging_Marguerite,BDG-2,commercial,cvrmse,0.21175183355808258,22.740161895751953,724
+Rat_lodging_Marion,BDG-2,commercial,cvrmse,0.18628981709480286,36.32524108886719,724
+Rat_lodging_Ted,BDG-2,commercial,cvrmse,0.46398022770881653,2.5309770107269287,724
+Rat_office_Adele,BDG-2,commercial,cvrmse,0.1681670993566513,597.4761352539062,724
+Rat_office_Annis,BDG-2,commercial,cvrmse,0.13174112141132355,33.30914306640625,724
+Rat_office_Arron,BDG-2,commercial,cvrmse,0.16167423129081726,59.62339401245117,724
+Rat_office_Ashlee,BDG-2,commercial,cvrmse,0.12310950458049774,53.98221206665039,359
+Rat_office_Avis,BDG-2,commercial,cvrmse,0.1975952386856079,897.1416015625,724
+Rat_office_Colby,BDG-2,commercial,cvrmse,0.1713019460439682,2129.51904296875,724
+Rat_office_Craig,BDG-2,commercial,cvrmse,0.10291699320077896,235.3618621826172,724
+Rat_office_Jacinta,BDG-2,commercial,cvrmse,0.09188312292098999,219.07896423339844,724
+Rat_office_Jamal,BDG-2,commercial,cvrmse,0.24649561941623688,936.1339111328125,724
+Rat_office_Jeannie,BDG-2,commercial,cvrmse,0.2636357247829437,43.55278396606445,724
+Rat_office_Jessica,BDG-2,commercial,cvrmse,0.12276317179203033,698.9304809570312,724
+Rat_office_Jill,BDG-2,commercial,cvrmse,0.3257567286491394,641.1478271484375,724
+Rat_office_Kasey,BDG-2,commercial,cvrmse,0.28680795431137085,86.20745086669922,724
+Rat_office_Lora,BDG-2,commercial,cvrmse,0.2963692247867584,425.9044189453125,724
+Rat_office_Loyd,BDG-2,commercial,cvrmse,0.18282446265220642,55.31507110595703,724
+Rat_office_Mei,BDG-2,commercial,cvrmse,0.13964706659317017,20.62793731689453,724
+Rat_office_Olivia,BDG-2,commercial,cvrmse,0.29136133193969727,52.92548370361328,724
+Rat_office_Ramiro,BDG-2,commercial,cvrmse,0.11567722260951996,35.028141021728516,724
+Rat_office_Randy,BDG-2,commercial,cvrmse,0.2228529006242752,102.96692657470703,724
+Rat_office_Ronald,BDG-2,commercial,cvrmse,0.22267360985279083,53.605735778808594,724
+Rat_office_Rosemary,BDG-2,commercial,cvrmse,0.26211920380592346,16.534881591796875,724
+Rat_office_Sammy,BDG-2,commercial,cvrmse,0.2527271807193756,53.63846206665039,724
+Rat_office_Tracy,BDG-2,commercial,cvrmse,0.14044445753097534,20.6204891204834,724
+Rat_other_Al,BDG-2,commercial,cvrmse,0.18180394172668457,52.58837127685547,724
+Rat_other_Daphne,BDG-2,commercial,cvrmse,0.3385864496231079,11.666296005249023,724
+Rat_other_Hazel,BDG-2,commercial,cvrmse,0.02994227036833763,373.4327392578125,724
+Rat_other_Lan,BDG-2,commercial,cvrmse,0.14797323942184448,13.526590347290039,724
+Rat_parking_Ronnie,BDG-2,commercial,cvrmse,0.32553553581237793,16.799423217773438,724
+Rat_public_Alanna,BDG-2,commercial,cvrmse,0.14339572191238403,1161.5689697265625,724
+Rat_public_Allie,BDG-2,commercial,cvrmse,0.17287397384643555,11.589986801147461,724
+Rat_public_Allyson,BDG-2,commercial,cvrmse,0.16683192551136017,54.35792922973633,724
+Rat_public_Amber,BDG-2,commercial,cvrmse,0.3014809191226959,10.290146827697754,724
+Rat_public_Angelina,BDG-2,commercial,cvrmse,0.1060766652226448,32.66437530517578,724
+Rat_public_Becky,BDG-2,commercial,cvrmse,0.16237200796604156,21.112138748168945,724
+Rat_public_Berry,BDG-2,commercial,cvrmse,0.060094770044088364,97.70889282226562,724
+Rat_public_Bronwyn,BDG-2,commercial,cvrmse,0.10995608568191528,443.7679138183594,724
+Rat_public_Carole,BDG-2,commercial,cvrmse,0.18534407019615173,18.853660583496094,724
+Rat_public_Caroline,BDG-2,commercial,cvrmse,0.14845655858516693,149.60484313964844,724
+Rat_public_Chrissy,BDG-2,commercial,cvrmse,0.16360725462436676,56.36956787109375,724
+Rat_public_Clyde,BDG-2,commercial,cvrmse,0.1653476059436798,34.06587600708008,724
+Rat_public_Corinne,BDG-2,commercial,cvrmse,0.12031283974647522,25.522584915161133,724
+Rat_public_Courtney,BDG-2,commercial,cvrmse,0.1910216212272644,30.756467819213867,724
+Rat_public_Dalia,BDG-2,commercial,cvrmse,0.07416286319494247,186.8453826904297,724
+Rat_public_Damon,BDG-2,commercial,cvrmse,0.1297648549079895,20.841697692871094,724
+Rat_public_Darren,BDG-2,commercial,cvrmse,0.046365588903427124,4.361230373382568,724
+Rat_public_Deidre,BDG-2,commercial,cvrmse,0.18844185769557953,8.981331825256348,724
+Rat_public_Desiree,BDG-2,commercial,cvrmse,0.15549089014530182,12.96310806274414,724
+Rat_public_Dexter,BDG-2,commercial,cvrmse,0.15201817452907562,13.144163131713867,724
+Rat_public_Duane,BDG-2,commercial,cvrmse,0.49796801805496216,77.34970092773438,724
+Rat_public_Elmira,BDG-2,commercial,cvrmse,0.19540618360042572,21.982282638549805,358
+Rat_public_Emilee,BDG-2,commercial,cvrmse,0.27527180314064026,38.3154411315918,724
+Rat_public_Faye,BDG-2,commercial,cvrmse,0.18232640624046326,31.271621704101562,724
+Rat_public_Fern,BDG-2,commercial,cvrmse,0.11954643577337265,48.8765983581543,724
+Rat_public_Frank,BDG-2,commercial,cvrmse,0.2987499237060547,7.978607177734375,724
+Rat_public_Frederick,BDG-2,commercial,cvrmse,0.11664652079343796,20.441009521484375,724
+Rat_public_Fredrick,BDG-2,commercial,cvrmse,0.6224007606506348,13.03078556060791,724
+Rat_public_Grover,BDG-2,commercial,cvrmse,0.10313833504915237,17.762327194213867,724
+Rat_public_Helena,BDG-2,commercial,cvrmse,0.2218439280986786,24.048465728759766,724
+Rat_public_Hortencia,BDG-2,commercial,cvrmse,0.20565171539783478,59.40205764770508,724
+Rat_public_Isabel,BDG-2,commercial,cvrmse,0.12831225991249084,53.54142761230469,724
+Rat_public_Jason,BDG-2,commercial,cvrmse,0.19014471769332886,25.26132583618164,724
+Rat_public_Joann,BDG-2,commercial,cvrmse,0.14017407596111298,17.636754989624023,724
+Rat_public_Johnna,BDG-2,commercial,cvrmse,0.344149649143219,30.678823471069336,359
+Rat_public_Johnny,BDG-2,commercial,cvrmse,0.08946581929922104,20.547624588012695,724
+Rat_public_Josiah,BDG-2,commercial,cvrmse,0.16707280278205872,87.9535903930664,724
+Rat_public_Julieann,BDG-2,commercial,cvrmse,0.3081488609313965,4.436612129211426,724
+Rat_public_Kathleen,BDG-2,commercial,cvrmse,0.1749894917011261,28.618873596191406,724
+Rat_public_Kelle,BDG-2,commercial,cvrmse,0.2199905663728714,24.91040802001953,724
+Rat_public_Kelly,BDG-2,commercial,cvrmse,0.11928128451108932,21.09077262878418,724
+Rat_public_Kermit,BDG-2,commercial,cvrmse,0.24125134944915771,17.4429874420166,724
+Rat_public_Kimber,BDG-2,commercial,cvrmse,0.33037781715393066,227.28805541992188,724
+Rat_public_Laura,BDG-2,commercial,cvrmse,0.18922129273414612,13.168357849121094,724
+Rat_public_Laurie,BDG-2,commercial,cvrmse,0.14401522278785706,157.3203125,724
+Rat_public_Laverne,BDG-2,commercial,cvrmse,0.1680087447166443,12.740730285644531,724
+Rat_public_Lea,BDG-2,commercial,cvrmse,0.10122537612915039,67.71892547607422,359
+Rat_public_Leo,BDG-2,commercial,cvrmse,0.11886834353208542,18.098358154296875,724
+Rat_public_Leta,BDG-2,commercial,cvrmse,0.1576184779405594,17.05811882019043,724
+Rat_public_Lloyd,BDG-2,commercial,cvrmse,0.16035017371177673,71.90122985839844,724
+Rat_public_Loretta,BDG-2,commercial,cvrmse,0.09085479378700256,203.06903076171875,724
+Rat_public_Lynda,BDG-2,commercial,cvrmse,0.15311500430107117,11.954833030700684,724
+Rat_public_Mabel,BDG-2,commercial,cvrmse,0.08536992222070694,101.51525115966797,724
+Rat_public_Marcellus,BDG-2,commercial,cvrmse,0.25626301765441895,9.674121856689453,724
+Rat_public_Margart,BDG-2,commercial,cvrmse,0.205346018075943,42.60013961791992,724
+Rat_public_Mark,BDG-2,commercial,cvrmse,0.2083517163991928,22.8597469329834,724
+Rat_public_Maxine,BDG-2,commercial,cvrmse,0.14345090091228485,144.57415771484375,359
+Rat_public_Michael,BDG-2,commercial,cvrmse,0.15675733983516693,42.744415283203125,724
+Rat_public_Michelle,BDG-2,commercial,cvrmse,0.3436706066131592,68.64207458496094,724
+Rat_public_Muriel,BDG-2,commercial,cvrmse,0.29658350348472595,84.18093872070312,724
+Rat_public_Nancy,BDG-2,commercial,cvrmse,0.13516958057880402,18.933025360107422,724
+Rat_public_Neil,BDG-2,commercial,cvrmse,0.2503168284893036,24.48975944519043,724
+Rat_public_Nell,BDG-2,commercial,cvrmse,0.2020137459039688,48.505706787109375,724
+Rat_public_Nelson,BDG-2,commercial,cvrmse,0.143949493765831,44.366634368896484,724
+Rat_public_Ramon,BDG-2,commercial,cvrmse,0.2929806709289551,30.5179443359375,724
+Rat_public_Ramona,BDG-2,commercial,cvrmse,0.1588204801082611,26.93729019165039,724
+Rat_public_Roberta,BDG-2,commercial,cvrmse,0.14053314924240112,14.934556007385254,724
+Rat_public_Roma,BDG-2,commercial,cvrmse,0.23751091957092285,53.01898193359375,724
+Rat_public_Sade,BDG-2,commercial,cvrmse,0.14699259400367737,32.61101150512695,724
+Rat_public_Sana,BDG-2,commercial,cvrmse,0.09753810614347458,1308.852783203125,359
+Rat_public_Sean,BDG-2,commercial,cvrmse,0.21696442365646362,21.979202270507812,724
+Rat_public_Shanta,BDG-2,commercial,cvrmse,0.1823354959487915,12.290855407714844,724
+Rat_public_Sharonda,BDG-2,commercial,cvrmse,0.2259359508752823,36.535003662109375,724
+Rat_public_Sharron,BDG-2,commercial,cvrmse,0.12377344071865082,43.454898834228516,724
+Rat_public_Stacey,BDG-2,commercial,cvrmse,0.22708885371685028,16.40106201171875,724
+Rat_public_Stella,BDG-2,commercial,cvrmse,0.06895661354064941,96.61988830566406,724
+Rat_public_Sue,BDG-2,commercial,cvrmse,0.20534546673297882,29.0174560546875,724
+Rat_public_Tammara,BDG-2,commercial,cvrmse,0.33179181814193726,7.4739274978637695,724
+Rat_public_Tamra,BDG-2,commercial,cvrmse,0.11404857039451599,21.03607177734375,724
+Rat_public_Tommy,BDG-2,commercial,cvrmse,0.10599738359451294,16.86630630493164,724
+Rat_public_Toya,BDG-2,commercial,cvrmse,0.34069105982780457,26.74979591369629,724
+Rat_public_Tricia,BDG-2,commercial,cvrmse,0.23448874056339264,37.31135559082031,724
+Rat_public_Vickie,BDG-2,commercial,cvrmse,0.3648420572280884,44.91769027709961,724
+Rat_public_Wilbur,BDG-2,commercial,cvrmse,0.14619329571723938,177.251953125,724
+Rat_public_Wilma,BDG-2,commercial,cvrmse,0.13246291875839233,56.77116012573242,724
+Rat_public_Yessenia,BDG-2,commercial,cvrmse,0.17096473276615143,113.34838104248047,724
+Rat_religion_Kathy,BDG-2,commercial,cvrmse,0.3537308871746063,5.153850078582764,724
+Rat_retail_Jeffrey,BDG-2,commercial,cvrmse,0.23110570013523102,76.12847137451172,724
+Rat_warehouse_Breanna,BDG-2,commercial,cvrmse,0.07383052259683609,90.615966796875,724
+Rat_warehouse_Doretta,BDG-2,commercial,cvrmse,0.14049318432807922,157.24862670898438,724
+Rat_warehouse_Eloisa,BDG-2,commercial,cvrmse,0.1941014975309372,90.1650619506836,724
+Rat_warehouse_Maegan,BDG-2,commercial,cvrmse,4.408674716949463,6.7156982421875,724
+Rat_warehouse_Shari,BDG-2,commercial,cvrmse,0.15487487614154816,45.65596008300781,724
+Electricity MT_001,Electricity,commercial,cvrmse,0.7365303039550781,5.234061241149902,1089
+Electricity MT_002,Electricity,commercial,cvrmse,0.12935206294059753,27.683788299560547,1089
+Electricity MT_003,Electricity,commercial,cvrmse,2.5610649585723877,3.78131365776062,1089
+Electricity MT_004,Electricity,commercial,cvrmse,0.1231088787317276,109.47509765625,1089
+Electricity MT_005,Electricity,commercial,cvrmse,0.1470920890569687,49.549339294433594,1089
+Electricity MT_006,Electricity,commercial,cvrmse,0.10971375554800034,187.96714782714844,1089
+Electricity MT_007,Electricity,commercial,cvrmse,0.47340837121009827,6.040045261383057,1089
+Electricity MT_008,Electricity,commercial,cvrmse,0.09181255102157593,255.0221710205078,1089
+Electricity MT_009,Electricity,commercial,cvrmse,0.22997315227985382,53.14626693725586,1089
+Electricity MT_010,Electricity,commercial,cvrmse,0.30272480845451355,56.16481399536133,1089
+Electricity MT_011,Electricity,commercial,cvrmse,0.11933349817991257,39.70566177368164,1089
+Electricity MT_012,Electricity,commercial,cvrmse,0.13121676445007324,145.88890075683594,358
+Electricity MT_013,Electricity,commercial,cvrmse,0.20009343326091766,73.5063247680664,1089
+Electricity MT_014,Electricity,commercial,cvrmse,0.15256854891777039,44.618839263916016,1089
+Electricity MT_015,Electricity,commercial,cvrmse,0.12740351259708405,47.612945556640625,358
+Electricity MT_016,Electricity,commercial,cvrmse,0.14138169586658478,32.97597122192383,1089
+Electricity MT_017,Electricity,commercial,cvrmse,0.0890568345785141,49.1920051574707,1089
+Electricity MT_018,Electricity,commercial,cvrmse,0.14079362154006958,244.99119567871094,1089
+Electricity MT_019,Electricity,commercial,cvrmse,0.14039741456508636,8.235721588134766,1089
+Electricity MT_020,Electricity,commercial,cvrmse,0.1442715972661972,40.7968635559082,1089
+Electricity MT_021,Electricity,commercial,cvrmse,0.1145532950758934,162.0971221923828,1089
+Electricity MT_022,Electricity,commercial,cvrmse,0.21520572900772095,27.382104873657227,1089
+Electricity MT_023,Electricity,commercial,cvrmse,0.16555450856685638,9.829129219055176,1089
+Electricity MT_024,Electricity,commercial,cvrmse,0.13884925842285156,31.592477798461914,723
+Electricity MT_025,Electricity,commercial,cvrmse,0.13051648437976837,217.55467224121094,1089
+Electricity MT_026,Electricity,commercial,cvrmse,0.15474817156791687,20.839733123779297,1089
+Electricity MT_027,Electricity,commercial,cvrmse,0.13489417731761932,19.94597053527832,1089
+Electricity MT_028,Electricity,commercial,cvrmse,0.12888357043266296,67.09553527832031,1089
+Electricity MT_029,Electricity,commercial,cvrmse,0.26127079129219055,78.43429565429688,1089
+Electricity MT_030,Electricity,commercial,cvrmse,0.12040546536445618,37.7459831237793,358
+Electricity MT_031,Electricity,commercial,cvrmse,0.1101197898387909,89.67816162109375,1089
+Electricity MT_032,Electricity,commercial,cvrmse,0.14952117204666138,27.90242576599121,723
+Electricity MT_033,Electricity,commercial,cvrmse,0.10842855274677277,40.519588470458984,723
+Electricity MT_034,Electricity,commercial,cvrmse,0.14568747580051422,14.055110931396484,1089
+Electricity MT_035,Electricity,commercial,cvrmse,0.13080951571464539,117.04810333251953,1089
+Electricity MT_036,Electricity,commercial,cvrmse,0.3495364189147949,36.571861267089844,1089
+Electricity MT_037,Electricity,commercial,cvrmse,0.14573509991168976,111.0606460571289,1089
+Electricity MT_038,Electricity,commercial,cvrmse,0.10017701238393784,119.71736145019531,1089
+Electricity MT_039,Electricity,commercial,cvrmse,0.1592032015323639,41.38267135620117,358
+Electricity MT_040,Electricity,commercial,cvrmse,0.15549230575561523,99.28128814697266,1089
+Electricity MT_041,Electricity,commercial,cvrmse,0.10070893913507462,86.8047866821289,358
+Electricity MT_042,Electricity,commercial,cvrmse,0.12293124198913574,42.25163269042969,1089
+Electricity MT_043,Electricity,commercial,cvrmse,0.12125508487224579,1084.95947265625,1089
+Electricity MT_044,Electricity,commercial,cvrmse,0.12798915803432465,30.38525390625,1089
+Electricity MT_045,Electricity,commercial,cvrmse,0.28950589895248413,94.1080322265625,1089
+Electricity MT_046,Electricity,commercial,cvrmse,0.1294894963502884,131.1175994873047,1089
+Electricity MT_047,Electricity,commercial,cvrmse,0.14449332654476166,28.01981544494629,1089
+Electricity MT_048,Electricity,commercial,cvrmse,0.13573136925697327,15.370166778564453,1089
+Electricity MT_049,Electricity,commercial,cvrmse,0.09861971437931061,930.732421875,1089
+Electricity MT_050,Electricity,commercial,cvrmse,0.12395450472831726,164.75827026367188,1089
+Electricity MT_051,Electricity,commercial,cvrmse,0.1350128948688507,55.302188873291016,1089
+Electricity MT_052,Electricity,commercial,cvrmse,0.10860378295183182,35.47279357910156,1089
+Electricity MT_053,Electricity,commercial,cvrmse,0.1296091228723526,66.88671112060547,1089
+Electricity MT_054,Electricity,commercial,cvrmse,0.08675821125507355,69.72706604003906,1089
+Electricity MT_055,Electricity,commercial,cvrmse,0.16627496480941772,23.52341651916504,1089
+Electricity MT_056,Electricity,commercial,cvrmse,0.09461510926485062,37.56214904785156,1089
+Electricity MT_057,Electricity,commercial,cvrmse,0.22230175137519836,24.57240104675293,1089
+Electricity MT_058,Electricity,commercial,cvrmse,0.12697765231132507,85.19769287109375,1089
+Electricity MT_059,Electricity,commercial,cvrmse,0.16104407608509064,119.10672760009766,1089
+Electricity MT_060,Electricity,commercial,cvrmse,0.10377056896686554,27.392274856567383,1089
+Electricity MT_061,Electricity,commercial,cvrmse,0.13507403433322906,75.54386901855469,1089
+Electricity MT_062,Electricity,commercial,cvrmse,0.09926173090934753,59.70875549316406,1089
+Electricity MT_063,Electricity,commercial,cvrmse,0.1384676694869995,22.560428619384766,1089
+Electricity MT_064,Electricity,commercial,cvrmse,0.1415291130542755,1412.437744140625,1089
+Electricity MT_065,Electricity,commercial,cvrmse,0.128383606672287,63.0145149230957,1089
+Electricity MT_066,Electricity,commercial,cvrmse,0.12408606708049774,46.532508850097656,724
+Electricity MT_067,Electricity,commercial,cvrmse,0.13347692787647247,196.05972290039062,1089
+Electricity MT_068,Electricity,commercial,cvrmse,0.2131892591714859,155.1713409423828,1089
+Electricity MT_069,Electricity,commercial,cvrmse,0.10596242547035217,161.51121520996094,1089
+Electricity MT_070,Electricity,commercial,cvrmse,0.10257863998413086,41.42420959472656,1089
+Electricity MT_071,Electricity,commercial,cvrmse,0.0913488119840622,45.59550476074219,1089
+Electricity MT_072,Electricity,commercial,cvrmse,0.09774209558963776,95.06047058105469,1089
+Electricity MT_073,Electricity,commercial,cvrmse,0.16581247746944427,47.15602111816406,1089
+Electricity MT_074,Electricity,commercial,cvrmse,0.1041109710931778,89.08769226074219,1089
+Electricity MT_075,Electricity,commercial,cvrmse,0.10130127519369125,47.84449768066406,1089
+Electricity MT_076,Electricity,commercial,cvrmse,0.10760749876499176,60.28184127807617,1089
+Electricity MT_077,Electricity,commercial,cvrmse,0.19505585730075836,35.34368896484375,1089
+Electricity MT_078,Electricity,commercial,cvrmse,0.09463310986757278,40.088645935058594,1089
+Electricity MT_079,Electricity,commercial,cvrmse,0.22027228772640228,32.44935607910156,1089
+Electricity MT_080,Electricity,commercial,cvrmse,0.17879536747932434,14.414676666259766,1089
+Electricity MT_081,Electricity,commercial,cvrmse,0.10656565427780151,99.54071044921875,1089
+Electricity MT_082,Electricity,commercial,cvrmse,0.08205388486385345,44.52295684814453,1089
+Electricity MT_083,Electricity,commercial,cvrmse,0.09123259782791138,71.36962127685547,1089
+Electricity MT_084,Electricity,commercial,cvrmse,0.1614452749490738,220.7194366455078,1089
+Electricity MT_085,Electricity,commercial,cvrmse,0.11199276894330978,123.91095733642578,1089
+Electricity MT_086,Electricity,commercial,cvrmse,0.14727014303207397,440.0819091796875,1089
+Electricity MT_087,Electricity,commercial,cvrmse,0.1527596265077591,115.32305908203125,1089
+Electricity MT_088,Electricity,commercial,cvrmse,0.24961352348327637,126.91853332519531,1089
+Electricity MT_089,Electricity,commercial,cvrmse,0.14461827278137207,194.12619018554688,1089
+Electricity MT_090,Electricity,commercial,cvrmse,0.502839207649231,129.0919952392578,1089
+Electricity MT_091,Electricity,commercial,cvrmse,0.12687204778194427,138.32266235351562,1089
+Electricity MT_092,Electricity,commercial,cvrmse,0.3219783902168274,50.88859176635742,723
+Electricity MT_093,Electricity,commercial,cvrmse,1.586136817932129,26.008888244628906,1089
+Electricity MT_094,Electricity,commercial,cvrmse,0.8240865468978882,25.588775634765625,1089
+Electricity MT_095,Electricity,commercial,cvrmse,0.344966858625412,16.917490005493164,1089
+Electricity MT_096,Electricity,commercial,cvrmse,0.26070636510849,10.894956588745117,1089
+Electricity MT_097,Electricity,commercial,cvrmse,0.20067045092582703,187.64183044433594,1089
+Electricity MT_098,Electricity,commercial,cvrmse,0.11859054863452911,681.4810180664062,1089
+Electricity MT_099,Electricity,commercial,cvrmse,0.14110925793647766,1170.92578125,1089
+Electricity MT_100,Electricity,commercial,cvrmse,0.20917220413684845,58.98092269897461,1089
+Electricity MT_101,Electricity,commercial,cvrmse,0.13611605763435364,699.2503051757812,1089
+Electricity MT_102,Electricity,commercial,cvrmse,0.21110570430755615,875.2662963867188,1089
+Electricity MT_103,Electricity,commercial,cvrmse,0.09889345616102219,1124.7901611328125,1089
+Electricity MT_104,Electricity,commercial,cvrmse,0.12759196758270264,567.16064453125,1089
+Electricity MT_105,Electricity,commercial,cvrmse,0.18588405847549438,218.55905151367188,1089
+Electricity MT_106,Electricity,commercial,cvrmse,1.178472638130188,50.71212387084961,358
+Electricity MT_107,Electricity,commercial,cvrmse,0.986619770526886,16.758403778076172,358
+Electricity MT_108,Electricity,commercial,cvrmse,0.7966819405555725,29.429912567138672,358
+Electricity MT_110,Electricity,commercial,cvrmse,1.0345661640167236,23.104196548461914,358
+Electricity MT_111,Electricity,commercial,cvrmse,1.0685054063796997,52.31546401977539,358
+Electricity MT_113,Electricity,commercial,cvrmse,0.6902102828025818,31.783973693847656,358
+Electricity MT_114,Electricity,commercial,cvrmse,0.15716521441936493,309.969482421875,1089
+Electricity MT_115,Electricity,commercial,cvrmse,0.5736956000328064,23.21471405029297,358
+Electricity MT_117,Electricity,commercial,cvrmse,0.3125523328781128,14.82579231262207,358
+Electricity MT_118,Electricity,commercial,cvrmse,0.10822544246912003,97.64564514160156,1089
+Electricity MT_119,Electricity,commercial,cvrmse,0.17554962635040283,80.34068298339844,1089
+Electricity MT_120,Electricity,commercial,cvrmse,0.8274156451225281,39.52340316772461,358
+Electricity MT_121,Electricity,commercial,cvrmse,2.7805769443511963,114.23270416259766,358
+Electricity MT_122,Electricity,commercial,cvrmse,0.8750963807106018,22.166976928710938,358
+Electricity MT_123,Electricity,commercial,cvrmse,0.18404242396354675,62.03779602050781,1089
+Electricity MT_124,Electricity,commercial,cvrmse,0.1622323989868164,280.94403076171875,1453
+Electricity MT_125,Electricity,commercial,cvrmse,0.14180129766464233,38.32101058959961,1089
+Electricity MT_126,Electricity,commercial,cvrmse,0.10192863643169403,58.84305953979492,1089
+Electricity MT_127,Electricity,commercial,cvrmse,0.6071193814277649,69.12751770019531,723
+Electricity MT_128,Electricity,commercial,cvrmse,0.2646826207637787,298.62652587890625,1089
+Electricity MT_129,Electricity,commercial,cvrmse,0.12509170174598694,110.97606658935547,1089
+Electricity MT_134,Electricity,commercial,cvrmse,0.29370662569999695,14.205021858215332,723
+Electricity MT_135,Electricity,commercial,cvrmse,0.12234510481357574,32.31297302246094,1089
+Electricity MT_136,Electricity,commercial,cvrmse,0.1390400230884552,133.4030303955078,1089
+Electricity MT_137,Electricity,commercial,cvrmse,0.12513992190361023,70.9278793334961,1089
+Electricity MT_138,Electricity,commercial,cvrmse,0.12849153578281403,114.24726104736328,1089
+Electricity MT_139,Electricity,commercial,cvrmse,0.14881949126720428,392.54071044921875,1089
+Electricity MT_140,Electricity,commercial,cvrmse,0.8907480835914612,64.70555114746094,1089
+Electricity MT_141,Electricity,commercial,cvrmse,0.10463171452283859,8.84566593170166,1089
+Electricity MT_142,Electricity,commercial,cvrmse,0.1860460788011551,55.8006477355957,1089
+Electricity MT_143,Electricity,commercial,cvrmse,0.11316312104463577,169.9160919189453,1089
+Electricity MT_144,Electricity,commercial,cvrmse,0.033671654760837555,184.31289672851562,723
+Electricity MT_145,Electricity,commercial,cvrmse,0.028535587713122368,77.29843139648438,1089
+Electricity MT_146,Electricity,commercial,cvrmse,0.04652274399995804,84.0009765625,1089
+Electricity MT_148,Electricity,commercial,cvrmse,0.027339739724993706,343.140869140625,1089
+Electricity MT_149,Electricity,commercial,cvrmse,0.07571838796138763,23.461427688598633,1089
+Electricity MT_150,Electricity,commercial,cvrmse,0.06031195446848869,27.395061492919922,1089
+Electricity MT_151,Electricity,commercial,cvrmse,0.13609495759010315,98.76444244384766,1089
+Electricity MT_152,Electricity,commercial,cvrmse,0.03373124450445175,1060.6917724609375,723
+Electricity MT_153,Electricity,commercial,cvrmse,0.12053278088569641,183.78700256347656,1089
+Electricity MT_154,Electricity,commercial,cvrmse,0.07823865115642548,33.25424575805664,1089
+Electricity MT_155,Electricity,commercial,cvrmse,0.26453572511672974,147.68138122558594,1089
+Electricity MT_156,Electricity,commercial,cvrmse,0.24898827075958252,78.07544708251953,1453
+Electricity MT_158,Electricity,commercial,cvrmse,0.33207082748413086,75.47515869140625,1453
+Electricity MT_159,Electricity,commercial,cvrmse,0.40599197149276733,61.80237579345703,1453
+Electricity MT_160,Electricity,commercial,cvrmse,0.8378139138221741,4.715978622436523,358
+Electricity MT_161,Electricity,commercial,cvrmse,0.09111329168081284,1772.8775634765625,1453
+Electricity MT_162,Electricity,commercial,cvrmse,0.23395894467830658,288.3987121582031,1453
+Electricity MT_163,Electricity,commercial,cvrmse,0.1057651937007904,2397.807373046875,1453
+Electricity MT_164,Electricity,commercial,cvrmse,0.21378907561302185,105.53175354003906,1089
+Electricity MT_165,Electricity,commercial,cvrmse,0.0799931064248085,84.93827819824219,358
+Electricity MT_166,Electricity,commercial,cvrmse,0.08287163823843002,1283.152099609375,1453
+Electricity MT_167,Electricity,commercial,cvrmse,0.09543287009000778,75.3828125,723
+Electricity MT_168,Electricity,commercial,cvrmse,0.07807406783103943,137.15045166015625,1453
+Electricity MT_169,Electricity,commercial,cvrmse,0.0742209330201149,40.040828704833984,1453
+Electricity MT_170,Electricity,commercial,cvrmse,0.12349627912044525,84.19049072265625,358
+Electricity MT_171,Electricity,commercial,cvrmse,0.07094091922044754,246.29266357421875,1453
+Electricity MT_172,Electricity,commercial,cvrmse,0.10052190721035004,124.01806640625,1453
+Electricity MT_173,Electricity,commercial,cvrmse,0.08671726286411285,63.08505630493164,723
+Electricity MT_174,Electricity,commercial,cvrmse,0.09649144858121872,145.53085327148438,1453
+Electricity MT_175,Electricity,commercial,cvrmse,0.09927912056446075,163.43870544433594,1453
+Electricity MT_176,Electricity,commercial,cvrmse,0.0824015811085701,84.82650756835938,1453
+Electricity MT_177,Electricity,commercial,cvrmse,0.09508268535137177,152.9795379638672,723
+Electricity MT_179,Electricity,commercial,cvrmse,0.09616276621818542,79.2967758178711,358
+Electricity MT_180,Electricity,commercial,cvrmse,0.12802362442016602,154.28553771972656,1453
+Electricity MT_182,Electricity,commercial,cvrmse,0.07461465150117874,52.803714752197266,1453
+Electricity MT_183,Electricity,commercial,cvrmse,0.09989243000745773,85.39015197753906,1453
+Electricity MT_184,Electricity,commercial,cvrmse,0.06672301143407822,95.30017852783203,723
+Electricity MT_185,Electricity,commercial,cvrmse,0.0865246057510376,67.55142974853516,358
+Electricity MT_186,Electricity,commercial,cvrmse,0.07607361674308777,568.6561889648438,358
+Electricity MT_187,Electricity,commercial,cvrmse,0.14493882656097412,49.86855697631836,1453
+Electricity MT_188,Electricity,commercial,cvrmse,0.06657233089208603,35.19260787963867,1453
+Electricity MT_189,Electricity,commercial,cvrmse,0.0874180719256401,415.56292724609375,1453
+Electricity MT_190,Electricity,commercial,cvrmse,0.086419478058815,387.01153564453125,1453
+Electricity MT_191,Electricity,commercial,cvrmse,0.07413981109857559,1952.97998046875,1453
+Electricity MT_192,Electricity,commercial,cvrmse,0.08964437246322632,466.12811279296875,1453
+Electricity MT_193,Electricity,commercial,cvrmse,0.07795742154121399,303.8140869140625,1453
+Electricity MT_195,Electricity,commercial,cvrmse,0.10590913146734238,452.0168151855469,1453
+Electricity MT_197,Electricity,commercial,cvrmse,0.09299658983945847,156.9678192138672,1453
+Electricity MT_198,Electricity,commercial,cvrmse,0.10950881242752075,246.8942413330078,1453
+Electricity MT_199,Electricity,commercial,cvrmse,0.09050652384757996,465.72802734375,1453
+Electricity MT_200,Electricity,commercial,cvrmse,0.07480529695749283,849.2020263671875,1453
+Electricity MT_201,Electricity,commercial,cvrmse,0.09160001575946808,296.1221008300781,1453
+Electricity MT_202,Electricity,commercial,cvrmse,0.08369653671979904,242.45571899414062,1453
+Electricity MT_203,Electricity,commercial,cvrmse,0.08155971765518188,537.8935546875,1453
+Electricity MT_204,Electricity,commercial,cvrmse,0.08497145771980286,888.805419921875,1453
+Electricity MT_205,Electricity,commercial,cvrmse,0.07767269760370255,532.1597900390625,1453
+Electricity MT_206,Electricity,commercial,cvrmse,0.09913257509469986,209.28623962402344,1453
+Electricity MT_207,Electricity,commercial,cvrmse,0.10263710469007492,857.9415283203125,1453
+Electricity MT_209,Electricity,commercial,cvrmse,0.08611147105693817,587.0698852539062,1453
+Electricity MT_210,Electricity,commercial,cvrmse,0.07387816905975342,733.3997192382812,1453
+Electricity MT_211,Electricity,commercial,cvrmse,0.09045176953077316,192.95848083496094,1453
+Electricity MT_212,Electricity,commercial,cvrmse,0.07426243275403976,363.71417236328125,1453
+Electricity MT_213,Electricity,commercial,cvrmse,0.06951265782117844,1195.6654052734375,1453
+Electricity MT_214,Electricity,commercial,cvrmse,0.10005761682987213,397.05548095703125,1453
+Electricity MT_215,Electricity,commercial,cvrmse,0.07425516098737717,405.6079406738281,1453
+Electricity MT_216,Electricity,commercial,cvrmse,0.06222286820411682,2201.783935546875,1453
+Electricity MT_217,Electricity,commercial,cvrmse,0.08987315744161606,214.63943481445312,1453
+Electricity MT_218,Electricity,commercial,cvrmse,0.07561080157756805,1300.7086181640625,1453
+Electricity MT_219,Electricity,commercial,cvrmse,0.10616017132997513,510.2494201660156,1453
+Electricity MT_221,Electricity,commercial,cvrmse,0.08610797673463821,158.7043914794922,1453
+Electricity MT_222,Electricity,commercial,cvrmse,0.07998976111412048,947.090576171875,1453
+Electricity MT_223,Electricity,commercial,cvrmse,0.06984665244817734,806.4251098632812,357
+Electricity MT_225,Electricity,commercial,cvrmse,0.07629474252462387,337.7481689453125,1453
+Electricity MT_226,Electricity,commercial,cvrmse,0.07512162625789642,484.0280456542969,1453
+Electricity MT_227,Electricity,commercial,cvrmse,0.09102525562047958,272.2565612792969,1453
+Electricity MT_229,Electricity,commercial,cvrmse,0.06412724405527115,973.954345703125,1453
+Electricity MT_230,Electricity,commercial,cvrmse,0.09428992122411728,98.53636169433594,1453
+Electricity MT_231,Electricity,commercial,cvrmse,0.09691102057695389,641.4829711914062,1453
+Electricity MT_232,Electricity,commercial,cvrmse,0.08815670758485794,85.51850128173828,1453
+Electricity MT_233,Electricity,commercial,cvrmse,0.08600124716758728,139.17881774902344,1453
+Electricity MT_234,Electricity,commercial,cvrmse,0.09970661252737045,88.24434661865234,1453
+Electricity MT_235,Electricity,commercial,cvrmse,0.11609308421611786,791.3231811523438,1453
+Electricity MT_236,Electricity,commercial,cvrmse,0.090000681579113,148.02098083496094,1453
+Electricity MT_237,Electricity,commercial,cvrmse,0.09127592295408249,86.01831817626953,1453
+Electricity MT_238,Electricity,commercial,cvrmse,0.08067161589860916,411.05364990234375,1453
+Electricity MT_239,Electricity,commercial,cvrmse,0.08560836315155029,116.07282257080078,1453
+Electricity MT_240,Electricity,commercial,cvrmse,0.09467733651399612,364.3603210449219,1453
+Electricity MT_241,Electricity,commercial,cvrmse,0.08136749267578125,2617.527099609375,1453
+Electricity MT_242,Electricity,commercial,cvrmse,0.10281090438365936,199.67953491210938,1453
+Electricity MT_243,Electricity,commercial,cvrmse,0.08290647715330124,131.05813598632812,1453
+Electricity MT_244,Electricity,commercial,cvrmse,0.08791961520910263,156.9474334716797,1453
+Electricity MT_245,Electricity,commercial,cvrmse,0.07601161301136017,198.32545471191406,1453
+Electricity MT_246,Electricity,commercial,cvrmse,0.0844884142279625,608.170654296875,1453
+Electricity MT_247,Electricity,commercial,cvrmse,0.11791406571865082,464.4668884277344,1453
+Electricity MT_248,Electricity,commercial,cvrmse,0.08604783564805984,166.64224243164062,1453
+Electricity MT_249,Electricity,commercial,cvrmse,0.10838211327791214,69.69631958007812,1453
+Electricity MT_250,Electricity,commercial,cvrmse,0.0712069571018219,93.09981536865234,1453
+Electricity MT_251,Electricity,commercial,cvrmse,0.07898850739002228,78.05693817138672,1453
+Electricity MT_252,Electricity,commercial,cvrmse,0.07831616699695587,232.5260009765625,1453
+Electricity MT_253,Electricity,commercial,cvrmse,0.12312515825033188,334.3517150878906,1453
+Electricity MT_254,Electricity,commercial,cvrmse,0.0721597969532013,250.54930114746094,1453
+Electricity MT_255,Electricity,commercial,cvrmse,0.1242302879691124,617.7957153320312,723
+Electricity MT_256,Electricity,commercial,cvrmse,0.07635090500116348,147.256591796875,1453
+Electricity MT_257,Electricity,commercial,cvrmse,0.07226071506738663,156.4370880126953,1453
+Electricity MT_258,Electricity,commercial,cvrmse,0.0827062651515007,123.5770263671875,1453
+Electricity MT_259,Electricity,commercial,cvrmse,0.0658223032951355,159.08905029296875,1453
+Electricity MT_260,Electricity,commercial,cvrmse,0.0812515988945961,183.5257568359375,1453
+Electricity MT_261,Electricity,commercial,cvrmse,0.12040776759386063,62.35153579711914,1453
+Electricity MT_262,Electricity,commercial,cvrmse,0.07848846167325974,197.2890625,1453
+Electricity MT_263,Electricity,commercial,cvrmse,0.10916264355182648,191.61758422851562,1453
+Electricity MT_264,Electricity,commercial,cvrmse,0.08875975757837296,196.4628448486328,1453
+Electricity MT_265,Electricity,commercial,cvrmse,0.07652714848518372,177.65133666992188,1453
+Electricity MT_266,Electricity,commercial,cvrmse,0.0781778022646904,280.79241943359375,1453
+Electricity MT_267,Electricity,commercial,cvrmse,0.11343379318714142,69.88604736328125,1453
+Electricity MT_268,Electricity,commercial,cvrmse,0.09827753901481628,250.509521484375,1453
+Electricity MT_269,Electricity,commercial,cvrmse,0.07981045544147491,800.8711547851562,1453
+Electricity MT_270,Electricity,commercial,cvrmse,0.09057777374982834,68.45121002197266,1453
+Electricity MT_271,Electricity,commercial,cvrmse,0.06735233962535858,152.5481414794922,1453
+Electricity MT_272,Electricity,commercial,cvrmse,0.06719258427619934,155.37115478515625,1453
+Electricity MT_273,Electricity,commercial,cvrmse,0.08045846968889236,496.9094543457031,1453
+Electricity MT_274,Electricity,commercial,cvrmse,0.07522892951965332,328.982177734375,1453
+Electricity MT_275,Electricity,commercial,cvrmse,0.09504644572734833,131.54562377929688,1453
+Electricity MT_276,Electricity,commercial,cvrmse,0.07793788611888885,1974.14794921875,1453
+Electricity MT_277,Electricity,commercial,cvrmse,0.07607113569974899,92.04454040527344,1453
+Electricity MT_278,Electricity,commercial,cvrmse,0.07970397919416428,90.70806121826172,1453
+Electricity MT_280,Electricity,commercial,cvrmse,0.08024662733078003,283.9456481933594,1089
+Electricity MT_281,Electricity,commercial,cvrmse,0.059889890253543854,122.81719970703125,1453
+Electricity MT_282,Electricity,commercial,cvrmse,0.07170780003070831,113.16874694824219,1453
+Electricity MT_283,Electricity,commercial,cvrmse,0.05982007458806038,268.7430114746094,1453
+Electricity MT_284,Electricity,commercial,cvrmse,0.0878368467092514,73.79039001464844,1453
+Electricity MT_285,Electricity,commercial,cvrmse,0.06817872077226639,101.40196990966797,1453
+Electricity MT_286,Electricity,commercial,cvrmse,0.08655146509408951,120.60928344726562,1453
+Electricity MT_287,Electricity,commercial,cvrmse,0.07724159210920334,158.09962463378906,1453
+Electricity MT_288,Electricity,commercial,cvrmse,0.14886105060577393,95.87838745117188,1453
+Electricity MT_289,Electricity,commercial,cvrmse,0.07204774767160416,105.904296875,358
+Electricity MT_290,Electricity,commercial,cvrmse,0.13225722312927246,582.8739624023438,1453
+Electricity MT_291,Electricity,commercial,cvrmse,0.12374074757099152,89.23531341552734,1453
+Electricity MT_292,Electricity,commercial,cvrmse,0.0928863063454628,264.3898010253906,1453
+Electricity MT_293,Electricity,commercial,cvrmse,0.08696753531694412,97.23995971679688,1453
+Electricity MT_294,Electricity,commercial,cvrmse,0.089718297123909,640.8786010742188,1453
+Electricity MT_295,Electricity,commercial,cvrmse,0.10247184336185455,266.623779296875,1453
+Electricity MT_296,Electricity,commercial,cvrmse,0.08079291880130768,97.83914947509766,1453
+Electricity MT_297,Electricity,commercial,cvrmse,0.09701383858919144,150.55743408203125,1453
+Electricity MT_298,Electricity,commercial,cvrmse,0.07262998074293137,963.073974609375,1453
+Electricity MT_299,Electricity,commercial,cvrmse,0.08653192222118378,494.1308898925781,1453
+Electricity MT_300,Electricity,commercial,cvrmse,0.07399763911962509,131.7848663330078,1453
+Electricity MT_301,Electricity,commercial,cvrmse,0.07832249253988266,116.1435775756836,1453
+Electricity MT_302,Electricity,commercial,cvrmse,0.09375105053186417,126.80413818359375,1453
+Electricity MT_303,Electricity,commercial,cvrmse,0.08163188397884369,152.71524047851562,1453
+Electricity MT_304,Electricity,commercial,cvrmse,0.10644736140966415,69.36376190185547,1453
+Electricity MT_305,Electricity,commercial,cvrmse,0.08034711331129074,69.58422088623047,358
+Electricity MT_306,Electricity,commercial,cvrmse,0.1006968766450882,81.2754898071289,1453
+Electricity MT_307,Electricity,commercial,cvrmse,0.07516167312860489,781.8573608398438,1453
+Electricity MT_308,Electricity,commercial,cvrmse,0.09696725755929947,108.49580383300781,723
+Electricity MT_309,Electricity,commercial,cvrmse,0.07684419304132462,222.59873962402344,1453
+Electricity MT_310,Electricity,commercial,cvrmse,0.08080964535474777,601.6980590820312,1453
+Electricity MT_311,Electricity,commercial,cvrmse,0.07944868505001068,129.80101013183594,1453
+Electricity MT_312,Electricity,commercial,cvrmse,0.0978221520781517,384.495361328125,1453
+Electricity MT_313,Electricity,commercial,cvrmse,0.0738055557012558,238.0475311279297,1453
+Electricity MT_314,Electricity,commercial,cvrmse,0.06353632360696793,1120.439453125,1453
+Electricity MT_315,Electricity,commercial,cvrmse,0.0633673220872879,88.8178482055664,1453
+Electricity MT_316,Electricity,commercial,cvrmse,0.0711367279291153,347.767333984375,1453
+Electricity MT_317,Electricity,commercial,cvrmse,0.08308711647987366,534.9223022460938,1453
+Electricity MT_318,Electricity,commercial,cvrmse,0.08567904680967331,174.48072814941406,1453
+Electricity MT_319,Electricity,commercial,cvrmse,0.07019318640232086,96.86820220947266,1453
+Electricity MT_320,Electricity,commercial,cvrmse,0.08307048678398132,104.71817779541016,1453
+Electricity MT_321,Electricity,commercial,cvrmse,0.0789036825299263,112.89520263671875,1453
+Electricity MT_322,Electricity,commercial,cvrmse,0.08012793958187103,92.93464660644531,358
+Electricity MT_323,Electricity,commercial,cvrmse,0.10775104910135269,1790.291748046875,1453
+Electricity MT_324,Electricity,commercial,cvrmse,0.0723605826497078,336.9673767089844,1453
+Electricity MT_325,Electricity,commercial,cvrmse,0.06905459612607956,314.2298278808594,1453
+Electricity MT_326,Electricity,commercial,cvrmse,0.08880183845758438,254.00782775878906,1453
+Electricity MT_327,Electricity,commercial,cvrmse,0.08330851793289185,568.1883544921875,1453
+Electricity MT_328,Electricity,commercial,cvrmse,0.08216352015733719,1255.4364013671875,1453
+Electricity MT_329,Electricity,commercial,cvrmse,0.0670526996254921,212.73477172851562,1453
+Electricity MT_330,Electricity,commercial,cvrmse,0.09183911234140396,99.43350219726562,1453
+Electricity MT_331,Electricity,commercial,cvrmse,0.11464522778987885,221.83261108398438,1453
+Electricity MT_332,Electricity,commercial,cvrmse,0.299309641122818,57.588539123535156,723
+Electricity MT_333,Electricity,commercial,cvrmse,0.10042933374643326,84.924072265625,1089
+Electricity MT_334,Electricity,commercial,cvrmse,0.15746736526489258,81.29917907714844,1089
+Electricity MT_335,Electricity,commercial,cvrmse,0.26428043842315674,73.38984680175781,1089
+Electricity MT_336,Electricity,commercial,cvrmse,0.16164739429950714,161.43722534179688,1089
+Electricity MT_337,Electricity,commercial,cvrmse,0.2049068808555603,128.14012145996094,358
+Electricity MT_338,Electricity,commercial,cvrmse,0.13539554178714752,244.98667907714844,1089
+Electricity MT_340,Electricity,commercial,cvrmse,0.1474366933107376,133.7859649658203,1089
+Electricity MT_341,Electricity,commercial,cvrmse,0.08355532586574554,1039.1168212890625,1089
+Electricity MT_342,Electricity,commercial,cvrmse,0.1397576928138733,271.87908935546875,1089
+Electricity MT_343,Electricity,commercial,cvrmse,0.19659018516540527,151.82150268554688,1089
+Electricity MT_344,Electricity,commercial,cvrmse,0.2650836408138275,173.76638793945312,1089
+Electricity MT_345,Electricity,commercial,cvrmse,0.08736919611692429,2087.919921875,1089
+Electricity MT_346,Electricity,commercial,cvrmse,0.11228660494089127,286.7100830078125,1089
+Electricity MT_349,Electricity,commercial,cvrmse,0.18909859657287598,192.32728576660156,1089
+Electricity MT_350,Electricity,commercial,cvrmse,0.1755407303571701,645.9059448242188,1089
+Electricity MT_352,Electricity,commercial,cvrmse,0.4223989248275757,102.9020004272461,1089
+Electricity MT_353,Electricity,commercial,cvrmse,0.0777587965130806,521.5657348632812,1089
+Electricity MT_354,Electricity,commercial,cvrmse,0.3081449568271637,120.25257110595703,1089
+Electricity MT_355,Electricity,commercial,cvrmse,0.1116471141576767,660.8392333984375,1089
+Electricity MT_356,Electricity,commercial,cvrmse,0.33979305624961853,109.73619842529297,1089
+Electricity MT_357,Electricity,commercial,cvrmse,0.1307375431060791,1879.25146484375,1089
+Electricity MT_358,Electricity,commercial,cvrmse,0.1841520071029663,807.7862548828125,1089
+Electricity MT_359,Electricity,commercial,cvrmse,0.17477597296237946,108.21697998046875,1089
+Electricity MT_360,Electricity,commercial,cvrmse,0.13526177406311035,517.5530395507812,1089
+Electricity MT_361,Electricity,commercial,cvrmse,0.1326977163553238,290.8990783691406,1089
+Electricity MT_365,Electricity,commercial,cvrmse,0.20639055967330933,87.30879974365234,1089
+Electricity MT_366,Electricity,commercial,cvrmse,0.6811685562133789,12.3056640625,1089
+Electricity MT_367,Electricity,commercial,cvrmse,0.09489597380161285,565.8243408203125,1089
+Electricity MT_368,Electricity,commercial,cvrmse,0.2210615873336792,126.19489288330078,1089
+Electricity MT_369,Electricity,commercial,cvrmse,0.07835298031568527,833.7850952148438,1089
+home100,IDEAL,residential,cvrmse,0.4318447709083557,0.24818554520606995,473
+home101,IDEAL,residential,cvrmse,1.800769329071045,0.1416138857603073,467
+home102,IDEAL,residential,cvrmse,0.9765974283218384,0.7303462624549866,290
+home105,IDEAL,residential,cvrmse,0.6901536583900452,0.2110697627067566,366
+home106,IDEAL,residential,cvrmse,1.1935707330703735,0.16999220848083496,420
+home107,IDEAL,residential,cvrmse,0.9505490660667419,0.27987492084503174,441
+home109,IDEAL,residential,cvrmse,0.8361784219741821,0.6632538437843323,397
+home110,IDEAL,residential,cvrmse,1.437791347503662,0.37854060530662537,430
+home113,IDEAL,residential,cvrmse,0.7895670533180237,0.4715424180030823,287
+home114,IDEAL,residential,cvrmse,1.4619518518447876,0.2826556861400604,174
+home115,IDEAL,residential,cvrmse,1.3648953437805176,0.3308645784854889,161
+home116,IDEAL,residential,cvrmse,1.0056676864624023,0.3052074611186981,375
+home117,IDEAL,residential,cvrmse,0.7879499793052673,0.33533617854118347,368
+home118,IDEAL,residential,cvrmse,1.1467231512069702,0.3309359848499298,193
+home119,IDEAL,residential,cvrmse,0.6076595783233643,0.36499112844467163,187
+home120,IDEAL,residential,cvrmse,0.7718443870544434,0.2021438479423523,356
+home121,IDEAL,residential,cvrmse,0.6709615588188171,0.38965678215026855,374
+home122,IDEAL,residential,cvrmse,0.9574917554855347,0.6420224905014038,367
+home123,IDEAL,residential,cvrmse,0.8594334125518799,0.42159807682037354,367
+home124,IDEAL,residential,cvrmse,1.193525791168213,0.3214751183986664,356
+home125,IDEAL,residential,cvrmse,0.9722245931625366,0.20411738753318787,366
+home128,IDEAL,residential,cvrmse,0.6570989489555359,0.16167733073234558,366
+home129,IDEAL,residential,cvrmse,0.6363118886947632,0.40622952580451965,368
+home133,IDEAL,residential,cvrmse,0.7607606053352356,0.42467740178108215,361
+home134,IDEAL,residential,cvrmse,0.6328815221786499,0.6393145322799683,360
+home135,IDEAL,residential,cvrmse,0.6208589673042297,0.20397527515888214,360
+home136,IDEAL,residential,cvrmse,0.45092788338661194,0.3935062885284424,355
+home137,IDEAL,residential,cvrmse,0.8475589156150818,0.29702693223953247,355
+home139,IDEAL,residential,cvrmse,0.6413467526435852,0.18411137163639069,241
+home143,IDEAL,residential,cvrmse,0.8889329433441162,0.43231406807899475,48
+home144,IDEAL,residential,cvrmse,0.3382694125175476,0.6089619398117065,311
+home145,IDEAL,residential,cvrmse,1.9208426475524902,0.20315667986869812,174
+home146,IDEAL,residential,cvrmse,0.4101245403289795,0.9377427101135254,347
+home147,IDEAL,residential,cvrmse,0.5242698788642883,0.43629196286201477,347
+home148,IDEAL,residential,cvrmse,0.9932860136032104,0.33248716592788696,165
+home149,IDEAL,residential,cvrmse,0.6869426965713501,0.28989478945732117,345
+home150,IDEAL,residential,cvrmse,1.0009812116622925,0.17363587021827698,163
+home151,IDEAL,residential,cvrmse,0.47715330123901367,0.42213138937950134,344
+home152,IDEAL,residential,cvrmse,0.6623520851135254,0.4364548623561859,178
+home153,IDEAL,residential,cvrmse,1.1605662107467651,0.19723549485206604,316
+home154,IDEAL,residential,cvrmse,1.0558693408966064,0.47665855288505554,158
+home155,IDEAL,residential,cvrmse,0.740131676197052,0.3035601079463959,338
+home156,IDEAL,residential,cvrmse,0.6059467792510986,0.7676868438720703,285
+home157,IDEAL,residential,cvrmse,0.6816617250442505,0.3809313476085663,314
+home158,IDEAL,residential,cvrmse,1.5540112257003784,0.32908549904823303,295
+home159,IDEAL,residential,cvrmse,0.7685419321060181,0.26411768794059753,152
+home160,IDEAL,residential,cvrmse,0.933279812335968,0.5489463806152344,332
+home161,IDEAL,residential,cvrmse,0.8747631907463074,0.3453506529331207,151
+home162,IDEAL,residential,cvrmse,1.169357180595398,0.3992496430873871,313
+home163,IDEAL,residential,cvrmse,0.9271945357322693,0.2906244993209839,312
+home165,IDEAL,residential,cvrmse,0.7212965488433838,0.23816807568073273,331
+home166,IDEAL,residential,cvrmse,0.4808574914932251,0.44822239875793457,331
+home167,IDEAL,residential,cvrmse,0.9706028699874878,0.17476871609687805,173
+home168,IDEAL,residential,cvrmse,0.7074204087257385,0.6958527565002441,144
+home169,IDEAL,residential,cvrmse,0.7627325654029846,0.3207932710647583,144
+home170,IDEAL,residential,cvrmse,0.7484534382820129,0.5765973925590515,143
+home173,IDEAL,residential,cvrmse,0.7436016798019409,0.5466690063476562,199
+home174,IDEAL,residential,cvrmse,0.5318030118942261,0.7841339707374573,318
+home175,IDEAL,residential,cvrmse,0.8932643532752991,0.5081889629364014,306
+home176,IDEAL,residential,cvrmse,0.584786057472229,0.32821422815322876,125
+home177,IDEAL,residential,cvrmse,0.674209713935852,0.44622603058815,122
+home178,IDEAL,residential,cvrmse,1.0729484558105469,0.38949352502822876,303
+home179,IDEAL,residential,cvrmse,0.7537655830383301,0.21468940377235413,304
+home180,IDEAL,residential,cvrmse,0.8134626746177673,0.8491662740707397,123
+home181,IDEAL,residential,cvrmse,0.7512239813804626,0.7045727372169495,53
+home182,IDEAL,residential,cvrmse,0.9783487915992737,0.5781853199005127,117
+home183,IDEAL,residential,cvrmse,0.9441250562667847,0.2816852927207947,298
+home184,IDEAL,residential,cvrmse,0.6422472596168518,0.37750664353370667,296
+home185,IDEAL,residential,cvrmse,1.1156233549118042,0.34613803029060364,114
+home186,IDEAL,residential,cvrmse,1.1675206422805786,0.2844097912311554,288
+home187,IDEAL,residential,cvrmse,0.6369859576225281,0.26154208183288574,292
+home188,IDEAL,residential,cvrmse,0.8633648753166199,0.24556006491184235,291
+home189,IDEAL,residential,cvrmse,0.9548500180244446,0.3876061737537384,109
+home191,IDEAL,residential,cvrmse,1.1593501567840576,0.3428192734718323,283
+home192,IDEAL,residential,cvrmse,0.9489337801933289,0.5068120956420898,94
+home193,IDEAL,residential,cvrmse,0.6203727722167969,0.3886848986148834,170
+home194,IDEAL,residential,cvrmse,1.2529518604278564,0.14041094481945038,273
+home197,IDEAL,residential,cvrmse,0.85292649269104,0.19818449020385742,89
+home199,IDEAL,residential,cvrmse,0.5190189480781555,1.147712230682373,252
+home200,IDEAL,residential,cvrmse,1.079831838607788,0.81557697057724,268
+home201,IDEAL,residential,cvrmse,0.8185969591140747,0.4255506694316864,253
+home202,IDEAL,residential,cvrmse,0.6557400822639465,0.4742126762866974,267
+home203,IDEAL,residential,cvrmse,0.7363806962966919,0.2999964952468872,249
+home205,IDEAL,residential,cvrmse,1.5015332698822021,0.2019656002521515,261
+home206,IDEAL,residential,cvrmse,0.7799854874610901,0.4297085702419281,262
+home207,IDEAL,residential,cvrmse,0.7980612516403198,0.25355374813079834,261
+home208,IDEAL,residential,cvrmse,1.2934837341308594,0.3778672516345978,260
+home209,IDEAL,residential,cvrmse,0.6161811947822571,0.13989193737506866,246
+home210,IDEAL,residential,cvrmse,0.4847632944583893,0.5326359272003174,257
+home212,IDEAL,residential,cvrmse,0.8328207731246948,0.25965508818626404,174
+home213,IDEAL,residential,cvrmse,1.06329345703125,0.2168930321931839,73
+home214,IDEAL,residential,cvrmse,0.8728750348091125,0.5193342566490173,254
+home216,IDEAL,residential,cvrmse,0.9304527640342712,0.1261218786239624,253
+home218,IDEAL,residential,cvrmse,0.8663944602012634,0.6152926087379456,253
+home219,IDEAL,residential,cvrmse,1.1375610828399658,0.5879504680633545,150
+home221,IDEAL,residential,cvrmse,0.7727234363555908,0.20219238102436066,181
+home222,IDEAL,residential,cvrmse,1.3269827365875244,0.7136402726173401,243
+home224,IDEAL,residential,cvrmse,1.0844371318817139,0.3178309500217438,242
+home225,IDEAL,residential,cvrmse,0.7008112668991089,0.23651239275932312,242
+home226,IDEAL,residential,cvrmse,0.9537391662597656,0.22236663103103638,60
+home227,IDEAL,residential,cvrmse,0.9346239566802979,0.5271382927894592,59
+home228,IDEAL,residential,cvrmse,1.164294719696045,0.27262428402900696,174
+home229,IDEAL,residential,cvrmse,1.0057228803634644,0.8015426993370056,236
+home230,IDEAL,residential,cvrmse,0.5540395975112915,0.5363084673881531,174
+home231,IDEAL,residential,cvrmse,0.6912900805473328,0.5693550705909729,163
+home232,IDEAL,residential,cvrmse,0.5927201509475708,0.44831302762031555,225
+home234,IDEAL,residential,cvrmse,1.3519185781478882,0.13880221545696259,167
+home235,IDEAL,residential,cvrmse,0.7537634372711182,0.24726314842700958,232
+home237,IDEAL,residential,cvrmse,0.9799394607543945,0.17533259093761444,233
+home238,IDEAL,residential,cvrmse,0.5963156223297119,0.3695562183856964,233
+home239,IDEAL,residential,cvrmse,1.0703883171081543,0.27441319823265076,232
+home240,IDEAL,residential,cvrmse,0.8551076054573059,0.19549737870693207,229
+home241,IDEAL,residential,cvrmse,1.512324333190918,0.19572129845619202,228
+home242,IDEAL,residential,cvrmse,0.8513410687446594,0.37724199891090393,221
+home243,IDEAL,residential,cvrmse,0.8677684664726257,0.3388572037220001,227
+home244,IDEAL,residential,cvrmse,0.9362379312515259,0.31400805711746216,222
+home245,IDEAL,residential,cvrmse,1.0613210201263428,0.37850531935691833,217
+home246,IDEAL,residential,cvrmse,0.6019631624221802,1.1459035873413086,45
+home248,IDEAL,residential,cvrmse,1.3507286310195923,0.2249131202697754,214
+home249,IDEAL,residential,cvrmse,1.217742919921875,0.23501284420490265,41
+home250,IDEAL,residential,cvrmse,0.5148701667785645,0.2874413728713989,218
+home251,IDEAL,residential,cvrmse,0.9722796082496643,0.15992438793182373,218
+home252,IDEAL,residential,cvrmse,0.8679662942886353,0.20706212520599365,198
+home253,IDEAL,residential,cvrmse,0.9560995101928711,0.6862708330154419,33
+home254,IDEAL,residential,cvrmse,1.0256016254425049,0.5684577822685242,33
+home255,IDEAL,residential,cvrmse,0.6568083763122559,0.37839555740356445,212
+home257,IDEAL,residential,cvrmse,1.2287379503250122,0.20829607546329498,193
+home258,IDEAL,residential,cvrmse,0.9121549725532532,0.23921778798103333,25
+home259,IDEAL,residential,cvrmse,1.3549281358718872,0.5934847593307495,194
+home260,IDEAL,residential,cvrmse,0.48617929220199585,0.7490108609199524,181
+home261,IDEAL,residential,cvrmse,0.6234422922134399,0.47282058000564575,201
+home262,IDEAL,residential,cvrmse,0.8142509460449219,0.23552186787128448,201
+home263,IDEAL,residential,cvrmse,0.7031263709068298,0.39339810609817505,199
+home264,IDEAL,residential,cvrmse,0.7128864526748657,0.4045479893684387,199
+home265,IDEAL,residential,cvrmse,0.7736519575119019,0.33293792605400085,194
+home266,IDEAL,residential,cvrmse,0.8327058553695679,0.4086834788322449,17
+home268,IDEAL,residential,cvrmse,0.7602179050445557,0.16454529762268066,197
+home269,IDEAL,residential,cvrmse,1.021445870399475,0.3937268853187561,197
+home270,IDEAL,residential,cvrmse,1.0857657194137573,0.7055581212043762,174
+home271,IDEAL,residential,cvrmse,0.8867737650871277,0.41163817048072815,174
+home272,IDEAL,residential,cvrmse,1.1007213592529297,0.10422930121421814,73
+home273,IDEAL,residential,cvrmse,0.6672495007514954,0.4373120069503784,174
+home275,IDEAL,residential,cvrmse,0.6677722334861755,0.17417727410793304,150
+home276,IDEAL,residential,cvrmse,0.7149477005004883,0.4598817527294159,134
+home277,IDEAL,residential,cvrmse,0.924058735370636,0.27093371748924255,174
+home278,IDEAL,residential,cvrmse,1.2228368520736694,0.5188320279121399,174
+home279,IDEAL,residential,cvrmse,2.0383663177490234,0.23109836876392365,174
+home280,IDEAL,residential,cvrmse,0.6868082880973816,0.5578253865242004,174
+home283,IDEAL,residential,cvrmse,0.4314407706260681,0.3719881772994995,162
+home284,IDEAL,residential,cvrmse,0.7767829895019531,0.21884897351264954,156
+home286,IDEAL,residential,cvrmse,0.9301640391349792,0.40929317474365234,128
+home287,IDEAL,residential,cvrmse,0.8595139980316162,0.30952101945877075,127
+home290,IDEAL,residential,cvrmse,0.8582876920700073,0.6103091239929199,138
+home291,IDEAL,residential,cvrmse,0.7890804409980774,0.1720588207244873,149
+home292,IDEAL,residential,cvrmse,0.9572953581809998,0.23616953194141388,149
+home293,IDEAL,residential,cvrmse,0.604920506477356,0.27461346983909607,29
+home294,IDEAL,residential,cvrmse,1.4147589206695557,0.2384585738182068,131
+home295,IDEAL,residential,cvrmse,1.276536464691162,0.15692275762557983,122
+home298,IDEAL,residential,cvrmse,0.7198768854141235,0.3818414509296417,123
+home299,IDEAL,residential,cvrmse,1.0041128396987915,0.15939918160438538,123
+home300,IDEAL,residential,cvrmse,0.5679311752319336,0.205914705991745,110
+home302,IDEAL,residential,cvrmse,1.769559621810913,0.3080924451351166,116
+home303,IDEAL,residential,cvrmse,0.7400656938552856,0.2127234786748886,117
+home304,IDEAL,residential,cvrmse,0.7698091268539429,0.6052682995796204,116
+home305,IDEAL,residential,cvrmse,0.8599627017974854,0.30898886919021606,110
+home306,IDEAL,residential,cvrmse,0.6800445914268494,1.0517654418945312,90
+home308,IDEAL,residential,cvrmse,1.1333307027816772,0.3755735456943512,11
+home310,IDEAL,residential,cvrmse,0.9397991299629211,0.22103533148765564,95
+home311,IDEAL,residential,cvrmse,1.3367689847946167,0.21707259118556976,103
+home313,IDEAL,residential,cvrmse,1.2777748107910156,0.11423913389444351,89
+home315,IDEAL,residential,cvrmse,1.536525845527649,0.22954493761062622,100
+home316,IDEAL,residential,cvrmse,0.5559435486793518,0.6044342517852783,99
+home318,IDEAL,residential,cvrmse,1.2093796730041504,0.3666950464248657,95
+home319,IDEAL,residential,cvrmse,0.6925032734870911,0.23799368739128113,95
+home320,IDEAL,residential,cvrmse,1.2282099723815918,0.2845057547092438,94
+home321,IDEAL,residential,cvrmse,0.6432693600654602,0.32063302397727966,92
+home322,IDEAL,residential,cvrmse,1.1015206575393677,0.2942848205566406,89
+home323,IDEAL,residential,cvrmse,0.538529634475708,0.20485182106494904,92
+home325,IDEAL,residential,cvrmse,0.9340888857841492,0.4101319909095764,87
+home326,IDEAL,residential,cvrmse,0.5318593978881836,0.1487247794866562,87
+home328,IDEAL,residential,cvrmse,0.7711966037750244,0.1701856106519699,81
+home329,IDEAL,residential,cvrmse,0.5282323360443115,0.3033665418624878,76
+home330,IDEAL,residential,cvrmse,0.4942074716091156,0.48645809292793274,49
+home331,IDEAL,residential,cvrmse,0.7456496953964233,0.16132278740406036,72
+home333,IDEAL,residential,cvrmse,1.1924208402633667,0.17897023260593414,54
+home335,IDEAL,residential,cvrmse,1.268653392791748,0.3166443407535553,54
+home47,IDEAL,residential,cvrmse,0.9232195019721985,0.18126729130744934,264
+home59,IDEAL,residential,cvrmse,0.6828535199165344,0.2722434401512146,471
+home61,IDEAL,residential,cvrmse,0.9945886135101318,0.23452244699001312,370
+home62,IDEAL,residential,cvrmse,0.718602180480957,0.23177886009216309,666
+home63,IDEAL,residential,cvrmse,1.5027127265930176,0.389681875705719,422
+home64,IDEAL,residential,cvrmse,0.9178938865661621,0.32561272382736206,246
+home65,IDEAL,residential,cvrmse,0.8542261719703674,0.40789148211479187,591
+home66,IDEAL,residential,cvrmse,0.75418621301651,0.25323936343193054,577
+home67,IDEAL,residential,cvrmse,0.92340087890625,0.5127935409545898,555
+home68,IDEAL,residential,cvrmse,0.5629252195358276,0.4817928075790405,576
+home69,IDEAL,residential,cvrmse,1.1360368728637695,0.5165830850601196,174
+home70,IDEAL,residential,cvrmse,1.2751131057739258,0.3220052123069763,563
+home71,IDEAL,residential,cvrmse,1.0036518573760986,0.23316507041454315,528
+home72,IDEAL,residential,cvrmse,0.7098391652107239,0.10882603377103806,535
+home73,IDEAL,residential,cvrmse,0.7522068023681641,0.1617160141468048,9
+home74,IDEAL,residential,cvrmse,0.4934217631816864,0.5517979860305786,353
+home75,IDEAL,residential,cvrmse,1.4818390607833862,0.30698996782302856,513
+home78,IDEAL,residential,cvrmse,0.8756028413772583,0.2574036717414856,520
+home80,IDEAL,residential,cvrmse,1.3049126863479614,0.24121907353401184,95
+home81,IDEAL,residential,cvrmse,0.6833322048187256,0.45442885160446167,497
+home82,IDEAL,residential,cvrmse,0.8295737504959106,0.39916154742240906,174
+home83,IDEAL,residential,cvrmse,0.7788382768630981,0.5159542560577393,488
+home84,IDEAL,residential,cvrmse,1.1593518257141113,0.6603959798812866,59
+home86,IDEAL,residential,cvrmse,0.8090194463729858,0.4217771589756012,493
+home88,IDEAL,residential,cvrmse,0.39361244440078735,0.3734501004219055,381
+home89,IDEAL,residential,cvrmse,0.8387216925621033,0.47295159101486206,174
+home90,IDEAL,residential,cvrmse,1.0472798347473145,0.09425116330385208,499
+home91,IDEAL,residential,cvrmse,1.4598902463912964,0.2721307873725891,15
+home92,IDEAL,residential,cvrmse,0.8387643098831177,0.25916099548339844,494
+home94,IDEAL,residential,cvrmse,1.0125367641448975,0.2617451250553131,487
+home97,IDEAL,residential,cvrmse,0.9063370227813721,0.46105527877807617,430
+home98,IDEAL,residential,cvrmse,1.1713430881500244,0.12253357470035553,478
+home99,IDEAL,residential,cvrmse,1.0275423526763916,0.4709947109222412,174
+MAC000005,LCL,residential,cvrmse,0.8980057835578918,0.09145151078701019,571
+MAC000014,LCL,residential,cvrmse,0.9581347107887268,0.1218467503786087,435
+MAC000015,LCL,residential,cvrmse,0.805521547794342,0.22511813044548035,724
+MAC000017,LCL,residential,cvrmse,0.8917187452316284,0.1296185404062271,724
+MAC000031,LCL,residential,cvrmse,0.8679943680763245,0.4025619924068451,724
+MAC000044,LCL,residential,cvrmse,0.8488314747810364,0.2884582281112671,724
+MAC000046,LCL,residential,cvrmse,0.6735981106758118,0.26720887422561646,724
+MAC000048,LCL,residential,cvrmse,1.0816396474838257,0.13010725378990173,724
+MAC000051,LCL,residential,cvrmse,0.7995250225067139,0.32502081990242004,724
+MAC000052,LCL,residential,cvrmse,1.3369730710983276,0.13284768164157867,724
+MAC000064,LCL,residential,cvrmse,0.9806812405586243,0.2691541910171509,724
+MAC000065,LCL,residential,cvrmse,1.1641926765441895,0.15326984226703644,547
+MAC000071,LCL,residential,cvrmse,0.8637964129447937,0.3699432611465454,477
+MAC000075,LCL,residential,cvrmse,0.8877158761024475,0.10378395766019821,724
+MAC000076,LCL,residential,cvrmse,0.677619457244873,0.38466018438339233,724
+MAC000082,LCL,residential,cvrmse,1.906400203704834,0.07804353535175323,724
+MAC000088,LCL,residential,cvrmse,0.5183888077735901,0.33066222071647644,724
+MAC000106,LCL,residential,cvrmse,0.5460178256034851,0.26880040764808655,724
+MAC000107,LCL,residential,cvrmse,0.8219752907752991,0.1360584795475006,724
+MAC000109,LCL,residential,cvrmse,0.6090171933174133,0.13405349850654602,724
+MAC000124,LCL,residential,cvrmse,0.43632039427757263,0.22677525877952576,724
+MAC000139,LCL,residential,cvrmse,0.6050027012825012,0.3842208683490753,631
+MAC000141,LCL,residential,cvrmse,0.9458510875701904,0.12537449598312378,724
+MAC000146,LCL,residential,cvrmse,0.4604126513004303,0.1362072080373764,222
+MAC000303,LCL,residential,cvrmse,0.6895810961723328,0.14189408719539642,659
+MAC000328,LCL,residential,cvrmse,0.8035753965377808,0.08970106393098831,657
+MAC000336,LCL,residential,cvrmse,1.1371136903762817,0.1596849113702774,563
+MAC000339,LCL,residential,cvrmse,0.6018589735031128,0.2926996350288391,656
+MAC000342,LCL,residential,cvrmse,0.5873928070068359,0.22680075466632843,656
+MAC000344,LCL,residential,cvrmse,0.437445729970932,0.07107675820589066,656
+MAC000352,LCL,residential,cvrmse,0.7951470613479614,0.21698430180549622,655
+MAC000354,LCL,residential,cvrmse,0.860923707485199,0.3170221447944641,655
+MAC000366,LCL,residential,cvrmse,1.1026889085769653,0.13470961153507233,652
+MAC000369,LCL,residential,cvrmse,0.5920546054840088,0.29286378622055054,652
+MAC000383,LCL,residential,cvrmse,0.9632979035377502,0.11099986732006073,651
+MAC000384,LCL,residential,cvrmse,0.6262176036834717,0.0825677216053009,651
+MAC000392,LCL,residential,cvrmse,0.8539300560951233,0.0522150918841362,651
+MAC000395,LCL,residential,cvrmse,0.350191593170166,0.2446744740009308,651
+MAC000401,LCL,residential,cvrmse,0.5628892183303833,0.18264250457286835,650
+MAC000402,LCL,residential,cvrmse,0.8231098651885986,0.1524432748556137,650
+MAC000406,LCL,residential,cvrmse,0.7023480534553528,0.12901733815670013,643
+MAC000408,LCL,residential,cvrmse,1.127104640007019,0.01068184059113264,643
+MAC000418,LCL,residential,cvrmse,1.3012357950210571,0.09747010469436646,643
+MAC000421,LCL,residential,cvrmse,1.0321879386901855,0.0547664649784565,643
+MAC000433,LCL,residential,cvrmse,0.7620622515678406,0.1684664487838745,642
+MAC000439,LCL,residential,cvrmse,0.6754547953605652,0.25325560569763184,642
+MAC000447,LCL,residential,cvrmse,0.553458571434021,0.20368582010269165,642
+MAC000451,LCL,residential,cvrmse,0.5895099639892578,0.3283537030220032,641
+MAC000456,LCL,residential,cvrmse,0.7236005067825317,0.14901164174079895,583
+MAC000461,LCL,residential,cvrmse,0.5071218609809875,0.3564262092113495,641
+MAC000464,LCL,residential,cvrmse,0.5387831330299377,0.11603038012981415,641
+MAC000465,LCL,residential,cvrmse,0.8885525465011597,0.20440517365932465,641
+MAC000467,LCL,residential,cvrmse,1.4685800075531006,0.08045433461666107,583
+MAC000470,LCL,residential,cvrmse,0.36583375930786133,0.17219144105911255,482
+MAC000633,LCL,residential,cvrmse,1.1606131792068481,0.22247610986232758,620
+MAC000635,LCL,residential,cvrmse,1.0994148254394531,0.18985946476459503,620
+MAC000640,LCL,residential,cvrmse,0.850155234336853,0.14668643474578857,620
+MAC000641,LCL,residential,cvrmse,0.6641080975532532,0.499849408864975,620
+MAC000653,LCL,residential,cvrmse,1.130966067314148,0.05435638874769211,620
+MAC000665,LCL,residential,cvrmse,1.3012990951538086,0.03899363428354263,615
+MAC000666,LCL,residential,cvrmse,0.8025670051574707,0.06605386734008789,572
+MAC000672,LCL,residential,cvrmse,0.9247155785560608,0.1547606736421585,615
+MAC000673,LCL,residential,cvrmse,0.5942904949188232,0.3090801239013672,615
+MAC000675,LCL,residential,cvrmse,1.170847773551941,0.13980205357074738,615
+MAC000676,LCL,residential,cvrmse,0.37280189990997314,0.17145827412605286,615
+MAC000677,LCL,residential,cvrmse,0.9986788034439087,0.08792077004909515,615
+MAC000678,LCL,residential,cvrmse,1.033744215965271,0.16540680825710297,615
+MAC000679,LCL,residential,cvrmse,0.9032115936279297,0.1871158331632614,615
+MAC000680,LCL,residential,cvrmse,0.8883781433105469,0.09592290222644806,615
+MAC000681,LCL,residential,cvrmse,0.6220524311065674,0.2671046555042267,615
+MAC000682,LCL,residential,cvrmse,0.7580647468566895,0.3083893060684204,615
+MAC000683,LCL,residential,cvrmse,0.9365124702453613,0.1498778611421585,615
+MAC000684,LCL,residential,cvrmse,0.4997759461402893,0.09528455138206482,615
+MAC000685,LCL,residential,cvrmse,1.6702022552490234,0.10605990141630173,615
+MAC000686,LCL,residential,cvrmse,0.8392304182052612,0.30153217911720276,615
+MAC000687,LCL,residential,cvrmse,0.3262605369091034,0.18753814697265625,615
+MAC000688,LCL,residential,cvrmse,1.0444918870925903,0.19557347893714905,615
+MAC000689,LCL,residential,cvrmse,0.7444519400596619,0.26409393548965454,615
+MAC000690,LCL,residential,cvrmse,0.788823127746582,0.14933258295059204,615
+MAC000691,LCL,residential,cvrmse,0.3652183711528778,0.08615092188119888,615
+MAC000692,LCL,residential,cvrmse,0.8085225820541382,0.3899879455566406,615
+MAC000693,LCL,residential,cvrmse,0.4205135107040405,0.6787183284759521,615
+MAC000694,LCL,residential,cvrmse,0.3921170234680176,0.16774795949459076,615
+MAC000695,LCL,residential,cvrmse,1.045083999633789,0.038551073521375656,614
+MAC000696,LCL,residential,cvrmse,0.7322677969932556,0.14537642896175385,615
+MAC000697,LCL,residential,cvrmse,0.4868904948234558,0.6729879379272461,615
+MAC000698,LCL,residential,cvrmse,0.8705922365188599,0.14021144807338715,615
+MAC000699,LCL,residential,cvrmse,0.7148435711860657,0.13870203495025635,615
+MAC000700,LCL,residential,cvrmse,2.0334408283233643,0.03955129161477089,588
+MAC000701,LCL,residential,cvrmse,0.6229168176651001,0.07705772668123245,615
+MAC000702,LCL,residential,cvrmse,0.7800900340080261,0.11848894506692886,614
+MAC000703,LCL,residential,cvrmse,0.3042523264884949,0.24551627039909363,614
+MAC000704,LCL,residential,cvrmse,0.7835463881492615,0.058435264974832535,614
+MAC000705,LCL,residential,cvrmse,0.3839085102081299,0.08954679220914841,614
+MAC000706,LCL,residential,cvrmse,0.8892478346824646,0.2308417558670044,614
+MAC000707,LCL,residential,cvrmse,0.4440265893936157,0.2120397388935089,614
+MAC000708,LCL,residential,cvrmse,0.5268226265907288,0.16136395931243896,614
+MAC000709,LCL,residential,cvrmse,0.5619710683822632,0.22497648000717163,614
+MAC000710,LCL,residential,cvrmse,0.45866498351097107,0.12184886634349823,614
+MAC000711,LCL,residential,cvrmse,0.525258481502533,0.26852914690971375,614
+MAC000712,LCL,residential,cvrmse,0.6807733774185181,0.08179601281881332,614
+MAC000713,LCL,residential,cvrmse,0.82490473985672,0.2459249645471573,614
+MAC000714,LCL,residential,cvrmse,0.8819161057472229,0.0772695392370224,529
+MAC000716,LCL,residential,cvrmse,0.669287919998169,0.1485683172941208,614
+MAC000719,LCL,residential,cvrmse,0.45361658930778503,0.07088962197303772,614
+MAC000722,LCL,residential,cvrmse,0.9560408592224121,0.10007864981889725,614
+MAC000725,LCL,residential,cvrmse,0.7025825381278992,0.18307992815971375,614
+MAC000728,LCL,residential,cvrmse,0.6155918836593628,0.2828693985939026,614
+MAC000738,LCL,residential,cvrmse,0.3848544657230377,0.14768874645233154,497
+MAC000739,LCL,residential,cvrmse,0.692581057548523,0.07778099179267883,614
+MAC000751,LCL,residential,cvrmse,0.7090320587158203,0.05039278045296669,613
+MAC000754,LCL,residential,cvrmse,0.7205163240432739,0.19854238629341125,613
+MAC000755,LCL,residential,cvrmse,0.7917150259017944,0.35763660073280334,613
+MAC000757,LCL,residential,cvrmse,0.8780545592308044,0.08237569034099579,613
+MAC000758,LCL,residential,cvrmse,0.9495107531547546,0.08473480492830276,566
+MAC000759,LCL,residential,cvrmse,0.9298336505889893,0.08303660154342651,613
+MAC000760,LCL,residential,cvrmse,0.7386448383331299,0.06834166496992111,613
+MAC000761,LCL,residential,cvrmse,0.5811532139778137,0.15956605970859528,613
+MAC000762,LCL,residential,cvrmse,1.264772891998291,0.0695117935538292,613
+MAC000763,LCL,residential,cvrmse,0.526141345500946,0.14449384808540344,613
+MAC000764,LCL,residential,cvrmse,0.5910212397575378,0.09796607494354248,613
+MAC000765,LCL,residential,cvrmse,0.7262904047966003,0.19681169092655182,613
+MAC000766,LCL,residential,cvrmse,0.6991807222366333,0.14638173580169678,613
+MAC000767,LCL,residential,cvrmse,1.2260713577270508,0.10009530186653137,613
+MAC000768,LCL,residential,cvrmse,0.7306557297706604,0.23748879134655,613
+MAC000769,LCL,residential,cvrmse,1.5296727418899536,0.05068271607160568,613
+MAC000770,LCL,residential,cvrmse,0.9395961761474609,0.12023504078388214,263
+MAC000771,LCL,residential,cvrmse,0.5448192954063416,0.12197131663560867,613
+MAC000772,LCL,residential,cvrmse,1.0260196924209595,0.11587326973676682,613
+MAC000773,LCL,residential,cvrmse,0.89051353931427,0.12591418623924255,613
+MAC000774,LCL,residential,cvrmse,1.0665504932403564,0.15756358206272125,574
+MAC000776,LCL,residential,cvrmse,0.4144216477870941,0.09149103611707687,613
+MAC000777,LCL,residential,cvrmse,1.4988375902175903,0.08842329680919647,613
+MAC000778,LCL,residential,cvrmse,1.0385135412216187,0.36818984150886536,613
+MAC000779,LCL,residential,cvrmse,1.9836596250534058,0.06428524851799011,613
+MAC000780,LCL,residential,cvrmse,0.5301159620285034,0.48169150948524475,613
+MAC000781,LCL,residential,cvrmse,0.9099375009536743,0.1263330578804016,613
+MAC000782,LCL,residential,cvrmse,0.8142460584640503,0.1133001372218132,613
+MAC000783,LCL,residential,cvrmse,0.9072936177253723,0.12150952219963074,613
+MAC000784,LCL,residential,cvrmse,0.6931504011154175,0.3362370431423187,613
+MAC000786,LCL,residential,cvrmse,0.4164429008960724,0.14969252049922943,613
+MAC000787,LCL,residential,cvrmse,0.5035712122917175,0.25491586327552795,613
+MAC000788,LCL,residential,cvrmse,1.1336781978607178,0.14758317172527313,536
+MAC000790,LCL,residential,cvrmse,0.6816193461418152,0.05694211646914482,613
+MAC000792,LCL,residential,cvrmse,0.4011741578578949,0.20988783240318298,612
+MAC000793,LCL,residential,cvrmse,0.9946609139442444,0.09592123329639435,612
+MAC000794,LCL,residential,cvrmse,0.441571444272995,0.2250296175479889,612
+MAC000795,LCL,residential,cvrmse,0.7865954041481018,0.2160792052745819,597
+MAC001536,LCL,residential,cvrmse,0.7080654501914978,0.23768065869808197,79
+MAC001538,LCL,residential,cvrmse,0.45756983757019043,0.4251406192779541,581
+MAC001542,LCL,residential,cvrmse,0.4093945324420929,0.16495098173618317,581
+MAC001547,LCL,residential,cvrmse,0.9447061419487,0.1775151789188385,581
+MAC001554,LCL,residential,cvrmse,0.6619883179664612,0.10255710780620575,581
+MAC001556,LCL,residential,cvrmse,0.9785242676734924,0.3264312148094177,581
+MAC001559,LCL,residential,cvrmse,0.7838667035102844,0.19592127203941345,581
+MAC001564,LCL,residential,cvrmse,0.9797618985176086,0.33709093928337097,581
+MAC001566,LCL,residential,cvrmse,0.4146960973739624,0.09025726467370987,580
+MAC001576,LCL,residential,cvrmse,0.745236337184906,0.5025742053985596,578
+MAC001586,LCL,residential,cvrmse,0.9039387702941895,0.11667075753211975,578
+MAC001590,LCL,residential,cvrmse,0.6555546522140503,0.5684205293655396,578
+MAC001596,LCL,residential,cvrmse,1.6858357191085815,0.052873414009809494,485
+MAC001597,LCL,residential,cvrmse,1.060346245765686,0.16913165152072906,578
+MAC001602,LCL,residential,cvrmse,0.5840749144554138,0.05004804953932762,578
+MAC001610,LCL,residential,cvrmse,0.9937756657600403,0.06100025773048401,578
+MAC001612,LCL,residential,cvrmse,0.7458676695823669,0.21300941705703735,578
+MAC001614,LCL,residential,cvrmse,0.7167045474052429,0.18760183453559875,578
+MAC001626,LCL,residential,cvrmse,0.9696341753005981,0.3072178363800049,577
+MAC001636,LCL,residential,cvrmse,0.3912471830844879,0.22135666012763977,575
+MAC001642,LCL,residential,cvrmse,0.6009517908096313,0.4245471954345703,575
+MAC001645,LCL,residential,cvrmse,0.9715412855148315,0.14724597334861755,575
+MAC001650,LCL,residential,cvrmse,0.8561598062515259,0.2073807269334793,575
+MAC001651,LCL,residential,cvrmse,0.6567630767822266,0.18174128234386444,575
+MAC001655,LCL,residential,cvrmse,1.2249672412872314,0.06064295768737793,575
+MAC001658,LCL,residential,cvrmse,0.6936208605766296,0.14783960580825806,575
+MAC001660,LCL,residential,cvrmse,0.8870959281921387,0.1288030445575714,575
+MAC001667,LCL,residential,cvrmse,0.40935131907463074,0.12593798339366913,575
+MAC001680,LCL,residential,cvrmse,0.9689857959747314,0.1317601501941681,574
+MAC001682,LCL,residential,cvrmse,0.8262137770652771,0.2694942057132721,574
+MAC001686,LCL,residential,cvrmse,1.1765961647033691,0.09031134098768234,574
+MAC001688,LCL,residential,cvrmse,0.6087336540222168,0.057012125849723816,574
+MAC001693,LCL,residential,cvrmse,0.5916622281074524,0.35064178705215454,574
+MAC001694,LCL,residential,cvrmse,1.0257339477539062,0.1655612587928772,572
+MAC001700,LCL,residential,cvrmse,0.6325015425682068,0.08199826627969742,192
+MAC001704,LCL,residential,cvrmse,1.030104398727417,0.10972267389297485,574
+MAC001706,LCL,residential,cvrmse,0.8071445822715759,0.2109132558107376,571
+MAC001707,LCL,residential,cvrmse,1.043869137763977,0.27382081747055054,571
+MAC001712,LCL,residential,cvrmse,0.7924894094467163,0.14372211694717407,328
+MAC001715,LCL,residential,cvrmse,0.6004913449287415,0.21919801831245422,522
+MAC001718,LCL,residential,cvrmse,0.8378771543502808,0.060099903494119644,571
+MAC001730,LCL,residential,cvrmse,0.9221212267875671,0.19506731629371643,199
+MAC001731,LCL,residential,cvrmse,1.2091388702392578,0.14472638070583344,571
+MAC001732,LCL,residential,cvrmse,0.4323919415473938,0.07842031866312027,571
+MAC001733,LCL,residential,cvrmse,0.5608089566230774,0.1751956194639206,571
+MAC001734,LCL,residential,cvrmse,0.5490680932998657,0.6740873456001282,571
+MAC001735,LCL,residential,cvrmse,0.41054826974868774,1.1542351245880127,571
+MAC001736,LCL,residential,cvrmse,0.5645809769630432,0.5086736679077148,549
+MAC001737,LCL,residential,cvrmse,0.771881103515625,0.035477638244628906,571
+MAC001738,LCL,residential,cvrmse,0.4364408850669861,0.09495840966701508,571
+MAC001739,LCL,residential,cvrmse,0.32282739877700806,1.2312031984329224,571
+MAC001740,LCL,residential,cvrmse,0.5976284742355347,0.10083649307489395,571
+MAC001741,LCL,residential,cvrmse,0.5103322863578796,0.1132383942604065,571
+MAC001742,LCL,residential,cvrmse,0.6704398393630981,0.17004531621932983,570
+MAC001743,LCL,residential,cvrmse,1.625108242034912,0.20747612416744232,570
+MAC001744,LCL,residential,cvrmse,1.2705230712890625,0.24143198132514954,570
+MAC001745,LCL,residential,cvrmse,0.6218988299369812,0.32140445709228516,570
+MAC001746,LCL,residential,cvrmse,0.9648290276527405,0.3594256341457367,570
+MAC001747,LCL,residential,cvrmse,0.6335827112197876,0.26671892404556274,570
+MAC001748,LCL,residential,cvrmse,0.8761237263679504,0.15238136053085327,262
+MAC001749,LCL,residential,cvrmse,0.6201738119125366,0.3153056502342224,570
+MAC001750,LCL,residential,cvrmse,1.0162912607192993,0.09175404161214828,570
+MAC001751,LCL,residential,cvrmse,0.4977571964263916,0.16915899515151978,570
+MAC001752,LCL,residential,cvrmse,0.45670485496520996,0.23774778842926025,570
+MAC001753,LCL,residential,cvrmse,0.9915337562561035,0.25763949751853943,570
+MAC001754,LCL,residential,cvrmse,1.392463207244873,0.10978995263576508,570
+MAC001755,LCL,residential,cvrmse,0.4501333236694336,0.06079412251710892,570
+MAC001756,LCL,residential,cvrmse,0.5398291349411011,0.27056819200515747,570
+MAC001757,LCL,residential,cvrmse,0.4457417130470276,0.14474879205226898,570
+MAC001758,LCL,residential,cvrmse,0.8604443073272705,0.43449828028678894,570
+MAC001759,LCL,residential,cvrmse,0.7416881918907166,0.11596231907606125,570
+MAC001760,LCL,residential,cvrmse,0.8484311103820801,0.25448906421661377,570
+MAC001761,LCL,residential,cvrmse,1.0497875213623047,0.1668621152639389,570
+MAC001762,LCL,residential,cvrmse,0.863724410533905,0.18297620117664337,531
+MAC001763,LCL,residential,cvrmse,0.477790504693985,0.06617734581232071,205
+MAC001764,LCL,residential,cvrmse,0.5477885603904724,0.305986225605011,570
+MAC001765,LCL,residential,cvrmse,0.6082203388214111,0.29677850008010864,570
+MAC001766,LCL,residential,cvrmse,0.3735215365886688,0.7607651948928833,566
+MAC001767,LCL,residential,cvrmse,0.9919479489326477,0.07781326770782471,566
+MAC001768,LCL,residential,cvrmse,0.766858696937561,0.33200180530548096,566
+MAC001769,LCL,residential,cvrmse,0.7147207260131836,0.25598493218421936,566
+MAC001770,LCL,residential,cvrmse,1.4077593088150024,0.08794602751731873,566
+MAC001771,LCL,residential,cvrmse,0.7412547469139099,0.33722779154777527,566
+MAC001772,LCL,residential,cvrmse,1.4637616872787476,0.08551399409770966,566
+MAC001773,LCL,residential,cvrmse,0.8665918707847595,0.09242893010377884,566
+MAC001777,LCL,residential,cvrmse,0.7446871995925903,0.13036589324474335,473
+MAC001778,LCL,residential,cvrmse,0.7315656542778015,0.1379975825548172,566
+MAC001806,LCL,residential,cvrmse,0.94267338514328,0.14904113113880157,566
+MAC001814,LCL,residential,cvrmse,0.9451475143432617,0.07945045828819275,566
+MAC001823,LCL,residential,cvrmse,1.001448154449463,0.06018982082605362,565
+MAC001825,LCL,residential,cvrmse,0.7308393716812134,0.1381271630525589,565
+MAC001826,LCL,residential,cvrmse,0.9262290000915527,0.11098145693540573,565
+MAC001830,LCL,residential,cvrmse,0.578231155872345,0.22442519664764404,565
+MAC001833,LCL,residential,cvrmse,1.4028375148773193,0.11664178222417831,565
+MAC001835,LCL,residential,cvrmse,0.6340389847755432,0.28524449467658997,565
+MAC001840,LCL,residential,cvrmse,1.0399936437606812,0.1216219812631607,565
+MAC001847,LCL,residential,cvrmse,0.6676281690597534,0.11477011442184448,565
+MAC001849,LCL,residential,cvrmse,1.028926968574524,0.08080530911684036,565
+MAC001851,LCL,residential,cvrmse,0.5033912062644958,0.6296114325523376,565
+MAC001853,LCL,residential,cvrmse,0.7576267123222351,0.3037406802177429,565
+MAC001855,LCL,residential,cvrmse,1.0465607643127441,0.050998952239751816,565
+MAC001856,LCL,residential,cvrmse,0.9397383332252502,0.19537213444709778,565
+MAC001940,LCL,residential,cvrmse,0.8853703737258911,0.2373298704624176,18
+MAC001941,LCL,residential,cvrmse,1.0531684160232544,0.21556629240512848,561
+MAC001943,LCL,residential,cvrmse,0.9194055795669556,0.12624891102313995,561
+MAC001944,LCL,residential,cvrmse,0.7337952256202698,0.08751875907182693,561
+MAC001945,LCL,residential,cvrmse,0.9590488076210022,0.07391418516635895,561
+MAC001946,LCL,residential,cvrmse,0.719169020652771,0.0786021277308464,561
+MAC001947,LCL,residential,cvrmse,0.7827444672584534,0.19845709204673767,561
+MAC001948,LCL,residential,cvrmse,0.5160003304481506,0.24840772151947021,561
+MAC001949,LCL,residential,cvrmse,0.29299670457839966,0.13992725312709808,561
+MAC001950,LCL,residential,cvrmse,0.8310720324516296,0.27298521995544434,561
+MAC001953,LCL,residential,cvrmse,0.7992168068885803,0.04137192294001579,561
+MAC001954,LCL,residential,cvrmse,0.39917799830436707,0.1557454764842987,561
+MAC001955,LCL,residential,cvrmse,0.6951654553413391,0.2250501811504364,561
+MAC001956,LCL,residential,cvrmse,0.6541395783424377,0.44296586513519287,561
+MAC001958,LCL,residential,cvrmse,0.7431211471557617,0.1271222084760666,561
+MAC001959,LCL,residential,cvrmse,1.0857559442520142,0.11522703617811203,429
+MAC001960,LCL,residential,cvrmse,0.6830428242683411,0.1084958091378212,561
+MAC001961,LCL,residential,cvrmse,0.44318175315856934,0.13096104562282562,561
+MAC001962,LCL,residential,cvrmse,0.3681047558784485,0.10213682055473328,561
+MAC001963,LCL,residential,cvrmse,1.0126160383224487,0.11539582908153534,561
+MAC001964,LCL,residential,cvrmse,0.46820369362831116,0.1319398730993271,561
+MAC001965,LCL,residential,cvrmse,1.4376333951950073,0.0737900361418724,561
+MAC001966,LCL,residential,cvrmse,0.6010628938674927,0.40911900997161865,561
+MAC001967,LCL,residential,cvrmse,0.6343501210212708,0.12627264857292175,561
+MAC001968,LCL,residential,cvrmse,0.7596070170402527,0.3067392408847809,490
+MAC001970,LCL,residential,cvrmse,0.9023891091346741,0.2382407933473587,561
+MAC001971,LCL,residential,cvrmse,0.5330737829208374,0.14772456884384155,561
+MAC001972,LCL,residential,cvrmse,1.3746068477630615,0.06575071066617966,560
+MAC001973,LCL,residential,cvrmse,0.5920720100402832,0.27476441860198975,560
+MAC001974,LCL,residential,cvrmse,0.44192224740982056,0.16685417294502258,560
+MAC001975,LCL,residential,cvrmse,0.6609659790992737,0.15047065913677216,560
+MAC001977,LCL,residential,cvrmse,0.5567516088485718,0.11789494752883911,560
+MAC001978,LCL,residential,cvrmse,0.8256686925888062,0.8032158017158508,560
+MAC001979,LCL,residential,cvrmse,0.9013546705245972,0.1671638786792755,560
+MAC001980,LCL,residential,cvrmse,0.45058342814445496,0.09548315405845642,476
+MAC002117,LCL,residential,cvrmse,1.0337834358215332,0.09076910465955734,554
+MAC002120,LCL,residential,cvrmse,0.6546035408973694,0.38244038820266724,554
+MAC002121,LCL,residential,cvrmse,0.8365469574928284,0.17773452401161194,554
+MAC002123,LCL,residential,cvrmse,0.9718038439750671,0.1600576490163803,554
+MAC002124,LCL,residential,cvrmse,0.3268851041793823,0.055430810898542404,554
+MAC002125,LCL,residential,cvrmse,1.3752022981643677,0.18055596947669983,554
+MAC002127,LCL,residential,cvrmse,1.2554258108139038,0.12413707375526428,554
+MAC002128,LCL,residential,cvrmse,0.5880557298660278,0.06297501921653748,554
+MAC002129,LCL,residential,cvrmse,0.4281095564365387,0.078555166721344,554
+MAC002130,LCL,residential,cvrmse,1.090446949005127,0.11766491830348969,554
+MAC002133,LCL,residential,cvrmse,0.8659418821334839,0.06581893563270569,554
+MAC002135,LCL,residential,cvrmse,1.160811424255371,0.0752243772149086,554
+MAC002136,LCL,residential,cvrmse,1.9808754920959473,0.014944422990083694,554
+MAC002137,LCL,residential,cvrmse,0.6563194394111633,0.6841591596603394,554
+MAC002138,LCL,residential,cvrmse,0.695533275604248,0.24523018300533295,554
+MAC002139,LCL,residential,cvrmse,1.6879843473434448,0.1303987205028534,554
+MAC002141,LCL,residential,cvrmse,0.7823341488838196,0.2619975507259369,553
+MAC002142,LCL,residential,cvrmse,0.643491268157959,0.1351003646850586,553
+MAC002143,LCL,residential,cvrmse,1.0480494499206543,0.07644888758659363,553
+MAC002144,LCL,residential,cvrmse,0.7342169880867004,0.11692876368761063,553
+MAC002145,LCL,residential,cvrmse,0.7050827145576477,0.28864213824272156,553
+MAC002146,LCL,residential,cvrmse,1.439197301864624,0.06455309689044952,553
+MAC002149,LCL,residential,cvrmse,1.4370383024215698,0.16764746606349945,553
+MAC002150,LCL,residential,cvrmse,0.7739732265472412,0.27646246552467346,553
+MAC002151,LCL,residential,cvrmse,0.8438752889633179,0.1842470020055771,553
+MAC002152,LCL,residential,cvrmse,0.8291950821876526,0.07516274601221085,553
+MAC002153,LCL,residential,cvrmse,0.9340549111366272,0.37742137908935547,553
+MAC002155,LCL,residential,cvrmse,0.6614654660224915,1.9246208667755127,175
+MAC002157,LCL,residential,cvrmse,0.983028769493103,0.17547403275966644,553
+MAC002158,LCL,residential,cvrmse,0.39154547452926636,0.2520679533481598,553
+MAC002159,LCL,residential,cvrmse,0.7530578970909119,0.16622327268123627,552
+MAC002160,LCL,residential,cvrmse,1.1020737886428833,0.12578465044498444,552
+MAC002161,LCL,residential,cvrmse,0.6102971434593201,0.14594221115112305,552
+MAC002162,LCL,residential,cvrmse,0.9187589883804321,0.0961584597826004,552
+MAC002163,LCL,residential,cvrmse,0.6216252446174622,0.6000425815582275,202
+MAC002217,LCL,residential,cvrmse,1.3471179008483887,0.0741271823644638,134
+MAC002219,LCL,residential,cvrmse,0.8310341835021973,0.10483306646347046,543
+MAC002222,LCL,residential,cvrmse,0.646274983882904,0.26184502243995667,543
+MAC002225,LCL,residential,cvrmse,0.5672793984413147,0.2742152810096741,612
+MAC002226,LCL,residential,cvrmse,1.331043004989624,0.12242673337459564,612
+MAC002227,LCL,residential,cvrmse,0.8391846418380737,0.21584251523017883,236
+MAC002230,LCL,residential,cvrmse,1.2199184894561768,0.12034628540277481,612
+MAC002232,LCL,residential,cvrmse,0.4010559618473053,0.25408005714416504,612
+MAC002236,LCL,residential,cvrmse,0.6988838315010071,0.08387868851423264,612
+MAC002238,LCL,residential,cvrmse,0.6900144815444946,0.27008920907974243,612
+MAC002240,LCL,residential,cvrmse,0.8716142773628235,0.21538518369197845,612
+MAC002242,LCL,residential,cvrmse,0.9213276505470276,0.17410841584205627,612
+MAC002243,LCL,residential,cvrmse,0.8276687264442444,0.34591421484947205,612
+MAC002246,LCL,residential,cvrmse,0.6829242706298828,0.2905283570289612,610
+MAC002247,LCL,residential,cvrmse,0.8116591572761536,0.1887741982936859,245
+MAC002264,LCL,residential,cvrmse,1.4965180158615112,0.2729223966598511,610
+MAC002265,LCL,residential,cvrmse,0.8035265207290649,0.23612958192825317,610
+MAC002268,LCL,residential,cvrmse,1.162713646888733,0.09861472994089127,610
+MAC002277,LCL,residential,cvrmse,0.373368501663208,0.13404396176338196,610
+MAC002280,LCL,residential,cvrmse,0.604383111000061,0.23911583423614502,610
+MAC002281,LCL,residential,cvrmse,2.2673051357269287,0.14075897634029388,610
+MAC002290,LCL,residential,cvrmse,1.619310975074768,0.06653103232383728,610
+MAC002291,LCL,residential,cvrmse,0.49402791261672974,0.41541945934295654,610
+MAC002292,LCL,residential,cvrmse,0.8858055472373962,0.04483615234494209,610
+MAC002300,LCL,residential,cvrmse,0.8099388480186462,0.19064870476722717,609
+MAC002318,LCL,residential,cvrmse,0.5349116921424866,0.10185461491346359,609
+MAC002324,LCL,residential,cvrmse,0.7434552907943726,0.6306214332580566,609
+MAC002334,LCL,residential,cvrmse,1.2732218503952026,0.1262618601322174,609
+MAC002336,LCL,residential,cvrmse,1.4515537023544312,0.15509667992591858,609
+MAC002344,LCL,residential,cvrmse,0.9200001358985901,0.0680324137210846,608
+MAC002346,LCL,residential,cvrmse,0.8092278242111206,0.15971319377422333,608
+MAC002838,LCL,residential,cvrmse,0.7421314120292664,0.1621507704257965,131
+MAC002840,LCL,residential,cvrmse,0.9265459179878235,0.34447410702705383,592
+MAC002841,LCL,residential,cvrmse,0.7116291522979736,0.07541812211275101,592
+MAC002842,LCL,residential,cvrmse,1.717055320739746,0.04522351548075676,256
+MAC002843,LCL,residential,cvrmse,0.3650473952293396,0.12363570183515549,592
+MAC002844,LCL,residential,cvrmse,0.7844343781471252,0.4846395254135132,415
+MAC002846,LCL,residential,cvrmse,0.8252636790275574,0.16169951856136322,592
+MAC002847,LCL,residential,cvrmse,0.6224645972251892,0.09838780015707016,550
+MAC002849,LCL,residential,cvrmse,0.6922153234481812,1.0693864822387695,592
+MAC002850,LCL,residential,cvrmse,0.6181775331497192,0.08208858221769333,592
+MAC002851,LCL,residential,cvrmse,0.48499438166618347,0.4486868679523468,592
+MAC002852,LCL,residential,cvrmse,0.9007518291473389,0.5278177261352539,592
+MAC002853,LCL,residential,cvrmse,0.6640357375144958,0.29801657795906067,592
+MAC002854,LCL,residential,cvrmse,1.5795522928237915,0.12389165163040161,592
+MAC002856,LCL,residential,cvrmse,1.0546176433563232,0.30413973331451416,592
+MAC002857,LCL,residential,cvrmse,0.6140207052230835,0.10624369978904724,592
+MAC002858,LCL,residential,cvrmse,1.5806652307510376,0.028145689517259598,592
+MAC002859,LCL,residential,cvrmse,0.9865748286247253,0.22891448438167572,592
+MAC002860,LCL,residential,cvrmse,0.3795241713523865,0.13269741833209991,591
+MAC002862,LCL,residential,cvrmse,0.7745650410652161,0.35451266169548035,592
+MAC002863,LCL,residential,cvrmse,1.1134352684020996,0.05723795294761658,592
+MAC002865,LCL,residential,cvrmse,0.6341913342475891,0.4899415075778961,592
+MAC002866,LCL,residential,cvrmse,0.8855412006378174,0.12364818900823593,592
+MAC002867,LCL,residential,cvrmse,0.4463815689086914,0.07652075588703156,441
+MAC002870,LCL,residential,cvrmse,0.6035276651382446,0.09275303781032562,591
+MAC002871,LCL,residential,cvrmse,0.9791678190231323,0.16944940388202667,592
+MAC002872,LCL,residential,cvrmse,0.3000451326370239,1.0088642835617065,592
+MAC002873,LCL,residential,cvrmse,7.9269819259643555,0.0182050671428442,592
+MAC002875,LCL,residential,cvrmse,0.631268322467804,0.12002437561750412,542
+MAC002876,LCL,residential,cvrmse,0.799830436706543,0.14637434482574463,542
+MAC002877,LCL,residential,cvrmse,1.1295557022094727,0.12262869626283646,542
+MAC002878,LCL,residential,cvrmse,0.5721622109413147,0.20139195024967194,542
+MAC002880,LCL,residential,cvrmse,1.2460477352142334,0.22034306824207306,542
+MAC002882,LCL,residential,cvrmse,0.6856445670127869,0.056056663393974304,542
+MAC002883,LCL,residential,cvrmse,0.45559337735176086,0.24092739820480347,235
+MAC003165,LCL,residential,cvrmse,0.5772046446800232,0.25848641991615295,293
+MAC003170,LCL,residential,cvrmse,0.6391516327857971,0.326398104429245,468
+MAC003175,LCL,residential,cvrmse,0.7924274206161499,0.2356463074684143,468
+MAC003178,LCL,residential,cvrmse,0.4487866163253784,0.0856962502002716,467
+MAC003180,LCL,residential,cvrmse,0.4979744851589203,0.34075427055358887,467
+MAC003185,LCL,residential,cvrmse,0.6337547302246094,0.313991904258728,467
+MAC003196,LCL,residential,cvrmse,0.6456195116043091,0.17773845791816711,307
+MAC003198,LCL,residential,cvrmse,1.0587880611419678,0.17309992015361786,466
+MAC003201,LCL,residential,cvrmse,0.876488983631134,0.22868488729000092,466
+MAC003202,LCL,residential,cvrmse,0.7747316360473633,0.1863529086112976,149
+MAC003211,LCL,residential,cvrmse,0.6836481690406799,0.3300284743309021,463
+MAC003221,LCL,residential,cvrmse,0.552017867565155,0.1137540191411972,463
+MAC003238,LCL,residential,cvrmse,0.7015733122825623,0.2006404846906662,462
+MAC003245,LCL,residential,cvrmse,0.6689381003379822,0.2131269872188568,462
+MAC003247,LCL,residential,cvrmse,1.0238115787506104,0.339449405670166,462
+MAC003256,LCL,residential,cvrmse,0.8402466177940369,0.2514475882053375,461
+MAC003257,LCL,residential,cvrmse,0.40064308047294617,1.133681058883667,461
+MAC003259,LCL,residential,cvrmse,0.9724897146224976,0.2853788137435913,461
+MAC003262,LCL,residential,cvrmse,0.7875745296478271,0.1880417764186859,461
+MAC003265,LCL,residential,cvrmse,1.3283681869506836,0.07642541080713272,460
+MAC003268,LCL,residential,cvrmse,0.5452205538749695,0.32362985610961914,459
+MAC003269,LCL,residential,cvrmse,0.7228373289108276,0.2786158323287964,460
+MAC003272,LCL,residential,cvrmse,0.7466002106666565,0.436061292886734,460
+MAC003274,LCL,residential,cvrmse,1.024661898612976,0.23908095061779022,460
+MAC003277,LCL,residential,cvrmse,0.8926419019699097,0.19125941395759583,460
+MAC003285,LCL,residential,cvrmse,0.8327664136886597,0.5458950996398926,411
+MAC003286,LCL,residential,cvrmse,0.7803735136985779,0.27847588062286377,459
+MAC003298,LCL,residential,cvrmse,0.673438310623169,0.44841012358665466,456
+MAC003308,LCL,residential,cvrmse,0.6992813944816589,0.08967206627130508,456
+MAC003315,LCL,residential,cvrmse,0.6027867794036865,0.14653737843036652,456
+MAC003321,LCL,residential,cvrmse,1.3217899799346924,0.20823073387145996,456
+MAC003331,LCL,residential,cvrmse,0.6439167261123657,0.29136985540390015,455
+MAC003333,LCL,residential,cvrmse,0.7601613998413086,0.20281244814395905,455
+MAC003334,LCL,residential,cvrmse,0.7113245129585266,0.33394721150398254,455
+MAC003337,LCL,residential,cvrmse,0.6812291145324707,0.2991374135017395,443
+MAC003338,LCL,residential,cvrmse,0.8211723566055298,0.12377927452325821,454
+MAC003347,LCL,residential,cvrmse,0.6129814982414246,0.5626941323280334,154
+MAC003358,LCL,residential,cvrmse,0.5800462961196899,0.1437021940946579,454
+MAC003360,LCL,residential,cvrmse,0.723731279373169,0.11363884806632996,453
+MAC003365,LCL,residential,cvrmse,0.7843987345695496,0.09659497439861298,453
+MAC003366,LCL,residential,cvrmse,1.3426249027252197,0.09512298554182053,453
+MAC003372,LCL,residential,cvrmse,0.6566680669784546,0.20062057673931122,453
+MAC003379,LCL,residential,cvrmse,1.2103941440582275,0.06720983982086182,83
+MAC003500,LCL,residential,cvrmse,1.1029295921325684,0.12440178543329239,446
+MAC003501,LCL,residential,cvrmse,0.6222591996192932,0.26880931854248047,446
+MAC003504,LCL,residential,cvrmse,0.8754729628562927,0.09524394571781158,446
+MAC003506,LCL,residential,cvrmse,0.6615975499153137,0.7164208292961121,445
+MAC003507,LCL,residential,cvrmse,0.32313552498817444,1.4113036394119263,445
+MAC003508,LCL,residential,cvrmse,0.5087027549743652,0.2851060628890991,445
+MAC003509,LCL,residential,cvrmse,0.9682682752609253,0.05737631395459175,445
+MAC003510,LCL,residential,cvrmse,0.581844687461853,0.29621240496635437,445
+MAC003511,LCL,residential,cvrmse,0.6274715065956116,0.2085982710123062,445
+MAC003512,LCL,residential,cvrmse,0.93767249584198,0.13972719013690948,445
+MAC003514,LCL,residential,cvrmse,0.5363315343856812,0.2879188358783722,445
+MAC003515,LCL,residential,cvrmse,0.9869013428688049,0.16404929757118225,445
+MAC003516,LCL,residential,cvrmse,0.8008579611778259,0.0744466632604599,445
+MAC003517,LCL,residential,cvrmse,0.7027707099914551,0.16488951444625854,445
+MAC003518,LCL,residential,cvrmse,1.2200901508331299,0.22004316747188568,445
+MAC003519,LCL,residential,cvrmse,0.6245189309120178,0.07637898623943329,445
+MAC003520,LCL,residential,cvrmse,0.45347169041633606,0.1762576848268509,445
+MAC003521,LCL,residential,cvrmse,0.6238188147544861,0.0677025094628334,445
+MAC003522,LCL,residential,cvrmse,0.4358709156513214,0.23767423629760742,442
+MAC003526,LCL,residential,cvrmse,0.6663389205932617,0.1683569997549057,442
+MAC003527,LCL,residential,cvrmse,1.0514310598373413,0.2765233814716339,442
+MAC003529,LCL,residential,cvrmse,0.4853017330169678,0.10693471878767014,442
+MAC003530,LCL,residential,cvrmse,1.475266456604004,0.04870942234992981,442
+MAC003532,LCL,residential,cvrmse,1.4860731363296509,0.12692146003246307,442
+MAC003533,LCL,residential,cvrmse,0.9912189841270447,0.2532122731208801,442
+MAC003534,LCL,residential,cvrmse,1.1702189445495605,0.279671311378479,442
+MAC003535,LCL,residential,cvrmse,0.7191042304039001,0.2694631516933441,442
+MAC003537,LCL,residential,cvrmse,0.8142478466033936,0.24567516148090363,442
+MAC003538,LCL,residential,cvrmse,1.0042247772216797,0.08442459255456924,442
+MAC003540,LCL,residential,cvrmse,0.44320619106292725,0.11308512836694717,442
+MAC003542,LCL,residential,cvrmse,0.5864344239234924,0.06841815263032913,442
+MAC003543,LCL,residential,cvrmse,0.6070894598960876,0.12338951975107193,442
+MAC003546,LCL,residential,cvrmse,0.49993759393692017,0.05183946713805199,442
+MAC003547,LCL,residential,cvrmse,0.9397972822189331,0.2659289836883545,442
+MAC003548,LCL,residential,cvrmse,0.6968112587928772,0.2964595556259155,442
+MAC003549,LCL,residential,cvrmse,0.5756648778915405,0.18863922357559204,442
+MAC003551,LCL,residential,cvrmse,0.8698830008506775,0.06544655561447144,442
+MAC003552,LCL,residential,cvrmse,0.8114851713180542,0.14554838836193085,442
+MAC003553,LCL,residential,cvrmse,0.4907835125923157,0.33982428908348083,442
+MAC003554,LCL,residential,cvrmse,1.0625593662261963,0.03966427966952324,100
+MAC003556,LCL,residential,cvrmse,0.5240626335144043,0.3785070478916168,442
+MAC003557,LCL,residential,cvrmse,0.8521323800086975,0.20179840922355652,347
+MAC003769,LCL,residential,cvrmse,1.0218995809555054,0.18031249940395355,1
+MAC003771,LCL,residential,cvrmse,0.9296382665634155,0.1010657474398613,431
+MAC003782,LCL,residential,cvrmse,0.7016313672065735,0.26583439111709595,431
+MAC003783,LCL,residential,cvrmse,0.7222056984901428,0.2697570323944092,430
+MAC003788,LCL,residential,cvrmse,0.7208790183067322,0.14415080845355988,428
+MAC003807,LCL,residential,cvrmse,0.7391602993011475,0.5623456239700317,428
+MAC003808,LCL,residential,cvrmse,0.5472683906555176,0.19469383358955383,428
+MAC003816,LCL,residential,cvrmse,0.5309977531433105,0.2153288871049881,428
+MAC003820,LCL,residential,cvrmse,0.43345218896865845,0.5568674206733704,427
+MAC003823,LCL,residential,cvrmse,0.7028411030769348,0.2925637364387512,427
+MAC003827,LCL,residential,cvrmse,0.7972055673599243,0.0872916728258133,427
+MAC003829,LCL,residential,cvrmse,0.9963924884796143,0.39514368772506714,427
+MAC003848,LCL,residential,cvrmse,0.5471484661102295,0.3598472476005554,426
+MAC003852,LCL,residential,cvrmse,0.8047840595245361,0.3348790109157562,426
+MAC003862,LCL,residential,cvrmse,1.119673728942871,0.17983108758926392,425
+MAC003865,LCL,residential,cvrmse,0.532607913017273,0.05700015276670456,425
+MAC003869,LCL,residential,cvrmse,0.791218638420105,0.2925705015659332,425
+MAC003890,LCL,residential,cvrmse,0.8511852025985718,0.3185402750968933,424
+MAC003892,LCL,residential,cvrmse,0.5362972617149353,0.17859376966953278,424
+MAC003895,LCL,residential,cvrmse,0.6024099588394165,0.38009896874427795,424
+MAC003897,LCL,residential,cvrmse,0.32019269466400146,0.16052298247814178,424
+MAC003899,LCL,residential,cvrmse,0.9208851456642151,0.21662646532058716,424
+MAC003903,LCL,residential,cvrmse,0.5910057425498962,0.6558747887611389,424
+MAC003911,LCL,residential,cvrmse,0.691417396068573,0.2722052037715912,424
+MAC003914,LCL,residential,cvrmse,0.6339256763458252,0.5736203789710999,424
+MAC003915,LCL,residential,cvrmse,0.8317521810531616,0.12478277832269669,424
+MAC003916,LCL,residential,cvrmse,0.3431934714317322,0.32257768511772156,424
+MAC003919,LCL,residential,cvrmse,1.0738121271133423,0.15209518373012543,424
+MAC003947,LCL,residential,cvrmse,0.7373097538948059,0.1052023246884346,537
+MAC003951,LCL,residential,cvrmse,0.9436774253845215,0.20849747955799103,537
+MAC003954,LCL,residential,cvrmse,0.6442515254020691,0.11418497562408447,537
+MAC003960,LCL,residential,cvrmse,0.4521743655204773,0.3653644919395447,536
+MAC003967,LCL,residential,cvrmse,0.3604879677295685,0.20615249872207642,536
+MAC003968,LCL,residential,cvrmse,0.8103393912315369,0.22750456631183624,536
+MAC003973,LCL,residential,cvrmse,0.8304134607315063,0.19386373460292816,536
+MAC003975,LCL,residential,cvrmse,0.6694502830505371,0.3577398657798767,536
+MAC003977,LCL,residential,cvrmse,1.1097527742385864,0.19879624247550964,536
+MAC003982,LCL,residential,cvrmse,0.3495404124259949,0.13230814039707184,536
+MAC003984,LCL,residential,cvrmse,0.5311646461486816,0.09645072370767593,536
+MAC003988,LCL,residential,cvrmse,1.2497400045394897,0.058914221823215485,536
+MAC003989,LCL,residential,cvrmse,0.7904828190803528,0.18531478941440582,291
+MAC004626,LCL,residential,cvrmse,0.8034040927886963,0.20967447757720947,115
+MAC004627,LCL,residential,cvrmse,1.0169897079467773,0.23050250113010406,531
+MAC004628,LCL,residential,cvrmse,0.8398045897483826,0.2264528125524521,531
+MAC004629,LCL,residential,cvrmse,0.7209683060646057,0.16696199774742126,531
+MAC004630,LCL,residential,cvrmse,0.8320781588554382,0.15322960913181305,531
+MAC004631,LCL,residential,cvrmse,1.083912968635559,0.2860143482685089,180
+MAC004632,LCL,residential,cvrmse,0.4508003294467926,0.09431333094835281,531
+MAC004634,LCL,residential,cvrmse,1.8652352094650269,0.13228380680084229,530
+MAC004635,LCL,residential,cvrmse,0.5810376405715942,0.3228350579738617,530
+MAC004636,LCL,residential,cvrmse,0.4205312728881836,0.8779280781745911,530
+MAC004637,LCL,residential,cvrmse,0.6356514692306519,0.4824769198894501,530
+MAC004638,LCL,residential,cvrmse,0.7385692000389099,0.12248919159173965,530
+MAC004642,LCL,residential,cvrmse,0.945873498916626,0.10529053211212158,530
+MAC004643,LCL,residential,cvrmse,0.9628407955169678,0.24755539000034332,530
+MAC004644,LCL,residential,cvrmse,0.9223273992538452,0.1213754341006279,530
+MAC004645,LCL,residential,cvrmse,0.8147448301315308,0.11315716803073883,530
+MAC004646,LCL,residential,cvrmse,0.6093971133232117,0.5466041564941406,530
+MAC004647,LCL,residential,cvrmse,0.6640275716781616,0.2110065221786499,530
+MAC004648,LCL,residential,cvrmse,0.7212091088294983,0.1045827865600586,530
+MAC004649,LCL,residential,cvrmse,0.5818648338317871,0.5892522931098938,319
+MAC004650,LCL,residential,cvrmse,0.540940523147583,0.07394493371248245,530
+MAC004651,LCL,residential,cvrmse,0.6778421998023987,0.27278175950050354,530
+MAC004652,LCL,residential,cvrmse,0.7521591782569885,0.08100015670061111,530
+MAC004653,LCL,residential,cvrmse,0.8591047525405884,0.1712542027235031,530
+MAC004654,LCL,residential,cvrmse,0.5152668952941895,0.3523445129394531,530
+MAC004656,LCL,residential,cvrmse,1.9533426761627197,0.03019268810749054,530
+MAC004658,LCL,residential,cvrmse,0.9587199091911316,0.25070253014564514,467
+MAC004659,LCL,residential,cvrmse,0.6054518818855286,0.09588494151830673,388
+MAC004660,LCL,residential,cvrmse,0.8334469795227051,0.24487589299678802,530
+MAC004662,LCL,residential,cvrmse,1.0294219255447388,0.15693283081054688,530
+MAC004663,LCL,residential,cvrmse,1.0770032405853271,0.03484642505645752,530
+MAC004664,LCL,residential,cvrmse,0.5148956179618835,0.19727051258087158,530
+MAC004665,LCL,residential,cvrmse,0.8470143675804138,0.291526198387146,530
+MAC004666,LCL,residential,cvrmse,0.9732552170753479,0.35424089431762695,530
+MAC004667,LCL,residential,cvrmse,1.0808641910552979,0.03728046640753746,530
+MAC004671,LCL,residential,cvrmse,0.7306259870529175,0.41205209493637085,530
+MAC004672,LCL,residential,cvrmse,0.0007813589763827622,1.0000001111620804e-06,530
+MAC004673,LCL,residential,cvrmse,1.0798711776733398,0.07127167284488678,198
+MAC004904,LCL,residential,cvrmse,0.8670095801353455,0.03709658980369568,707
+MAC004905,LCL,residential,cvrmse,0.7492137551307678,0.11528530716896057,707
+MAC004906,LCL,residential,cvrmse,0.40220385789871216,0.0920487716794014,707
+MAC004907,LCL,residential,cvrmse,0.8392085433006287,0.10675329715013504,341
+MAC004908,LCL,residential,cvrmse,0.6349850296974182,0.6372218132019043,706
+MAC004909,LCL,residential,cvrmse,0.8051465749740601,0.3173578977584839,706
+MAC004911,LCL,residential,cvrmse,0.9007710218429565,0.22878223657608032,705
+MAC004912,LCL,residential,cvrmse,0.31153780221939087,0.1615740805864334,706
+MAC004913,LCL,residential,cvrmse,0.9104374051094055,0.13745343685150146,705
+MAC004914,LCL,residential,cvrmse,0.42320340871810913,0.13537082076072693,705
+MAC004915,LCL,residential,cvrmse,1.283870816230774,0.04661845415830612,705
+MAC004916,LCL,residential,cvrmse,0.45497721433639526,0.09690933674573898,705
+MAC004918,LCL,residential,cvrmse,0.6286152005195618,0.11725065112113953,705
+MAC004919,LCL,residential,cvrmse,1.0257890224456787,0.2049144208431244,705
+MAC004920,LCL,residential,cvrmse,1.5909756422042847,0.12771877646446228,705
+MAC004922,LCL,residential,cvrmse,0.7773294448852539,0.43673136830329895,704
+MAC004923,LCL,residential,cvrmse,0.49900171160697937,0.4818512797355652,704
+MAC004924,LCL,residential,cvrmse,0.6530259251594543,0.11781487613916397,704
+MAC004925,LCL,residential,cvrmse,0.7869600653648376,0.32228779792785645,704
+MAC004927,LCL,residential,cvrmse,1.076744556427002,0.15684539079666138,704
+MAC004928,LCL,residential,cvrmse,0.840701162815094,0.2161022573709488,704
+MAC004929,LCL,residential,cvrmse,0.7035894393920898,0.25493133068084717,704
+MAC004930,LCL,residential,cvrmse,0.214032381772995,0.21859924495220184,704
+MAC004931,LCL,residential,cvrmse,0.7104004621505737,0.060272298753261566,704
+MAC004933,LCL,residential,cvrmse,0.615599513053894,0.1068694069981575,704
+MAC004934,LCL,residential,cvrmse,0.4745003581047058,0.19550131261348724,704
+MAC004935,LCL,residential,cvrmse,0.7780430316925049,0.1099940836429596,704
+MAC004936,LCL,residential,cvrmse,0.7695212364196777,0.24179331958293915,63
+MAC004973,LCL,residential,cvrmse,1.23538076877594,0.13736753165721893,145
+MAC004974,LCL,residential,cvrmse,0.5004655718803406,0.1722497045993805,699
+MAC004975,LCL,residential,cvrmse,1.1145578622817993,0.10520654171705246,699
+MAC004976,LCL,residential,cvrmse,0.5486109256744385,0.35636106133461,594
+MAC004978,LCL,residential,cvrmse,1.0222043991088867,0.2616768479347229,699
+MAC004980,LCL,residential,cvrmse,0.6836799383163452,0.27197739481925964,699
+MAC004981,LCL,residential,cvrmse,0.30207547545433044,0.1306201070547104,699
+MAC004982,LCL,residential,cvrmse,1.9037145376205444,0.06738350540399551,699
+MAC004983,LCL,residential,cvrmse,1.2088829278945923,0.30393290519714355,699
+MAC004984,LCL,residential,cvrmse,0.4227375090122223,0.23063845932483673,699
+MAC004985,LCL,residential,cvrmse,0.7702184319496155,0.20126596093177795,698
+MAC004986,LCL,residential,cvrmse,1.0076053142547607,0.11048872768878937,698
+MAC004987,LCL,residential,cvrmse,0.36390480399131775,0.3526604473590851,698
+MAC004989,LCL,residential,cvrmse,1.1150001287460327,0.19666598737239838,698
+MAC004991,LCL,residential,cvrmse,1.054931640625,0.29071709513664246,618
+MAC004992,LCL,residential,cvrmse,0.7625889182090759,0.12645979225635529,697
+MAC004993,LCL,residential,cvrmse,0.3946349322795868,1.1197192668914795,697
+MAC004994,LCL,residential,cvrmse,0.7891852855682373,0.11934030801057816,697
+MAC004995,LCL,residential,cvrmse,0.8543269634246826,0.4078711271286011,513
+MAC004996,LCL,residential,cvrmse,0.6477198600769043,0.6421604752540588,697
+MAC004997,LCL,residential,cvrmse,0.6507274508476257,0.47640782594680786,428
+MAC004998,LCL,residential,cvrmse,0.5026533007621765,0.14313295483589172,697
+MAC004999,LCL,residential,cvrmse,0.9491329193115234,0.21241872012615204,697
+MAC005000,LCL,residential,cvrmse,0.7517603039741516,0.16059379279613495,697
+MAC005001,LCL,residential,cvrmse,0.5784397721290588,0.5165610909461975,697
+MAC005002,LCL,residential,cvrmse,0.965782880783081,0.14114433526992798,697
+MAC005003,LCL,residential,cvrmse,0.550098717212677,0.11335310339927673,697
+MAC005004,LCL,residential,cvrmse,0.8691381812095642,0.062355488538742065,696
+MAC005005,LCL,residential,cvrmse,1.1160314083099365,0.1484392285346985,696
+MAC005007,LCL,residential,cvrmse,1.1103358268737793,0.0982365608215332,155
+MAC005087,LCL,residential,cvrmse,1.9177132844924927,0.05286102741956711,237
+MAC005088,LCL,residential,cvrmse,0.9669359922409058,0.17478764057159424,573
+MAC005089,LCL,residential,cvrmse,0.8532483577728271,0.15521901845932007,573
+MAC005090,LCL,residential,cvrmse,0.6067679524421692,0.23869724571704865,454
+MAC005092,LCL,residential,cvrmse,0.5868157148361206,0.3150022029876709,216
+MAC005094,LCL,residential,cvrmse,0.945496678352356,0.054411955177783966,265
+MAC005095,LCL,residential,cvrmse,0.9526625275611877,0.07762125879526138,573
+MAC005096,LCL,residential,cvrmse,0.6925313472747803,0.2974538207054138,573
+MAC005097,LCL,residential,cvrmse,0.6809771060943604,0.25822827219963074,573
+MAC005098,LCL,residential,cvrmse,0.8203105926513672,0.1183040663599968,573
+MAC005099,LCL,residential,cvrmse,0.7539113759994507,0.05752243101596832,196
+MAC005100,LCL,residential,cvrmse,0.6089345216751099,0.22054001688957214,417
+MAC005101,LCL,residential,cvrmse,0.504309356212616,0.2490723431110382,573
+MAC005103,LCL,residential,cvrmse,1.258819341659546,0.3377230763435364,573
+MAC005104,LCL,residential,cvrmse,0.1966736912727356,0.06509310007095337,573
+MAC005105,LCL,residential,cvrmse,0.9468669891357422,0.07079686969518661,573
+MAC005107,LCL,residential,cvrmse,0.7910491824150085,0.3243103623390198,573
+MAC005108,LCL,residential,cvrmse,0.7612163424491882,0.19360798597335815,573
+MAC005109,LCL,residential,cvrmse,0.9560247659683228,0.055444635450839996,573
+MAC005112,LCL,residential,cvrmse,0.569249153137207,0.0744723379611969,573
+MAC005113,LCL,residential,cvrmse,0.7952477335929871,0.16674157977104187,572
+MAC005114,LCL,residential,cvrmse,0.6056944727897644,0.09102214127779007,572
+MAC005115,LCL,residential,cvrmse,1.1572339534759521,0.1526031196117401,572
+MAC005116,LCL,residential,cvrmse,0.9069124460220337,0.208486407995224,572
+MAC005117,LCL,residential,cvrmse,0.6634273529052734,0.5357689261436462,572
+MAC005118,LCL,residential,cvrmse,0.7916585206985474,0.18310858309268951,255
+MAC005119,LCL,residential,cvrmse,1.037561058998108,0.5308506488800049,572
+MAC005120,LCL,residential,cvrmse,0.8047917485237122,0.13470502197742462,572
+MAC005123,LCL,residential,cvrmse,0.9851306676864624,0.29351145029067993,572
+MAC005125,LCL,residential,cvrmse,0.7174649834632874,0.07579264789819717,572
+MAC005126,LCL,residential,cvrmse,0.5872899889945984,0.17755602300167084,572
+MAC005128,LCL,residential,cvrmse,1.1302789449691772,0.07093655318021774,572
+MAC005129,LCL,residential,cvrmse,0.40803882479667664,0.26735737919807434,572
+MAC005130,LCL,residential,cvrmse,0.662376344203949,0.1156959980726242,572
+MAC005131,LCL,residential,cvrmse,0.7536441683769226,0.0458642952144146,572
+MAC005132,LCL,residential,cvrmse,0.5633954405784607,0.13333430886268616,572
+MAC005133,LCL,residential,cvrmse,1.0944437980651855,0.18961428105831146,305
+MAC005425,LCL,residential,cvrmse,0.6941599249839783,0.20140914618968964,387
+MAC005426,LCL,residential,cvrmse,0.6074714660644531,0.09117826819419861,619
+MAC005428,LCL,residential,cvrmse,0.8372121453285217,0.2542295455932617,619
+MAC005430,LCL,residential,cvrmse,0.6213571429252625,0.21493536233901978,619
+MAC005431,LCL,residential,cvrmse,0.7855094075202942,0.12167640030384064,619
+MAC005433,LCL,residential,cvrmse,0.9584121108055115,0.0873587504029274,619
+MAC005435,LCL,residential,cvrmse,0.6546198725700378,0.19002550840377808,619
+MAC005436,LCL,residential,cvrmse,0.737286388874054,0.12836462259292603,619
+MAC005437,LCL,residential,cvrmse,1.1016823053359985,0.06394783407449722,617
+MAC005438,LCL,residential,cvrmse,0.5224334597587585,0.12069755047559738,617
+MAC005439,LCL,residential,cvrmse,1.6104487180709839,0.09965928643941879,617
+MAC005440,LCL,residential,cvrmse,0.7550346255302429,0.2386290580034256,617
+MAC005441,LCL,residential,cvrmse,0.42674243450164795,0.34022921323776245,617
+MAC005442,LCL,residential,cvrmse,0.5317281484603882,0.641400158405304,617
+MAC005443,LCL,residential,cvrmse,0.775499165058136,0.12896651029586792,617
+MAC005444,LCL,residential,cvrmse,0.7461258172988892,0.07319401949644089,617
+MAC005446,LCL,residential,cvrmse,0.9518682956695557,0.4210411608219147,617
+MAC005447,LCL,residential,cvrmse,0.7127407193183899,0.5114012956619263,617
+MAC005450,LCL,residential,cvrmse,0.6995152235031128,0.11508762091398239,617
+MAC005451,LCL,residential,cvrmse,0.537510097026825,0.33593836426734924,617
+MAC005452,LCL,residential,cvrmse,0.45791906118392944,0.2366868555545807,617
+MAC005453,LCL,residential,cvrmse,0.8043875098228455,0.05440888553857803,617
+MAC005454,LCL,residential,cvrmse,0.7174506783485413,0.19313517212867737,387
+MAC005455,LCL,residential,cvrmse,1.057167887687683,0.047344956547021866,617
+MAC005456,LCL,residential,cvrmse,0.9808629155158997,0.14900560677051544,617
+MAC005457,LCL,residential,cvrmse,0.8570027947425842,0.13698028028011322,617
+MAC005458,LCL,residential,cvrmse,0.5032610297203064,0.24118541181087494,617
+MAC005459,LCL,residential,cvrmse,0.4419742822647095,0.6750407218933105,617
+MAC005460,LCL,residential,cvrmse,0.4985642433166504,0.17055824398994446,617
+MAC005461,LCL,residential,cvrmse,0.5779973268508911,0.19364617764949799,617
+MAC005462,LCL,residential,cvrmse,1.1375688314437866,0.09069396555423737,616
+MAC005463,LCL,residential,cvrmse,0.8885430097579956,0.12468435615301132,610
+MAC005464,LCL,residential,cvrmse,0.3968527615070343,0.28680235147476196,617
+MAC005466,LCL,residential,cvrmse,0.22361835837364197,0.09561163187026978,617
+MAC005467,LCL,residential,cvrmse,0.643078625202179,0.11711946874856949,617
+MAC005468,LCL,residential,cvrmse,0.5415565371513367,0.2744002342224121,617
+MAC005469,LCL,residential,cvrmse,0.7093740701675415,0.1328325867652893,617
+MAC005471,LCL,residential,cvrmse,1.2890609502792358,0.10226820409297943,617
+MAC005472,LCL,residential,cvrmse,0.6099572777748108,0.014904207549989223,617
+MAC005475,LCL,residential,cvrmse,0.7841804027557373,0.1650693118572235,617
+MAC005476,LCL,residential,cvrmse,0.6630827188491821,0.2897178828716278,617
+MAC005478,LCL,residential,cvrmse,0.7606725692749023,0.16799399256706238,617
+MAC005479,LCL,residential,cvrmse,0.8497574925422668,0.13640984892845154,617
+MAC005480,LCL,residential,cvrmse,0.9855149984359741,0.06343775242567062,617
+MAC005481,LCL,residential,cvrmse,0.4060894846916199,0.15787331759929657,617
+MAC005483,LCL,residential,cvrmse,0.32212141156196594,0.2736862897872925,594
+MAC005484,LCL,residential,cvrmse,1.0803056955337524,0.2958759069442749,617
+MAC005485,LCL,residential,cvrmse,1.6542547941207886,0.1204889565706253,617
+MAC005486,LCL,residential,cvrmse,0.7403645515441895,0.09194382280111313,617
+MAC005487,LCL,residential,cvrmse,0.8629148006439209,0.13745753467082977,616
+MAC005490,LCL,residential,cvrmse,0.5664045810699463,0.3468417227268219,616
+MAC005491,LCL,residential,cvrmse,1.2544177770614624,0.07951130717992783,616
+MAC005493,LCL,residential,cvrmse,0.991672694683075,0.11578791588544846,616
+MAC005494,LCL,residential,cvrmse,0.7652260661125183,0.2519141137599945,392
+MAC005496,LCL,residential,cvrmse,0.8673226833343506,0.17861931025981903,594
+MAC005497,LCL,residential,cvrmse,0.6072643399238586,0.48781782388687134,616
+MAC005499,LCL,residential,cvrmse,0.8563596606254578,0.18000882863998413,616
+MAC005500,LCL,residential,cvrmse,0.3899209201335907,0.1998075395822525,616
+MAC005501,LCL,residential,cvrmse,0.9435223937034607,0.1050725132226944,616
+MAC005502,LCL,residential,cvrmse,0.9405262470245361,0.17258700728416443,616
+MAC005503,LCL,residential,cvrmse,0.9559878706932068,0.13910403847694397,616
+MAC005504,LCL,residential,cvrmse,1.3147282600402832,0.24167102575302124,616
+MAC005505,LCL,residential,cvrmse,0.8842440247535706,0.10730696469545364,469
+MAC005555,LCL,residential,cvrmse,0.6446113586425781,0.11952054500579834,557
+MAC005561,LCL,residential,cvrmse,0.6706909537315369,0.15206222236156464,358
+MAC005562,LCL,residential,cvrmse,0.5983612537384033,0.20950457453727722,596
+MAC005566,LCL,residential,cvrmse,0.5731338262557983,0.3880957067012787,447
+MAC005567,LCL,residential,cvrmse,0.887161374092102,0.10702060908079147,370
+HomeB,SMART,residential,cvrmse,0.6892152428627014,0.8222721815109253,1089
+HomeC,SMART,residential,cvrmse,0.7309571504592896,0.7999014854431152,1072
+HomeD,SMART,residential,cvrmse,0.9515095353126526,0.598103404045105,359
+HomeF,SMART,residential,cvrmse,0.7904945611953735,1.4050508737564087,1089
+HomeG,SMART,residential,cvrmse,0.5225843787193298,2.6878042221069336,342
+Sceaux,Sceaux,residential,cvrmse,0.6867910027503967,1.081360936164856,1418
+home14,Borealis,residential,cvrmse,0.6168279647827148,1.401487112045288,224
+home15,Borealis,residential,cvrmse,0.403887540102005,0.8836024403572083,169
+home16,Borealis,residential,cvrmse,0.6323807835578918,0.8162122964859009,227
+home18,Borealis,residential,cvrmse,0.6092473268508911,1.3592207431793213,162
+home19,Borealis,residential,cvrmse,0.6725291013717651,0.520890474319458,231
+home21,Borealis,residential,cvrmse,0.6839413046836853,0.45292797684669495,237
+home22,Borealis,residential,cvrmse,0.5384910106658936,0.8296240568161011,211
+home23,Borealis,residential,cvrmse,0.5379117131233215,0.3522184193134308,213
+home25,Borealis,residential,cvrmse,0.8549129366874695,0.27349475026130676,214
+home26,Borealis,residential,cvrmse,0.7312520742416382,0.5191503167152405,140
+home2,Borealis,residential,cvrmse,0.5763521194458008,0.6813915967941284,266
+home3,Borealis,residential,cvrmse,1.0675595998764038,0.30398309230804443,303
+home4,Borealis,residential,cvrmse,0.6579750776290894,1.6423516273498535,299
+home7,Borealis,residential,cvrmse,0.8142257332801819,0.7158986926078796,172
+home9,Borealis,residential,cvrmse,0.22645923495292664,1.2766233682632446,291

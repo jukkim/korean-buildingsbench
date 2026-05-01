@@ -1,0 +1,956 @@
+building_id,dataset,building_type,metric,value,mean_actual,n_windows
+Bear_assembly_Angel,BDG-2,commercial,cvrmse,0.1668873131275177,470.1442565917969,351
+Bear_assembly_Beatrice,BDG-2,commercial,cvrmse,0.3006454110145569,42.93876647949219,717
+Bear_assembly_Danial,BDG-2,commercial,cvrmse,0.09658648073673248,161.33656311035156,351
+Bear_assembly_Diana,BDG-2,commercial,cvrmse,0.26054564118385315,0.8562901020050049,351
+Bear_assembly_Genia,BDG-2,commercial,cvrmse,0.1779635101556778,264.0694580078125,717
+Bear_assembly_Harry,BDG-2,commercial,cvrmse,0.3052011728286743,17.418556213378906,351
+Bear_assembly_Jose,BDG-2,commercial,cvrmse,0.08500032126903534,258.6329650878906,717
+Bear_assembly_Roxy,BDG-2,commercial,cvrmse,0.603870153427124,17.25547981262207,717
+Bear_assembly_Ruby,BDG-2,commercial,cvrmse,0.08556181937456131,69.39464569091797,717
+Bear_education_Alfredo,BDG-2,commercial,cvrmse,0.33454909920692444,0.18142732977867126,717
+Bear_education_Alvaro,BDG-2,commercial,cvrmse,0.05253530293703079,419.9188232421875,717
+Bear_education_Arnold,BDG-2,commercial,cvrmse,0.6457359790802002,0.5600025653839111,717
+Bear_education_Augusta,BDG-2,commercial,cvrmse,0.1432478427886963,115.32402038574219,717
+Bear_education_Austin,BDG-2,commercial,cvrmse,0.18503360450267792,21.04792594909668,717
+Bear_education_Babara,BDG-2,commercial,cvrmse,0.06150315701961517,375.3759765625,717
+Bear_education_Benita,BDG-2,commercial,cvrmse,0.04986267909407616,522.1944580078125,717
+Bear_education_Benjamin,BDG-2,commercial,cvrmse,0.5082032680511475,1.0537137985229492,351
+Bear_education_Bob,BDG-2,commercial,cvrmse,0.11813083291053772,128.86627197265625,717
+Bear_education_Bonita,BDG-2,commercial,cvrmse,0.3921925127506256,0.19065319001674652,717
+Bear_education_Bulah,BDG-2,commercial,cvrmse,0.05430636182427406,1336.5594482421875,717
+Bear_education_Carlo,BDG-2,commercial,cvrmse,0.29450079798698425,3.9446921348571777,351
+Bear_education_Chad,BDG-2,commercial,cvrmse,0.06703606992959976,1006.735107421875,717
+Bear_education_Chana,BDG-2,commercial,cvrmse,0.11377136409282684,21.446714401245117,717
+Bear_education_Chun,BDG-2,commercial,cvrmse,0.11658588796854019,101.52201843261719,717
+Bear_education_Clint,BDG-2,commercial,cvrmse,0.0704655572772026,56.818511962890625,717
+Bear_education_Curtis,BDG-2,commercial,cvrmse,0.06391631066799164,69.01129913330078,717
+Bear_education_Danna,BDG-2,commercial,cvrmse,0.16700206696987152,103.5024185180664,717
+Bear_education_Darrell,BDG-2,commercial,cvrmse,0.24296486377716064,39.090938568115234,717
+Bear_education_Deena,BDG-2,commercial,cvrmse,175405728.0,8.566261291503906,717
+Bear_education_Derek,BDG-2,commercial,cvrmse,0.12351042777299881,184.3376007080078,717
+Bear_education_Destiny,BDG-2,commercial,cvrmse,0.15109992027282715,112.7834243774414,351
+Bear_education_Elise,BDG-2,commercial,cvrmse,0.18974196910858154,145.6223602294922,717
+Bear_education_Fannie,BDG-2,commercial,cvrmse,0.0935339406132698,436.8401184082031,717
+Bear_education_Gavin,BDG-2,commercial,cvrmse,0.0443219318985939,90.15251922607422,717
+Bear_education_Herb,BDG-2,commercial,cvrmse,0.13106904923915863,12.915465354919434,717
+Bear_education_Herman,BDG-2,commercial,cvrmse,0.2953503727912903,0.28481897711753845,717
+Bear_education_Holly,BDG-2,commercial,cvrmse,0.30436816811561584,1.2322837114334106,717
+Bear_education_Irene,BDG-2,commercial,cvrmse,0.3915923237800598,88.8019790649414,717
+Bear_education_Iris,BDG-2,commercial,cvrmse,0.16011612117290497,45.51517868041992,717
+Bear_education_Katy,BDG-2,commercial,cvrmse,0.12068146467208862,124.93408966064453,717
+Bear_education_Lashanda,BDG-2,commercial,cvrmse,0.1256684511899948,74.19009399414062,717
+Bear_education_Laurette,BDG-2,commercial,cvrmse,0.047754209488630295,50.913997650146484,717
+Bear_education_Leonel,BDG-2,commercial,cvrmse,0.18351756036281586,119.22261810302734,717
+Bear_education_Lewis,BDG-2,commercial,cvrmse,0.12815776467323303,23.512420654296875,717
+Bear_education_Lidia,BDG-2,commercial,cvrmse,0.1811649650335312,12.816450119018555,717
+Bear_education_Lila,BDG-2,commercial,cvrmse,0.03552347421646118,214.54583740234375,717
+Bear_education_Liliana,BDG-2,commercial,cvrmse,0.048205144703388214,468.3175048828125,351
+Bear_education_Lorie,BDG-2,commercial,cvrmse,0.057312965393066406,401.55987548828125,717
+Bear_education_Mara,BDG-2,commercial,cvrmse,0.03537271171808243,509.7140808105469,717
+Bear_education_Marie,BDG-2,commercial,cvrmse,0.16194400191307068,23.7471981048584,717
+Bear_education_Marsha,BDG-2,commercial,cvrmse,0.0838007777929306,88.02696228027344,717
+Bear_education_Marta,BDG-2,commercial,cvrmse,0.20680655539035797,42.0727424621582,717
+Bear_education_Maryjane,BDG-2,commercial,cvrmse,0.11459191143512726,331.4091796875,717
+Bear_education_Merrill,BDG-2,commercial,cvrmse,0.19863323867321014,22.17086410522461,351
+Bear_education_Millie,BDG-2,commercial,cvrmse,0.11394540965557098,3.430638313293457,717
+Bear_education_Nanette,BDG-2,commercial,cvrmse,0.15420477092266083,113.97969818115234,351
+Bear_education_Oscar,BDG-2,commercial,cvrmse,0.13364842534065247,11.718360900878906,717
+Bear_education_Owen,BDG-2,commercial,cvrmse,0.10631899535655975,149.9582061767578,717
+Bear_education_Paola,BDG-2,commercial,cvrmse,0.12769164144992828,149.59425354003906,717
+Bear_education_Patricia,BDG-2,commercial,cvrmse,0.043883778154850006,634.1749267578125,717
+Bear_education_Pattie,BDG-2,commercial,cvrmse,0.06810782104730606,173.7614288330078,717
+Bear_education_Rebecca,BDG-2,commercial,cvrmse,0.04133182018995285,781.9091186523438,717
+Bear_education_Sandy,BDG-2,commercial,cvrmse,0.12382620573043823,6.715182781219482,717
+Bear_education_Santos,BDG-2,commercial,cvrmse,0.6223364472389221,8.628327369689941,717
+Bear_education_Sharon,BDG-2,commercial,cvrmse,0.04111453518271446,112.38728332519531,717
+Bear_education_Shelley,BDG-2,commercial,cvrmse,0.10851727426052094,162.6426239013672,717
+Bear_education_Tara,BDG-2,commercial,cvrmse,0.19447258114814758,3.3917908668518066,717
+Bear_education_Thuy,BDG-2,commercial,cvrmse,0.12605804204940796,231.0850830078125,717
+Bear_education_Val,BDG-2,commercial,cvrmse,0.037157073616981506,374.3105773925781,717
+Bear_education_Wade,BDG-2,commercial,cvrmse,0.2487310767173767,53.92562484741211,717
+Bear_education_Wilton,BDG-2,commercial,cvrmse,0.05687733367085457,1567.184814453125,717
+Bear_education_Wm,BDG-2,commercial,cvrmse,0.08334296196699142,50.345420837402344,717
+Bear_education_Yuri,BDG-2,commercial,cvrmse,0.20266132056713104,17.982507705688477,717
+Bear_education_Yvette,BDG-2,commercial,cvrmse,0.21467797458171844,10.99066162109375,717
+Bear_education_Zandra,BDG-2,commercial,cvrmse,0.039950426667928696,981.1372680664062,717
+Bear_lodging_Dannie,BDG-2,commercial,cvrmse,0.21993975341320038,8.720085144042969,717
+Bear_lodging_Erick,BDG-2,commercial,cvrmse,0.1423252671957016,48.47627639770508,717
+Bear_lodging_Esperanza,BDG-2,commercial,cvrmse,0.15200141072273254,29.111289978027344,351
+Bear_lodging_Evan,BDG-2,commercial,cvrmse,0.07843495905399323,176.19810485839844,717
+Bear_parking_Bridget,BDG-2,commercial,cvrmse,0.23361176252365112,16.695289611816406,351
+Bear_parking_Bruce,BDG-2,commercial,cvrmse,0.05347970128059387,42.105674743652344,717
+Bear_parking_Gordon,BDG-2,commercial,cvrmse,0.010740074329078197,27.759489059448242,717
+Bear_public_Arlean,BDG-2,commercial,cvrmse,0.188205286860466,164.15414428710938,351
+Bear_public_Jocelyn,BDG-2,commercial,cvrmse,0.07407060265541077,48.5589485168457,717
+Bear_public_Lowell,BDG-2,commercial,cvrmse,0.05613891780376434,205.7467498779297,717
+Bear_public_Orville,BDG-2,commercial,cvrmse,0.1756679266691208,37.460533142089844,717
+Bear_public_Rayna,BDG-2,commercial,cvrmse,0.20286968350410461,111.31092834472656,717
+Bear_public_Valorie,BDG-2,commercial,cvrmse,0.1725011020898819,195.67218017578125,717
+Bear_science_Alison,BDG-2,commercial,cvrmse,0.033193688839673996,103.81888580322266,717
+Bear_science_Eleanor,BDG-2,commercial,cvrmse,0.17174690961837769,36.5145378112793,717
+Bear_utility_Sidney,BDG-2,commercial,cvrmse,0.03003515489399433,52.2108154296875,717
+Fox_assembly_Adrianne,BDG-2,commercial,cvrmse,0.2915557324886322,233.60870361328125,717
+Fox_assembly_Audrey,BDG-2,commercial,cvrmse,0.19144535064697266,13.030436515808105,717
+Fox_assembly_Boyce,BDG-2,commercial,cvrmse,4399.9794921875,345.9131774902344,717
+Fox_assembly_Bradley,BDG-2,commercial,cvrmse,3605.788330078125,157.94769287109375,717
+Fox_assembly_Carlos,BDG-2,commercial,cvrmse,0.18595585227012634,112.66629028320312,717
+Fox_assembly_Cathy,BDG-2,commercial,cvrmse,0.10801194608211517,57.335445404052734,717
+Fox_assembly_Cecelia,BDG-2,commercial,cvrmse,0.1619328260421753,16.939716339111328,717
+Fox_assembly_Christie,BDG-2,commercial,cvrmse,0.3323240876197815,20.819183349609375,717
+Fox_assembly_Cindy,BDG-2,commercial,cvrmse,0.12066171318292618,49.314212799072266,717
+Fox_assembly_Dixie,BDG-2,commercial,cvrmse,0.4264529347419739,73.5433120727539,717
+Fox_assembly_Emma,BDG-2,commercial,cvrmse,0.1185082271695137,170.93699645996094,717
+Fox_assembly_Gary,BDG-2,commercial,cvrmse,0.0802689641714096,91.97845458984375,717
+Fox_assembly_Jerrod,BDG-2,commercial,cvrmse,2.2610833644866943,2.5673940181732178,717
+Fox_assembly_Johnnie,BDG-2,commercial,cvrmse,0.14088763296604156,337.08551025390625,717
+Fox_assembly_Kathie,BDG-2,commercial,cvrmse,0.421251505613327,12.392182350158691,717
+Fox_assembly_Lakeisha,BDG-2,commercial,cvrmse,0.2966013550758362,17.775121688842773,717
+Fox_assembly_Leeanne,BDG-2,commercial,cvrmse,0.17901615798473358,18.305604934692383,717
+Fox_assembly_Renna,BDG-2,commercial,cvrmse,0.036384325474500656,376.0911865234375,717
+Fox_assembly_Sheldon,BDG-2,commercial,cvrmse,0.08759927749633789,99.36174774169922,717
+Fox_assembly_Terrell,BDG-2,commercial,cvrmse,0.2356676161289215,49.31412124633789,717
+Fox_assembly_Tony,BDG-2,commercial,cvrmse,0.11420170962810516,81.97361755371094,717
+Fox_education_Andre,BDG-2,commercial,cvrmse,0.04584923014044762,454.1271057128906,717
+Fox_education_Ashli,BDG-2,commercial,cvrmse,0.12080824375152588,28.907405853271484,717
+Fox_education_Burton,BDG-2,commercial,cvrmse,0.17319823801517487,47.76778793334961,717
+Fox_education_Carleen,BDG-2,commercial,cvrmse,0.13601255416870117,106.32233428955078,717
+Fox_education_Charles,BDG-2,commercial,cvrmse,0.19240637123584747,15.927838325500488,717
+Fox_education_Claire,BDG-2,commercial,cvrmse,0.14372627437114716,60.57556915283203,717
+Fox_education_Claude,BDG-2,commercial,cvrmse,0.02720358967781067,972.5343017578125,717
+Fox_education_Cynthia,BDG-2,commercial,cvrmse,0.1042458713054657,209.99281311035156,717
+Fox_education_Delma,BDG-2,commercial,cvrmse,0.30757227540016174,91.88951110839844,717
+Fox_education_Dewayne,BDG-2,commercial,cvrmse,0.14065863192081451,77.6355209350586,717
+Fox_education_Dominique,BDG-2,commercial,cvrmse,0.045555230230093,184.60655212402344,717
+Fox_education_Eddy,BDG-2,commercial,cvrmse,0.13897334039211273,295.19659423828125,717
+Fox_education_Eldon,BDG-2,commercial,cvrmse,0.031211664900183678,195.52169799804688,717
+Fox_education_Elizabeth,BDG-2,commercial,cvrmse,0.09235910326242447,488.7064208984375,352
+Fox_education_Elois,BDG-2,commercial,cvrmse,0.2139645665884018,11.269882202148438,717
+Fox_education_Elvira,BDG-2,commercial,cvrmse,0.10904385149478912,188.54965209960938,717
+Fox_education_Etta,BDG-2,commercial,cvrmse,0.10966096073389053,198.97555541992188,717
+Fox_education_Gayla,BDG-2,commercial,cvrmse,0.1435980647802353,61.21826934814453,352
+Fox_education_Geoffrey,BDG-2,commercial,cvrmse,0.06285838037729263,119.94386291503906,717
+Fox_education_Gloria,BDG-2,commercial,cvrmse,0.047439150512218475,660.4169921875,717
+Fox_education_Henrietta,BDG-2,commercial,cvrmse,0.35837703943252563,29.71613883972168,717
+Fox_education_Heriberto,BDG-2,commercial,cvrmse,0.14317210018634796,37.07695770263672,717
+Fox_education_Jaclyn,BDG-2,commercial,cvrmse,0.0775424987077713,193.2787628173828,717
+Fox_education_Janina,BDG-2,commercial,cvrmse,0.1347862333059311,125.54524230957031,717
+Fox_education_John,BDG-2,commercial,cvrmse,0.1510535627603531,56.53895568847656,717
+Fox_education_Kendrick,BDG-2,commercial,cvrmse,0.34507039189338684,12.368321418762207,717
+Fox_education_Kim,BDG-2,commercial,cvrmse,0.12851707637310028,57.67570114135742,717
+Fox_education_Kris,BDG-2,commercial,cvrmse,0.1420377492904663,107.81696319580078,717
+Fox_education_Leona,BDG-2,commercial,cvrmse,0.07413871586322784,271.7899169921875,717
+Fox_education_Leota,BDG-2,commercial,cvrmse,0.07996721565723419,215.90679931640625,717
+Fox_education_Lesley,BDG-2,commercial,cvrmse,0.31876713037490845,13.307424545288086,717
+Fox_education_Lilly,BDG-2,commercial,cvrmse,0.0941006988286972,186.96795654296875,717
+Fox_education_Long,BDG-2,commercial,cvrmse,0.1396990567445755,147.09461975097656,717
+Fox_education_Louie,BDG-2,commercial,cvrmse,0.11187168210744858,77.69803619384766,717
+Fox_education_Marcelina,BDG-2,commercial,cvrmse,0.4471927881240845,4.037551403045654,717
+Fox_education_Maris,BDG-2,commercial,cvrmse,0.09627415984869003,22.338199615478516,351
+Fox_education_Marlana,BDG-2,commercial,cvrmse,0.059889934957027435,177.95114135742188,717
+Fox_education_Maureen,BDG-2,commercial,cvrmse,0.05120391771197319,292.5721740722656,351
+Fox_education_Melinda,BDG-2,commercial,cvrmse,0.06595874577760696,407.5517883300781,717
+Fox_education_Melvin,BDG-2,commercial,cvrmse,0.19318746030330658,60.40093231201172,717
+Fox_education_Miguelina,BDG-2,commercial,cvrmse,0.17278198897838593,94.21733093261719,717
+Fox_education_Nilda,BDG-2,commercial,cvrmse,0.10520794242620468,136.30255126953125,717
+Fox_education_Ollie,BDG-2,commercial,cvrmse,0.10116841644048691,108.14569854736328,717
+Fox_education_Otilia,BDG-2,commercial,cvrmse,0.029896970838308334,932.8674926757812,717
+Fox_education_Ray,BDG-2,commercial,cvrmse,0.11072863638401031,47.15431213378906,717
+Fox_education_Rosie,BDG-2,commercial,cvrmse,0.0707605853676796,128.20440673828125,717
+Fox_education_Rudolph,BDG-2,commercial,cvrmse,0.18662337958812714,23.493406295776367,717
+Fox_education_Shaun,BDG-2,commercial,cvrmse,0.2393629401922226,85.12822723388672,351
+Fox_education_Shawanda,BDG-2,commercial,cvrmse,0.2881885766983032,11.558465957641602,717
+Fox_education_Shirley,BDG-2,commercial,cvrmse,0.18319296836853027,100.42552185058594,717
+Fox_education_Stacia,BDG-2,commercial,cvrmse,0.08270706236362457,76.25068664550781,717
+Fox_education_Sterling,BDG-2,commercial,cvrmse,0.20434124767780304,22.41008758544922,717
+Fox_education_Suzan,BDG-2,commercial,cvrmse,0.19778753817081451,41.12371063232422,717
+Fox_education_Tamika,BDG-2,commercial,cvrmse,0.1158989816904068,151.68955993652344,717
+Fox_education_Theodore,BDG-2,commercial,cvrmse,0.0344119630753994,270.7735290527344,717
+Fox_education_Tonya,BDG-2,commercial,cvrmse,0.055772729218006134,169.85482788085938,717
+Fox_education_Virgil,BDG-2,commercial,cvrmse,0.05073904991149902,89.75373077392578,717
+Fox_education_Virginia,BDG-2,commercial,cvrmse,0.39461538195610046,10.066706657409668,717
+Fox_education_Wendell,BDG-2,commercial,cvrmse,0.027901876717805862,532.7841796875,717
+Fox_education_Willis,BDG-2,commercial,cvrmse,0.03548126295208931,2439.903564453125,717
+Fox_education_Yolande,BDG-2,commercial,cvrmse,0.03331198915839195,523.2109375,717
+Fox_food_Francesco,BDG-2,commercial,cvrmse,0.1953943967819214,60.91631317138672,717
+Fox_food_Scott,BDG-2,commercial,cvrmse,0.13945940136909485,73.60455322265625,717
+Fox_health_Lorena,BDG-2,commercial,cvrmse,0.12694203853607178,41.487144470214844,717
+Fox_lodging_Alana,BDG-2,commercial,cvrmse,0.0785321593284607,202.36715698242188,717
+Fox_lodging_Angla,BDG-2,commercial,cvrmse,0.15623882412910461,118.23460388183594,717
+Fox_lodging_Frances,BDG-2,commercial,cvrmse,0.08765999227762222,99.1307373046875,717
+Fox_lodging_Helen,BDG-2,commercial,cvrmse,0.09753566980361938,354.310302734375,717
+Fox_lodging_Isabell,BDG-2,commercial,cvrmse,0.07737979292869568,27.809568405151367,717
+Fox_lodging_Jina,BDG-2,commercial,cvrmse,0.06687723100185394,142.22181701660156,717
+Fox_lodging_Morris,BDG-2,commercial,cvrmse,0.08084695786237717,23.36924934387207,717
+Fox_lodging_Stephan,BDG-2,commercial,cvrmse,0.08345981687307358,30.52829360961914,717
+Fox_lodging_Stephen,BDG-2,commercial,cvrmse,0.08555316179990768,82.47946166992188,717
+Fox_lodging_Wallace,BDG-2,commercial,cvrmse,0.08192996680736542,351.95391845703125,717
+Fox_lodging_Warren,BDG-2,commercial,cvrmse,0.09427306056022644,36.391929626464844,717
+Fox_lodging_Winifred,BDG-2,commercial,cvrmse,0.05875466763973236,84.36325073242188,717
+Fox_office_Alice,BDG-2,commercial,cvrmse,0.03970218822360039,361.25201416015625,717
+Fox_office_Bernard,BDG-2,commercial,cvrmse,0.06493856012821198,132.13819885253906,717
+Fox_office_Berniece,BDG-2,commercial,cvrmse,0.1682506948709488,27.65043830871582,717
+Fox_office_Brandy,BDG-2,commercial,cvrmse,0.16120122373104095,32.346588134765625,717
+Fox_office_Carson,BDG-2,commercial,cvrmse,0.13285715878009796,51.58430099487305,717
+Fox_office_Clayton,BDG-2,commercial,cvrmse,0.12991194427013397,88.40624237060547,717
+Fox_office_Demetrius,BDG-2,commercial,cvrmse,0.1926293671131134,121.23269653320312,717
+Fox_office_Easter,BDG-2,commercial,cvrmse,0.14878202974796295,22.96941566467285,717
+Fox_office_Edythe,BDG-2,commercial,cvrmse,0.08916071057319641,113.29351806640625,717
+Fox_office_Essie,BDG-2,commercial,cvrmse,0.319712370634079,33.84817123413086,717
+Fox_office_Gaylord,BDG-2,commercial,cvrmse,0.13550060987472534,161.9356689453125,717
+Fox_office_Israel,BDG-2,commercial,cvrmse,0.10838163644075394,121.08238983154297,717
+Fox_office_Joy,BDG-2,commercial,cvrmse,0.061794575303792953,182.63131713867188,717
+Fox_office_Juana,BDG-2,commercial,cvrmse,0.2134006768465042,19.198955535888672,717
+Fox_office_Karima,BDG-2,commercial,cvrmse,0.2372899055480957,71.1148910522461,717
+Fox_office_Margarita,BDG-2,commercial,cvrmse,0.1102040708065033,19.099437713623047,717
+Fox_office_Molly,BDG-2,commercial,cvrmse,0.2860930562019348,7.220118522644043,717
+Fox_office_Rowena,BDG-2,commercial,cvrmse,0.1523328274488449,36.971439361572266,717
+Fox_office_Sheila,BDG-2,commercial,cvrmse,0.20293205976486206,9.346714973449707,717
+Fox_office_Susanne,BDG-2,commercial,cvrmse,0.1866900622844696,17.673913955688477,717
+Fox_office_Thelma,BDG-2,commercial,cvrmse,0.11826389282941818,124.23247528076172,717
+Fox_office_Vicki,BDG-2,commercial,cvrmse,0.0736478790640831,147.36578369140625,717
+Fox_office_Yong,BDG-2,commercial,cvrmse,0.1154894307255745,134.12298583984375,717
+Fox_office_Zachary,BDG-2,commercial,cvrmse,0.15804661810398102,165.91156005859375,717
+Fox_parking_Felipa,BDG-2,commercial,cvrmse,0.06953904777765274,61.70691680908203,717
+Fox_parking_Lynelle,BDG-2,commercial,cvrmse,0.08433639258146286,13.058960914611816,717
+Fox_parking_Tommie,BDG-2,commercial,cvrmse,0.039573390036821365,87.1070327758789,717
+Fox_public_Bart,BDG-2,commercial,cvrmse,0.18570277094841003,132.51560974121094,717
+Fox_public_Belle,BDG-2,commercial,cvrmse,0.18602798879146576,121.8392105102539,717
+Fox_public_Denny,BDG-2,commercial,cvrmse,0.07506004720926285,142.86331176757812,717
+Fox_public_Lauren,BDG-2,commercial,cvrmse,0.08829326182603836,122.42144775390625,717
+Fox_public_Martin,BDG-2,commercial,cvrmse,0.05977017059922218,184.00633239746094,717
+Fox_public_Rhonda,BDG-2,commercial,cvrmse,0.1823841631412506,107.18018341064453,717
+Fox_religion_Maurice,BDG-2,commercial,cvrmse,0.44467899203300476,1.7436703443527222,717
+Fox_retail_Manie,BDG-2,commercial,cvrmse,0.22061562538146973,64.43873596191406,717
+Fox_utility_Marian,BDG-2,commercial,cvrmse,0.36088326573371887,472.11871337890625,717
+Fox_warehouse_Lorretta,BDG-2,commercial,cvrmse,1.3929357528686523,17.923429489135742,717
+Fox_warehouse_Pearl,BDG-2,commercial,cvrmse,0.2570793032646179,33.19517517089844,717
+Panther_assembly_Carrol,BDG-2,commercial,cvrmse,0.4440363943576813,26.643156051635742,351
+Panther_assembly_David,BDG-2,commercial,cvrmse,0.7139041423797607,66.32022857666016,351
+Panther_assembly_Denice,BDG-2,commercial,cvrmse,0.12787975370883942,476.81365966796875,351
+Panther_assembly_Gwyneth,BDG-2,commercial,cvrmse,0.14234675467014313,239.80699157714844,351
+Panther_assembly_Pamella,BDG-2,commercial,cvrmse,0.3828023672103882,105.84959411621094,351
+Panther_education_Alecia,BDG-2,commercial,cvrmse,0.09027335047721863,207.80368041992188,351
+Panther_education_Annetta,BDG-2,commercial,cvrmse,0.12980814278125763,106.7873306274414,351
+Panther_education_Aurora,BDG-2,commercial,cvrmse,0.15842244029045105,124.45648956298828,351
+Panther_education_Cleopatra,BDG-2,commercial,cvrmse,0.19268271327018738,27.394821166992188,351
+Panther_education_Diann,BDG-2,commercial,cvrmse,0.23305752873420715,74.61678314208984,351
+Panther_education_Edna,BDG-2,commercial,cvrmse,0.1030651405453682,133.93185424804688,351
+Panther_education_Emily,BDG-2,commercial,cvrmse,0.14848165214061737,132.416748046875,351
+Panther_education_Enriqueta,BDG-2,commercial,cvrmse,0.15441522002220154,98.0435562133789,351
+Panther_education_Genevieve,BDG-2,commercial,cvrmse,0.0774063766002655,256.7945251464844,351
+Panther_education_Gina,BDG-2,commercial,cvrmse,0.040923018008470535,388.45379638671875,351
+Panther_education_Hugh,BDG-2,commercial,cvrmse,0.036742690950632095,606.63525390625,351
+Panther_education_Ivan,BDG-2,commercial,cvrmse,0.09601368010044098,129.37156677246094,351
+Panther_education_Janis,BDG-2,commercial,cvrmse,0.25713545083999634,27.53898811340332,351
+Panther_education_Jerome,BDG-2,commercial,cvrmse,0.05080093443393707,489.62359619140625,351
+Panther_education_Jonathan,BDG-2,commercial,cvrmse,0.19490636885166168,7.501101016998291,351
+Panther_education_Karri,BDG-2,commercial,cvrmse,0.12931804358959198,378.70684814453125,351
+Panther_education_Mattie,BDG-2,commercial,cvrmse,0.3233083188533783,6.650121212005615,351
+Panther_education_Misty,BDG-2,commercial,cvrmse,0.14693571627140045,32.8033561706543,351
+Panther_education_Mohammad,BDG-2,commercial,cvrmse,0.112009696662426,146.51368713378906,351
+Panther_education_Neal,BDG-2,commercial,cvrmse,0.24795745313167572,234.2523956298828,351
+Panther_education_Quintin,BDG-2,commercial,cvrmse,0.10543374717235565,303.6141052246094,351
+Panther_education_Rosalie,BDG-2,commercial,cvrmse,0.14099730551242828,62.153961181640625,351
+Panther_education_Scarlett,BDG-2,commercial,cvrmse,0.24194994568824768,21.77532196044922,351
+Panther_education_Shelton,BDG-2,commercial,cvrmse,0.077497698366642,120.54566192626953,351
+Panther_education_Sophia,BDG-2,commercial,cvrmse,0.04605094715952873,142.08062744140625,351
+Panther_education_Teofila,BDG-2,commercial,cvrmse,0.12263442575931549,156.72409057617188,351
+Panther_education_Tina,BDG-2,commercial,cvrmse,0.33467331528663635,7.061610221862793,351
+Panther_education_Vincent,BDG-2,commercial,cvrmse,0.11715858429670334,141.37643432617188,351
+Panther_education_Violet,BDG-2,commercial,cvrmse,0.09721974283456802,147.3995361328125,351
+Panther_education_Zelda,BDG-2,commercial,cvrmse,0.11920110136270523,81.98208618164062,351
+Panther_lodging_Alita,BDG-2,commercial,cvrmse,0.12204203009605408,75.64659118652344,351
+Panther_lodging_Anastasia,BDG-2,commercial,cvrmse,0.1458311229944229,52.03474044799805,351
+Panther_lodging_Awilda,BDG-2,commercial,cvrmse,0.08550813049077988,94.41161346435547,351
+Panther_lodging_Blaine,BDG-2,commercial,cvrmse,0.1518867164850235,76.28948211669922,351
+Panther_lodging_Cora,BDG-2,commercial,cvrmse,0.07719817012548447,137.97364807128906,351
+Panther_lodging_Cornelia,BDG-2,commercial,cvrmse,0.2279568612575531,42.52251052856445,351
+Panther_lodging_Dianna,BDG-2,commercial,cvrmse,0.1109607070684433,54.292442321777344,351
+Panther_lodging_Edison,BDG-2,commercial,cvrmse,0.13460083305835724,103.77961730957031,351
+Panther_lodging_Edmond,BDG-2,commercial,cvrmse,0.16595910489559174,42.320919036865234,351
+Panther_lodging_Else,BDG-2,commercial,cvrmse,0.15532183647155762,42.969482421875,351
+Panther_lodging_Fausto,BDG-2,commercial,cvrmse,0.16424605250358582,50.39591598510742,351
+Panther_lodging_Floyd,BDG-2,commercial,cvrmse,0.12606456875801086,161.19754028320312,351
+Panther_lodging_Gale,BDG-2,commercial,cvrmse,0.07599858194589615,106.57786560058594,351
+Panther_lodging_Hattie,BDG-2,commercial,cvrmse,0.0942346602678299,135.45272827148438,351
+Panther_lodging_Jana,BDG-2,commercial,cvrmse,0.1553119421005249,81.7230224609375,351
+Panther_lodging_Janice,BDG-2,commercial,cvrmse,0.12700289487838745,54.52865219116211,351
+Panther_lodging_Jorge,BDG-2,commercial,cvrmse,0.13751931488513947,67.51612854003906,351
+Panther_lodging_Kaitlin,BDG-2,commercial,cvrmse,0.18434904515743256,48.03954315185547,351
+Panther_lodging_Kara,BDG-2,commercial,cvrmse,0.07661253958940506,174.01748657226562,351
+Panther_lodging_Kirk,BDG-2,commercial,cvrmse,0.07728155702352524,155.3186798095703,351
+Panther_lodging_Marisol,BDG-2,commercial,cvrmse,0.07566016167402267,161.3168182373047,351
+Panther_lodging_Myrtle,BDG-2,commercial,cvrmse,0.15509819984436035,52.949893951416016,351
+Panther_lodging_Russell,BDG-2,commercial,cvrmse,0.14367887377738953,39.14263916015625,351
+Panther_lodging_Sonja,BDG-2,commercial,cvrmse,0.12364338338375092,115.75271606445312,351
+Panther_lodging_Teresita,BDG-2,commercial,cvrmse,0.13754796981811523,64.48765563964844,351
+Panther_lodging_Tracie,BDG-2,commercial,cvrmse,0.13859139382839203,54.6953125,351
+Panther_lodging_Willa,BDG-2,commercial,cvrmse,0.08868219703435898,71.91130065917969,351
+Panther_office_Antonette,BDG-2,commercial,cvrmse,0.11865238845348358,32.78423309326172,351
+Panther_office_Brent,BDG-2,commercial,cvrmse,0.3929130434989929,11.92634105682373,351
+Panther_office_Catherine,BDG-2,commercial,cvrmse,0.1716650128364563,41.24191665649414,351
+Panther_office_Christian,BDG-2,commercial,cvrmse,0.24178509414196014,34.94293975830078,351
+Panther_office_Christin,BDG-2,commercial,cvrmse,0.44799017906188965,4.210994243621826,351
+Panther_office_Clementine,BDG-2,commercial,cvrmse,0.11995292454957962,46.21717071533203,351
+Panther_office_Danica,BDG-2,commercial,cvrmse,0.3141079843044281,5.055485248565674,351
+Panther_office_Garth,BDG-2,commercial,cvrmse,0.1156928539276123,57.42317199707031,351
+Panther_office_Graham,BDG-2,commercial,cvrmse,0.12532538175582886,71.99839782714844,351
+Panther_office_Hannah,BDG-2,commercial,cvrmse,0.37902140617370605,6.017847061157227,351
+Panther_office_Jeane,BDG-2,commercial,cvrmse,0.290178120136261,19.698476791381836,351
+Panther_office_Jesus,BDG-2,commercial,cvrmse,0.13569483160972595,97.02938079833984,351
+Panther_office_Karla,BDG-2,commercial,cvrmse,0.17932827770709991,34.98214340209961,351
+Panther_office_Kristen,BDG-2,commercial,cvrmse,0.15329474210739136,45.32199478149414,351
+Panther_office_Larry,BDG-2,commercial,cvrmse,0.12047658115625381,47.460906982421875,351
+Panther_office_Lauretta,BDG-2,commercial,cvrmse,0.07667160034179688,171.7663116455078,351
+Panther_office_Lavinia,BDG-2,commercial,cvrmse,0.09805109351873398,22.25048065185547,351
+Panther_office_Lois,BDG-2,commercial,cvrmse,0.04286496341228485,148.49887084960938,351
+Panther_office_Otto,BDG-2,commercial,cvrmse,0.06738167256116867,217.09939575195312,351
+Panther_office_Patti,BDG-2,commercial,cvrmse,0.0787234827876091,467.47039794921875,351
+Panther_office_Ruthie,BDG-2,commercial,cvrmse,0.07063039392232895,119.23338317871094,351
+Panther_office_Shauna,BDG-2,commercial,cvrmse,0.16591185331344604,94.6659927368164,351
+Panther_office_Taryn,BDG-2,commercial,cvrmse,0.0905086100101471,89.7594223022461,351
+Panther_office_Valarie,BDG-2,commercial,cvrmse,0.14353540539741516,35.118412017822266,351
+Panther_other_Bethel,BDG-2,commercial,cvrmse,0.08944760262966156,3.9943649768829346,351
+Panther_other_Bettie,BDG-2,commercial,cvrmse,0.06915857642889023,14.59504222869873,351
+Panther_other_Lucina,BDG-2,commercial,cvrmse,0.08444079756736755,365.598876953125,351
+Panther_other_Lula,BDG-2,commercial,cvrmse,0.3055570423603058,1.1312216520309448,351
+Panther_other_Tyrone,BDG-2,commercial,cvrmse,0.18113559484481812,25.764738082885742,351
+Panther_parking_Adela,BDG-2,commercial,cvrmse,0.06708972156047821,46.9251708984375,351
+Panther_parking_Alaina,BDG-2,commercial,cvrmse,0.04425586014986038,37.07478332519531,351
+Panther_parking_Asia,BDG-2,commercial,cvrmse,0.06937293708324432,26.841148376464844,351
+Panther_parking_Charlene,BDG-2,commercial,cvrmse,0.0706591010093689,42.8806037902832,351
+Panther_parking_Jody,BDG-2,commercial,cvrmse,0.1982998102903366,29.807817459106445,351
+Panther_parking_Lorriane,BDG-2,commercial,cvrmse,0.12514548003673553,10.168656349182129,351
+Panther_parking_Mellissa,BDG-2,commercial,cvrmse,0.07525777071714401,15.087039947509766,351
+Panther_parking_Stanley,BDG-2,commercial,cvrmse,0.03437603637576103,44.377593994140625,351
+Panther_retail_Felix,BDG-2,commercial,cvrmse,0.15163730084896088,113.69888305664062,351
+Panther_retail_Gilbert,BDG-2,commercial,cvrmse,0.07418394088745117,0.7053050994873047,351
+Panther_retail_Kristina,BDG-2,commercial,cvrmse,0.26618704199790955,32.39259719848633,351
+Panther_retail_Lester,BDG-2,commercial,cvrmse,0.2516227960586548,6.896374225616455,351
+Panther_retail_Rachel,BDG-2,commercial,cvrmse,0.32485800981521606,3.5612905025482178,351
+Panther_retail_Romeo,BDG-2,commercial,cvrmse,0.06331737339496613,437.8439025878906,351
+Rat_assembly_Adolfo,BDG-2,commercial,cvrmse,0.2484033703804016,35.0015869140625,717
+Rat_assembly_Aisha,BDG-2,commercial,cvrmse,0.16587142646312714,81.13019561767578,717
+Rat_assembly_Alex,BDG-2,commercial,cvrmse,0.29122892022132874,6.337793827056885,717
+Rat_assembly_Archie,BDG-2,commercial,cvrmse,0.29753026366233826,3.123593807220459,717
+Rat_assembly_Aubrey,BDG-2,commercial,cvrmse,0.4410475790500641,17.15410804748535,717
+Rat_assembly_Cristina,BDG-2,commercial,cvrmse,0.2564666271209717,51.73637771606445,717
+Rat_assembly_Damaris,BDG-2,commercial,cvrmse,0.0603543184697628,4.8453288078308105,717
+Rat_assembly_Deandre,BDG-2,commercial,cvrmse,0.09979775547981262,29.271011352539062,717
+Rat_assembly_Donny,BDG-2,commercial,cvrmse,0.29046928882598877,2.480924606323242,717
+Rat_assembly_Dovie,BDG-2,commercial,cvrmse,0.2247113585472107,24.013582229614258,717
+Rat_assembly_Erwin,BDG-2,commercial,cvrmse,0.22925996780395508,16.646451950073242,717
+Rat_assembly_Ezequiel,BDG-2,commercial,cvrmse,0.3810742497444153,40.21744155883789,717
+Rat_assembly_Francine,BDG-2,commercial,cvrmse,0.16181863844394684,39.800777435302734,717
+Rat_assembly_Frieda,BDG-2,commercial,cvrmse,0.1531909704208374,124.2370834350586,717
+Rat_assembly_Gerald,BDG-2,commercial,cvrmse,0.2504642903804779,5.576118469238281,352
+Rat_assembly_Gwen,BDG-2,commercial,cvrmse,0.1932782679796219,5.535717487335205,717
+Rat_assembly_Horace,BDG-2,commercial,cvrmse,0.25643473863601685,26.46864891052246,717
+Rat_assembly_Ida,BDG-2,commercial,cvrmse,0.18262074887752533,26.0877742767334,717
+Rat_assembly_Jamie,BDG-2,commercial,cvrmse,0.32897213101387024,28.035837173461914,717
+Rat_assembly_Jannie,BDG-2,commercial,cvrmse,1.236052393913269,0.8326873779296875,717
+Rat_assembly_Jennie,BDG-2,commercial,cvrmse,0.3208964467048645,2.5972676277160645,717
+Rat_assembly_Kaitlyn,BDG-2,commercial,cvrmse,0.12220167368650436,99.42096710205078,717
+Rat_assembly_Karen,BDG-2,commercial,cvrmse,0.18606255948543549,163.02391052246094,352
+Rat_assembly_Kelley,BDG-2,commercial,cvrmse,0.30680760741233826,2.7393839359283447,717
+Rat_assembly_Kenya,BDG-2,commercial,cvrmse,0.1883755922317505,64.24478149414062,717
+Rat_assembly_Kimberley,BDG-2,commercial,cvrmse,0.11523950845003128,66.2448501586914,717
+Rat_assembly_Kristine,BDG-2,commercial,cvrmse,0.14057180285453796,24.027111053466797,717
+Rat_assembly_Kristy,BDG-2,commercial,cvrmse,0.37728333473205566,48.994564056396484,717
+Rat_assembly_Lillie,BDG-2,commercial,cvrmse,0.27430474758148193,13.220773696899414,717
+Rat_assembly_Michel,BDG-2,commercial,cvrmse,0.18230675160884857,14.965744018554688,717
+Rat_assembly_Mirta,BDG-2,commercial,cvrmse,0.188430517911911,169.5415802001953,717
+Rat_assembly_Monica,BDG-2,commercial,cvrmse,0.16592587530612946,65.9587631225586,717
+Rat_assembly_Pam,BDG-2,commercial,cvrmse,0.38239502906799316,8.551355361938477,717
+Rat_assembly_Pauline,BDG-2,commercial,cvrmse,0.5085692405700684,1.763643741607666,717
+Rat_assembly_Rolland,BDG-2,commercial,cvrmse,0.24569134414196014,41.01020431518555,717
+Rat_assembly_Rosemarie,BDG-2,commercial,cvrmse,0.16443125903606415,11.412088394165039,717
+Rat_assembly_Ruth,BDG-2,commercial,cvrmse,0.28670230507850647,6.2565436363220215,717
+Rat_assembly_Silvia,BDG-2,commercial,cvrmse,0.20067164301872253,11.322061538696289,717
+Rat_assembly_Suzanne,BDG-2,commercial,cvrmse,0.22129766643047333,3.12260365486145,717
+Rat_assembly_Teddy,BDG-2,commercial,cvrmse,0.15644285082817078,84.87507629394531,717
+Rat_assembly_Teodoro,BDG-2,commercial,cvrmse,0.31220611929893494,25.636320114135742,717
+Rat_assembly_Trent,BDG-2,commercial,cvrmse,0.24084095656871796,22.616989135742188,717
+Rat_assembly_Trudy,BDG-2,commercial,cvrmse,0.28713473677635193,37.876705169677734,717
+Rat_assembly_Victorina,BDG-2,commercial,cvrmse,0.3863387107849121,1.7491991519927979,717
+Rat_assembly_Viola,BDG-2,commercial,cvrmse,0.18148332834243774,54.29255294799805,717
+Rat_education_Adell,BDG-2,commercial,cvrmse,0.18588165938854218,148.54676818847656,717
+Rat_education_Adrian,BDG-2,commercial,cvrmse,0.1704915314912796,78.21414184570312,717
+Rat_education_Alfonso,BDG-2,commercial,cvrmse,0.14504000544548035,333.43536376953125,717
+Rat_education_Alfred,BDG-2,commercial,cvrmse,0.15735657513141632,355.5678405761719,717
+Rat_education_Alyson,BDG-2,commercial,cvrmse,0.12612678110599518,48.44053268432617,352
+Rat_education_Barbara,BDG-2,commercial,cvrmse,0.17536017298698425,1.4434559345245361,717
+Rat_education_Barney,BDG-2,commercial,cvrmse,0.21653161942958832,28.388256072998047,717
+Rat_education_Beverly,BDG-2,commercial,cvrmse,0.22407127916812897,661.8349609375,717
+Rat_education_Brett,BDG-2,commercial,cvrmse,0.45157402753829956,64.92081451416016,717
+Rat_education_Bryant,BDG-2,commercial,cvrmse,0.10413659363985062,55.75661849975586,717
+Rat_education_Calvin,BDG-2,commercial,cvrmse,0.1814052164554596,37.029518127441406,717
+Rat_education_Candida,BDG-2,commercial,cvrmse,0.15098994970321655,139.6337890625,717
+Rat_education_Carmela,BDG-2,commercial,cvrmse,0.16637706756591797,86.08177947998047,717
+Rat_education_Cecil,BDG-2,commercial,cvrmse,0.1433439552783966,62.673770904541016,717
+Rat_education_Cedric,BDG-2,commercial,cvrmse,0.14034771919250488,93.0953369140625,717
+Rat_education_Cinthia,BDG-2,commercial,cvrmse,0.2554531693458557,40.06084060668945,352
+Rat_education_Colin,BDG-2,commercial,cvrmse,0.1877817064523697,54.79795455932617,717
+Rat_education_Conrad,BDG-2,commercial,cvrmse,0.4541841447353363,166.17385864257812,717
+Rat_education_Dana,BDG-2,commercial,cvrmse,0.19668325781822205,98.0201416015625,717
+Rat_education_Dann,BDG-2,commercial,cvrmse,0.10953591018915176,195.4038848876953,717
+Rat_education_Davis,BDG-2,commercial,cvrmse,0.13634634017944336,78.4908218383789,717
+Rat_education_Deanna,BDG-2,commercial,cvrmse,0.11537162214517593,88.59867095947266,717
+Rat_education_Debra,BDG-2,commercial,cvrmse,0.12926997244358063,105.86585235595703,717
+Rat_education_Denise,BDG-2,commercial,cvrmse,0.17163026332855225,79.67282104492188,352
+Rat_education_Dianne,BDG-2,commercial,cvrmse,0.16705423593521118,131.09201049804688,352
+Rat_education_Donnell,BDG-2,commercial,cvrmse,0.4148106276988983,56.959861755371094,352
+Rat_education_Dreama,BDG-2,commercial,cvrmse,40.19330596923828,91.82115936279297,717
+Rat_education_Earl,BDG-2,commercial,cvrmse,0.16957667469978333,159.74098205566406,717
+Rat_education_Earnest,BDG-2,commercial,cvrmse,0.1768929362297058,60.5843505859375,717
+Rat_education_Eleonora,BDG-2,commercial,cvrmse,0.22244404256343842,215.31069946289062,352
+Rat_education_Elisa,BDG-2,commercial,cvrmse,0.27965331077575684,39.73411178588867,717
+Rat_education_Elsie,BDG-2,commercial,cvrmse,0.5693240165710449,111.7069091796875,717
+Rat_education_Esther,BDG-2,commercial,cvrmse,0.16632336378097534,94.79988861083984,717
+Rat_education_Everett,BDG-2,commercial,cvrmse,0.15644852817058563,176.70556640625,717
+Rat_education_Fernando,BDG-2,commercial,cvrmse,0.18966175615787506,62.358211517333984,717
+Rat_education_Francisca,BDG-2,commercial,cvrmse,0.8486394882202148,36.40224838256836,717
+Rat_education_Gricelda,BDG-2,commercial,cvrmse,0.21506497263908386,31.661828994750977,351
+Rat_education_Guillermo,BDG-2,commercial,cvrmse,0.1142054870724678,108.70878601074219,717
+Rat_education_Humberto,BDG-2,commercial,cvrmse,0.253257691860199,171.90980529785156,717
+Rat_education_Imelda,BDG-2,commercial,cvrmse,0.03651629760861397,2.870751142501831,717
+Rat_education_Irma,BDG-2,commercial,cvrmse,0.166544109582901,74.69326782226562,717
+Rat_education_Jacob,BDG-2,commercial,cvrmse,0.11484731733798981,55.2149543762207,717
+Rat_education_Jame,BDG-2,commercial,cvrmse,0.1510644257068634,64.54647827148438,717
+Rat_education_Jeanne,BDG-2,commercial,cvrmse,0.1462423950433731,56.55086135864258,351
+Rat_education_Jena,BDG-2,commercial,cvrmse,0.11220792680978775,163.33462524414062,717
+Rat_education_Jesse,BDG-2,commercial,cvrmse,0.14908896386623383,29.51031494140625,717
+Rat_education_Kandice,BDG-2,commercial,cvrmse,0.4823157787322998,66.41032409667969,717
+Rat_education_Kathryn,BDG-2,commercial,cvrmse,0.2468186467885971,518.9229736328125,717
+Rat_education_Keith,BDG-2,commercial,cvrmse,0.12577801942825317,104.66316223144531,717
+Rat_education_Kelsey,BDG-2,commercial,cvrmse,0.15743213891983032,157.84471130371094,717
+Rat_education_Lee,BDG-2,commercial,cvrmse,0.15225426852703094,403.5301513671875,717
+Rat_education_Leonardo,BDG-2,commercial,cvrmse,0.9724738597869873,48.85709762573242,717
+Rat_education_Lincoln,BDG-2,commercial,cvrmse,0.21045556664466858,161.5001983642578,717
+Rat_education_Liz,BDG-2,commercial,cvrmse,0.21526311337947845,90.8344955444336,717
+Rat_education_Lonnie,BDG-2,commercial,cvrmse,0.22558775544166565,60.65076446533203,717
+Rat_education_Lynn,BDG-2,commercial,cvrmse,0.14878734946250916,105.4776840209961,717
+Rat_education_Marcos,BDG-2,commercial,cvrmse,0.11802046746015549,365.0494689941406,717
+Rat_education_Marianna,BDG-2,commercial,cvrmse,0.17679515480995178,80.01312255859375,717
+Rat_education_Maricela,BDG-2,commercial,cvrmse,0.6790188550949097,144.2383270263672,717
+Rat_education_Marvin,BDG-2,commercial,cvrmse,0.23308442533016205,53.74211502075195,717
+Rat_education_Matt,BDG-2,commercial,cvrmse,0.18107573688030243,150.43678283691406,352
+Rat_education_Meghan,BDG-2,commercial,cvrmse,0.2121773213148117,53.74177169799805,717
+Rat_education_Milagros,BDG-2,commercial,cvrmse,0.15926852822303772,108.01644134521484,717
+Rat_education_Mona,BDG-2,commercial,cvrmse,0.1449432522058487,77.78378295898438,717
+Rat_education_Morton,BDG-2,commercial,cvrmse,0.20456166565418243,151.3967742919922,717
+Rat_education_Mose,BDG-2,commercial,cvrmse,0.18181848526000977,83.07685089111328,717
+Rat_education_Nellie,BDG-2,commercial,cvrmse,0.13305942714214325,434.65228271484375,717
+Rat_education_Nona,BDG-2,commercial,cvrmse,0.32216542959213257,97.79853820800781,717
+Rat_education_Nydia,BDG-2,commercial,cvrmse,0.13810403645038605,151.15782165527344,717
+Rat_education_Pat,BDG-2,commercial,cvrmse,0.20431767404079437,158.61602783203125,717
+Rat_education_Patty,BDG-2,commercial,cvrmse,0.14512071013450623,136.88014221191406,717
+Rat_education_Paula,BDG-2,commercial,cvrmse,0.14974629878997803,123.5228500366211,717
+Rat_education_Renee,BDG-2,commercial,cvrmse,0.12264680117368698,34.40070724487305,717
+Rat_education_Robyn,BDG-2,commercial,cvrmse,0.1704772263765335,155.99734497070312,717
+Rat_education_Rogelio,BDG-2,commercial,cvrmse,0.1400018185377121,125.88986206054688,717
+Rat_education_Rosalyn,BDG-2,commercial,cvrmse,0.14980919659137726,71.26641082763672,717
+Rat_education_Royal,BDG-2,commercial,cvrmse,0.10917430371046066,72.95742797851562,717
+Rat_education_Salvatore,BDG-2,commercial,cvrmse,0.14157304167747498,79.41040802001953,717
+Rat_education_Shellie,BDG-2,commercial,cvrmse,0.14405962824821472,75.19473266601562,717
+Rat_education_Sherwood,BDG-2,commercial,cvrmse,0.16409741342067719,103.08879852294922,717
+Rat_education_Sina,BDG-2,commercial,cvrmse,0.1464800089597702,166.63641357421875,717
+Rat_education_Stuart,BDG-2,commercial,cvrmse,0.22588631510734558,47.09553527832031,717
+Rat_education_Susana,BDG-2,commercial,cvrmse,0.18278886377811432,9.21369457244873,352
+Rat_education_Tania,BDG-2,commercial,cvrmse,0.20024508237838745,307.35430908203125,717
+Rat_education_Terese,BDG-2,commercial,cvrmse,0.13076148927211761,116.48348999023438,717
+Rat_education_Theo,BDG-2,commercial,cvrmse,0.24885866045951843,551.1588745117188,717
+Rat_education_Tim,BDG-2,commercial,cvrmse,0.15782350301742554,62.362884521484375,717
+Rat_education_Tristan,BDG-2,commercial,cvrmse,0.20313848555088043,30.404233932495117,352
+Rat_education_Ulrike,BDG-2,commercial,cvrmse,0.12818123400211334,103.4378662109375,717
+Rat_education_Verna,BDG-2,commercial,cvrmse,0.169509619474411,83.39668273925781,717
+Rat_education_Vicky,BDG-2,commercial,cvrmse,0.2408447116613388,186.55104064941406,717
+Rat_education_Willie,BDG-2,commercial,cvrmse,0.19013145565986633,240.06195068359375,717
+Rat_education_Wilmer,BDG-2,commercial,cvrmse,0.1536550223827362,101.62114715576172,717
+Rat_education_Winnie,BDG-2,commercial,cvrmse,0.25098076462745667,55.17234420776367,717
+Rat_education_Yu,BDG-2,commercial,cvrmse,0.977694571018219,79.88938903808594,717
+Rat_education_Zina,BDG-2,commercial,cvrmse,0.25628766417503357,49.14033889770508,717
+Rat_education_Zoe,BDG-2,commercial,cvrmse,0.14968162775039673,93.02867126464844,717
+Rat_health_Gaye,BDG-2,commercial,cvrmse,0.15757307410240173,38.09290313720703,717
+Rat_health_Guy,BDG-2,commercial,cvrmse,0.08667287230491638,1468.52099609375,717
+Rat_health_Mildred,BDG-2,commercial,cvrmse,0.24548959732055664,17.999897003173828,717
+Rat_health_Rosaria,BDG-2,commercial,cvrmse,0.20711103081703186,30.971332550048828,717
+Rat_health_Shane,BDG-2,commercial,cvrmse,0.07469505816698074,1146.6488037109375,717
+Rat_health_Tanya,BDG-2,commercial,cvrmse,0.14701083302497864,52.14945983886719,717
+Rat_lodging_Ardell,BDG-2,commercial,cvrmse,0.1601800173521042,15.93410587310791,717
+Rat_lodging_Ben,BDG-2,commercial,cvrmse,0.12650999426841736,330.037353515625,717
+Rat_lodging_Christine,BDG-2,commercial,cvrmse,0.14344333112239838,62.37153625488281,717
+Rat_lodging_Dwight,BDG-2,commercial,cvrmse,0.31561315059661865,23.71277618408203,717
+Rat_lodging_Jeannette,BDG-2,commercial,cvrmse,0.28267788887023926,5.122107982635498,717
+Rat_lodging_Lakisha,BDG-2,commercial,cvrmse,0.6662743091583252,0.6915956735610962,352
+Rat_lodging_Lorenzo,BDG-2,commercial,cvrmse,0.38901424407958984,2.932366371154785,717
+Rat_lodging_Lucille,BDG-2,commercial,cvrmse,0.41142737865448,3.69109845161438,352
+Rat_lodging_Marguerite,BDG-2,commercial,cvrmse,0.19900260865688324,22.808809280395508,717
+Rat_lodging_Marion,BDG-2,commercial,cvrmse,0.19056536257266998,36.19329071044922,717
+Rat_lodging_Ted,BDG-2,commercial,cvrmse,0.445361852645874,2.5435099601745605,717
+Rat_office_Adele,BDG-2,commercial,cvrmse,0.16773734986782074,595.50244140625,717
+Rat_office_Annis,BDG-2,commercial,cvrmse,0.12558142840862274,33.374107360839844,717
+Rat_office_Arron,BDG-2,commercial,cvrmse,0.10487886518239975,59.7536735534668,717
+Rat_office_Ashlee,BDG-2,commercial,cvrmse,0.10538437962532043,54.10281753540039,352
+Rat_office_Avis,BDG-2,commercial,cvrmse,1.0063236951828003,892.1763916015625,717
+Rat_office_Colby,BDG-2,commercial,cvrmse,0.1676560491323471,2130.18798828125,717
+Rat_office_Craig,BDG-2,commercial,cvrmse,0.1045188382267952,235.84034729003906,717
+Rat_office_Jacinta,BDG-2,commercial,cvrmse,0.08793281018733978,219.40541076660156,717
+Rat_office_Jamal,BDG-2,commercial,cvrmse,0.17665202915668488,933.6217041015625,717
+Rat_office_Jeannie,BDG-2,commercial,cvrmse,0.24034082889556885,43.651851654052734,717
+Rat_office_Jessica,BDG-2,commercial,cvrmse,0.08595271408557892,698.4833374023438,717
+Rat_office_Jill,BDG-2,commercial,cvrmse,0.25491079688072205,638.9132080078125,717
+Rat_office_Kasey,BDG-2,commercial,cvrmse,0.18980635702610016,86.11343383789062,717
+Rat_office_Lora,BDG-2,commercial,cvrmse,0.24236372113227844,423.9471435546875,717
+Rat_office_Loyd,BDG-2,commercial,cvrmse,0.12574240565299988,55.203399658203125,717
+Rat_office_Mei,BDG-2,commercial,cvrmse,0.14533142745494843,20.621780395507812,717
+Rat_office_Olivia,BDG-2,commercial,cvrmse,0.19918623566627502,52.98652648925781,717
+Rat_office_Ramiro,BDG-2,commercial,cvrmse,0.1051783338189125,35.07722091674805,717
+Rat_office_Randy,BDG-2,commercial,cvrmse,0.14332692325115204,103.15217590332031,717
+Rat_office_Ronald,BDG-2,commercial,cvrmse,0.18255455791950226,53.6207160949707,717
+Rat_office_Rosemary,BDG-2,commercial,cvrmse,0.1850671023130417,16.519454956054688,717
+Rat_office_Sammy,BDG-2,commercial,cvrmse,0.2276441603899002,53.53894805908203,717
+Rat_office_Tracy,BDG-2,commercial,cvrmse,0.14114461839199066,20.64693260192871,717
+Rat_other_Al,BDG-2,commercial,cvrmse,0.1735711693763733,52.38876724243164,717
+Rat_other_Daphne,BDG-2,commercial,cvrmse,0.3255041837692261,11.649198532104492,717
+Rat_other_Hazel,BDG-2,commercial,cvrmse,0.030427221208810806,372.8525695800781,717
+Rat_other_Lan,BDG-2,commercial,cvrmse,1.7435822486877441,13.487932205200195,717
+Rat_parking_Ronnie,BDG-2,commercial,cvrmse,0.30363062024116516,16.761634826660156,717
+Rat_public_Alanna,BDG-2,commercial,cvrmse,0.16280141472816467,1161.5447998046875,717
+Rat_public_Allie,BDG-2,commercial,cvrmse,0.1674027144908905,11.641100883483887,717
+Rat_public_Allyson,BDG-2,commercial,cvrmse,0.16318857669830322,54.26353073120117,717
+Rat_public_Amber,BDG-2,commercial,cvrmse,0.31044697761535645,10.322514533996582,717
+Rat_public_Angelina,BDG-2,commercial,cvrmse,0.11809331923723221,32.73455047607422,717
+Rat_public_Becky,BDG-2,commercial,cvrmse,0.16022901237010956,21.15831756591797,717
+Rat_public_Berry,BDG-2,commercial,cvrmse,0.06924339383840561,97.81133270263672,717
+Rat_public_Bronwyn,BDG-2,commercial,cvrmse,0.10749778896570206,442.971923828125,717
+Rat_public_Carole,BDG-2,commercial,cvrmse,0.18101486563682556,18.872087478637695,717
+Rat_public_Caroline,BDG-2,commercial,cvrmse,0.14131364226341248,149.84034729003906,717
+Rat_public_Chrissy,BDG-2,commercial,cvrmse,0.16507063806056976,56.48226547241211,717
+Rat_public_Clyde,BDG-2,commercial,cvrmse,0.16023607552051544,33.99972915649414,717
+Rat_public_Corinne,BDG-2,commercial,cvrmse,0.13243570923805237,25.604646682739258,717
+Rat_public_Courtney,BDG-2,commercial,cvrmse,0.1698491871356964,30.815170288085938,717
+Rat_public_Dalia,BDG-2,commercial,cvrmse,0.07916148751974106,187.3408660888672,717
+Rat_public_Damon,BDG-2,commercial,cvrmse,0.131710022687912,20.90003204345703,717
+Rat_public_Darren,BDG-2,commercial,cvrmse,0.046045877039432526,4.3587541580200195,717
+Rat_public_Deidre,BDG-2,commercial,cvrmse,0.1803714483976364,8.9906587600708,717
+Rat_public_Desiree,BDG-2,commercial,cvrmse,0.14879350364208221,12.955252647399902,717
+Rat_public_Dexter,BDG-2,commercial,cvrmse,0.14205341041088104,13.138935089111328,717
+Rat_public_Duane,BDG-2,commercial,cvrmse,0.46100640296936035,76.89156341552734,717
+Rat_public_Elmira,BDG-2,commercial,cvrmse,0.182471364736557,22.051101684570312,351
+Rat_public_Emilee,BDG-2,commercial,cvrmse,0.26115357875823975,38.398006439208984,717
+Rat_public_Faye,BDG-2,commercial,cvrmse,0.1795530915260315,31.326257705688477,717
+Rat_public_Fern,BDG-2,commercial,cvrmse,0.13808557391166687,49.01180648803711,717
+Rat_public_Frank,BDG-2,commercial,cvrmse,0.28892865777015686,7.919166564941406,717
+Rat_public_Frederick,BDG-2,commercial,cvrmse,0.12122750282287598,20.47924041748047,717
+Rat_public_Fredrick,BDG-2,commercial,cvrmse,14.106888771057129,12.973262786865234,717
+Rat_public_Grover,BDG-2,commercial,cvrmse,0.10042756795883179,17.7821044921875,717
+Rat_public_Helena,BDG-2,commercial,cvrmse,0.21256913244724274,24.011526107788086,717
+Rat_public_Hortencia,BDG-2,commercial,cvrmse,0.14840874075889587,59.42860794067383,717
+Rat_public_Isabel,BDG-2,commercial,cvrmse,0.12061009556055069,53.68284225463867,717
+Rat_public_Jason,BDG-2,commercial,cvrmse,0.20747269690036774,25.29815673828125,717
+Rat_public_Joann,BDG-2,commercial,cvrmse,0.12701506912708282,17.64887809753418,717
+Rat_public_Johnna,BDG-2,commercial,cvrmse,0.3415425717830658,30.03641128540039,352
+Rat_public_Johnny,BDG-2,commercial,cvrmse,0.08795081824064255,20.498376846313477,717
+Rat_public_Josiah,BDG-2,commercial,cvrmse,0.1554868370294571,88.16835021972656,717
+Rat_public_Julieann,BDG-2,commercial,cvrmse,0.36556923389434814,4.471230506896973,717
+Rat_public_Kathleen,BDG-2,commercial,cvrmse,0.16888172924518585,28.59619140625,717
+Rat_public_Kelle,BDG-2,commercial,cvrmse,0.22327472269535065,24.86789894104004,717
+Rat_public_Kelly,BDG-2,commercial,cvrmse,0.11843445152044296,21.098600387573242,717
+Rat_public_Kermit,BDG-2,commercial,cvrmse,0.28485801815986633,17.43393325805664,717
+Rat_public_Kimber,BDG-2,commercial,cvrmse,0.282582551240921,226.80313110351562,717
+Rat_public_Laura,BDG-2,commercial,cvrmse,0.18022555112838745,13.174306869506836,717
+Rat_public_Laurie,BDG-2,commercial,cvrmse,0.1386692225933075,157.35794067382812,717
+Rat_public_Laverne,BDG-2,commercial,cvrmse,0.16098536550998688,12.747756958007812,717
+Rat_public_Lea,BDG-2,commercial,cvrmse,0.09171243011951447,67.44332885742188,352
+Rat_public_Leo,BDG-2,commercial,cvrmse,0.11634743958711624,18.090499877929688,717
+Rat_public_Leta,BDG-2,commercial,cvrmse,0.15134699642658234,17.09726333618164,717
+Rat_public_Lloyd,BDG-2,commercial,cvrmse,0.1390843540430069,71.97505187988281,717
+Rat_public_Loretta,BDG-2,commercial,cvrmse,0.10119282454252243,203.0821533203125,717
+Rat_public_Lynda,BDG-2,commercial,cvrmse,0.14550825953483582,11.966948509216309,717
+Rat_public_Mabel,BDG-2,commercial,cvrmse,0.09017342329025269,101.62433624267578,717
+Rat_public_Marcellus,BDG-2,commercial,cvrmse,0.19462236762046814,9.703974723815918,717
+Rat_public_Margart,BDG-2,commercial,cvrmse,0.1880844384431839,42.71653366088867,717
+Rat_public_Mark,BDG-2,commercial,cvrmse,0.1999976933002472,22.751327514648438,717
+Rat_public_Maxine,BDG-2,commercial,cvrmse,0.12762266397476196,144.50502014160156,352
+Rat_public_Michael,BDG-2,commercial,cvrmse,0.14008769392967224,42.84215545654297,717
+Rat_public_Michelle,BDG-2,commercial,cvrmse,0.21423780918121338,68.46321105957031,717
+Rat_public_Muriel,BDG-2,commercial,cvrmse,0.34352725744247437,83.62181091308594,717
+Rat_public_Nancy,BDG-2,commercial,cvrmse,0.13232724368572235,18.93061065673828,717
+Rat_public_Neil,BDG-2,commercial,cvrmse,0.2760906219482422,24.534513473510742,717
+Rat_public_Nell,BDG-2,commercial,cvrmse,0.197310671210289,48.618446350097656,717
+Rat_public_Nelson,BDG-2,commercial,cvrmse,0.1492670178413391,44.28033447265625,717
+Rat_public_Ramon,BDG-2,commercial,cvrmse,0.2927584946155548,30.479835510253906,717
+Rat_public_Ramona,BDG-2,commercial,cvrmse,0.15232713520526886,26.980064392089844,717
+Rat_public_Roberta,BDG-2,commercial,cvrmse,0.13376934826374054,14.954028129577637,717
+Rat_public_Roma,BDG-2,commercial,cvrmse,0.21542119979858398,52.90134048461914,717
+Rat_public_Sade,BDG-2,commercial,cvrmse,0.14420782029628754,32.68586730957031,717
+Rat_public_Sana,BDG-2,commercial,cvrmse,0.09264776855707169,1312.62109375,352
+Rat_public_Sean,BDG-2,commercial,cvrmse,0.19436746835708618,21.968414306640625,717
+Rat_public_Shanta,BDG-2,commercial,cvrmse,0.176907479763031,12.330816268920898,717
+Rat_public_Sharonda,BDG-2,commercial,cvrmse,0.17598167061805725,36.54338073730469,717
+Rat_public_Sharron,BDG-2,commercial,cvrmse,0.11529447138309479,43.396060943603516,717
+Rat_public_Stacey,BDG-2,commercial,cvrmse,0.19888578355312347,16.429912567138672,717
+Rat_public_Stella,BDG-2,commercial,cvrmse,0.06910507380962372,96.61380004882812,717
+Rat_public_Sue,BDG-2,commercial,cvrmse,0.18867182731628418,28.97334098815918,717
+Rat_public_Tammara,BDG-2,commercial,cvrmse,0.3023597002029419,7.488119602203369,717
+Rat_public_Tamra,BDG-2,commercial,cvrmse,0.10953577607870102,21.0715389251709,717
+Rat_public_Tommy,BDG-2,commercial,cvrmse,0.10073943436145782,16.917495727539062,717
+Rat_public_Toya,BDG-2,commercial,cvrmse,0.3249607980251312,26.732702255249023,717
+Rat_public_Tricia,BDG-2,commercial,cvrmse,0.23206128180027008,37.082176208496094,717
+Rat_public_Vickie,BDG-2,commercial,cvrmse,0.3804017901420593,44.36585998535156,717
+Rat_public_Wilbur,BDG-2,commercial,cvrmse,0.1333991140127182,177.47125244140625,717
+Rat_public_Wilma,BDG-2,commercial,cvrmse,0.12039908766746521,56.89759826660156,717
+Rat_public_Yessenia,BDG-2,commercial,cvrmse,0.16264405846595764,113.36384582519531,717
+Rat_religion_Kathy,BDG-2,commercial,cvrmse,0.34388795495033264,5.159325122833252,717
+Rat_retail_Jeffrey,BDG-2,commercial,cvrmse,0.22462889552116394,76.31806182861328,717
+Rat_warehouse_Breanna,BDG-2,commercial,cvrmse,0.08464740961790085,90.3812255859375,717
+Rat_warehouse_Doretta,BDG-2,commercial,cvrmse,0.11574327945709229,157.0296173095703,717
+Rat_warehouse_Eloisa,BDG-2,commercial,cvrmse,0.16801717877388,89.32637786865234,717
+Rat_warehouse_Maegan,BDG-2,commercial,cvrmse,2.044996500015259,6.6973557472229,717
+Rat_warehouse_Shari,BDG-2,commercial,cvrmse,0.16040335595607758,45.89358139038086,717
+Electricity MT_001,Electricity,commercial,cvrmse,0.6712967753410339,5.183416366577148,1082
+Electricity MT_002,Electricity,commercial,cvrmse,0.12081482261419296,27.69228744506836,1082
+Electricity MT_003,Electricity,commercial,cvrmse,2.4133522510528564,3.6643288135528564,1082
+Electricity MT_004,Electricity,commercial,cvrmse,0.11850149184465408,109.39917755126953,1082
+Electricity MT_005,Electricity,commercial,cvrmse,0.140677809715271,49.44264602661133,1082
+Electricity MT_006,Electricity,commercial,cvrmse,0.1022254005074501,187.62342834472656,1082
+Electricity MT_007,Electricity,commercial,cvrmse,0.460513710975647,6.053048610687256,1082
+Electricity MT_008,Electricity,commercial,cvrmse,0.08487724512815475,254.8768310546875,1082
+Electricity MT_009,Electricity,commercial,cvrmse,0.21303603053092957,52.97835159301758,1082
+Electricity MT_010,Electricity,commercial,cvrmse,0.2926204204559326,56.072174072265625,1082
+Electricity MT_011,Electricity,commercial,cvrmse,0.1116614043712616,39.619964599609375,1082
+Electricity MT_012,Electricity,commercial,cvrmse,0.09781567007303238,145.2547149658203,351
+Electricity MT_013,Electricity,commercial,cvrmse,0.18728724122047424,73.56414031982422,1082
+Electricity MT_014,Electricity,commercial,cvrmse,0.14727497100830078,44.53544235229492,1082
+Electricity MT_015,Electricity,commercial,cvrmse,0.09638743102550507,47.5150032043457,351
+Electricity MT_016,Electricity,commercial,cvrmse,0.1353575587272644,32.938377380371094,1082
+Electricity MT_017,Electricity,commercial,cvrmse,0.08259239792823792,49.171485900878906,1082
+Electricity MT_018,Electricity,commercial,cvrmse,0.1278804987668991,244.7381591796875,1082
+Electricity MT_019,Electricity,commercial,cvrmse,0.13489581644535065,8.2222261428833,1082
+Electricity MT_020,Electricity,commercial,cvrmse,0.14082185924053192,40.76470184326172,1082
+Electricity MT_021,Electricity,commercial,cvrmse,0.10842249542474747,161.8585205078125,1082
+Electricity MT_022,Electricity,commercial,cvrmse,0.18719470500946045,27.35340690612793,1082
+Electricity MT_023,Electricity,commercial,cvrmse,0.16155272722244263,9.82319450378418,1082
+Electricity MT_024,Electricity,commercial,cvrmse,0.1291974037885666,31.586074829101562,716
+Electricity MT_025,Electricity,commercial,cvrmse,0.12142296135425568,217.40023803710938,1082
+Electricity MT_026,Electricity,commercial,cvrmse,0.14578936994075775,20.793853759765625,1082
+Electricity MT_027,Electricity,commercial,cvrmse,0.13087372481822968,19.9206600189209,1082
+Electricity MT_028,Electricity,commercial,cvrmse,0.12604399025440216,66.97772979736328,1082
+Electricity MT_029,Electricity,commercial,cvrmse,0.21797993779182434,78.38329315185547,1082
+Electricity MT_030,Electricity,commercial,cvrmse,0.11460509151220322,37.628910064697266,351
+Electricity MT_031,Electricity,commercial,cvrmse,0.10519738495349884,89.54466247558594,1082
+Electricity MT_032,Electricity,commercial,cvrmse,0.14932680130004883,27.722177505493164,716
+Electricity MT_033,Electricity,commercial,cvrmse,0.10182362794876099,40.466888427734375,716
+Electricity MT_034,Electricity,commercial,cvrmse,0.14423532783985138,14.056476593017578,1082
+Electricity MT_035,Electricity,commercial,cvrmse,0.12709304690361023,116.83881378173828,1082
+Electricity MT_036,Electricity,commercial,cvrmse,0.31906959414482117,36.59440612792969,1082
+Electricity MT_037,Electricity,commercial,cvrmse,0.13359834253787994,110.97357940673828,1082
+Electricity MT_038,Electricity,commercial,cvrmse,0.08619477599859238,119.57121276855469,1082
+Electricity MT_039,Electricity,commercial,cvrmse,0.14933302998542786,41.283084869384766,351
+Electricity MT_040,Electricity,commercial,cvrmse,0.14671434462070465,99.00533294677734,1082
+Electricity MT_041,Electricity,commercial,cvrmse,0.09288269281387329,86.33631896972656,351
+Electricity MT_042,Electricity,commercial,cvrmse,0.11461671441793442,42.18213653564453,1082
+Electricity MT_043,Electricity,commercial,cvrmse,0.113233782351017,1084.2689208984375,1082
+Electricity MT_044,Electricity,commercial,cvrmse,0.12464123219251633,30.34972381591797,1082
+Electricity MT_045,Electricity,commercial,cvrmse,0.2604880928993225,93.95108032226562,1082
+Electricity MT_046,Electricity,commercial,cvrmse,0.12814700603485107,130.8240509033203,1082
+Electricity MT_047,Electricity,commercial,cvrmse,0.12900769710540771,27.996437072753906,1082
+Electricity MT_048,Electricity,commercial,cvrmse,0.1298203319311142,15.345170021057129,1082
+Electricity MT_049,Electricity,commercial,cvrmse,0.09060510993003845,929.2071533203125,1082
+Electricity MT_050,Electricity,commercial,cvrmse,0.11318361014127731,164.4727020263672,1082
+Electricity MT_051,Electricity,commercial,cvrmse,0.1289229691028595,55.302059173583984,1082
+Electricity MT_052,Electricity,commercial,cvrmse,0.10606517642736435,35.38520431518555,1082
+Electricity MT_053,Electricity,commercial,cvrmse,0.12544330954551697,66.7603530883789,1082
+Electricity MT_054,Electricity,commercial,cvrmse,0.07556712627410889,69.65483856201172,1082
+Electricity MT_055,Electricity,commercial,cvrmse,0.15273906290531158,23.369112014770508,1082
+Electricity MT_056,Electricity,commercial,cvrmse,0.09000680595636368,37.52988815307617,1082
+Electricity MT_057,Electricity,commercial,cvrmse,0.19610990583896637,24.570016860961914,1082
+Electricity MT_058,Electricity,commercial,cvrmse,0.12259268015623093,85.05950927734375,1082
+Electricity MT_059,Electricity,commercial,cvrmse,0.14735408127307892,118.9862060546875,1082
+Electricity MT_060,Electricity,commercial,cvrmse,0.09801829606294632,27.371707916259766,1082
+Electricity MT_061,Electricity,commercial,cvrmse,0.12824878096580505,75.38433074951172,1082
+Electricity MT_062,Electricity,commercial,cvrmse,0.09806311130523682,59.598968505859375,1082
+Electricity MT_063,Electricity,commercial,cvrmse,0.13382796943187714,22.51812171936035,1082
+Electricity MT_064,Electricity,commercial,cvrmse,0.1194162666797638,1411.992431640625,1082
+Electricity MT_065,Electricity,commercial,cvrmse,0.12432637810707092,62.99698257446289,1082
+Electricity MT_066,Electricity,commercial,cvrmse,0.11938248574733734,46.28750228881836,717
+Electricity MT_067,Electricity,commercial,cvrmse,0.1256307065486908,195.93112182617188,1082
+Electricity MT_068,Electricity,commercial,cvrmse,0.19870048761367798,154.51498413085938,1082
+Electricity MT_069,Electricity,commercial,cvrmse,0.10062642395496368,161.27493286132812,1082
+Electricity MT_070,Electricity,commercial,cvrmse,0.09960219264030457,41.342594146728516,1082
+Electricity MT_071,Electricity,commercial,cvrmse,0.0873613953590393,45.524288177490234,1082
+Electricity MT_072,Electricity,commercial,cvrmse,0.09441633522510529,94.93802642822266,1082
+Electricity MT_073,Electricity,commercial,cvrmse,0.14571183919906616,47.174983978271484,1082
+Electricity MT_074,Electricity,commercial,cvrmse,0.09916822612285614,88.96585845947266,1082
+Electricity MT_075,Electricity,commercial,cvrmse,0.09808910638093948,47.7699089050293,1082
+Electricity MT_076,Electricity,commercial,cvrmse,0.10308034718036652,60.19652557373047,1082
+Electricity MT_077,Electricity,commercial,cvrmse,0.18383945524692535,35.258705139160156,1082
+Electricity MT_078,Electricity,commercial,cvrmse,0.0847819447517395,39.93050765991211,1082
+Electricity MT_079,Electricity,commercial,cvrmse,0.1929730474948883,32.464534759521484,1082
+Electricity MT_080,Electricity,commercial,cvrmse,0.1731368750333786,14.409180641174316,1082
+Electricity MT_081,Electricity,commercial,cvrmse,0.09952253848314285,99.40291595458984,1082
+Electricity MT_082,Electricity,commercial,cvrmse,0.07715342193841934,44.511863708496094,1082
+Electricity MT_083,Electricity,commercial,cvrmse,0.08609509468078613,71.28858184814453,1082
+Electricity MT_084,Electricity,commercial,cvrmse,0.14839643239974976,220.39064025878906,1082
+Electricity MT_085,Electricity,commercial,cvrmse,0.10698864609003067,123.78787994384766,1082
+Electricity MT_086,Electricity,commercial,cvrmse,0.13979481160640717,439.93768310546875,1082
+Electricity MT_087,Electricity,commercial,cvrmse,0.14389678835868835,115.22261047363281,1082
+Electricity MT_088,Electricity,commercial,cvrmse,0.25357773900032043,126.78018188476562,1082
+Electricity MT_089,Electricity,commercial,cvrmse,0.13772226870059967,193.69522094726562,1082
+Electricity MT_090,Electricity,commercial,cvrmse,0.43189963698387146,129.03005981445312,1082
+Electricity MT_091,Electricity,commercial,cvrmse,0.1265249103307724,138.2353515625,1082
+Electricity MT_092,Electricity,commercial,cvrmse,0.26089945435523987,51.3860969543457,716
+Electricity MT_093,Electricity,commercial,cvrmse,1.5442622900009155,26.004606246948242,1082
+Electricity MT_094,Electricity,commercial,cvrmse,0.8079249858856201,25.485532760620117,1082
+Electricity MT_095,Electricity,commercial,cvrmse,0.37336698174476624,16.824899673461914,1082
+Electricity MT_096,Electricity,commercial,cvrmse,0.23513835668563843,10.865345001220703,1082
+Electricity MT_097,Electricity,commercial,cvrmse,0.20091314613819122,187.50413513183594,1082
+Electricity MT_098,Electricity,commercial,cvrmse,0.11118122190237045,681.6334228515625,1082
+Electricity MT_099,Electricity,commercial,cvrmse,0.14139562845230103,1171.836181640625,1082
+Electricity MT_100,Electricity,commercial,cvrmse,0.1937667578458786,59.062076568603516,1082
+Electricity MT_101,Electricity,commercial,cvrmse,0.1280284970998764,699.4080200195312,1082
+Electricity MT_102,Electricity,commercial,cvrmse,0.1862442046403885,875.754150390625,1082
+Electricity MT_103,Electricity,commercial,cvrmse,0.09287779033184052,1125.08154296875,1082
+Electricity MT_104,Electricity,commercial,cvrmse,0.12282415479421616,567.045654296875,1082
+Electricity MT_105,Electricity,commercial,cvrmse,0.17653688788414001,218.91171264648438,1082
+Electricity MT_106,Electricity,commercial,cvrmse,0.22054216265678406,51.07863235473633,351
+Electricity MT_107,Electricity,commercial,cvrmse,0.28712067008018494,16.841136932373047,351
+Electricity MT_108,Electricity,commercial,cvrmse,0.24224041402339935,29.70261573791504,351
+Electricity MT_110,Electricity,commercial,cvrmse,0.6266783475875854,23.29790687561035,351
+Electricity MT_111,Electricity,commercial,cvrmse,0.25904831290245056,52.812252044677734,351
+Electricity MT_113,Electricity,commercial,cvrmse,0.16518695652484894,32.11137390136719,351
+Electricity MT_114,Electricity,commercial,cvrmse,0.14733868837356567,309.9470520019531,1082
+Electricity MT_115,Electricity,commercial,cvrmse,0.26717668771743774,23.462892532348633,351
+Electricity MT_117,Electricity,commercial,cvrmse,0.24796625971794128,15.047364234924316,351
+Electricity MT_118,Electricity,commercial,cvrmse,0.1076948493719101,97.93900299072266,1082
+Electricity MT_119,Electricity,commercial,cvrmse,0.18005722761154175,80.38447570800781,1082
+Electricity MT_120,Electricity,commercial,cvrmse,0.15062125027179718,39.90177536010742,351
+Electricity MT_121,Electricity,commercial,cvrmse,0.30382922291755676,114.70010375976562,351
+Electricity MT_122,Electricity,commercial,cvrmse,0.28886955976486206,22.333274841308594,351
+Electricity MT_123,Electricity,commercial,cvrmse,0.17548301815986633,61.914058685302734,1082
+Electricity MT_124,Electricity,commercial,cvrmse,0.14357557892799377,281.0022277832031,1446
+Electricity MT_125,Electricity,commercial,cvrmse,0.1353849619626999,38.321632385253906,1082
+Electricity MT_126,Electricity,commercial,cvrmse,0.0943605974316597,58.871673583984375,1082
+Electricity MT_127,Electricity,commercial,cvrmse,0.5537640452384949,68.9975814819336,716
+Electricity MT_128,Electricity,commercial,cvrmse,0.20250360667705536,297.8222351074219,1082
+Electricity MT_129,Electricity,commercial,cvrmse,0.12068027257919312,110.73164367675781,1082
+Electricity MT_134,Electricity,commercial,cvrmse,0.26719093322753906,14.169374465942383,716
+Electricity MT_135,Electricity,commercial,cvrmse,0.11173249781131744,32.2735595703125,1082
+Electricity MT_136,Electricity,commercial,cvrmse,0.1297188550233841,133.43296813964844,1082
+Electricity MT_137,Electricity,commercial,cvrmse,0.11083000898361206,70.96968078613281,1082
+Electricity MT_138,Electricity,commercial,cvrmse,0.11899871379137039,114.57329559326172,1082
+Electricity MT_139,Electricity,commercial,cvrmse,0.13942785561084747,392.4084167480469,1082
+Electricity MT_140,Electricity,commercial,cvrmse,0.8862801790237427,64.56616973876953,1082
+Electricity MT_141,Electricity,commercial,cvrmse,0.12162575125694275,8.875414848327637,1082
+Electricity MT_142,Electricity,commercial,cvrmse,0.2357088327407837,56.055702209472656,1082
+Electricity MT_143,Electricity,commercial,cvrmse,0.13130439817905426,170.36141967773438,1082
+Electricity MT_144,Electricity,commercial,cvrmse,0.03208984434604645,184.58995056152344,716
+Electricity MT_145,Electricity,commercial,cvrmse,0.027359971776604652,77.27519226074219,1082
+Electricity MT_146,Electricity,commercial,cvrmse,0.040228456258773804,83.99652099609375,1082
+Electricity MT_148,Electricity,commercial,cvrmse,0.025614699348807335,343.1020812988281,1082
+Electricity MT_149,Electricity,commercial,cvrmse,0.07451679557561874,23.451478958129883,1082
+Electricity MT_150,Electricity,commercial,cvrmse,0.058513276278972626,27.33927345275879,1082
+Electricity MT_151,Electricity,commercial,cvrmse,0.12015505135059357,98.6690444946289,1082
+Electricity MT_152,Electricity,commercial,cvrmse,0.030067700892686844,1061.2906494140625,716
+Electricity MT_153,Electricity,commercial,cvrmse,0.09764198958873749,183.72325134277344,1082
+Electricity MT_154,Electricity,commercial,cvrmse,0.07853781431913376,33.27677917480469,1082
+Electricity MT_155,Electricity,commercial,cvrmse,0.23014645278453827,147.3009490966797,1082
+Electricity MT_156,Electricity,commercial,cvrmse,0.17016978561878204,78.13021087646484,1446
+Electricity MT_158,Electricity,commercial,cvrmse,0.2657531201839447,75.46884155273438,1446
+Electricity MT_159,Electricity,commercial,cvrmse,0.32898297905921936,61.62882614135742,1446
+Electricity MT_160,Electricity,commercial,cvrmse,0.7025852203369141,4.810029029846191,351
+Electricity MT_161,Electricity,commercial,cvrmse,0.087071493268013,1770.9339599609375,1446
+Electricity MT_162,Electricity,commercial,cvrmse,0.15605442225933075,288.10015869140625,1446
+Electricity MT_163,Electricity,commercial,cvrmse,0.08720148354768753,2396.5009765625,1446
+Electricity MT_164,Electricity,commercial,cvrmse,0.20407365262508392,105.13037109375,1082
+Electricity MT_165,Electricity,commercial,cvrmse,0.0808621495962143,85.04625701904297,351
+Electricity MT_166,Electricity,commercial,cvrmse,0.08742089569568634,1282.100341796875,1446
+Electricity MT_167,Electricity,commercial,cvrmse,0.09735802561044693,75.28858184814453,716
+Electricity MT_168,Electricity,commercial,cvrmse,0.07662816345691681,137.1460723876953,1446
+Electricity MT_169,Electricity,commercial,cvrmse,0.07299094647169113,40.03750228881836,1446
+Electricity MT_170,Electricity,commercial,cvrmse,0.12362419068813324,84.51596069335938,351
+Electricity MT_171,Electricity,commercial,cvrmse,0.07106879353523254,246.27452087402344,1446
+Electricity MT_172,Electricity,commercial,cvrmse,0.09466837346553802,124.02529907226562,1446
+Electricity MT_173,Electricity,commercial,cvrmse,0.09180941432714462,63.09143829345703,716
+Electricity MT_174,Electricity,commercial,cvrmse,0.09994056075811386,145.65647888183594,1446
+Electricity MT_175,Electricity,commercial,cvrmse,0.09955290704965591,163.56533813476562,1446
+Electricity MT_176,Electricity,commercial,cvrmse,0.08272542804479599,84.85659790039062,1446
+Electricity MT_177,Electricity,commercial,cvrmse,0.0980817899107933,153.0977325439453,716
+Electricity MT_179,Electricity,commercial,cvrmse,0.09067930281162262,79.28170776367188,351
+Electricity MT_180,Electricity,commercial,cvrmse,0.12220639735460281,154.2787628173828,1446
+Electricity MT_182,Electricity,commercial,cvrmse,0.07463613897562027,52.808231353759766,1446
+Electricity MT_183,Electricity,commercial,cvrmse,0.10044517368078232,85.39248657226562,1446
+Electricity MT_184,Electricity,commercial,cvrmse,0.06792779266834259,95.36614990234375,716
+Electricity MT_185,Electricity,commercial,cvrmse,0.08863856643438339,67.60057067871094,351
+Electricity MT_186,Electricity,commercial,cvrmse,0.07667023688554764,569.6683959960938,351
+Electricity MT_187,Electricity,commercial,cvrmse,0.14816239476203918,49.969844818115234,1446
+Electricity MT_188,Electricity,commercial,cvrmse,0.07087628543376923,35.2202033996582,1446
+Electricity MT_189,Electricity,commercial,cvrmse,0.0832786113023758,415.3701477050781,1446
+Electricity MT_190,Electricity,commercial,cvrmse,0.0867236852645874,386.92120361328125,1446
+Electricity MT_191,Electricity,commercial,cvrmse,0.07353594899177551,1953.215576171875,1446
+Electricity MT_192,Electricity,commercial,cvrmse,0.08308973908424377,466.2318420410156,1446
+Electricity MT_193,Electricity,commercial,cvrmse,0.08462731540203094,303.504638671875,1446
+Electricity MT_195,Electricity,commercial,cvrmse,0.10397251695394516,451.9150085449219,1446
+Electricity MT_197,Electricity,commercial,cvrmse,0.09418798238039017,156.94973754882812,1446
+Electricity MT_198,Electricity,commercial,cvrmse,0.10562145709991455,246.77581787109375,1446
+Electricity MT_199,Electricity,commercial,cvrmse,0.09131579846143723,465.7149353027344,1446
+Electricity MT_200,Electricity,commercial,cvrmse,0.07190306484699249,849.2095336914062,1446
+Electricity MT_201,Electricity,commercial,cvrmse,0.0873376801609993,296.1741638183594,1446
+Electricity MT_202,Electricity,commercial,cvrmse,0.07849140465259552,242.40805053710938,1446
+Electricity MT_203,Electricity,commercial,cvrmse,0.07811703532934189,537.7584228515625,1446
+Electricity MT_204,Electricity,commercial,cvrmse,0.0792742520570755,888.808349609375,1446
+Electricity MT_205,Electricity,commercial,cvrmse,0.07416262477636337,532.1094970703125,1446
+Electricity MT_206,Electricity,commercial,cvrmse,0.09203995764255524,209.24899291992188,1446
+Electricity MT_207,Electricity,commercial,cvrmse,0.09793133288621902,858.1339111328125,1446
+Electricity MT_209,Electricity,commercial,cvrmse,0.08778133988380432,587.3411865234375,1446
+Electricity MT_210,Electricity,commercial,cvrmse,0.07180929183959961,733.1596069335938,1446
+Electricity MT_211,Electricity,commercial,cvrmse,0.08445882797241211,192.95948791503906,1446
+Electricity MT_212,Electricity,commercial,cvrmse,0.07166065275669098,363.46478271484375,1446
+Electricity MT_213,Electricity,commercial,cvrmse,0.06740926951169968,1194.652587890625,1446
+Electricity MT_214,Electricity,commercial,cvrmse,0.09417867660522461,397.00927734375,1446
+Electricity MT_215,Electricity,commercial,cvrmse,0.0697634220123291,405.53692626953125,1446
+Electricity MT_216,Electricity,commercial,cvrmse,0.0620218850672245,2201.646240234375,1446
+Electricity MT_217,Electricity,commercial,cvrmse,0.08609198778867722,214.74342346191406,1446
+Electricity MT_218,Electricity,commercial,cvrmse,0.07181081175804138,1300.189208984375,1446
+Electricity MT_219,Electricity,commercial,cvrmse,0.10834384709596634,510.8092956542969,1446
+Electricity MT_221,Electricity,commercial,cvrmse,0.08336503803730011,158.69671630859375,1446
+Electricity MT_222,Electricity,commercial,cvrmse,0.07652540504932404,947.3533935546875,1446
+Electricity MT_223,Electricity,commercial,cvrmse,0.06973990052938461,808.3048095703125,350
+Electricity MT_225,Electricity,commercial,cvrmse,0.07845411449670792,337.7972717285156,1446
+Electricity MT_226,Electricity,commercial,cvrmse,0.07310853898525238,483.9537353515625,1446
+Electricity MT_227,Electricity,commercial,cvrmse,0.08802098780870438,272.2142028808594,1446
+Electricity MT_229,Electricity,commercial,cvrmse,0.0617537721991539,973.5427856445312,1446
+Electricity MT_230,Electricity,commercial,cvrmse,0.092754065990448,98.53307342529297,1446
+Electricity MT_231,Electricity,commercial,cvrmse,0.0988275334239006,641.3453369140625,1446
+Electricity MT_232,Electricity,commercial,cvrmse,0.08936595171689987,85.37586212158203,1446
+Electricity MT_233,Electricity,commercial,cvrmse,0.08748245984315872,139.19134521484375,1446
+Electricity MT_234,Electricity,commercial,cvrmse,0.09962933510541916,88.26905059814453,1446
+Electricity MT_235,Electricity,commercial,cvrmse,0.11512812972068787,790.6372680664062,1446
+Electricity MT_236,Electricity,commercial,cvrmse,0.08891510218381882,148.10791015625,1446
+Electricity MT_237,Electricity,commercial,cvrmse,0.09403977543115616,86.02227783203125,1446
+Electricity MT_238,Electricity,commercial,cvrmse,0.08204174786806107,411.00274658203125,1446
+Electricity MT_239,Electricity,commercial,cvrmse,0.08474241197109222,116.09195709228516,1446
+Electricity MT_240,Electricity,commercial,cvrmse,0.09478970617055893,364.04736328125,1446
+Electricity MT_241,Electricity,commercial,cvrmse,0.07833455502986908,2617.516845703125,1446
+Electricity MT_242,Electricity,commercial,cvrmse,0.10064396262168884,199.44342041015625,1446
+Electricity MT_243,Electricity,commercial,cvrmse,0.08274248242378235,130.97122192382812,1446
+Electricity MT_244,Electricity,commercial,cvrmse,0.08897712826728821,156.93948364257812,1446
+Electricity MT_245,Electricity,commercial,cvrmse,0.07592600584030151,198.23751831054688,1446
+Electricity MT_246,Electricity,commercial,cvrmse,0.0848604366183281,608.08349609375,1446
+Electricity MT_247,Electricity,commercial,cvrmse,0.11607476323843002,464.54632568359375,1446
+Electricity MT_248,Electricity,commercial,cvrmse,0.0892394557595253,166.48695373535156,1446
+Electricity MT_249,Electricity,commercial,cvrmse,0.1147727370262146,69.72457885742188,1446
+Electricity MT_250,Electricity,commercial,cvrmse,0.07351748645305634,93.09502410888672,1446
+Electricity MT_251,Electricity,commercial,cvrmse,0.08013017475605011,78.0599594116211,1446
+Electricity MT_252,Electricity,commercial,cvrmse,0.0790649950504303,232.33428955078125,1446
+Electricity MT_253,Electricity,commercial,cvrmse,0.10143135488033295,334.1115417480469,1446
+Electricity MT_254,Electricity,commercial,cvrmse,0.07601574808359146,250.42562866210938,1446
+Electricity MT_255,Electricity,commercial,cvrmse,0.12377933412790298,617.1295166015625,716
+Electricity MT_256,Electricity,commercial,cvrmse,0.07503216713666916,147.19342041015625,1446
+Electricity MT_257,Electricity,commercial,cvrmse,0.07395733892917633,156.41165161132812,1446
+Electricity MT_258,Electricity,commercial,cvrmse,0.08372015506029129,123.54084777832031,1446
+Electricity MT_259,Electricity,commercial,cvrmse,0.06531848013401031,159.0325927734375,1446
+Electricity MT_260,Electricity,commercial,cvrmse,0.08077143132686615,183.38673400878906,1446
+Electricity MT_261,Electricity,commercial,cvrmse,0.12163542211055756,62.214046478271484,1446
+Electricity MT_262,Electricity,commercial,cvrmse,0.07990919053554535,197.19439697265625,1446
+Electricity MT_263,Electricity,commercial,cvrmse,0.11047415435314178,191.53541564941406,1446
+Electricity MT_264,Electricity,commercial,cvrmse,0.08932725340127945,196.3966064453125,1446
+Electricity MT_265,Electricity,commercial,cvrmse,0.07778968662023544,177.56753540039062,1446
+Electricity MT_266,Electricity,commercial,cvrmse,0.07834253460168839,280.760498046875,1446
+Electricity MT_267,Electricity,commercial,cvrmse,0.1089206412434578,69.79784393310547,1446
+Electricity MT_268,Electricity,commercial,cvrmse,0.10123112797737122,250.37823486328125,1446
+Electricity MT_269,Electricity,commercial,cvrmse,0.07825081050395966,800.5933837890625,1446
+Electricity MT_270,Electricity,commercial,cvrmse,0.09112498164176941,68.46592712402344,1446
+Electricity MT_271,Electricity,commercial,cvrmse,0.06808633357286453,152.5200958251953,1446
+Electricity MT_272,Electricity,commercial,cvrmse,0.06556140631437302,155.3248291015625,1446
+Electricity MT_273,Electricity,commercial,cvrmse,0.07969867438077927,496.9168395996094,1446
+Electricity MT_274,Electricity,commercial,cvrmse,0.07527066022157669,328.911865234375,1446
+Electricity MT_275,Electricity,commercial,cvrmse,0.08637838810682297,131.5466766357422,1446
+Electricity MT_276,Electricity,commercial,cvrmse,0.0793830156326294,1974.0223388671875,1446
+Electricity MT_277,Electricity,commercial,cvrmse,0.07625730335712433,92.02429962158203,1446
+Electricity MT_278,Electricity,commercial,cvrmse,0.07936268299818039,90.68159484863281,1446
+Electricity MT_280,Electricity,commercial,cvrmse,0.0820685401558876,283.9512939453125,1082
+Electricity MT_281,Electricity,commercial,cvrmse,0.05963735282421112,122.78379821777344,1446
+Electricity MT_282,Electricity,commercial,cvrmse,0.06904777139425278,113.18568420410156,1446
+Electricity MT_283,Electricity,commercial,cvrmse,0.060041677206754684,268.7218017578125,1446
+Electricity MT_284,Electricity,commercial,cvrmse,0.0885806456208229,73.76561737060547,1446
+Electricity MT_285,Electricity,commercial,cvrmse,0.07062581181526184,101.33807373046875,1446
+Electricity MT_286,Electricity,commercial,cvrmse,0.08417519927024841,120.61271667480469,1446
+Electricity MT_287,Electricity,commercial,cvrmse,0.07892903685569763,158.05213928222656,1446
+Electricity MT_288,Electricity,commercial,cvrmse,0.175878643989563,95.97138214111328,1446
+Electricity MT_289,Electricity,commercial,cvrmse,0.0689074918627739,105.82357788085938,351
+Electricity MT_290,Electricity,commercial,cvrmse,0.13076180219650269,582.2164306640625,1446
+Electricity MT_291,Electricity,commercial,cvrmse,0.12299022823572159,89.03146362304688,1446
+Electricity MT_292,Electricity,commercial,cvrmse,0.09141229838132858,264.34521484375,1446
+Electricity MT_293,Electricity,commercial,cvrmse,0.08371920883655548,97.13726043701172,1446
+Electricity MT_294,Electricity,commercial,cvrmse,0.0902913436293602,640.6001586914062,1446
+Electricity MT_295,Electricity,commercial,cvrmse,0.10209339112043381,266.5033264160156,1446
+Electricity MT_296,Electricity,commercial,cvrmse,0.07938067615032196,97.77854919433594,1446
+Electricity MT_297,Electricity,commercial,cvrmse,0.09661956131458282,150.36077880859375,1446
+Electricity MT_298,Electricity,commercial,cvrmse,0.0737462118268013,962.5043334960938,1446
+Electricity MT_299,Electricity,commercial,cvrmse,0.08556866645812988,493.74200439453125,1446
+Electricity MT_300,Electricity,commercial,cvrmse,0.07490560412406921,131.72569274902344,1446
+Electricity MT_301,Electricity,commercial,cvrmse,0.08048062026500702,116.09910583496094,1446
+Electricity MT_302,Electricity,commercial,cvrmse,0.09097005426883698,126.61077880859375,1446
+Electricity MT_303,Electricity,commercial,cvrmse,0.0832257866859436,152.7530975341797,1446
+Electricity MT_304,Electricity,commercial,cvrmse,0.1052563413977623,69.358642578125,1446
+Electricity MT_305,Electricity,commercial,cvrmse,0.08320954442024231,69.12085723876953,351
+Electricity MT_306,Electricity,commercial,cvrmse,0.09917689859867096,81.19181060791016,1446
+Electricity MT_307,Electricity,commercial,cvrmse,0.07642674446105957,781.8214721679688,1446
+Electricity MT_308,Electricity,commercial,cvrmse,0.09919922053813934,108.3727035522461,716
+Electricity MT_309,Electricity,commercial,cvrmse,0.07912261039018631,222.5818634033203,1446
+Electricity MT_310,Electricity,commercial,cvrmse,0.08322687447071075,601.6707153320312,1446
+Electricity MT_311,Electricity,commercial,cvrmse,0.08039732277393341,129.7252197265625,1446
+Electricity MT_312,Electricity,commercial,cvrmse,0.09982993453741074,384.35260009765625,1446
+Electricity MT_313,Electricity,commercial,cvrmse,0.0739571750164032,238.006103515625,1446
+Electricity MT_314,Electricity,commercial,cvrmse,0.06325636804103851,1119.7374267578125,1446
+Electricity MT_315,Electricity,commercial,cvrmse,0.06909924745559692,88.83719635009766,1446
+Electricity MT_316,Electricity,commercial,cvrmse,0.07307352870702744,347.91314697265625,1446
+Electricity MT_317,Electricity,commercial,cvrmse,0.08496512472629547,534.6270751953125,1446
+Electricity MT_318,Electricity,commercial,cvrmse,0.08602418750524521,174.45350646972656,1446
+Electricity MT_319,Electricity,commercial,cvrmse,0.06984695792198181,96.89379119873047,1446
+Electricity MT_320,Electricity,commercial,cvrmse,0.08328227698802948,104.68463897705078,1446
+Electricity MT_321,Electricity,commercial,cvrmse,0.081016406416893,112.84619140625,1446
+Electricity MT_322,Electricity,commercial,cvrmse,0.08109679073095322,93.07189178466797,351
+Electricity MT_323,Electricity,commercial,cvrmse,0.10708724707365036,1790.2750244140625,1446
+Electricity MT_324,Electricity,commercial,cvrmse,0.07305275648832321,336.93365478515625,1446
+Electricity MT_325,Electricity,commercial,cvrmse,0.07083013653755188,314.3232116699219,1446
+Electricity MT_326,Electricity,commercial,cvrmse,0.08721515536308289,253.91505432128906,1446
+Electricity MT_327,Electricity,commercial,cvrmse,0.08445548266172409,567.7874145507812,1446
+Electricity MT_328,Electricity,commercial,cvrmse,0.08057858794927597,1255.0855712890625,1446
+Electricity MT_329,Electricity,commercial,cvrmse,0.07259310036897659,212.6706085205078,1446
+Electricity MT_330,Electricity,commercial,cvrmse,0.09146680682897568,99.41482543945312,1446
+Electricity MT_331,Electricity,commercial,cvrmse,0.11114880442619324,221.71913146972656,1446
+Electricity MT_332,Electricity,commercial,cvrmse,0.2888183295726776,58.06674575805664,716
+Electricity MT_333,Electricity,commercial,cvrmse,0.09360980987548828,84.82393646240234,1082
+Electricity MT_334,Electricity,commercial,cvrmse,0.14672167599201202,81.18782806396484,1082
+Electricity MT_335,Electricity,commercial,cvrmse,0.24727129936218262,73.43032836914062,1082
+Electricity MT_336,Electricity,commercial,cvrmse,0.14636561274528503,161.1039581298828,1082
+Electricity MT_337,Electricity,commercial,cvrmse,0.21119451522827148,130.6813201904297,351
+Electricity MT_338,Electricity,commercial,cvrmse,0.12826766073703766,245.0248565673828,1082
+Electricity MT_340,Electricity,commercial,cvrmse,0.1356993466615677,133.73153686523438,1082
+Electricity MT_341,Electricity,commercial,cvrmse,0.08003706485033035,1039.08837890625,1082
+Electricity MT_342,Electricity,commercial,cvrmse,0.13890822231769562,271.62237548828125,1082
+Electricity MT_343,Electricity,commercial,cvrmse,0.17234061658382416,151.9980926513672,1082
+Electricity MT_344,Electricity,commercial,cvrmse,0.25981470942497253,173.6826934814453,1082
+Electricity MT_345,Electricity,commercial,cvrmse,0.08777368813753128,2088.19775390625,1082
+Electricity MT_346,Electricity,commercial,cvrmse,0.1124001070857048,286.73779296875,1082
+Electricity MT_349,Electricity,commercial,cvrmse,0.18364940583705902,192.54531860351562,1082
+Electricity MT_350,Electricity,commercial,cvrmse,0.16214275360107422,645.54345703125,1082
+Electricity MT_352,Electricity,commercial,cvrmse,0.4044204354286194,103.10355377197266,1082
+Electricity MT_353,Electricity,commercial,cvrmse,0.07715124636888504,521.5848999023438,1082
+Electricity MT_354,Electricity,commercial,cvrmse,0.29884856939315796,120.41375732421875,1082
+Electricity MT_355,Electricity,commercial,cvrmse,0.10323444753885269,661.3538208007812,1082
+Electricity MT_356,Electricity,commercial,cvrmse,0.3116202652454376,109.88815307617188,1082
+Electricity MT_357,Electricity,commercial,cvrmse,0.12198348343372345,1879.5740966796875,1082
+Electricity MT_358,Electricity,commercial,cvrmse,0.18623974919319153,808.7962036132812,1082
+Electricity MT_359,Electricity,commercial,cvrmse,0.14577902853488922,107.62952423095703,1082
+Electricity MT_360,Electricity,commercial,cvrmse,0.13095656037330627,517.716064453125,1082
+Electricity MT_361,Electricity,commercial,cvrmse,0.12175048142671585,290.9635314941406,1082
+Electricity MT_365,Electricity,commercial,cvrmse,0.19836843013763428,87.35914611816406,1082
+Electricity MT_366,Electricity,commercial,cvrmse,0.6467766761779785,12.266142845153809,1082
+Electricity MT_367,Electricity,commercial,cvrmse,0.09313520789146423,565.954345703125,1082
+Electricity MT_368,Electricity,commercial,cvrmse,0.18869788944721222,126.16175842285156,1082
+Electricity MT_369,Electricity,commercial,cvrmse,0.06285523623228073,833.979736328125,1082
