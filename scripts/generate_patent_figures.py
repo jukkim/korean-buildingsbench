@@ -173,8 +173,8 @@ def fig2_lhs():
 
 # ── Fig. 3: RevIN + Transformer Model (portrait, A4-friendly) ────────────────
 def fig3_revin():
-    # Portrait 10" × 16" — 3 boxes per row, 2 rows per phase → compact & readable
-    fig = plt.figure(figsize=(10, 18))
+    # Portrait 10" × 8" — tight canvas, content fills the space
+    fig = plt.figure(figsize=(10, 8))
     fig.patch.set_facecolor("white")
     fig.text(0.5, 0.975,
              "Fig. 3  RevIN + Transformer: Training & Inference",
@@ -204,7 +204,7 @@ def fig3_revin():
     ]
 
     def draw_phase(fig, y_top, phase_label, phase_color, row1, row2, output_col=None):
-        H = 0.22   # height fraction per phase block
+        H = 0.44   # height fraction per phase block (44% of 8" = 3.52" per phase)
         ax = fig.add_axes([0.04, y_top - H, 0.92, H])
         ax.set_xlim(0, 10); ax.set_ylim(0, 10); ax.axis("off")
         ax.text(0.1, 9.5, phase_label, fontsize=18, fontweight="bold", color=phase_color)
@@ -229,10 +229,10 @@ def fig3_revin():
             # arrows go right-to-left on row 2
             arrow(ax, xs2[i]-1.4, 2.8, xs2[i+1]+1.4, 2.8)
 
-    draw_phase(fig, 0.94, "① Training Phase",              "#1565C0", train_r1, train_r2)
-    draw_phase(fig, 0.68, "② Inference Phase (Zero-Shot)", "#C62828", infer_r1, infer_r2, output_col=True)
+    draw_phase(fig, 0.95, "① Training Phase",              "#1565C0", train_r1, train_r2)
+    draw_phase(fig, 0.48, "② Inference Phase (Zero-Shot)", "#C62828", infer_r1, infer_r2, output_col=True)
 
-    fig.text(0.5, 0.04,
+    fig.text(0.5, 0.02,
              "RevIN removes per-building magnitude  →  model learns temporal shape only"
              "  →  no location metadata needed",
              ha="center", fontsize=14, color="#444", style="italic")
@@ -313,9 +313,9 @@ def fig5_comparison():
     nrmse = [13.27, 13.11, 14.72, 14.26, 15.28, 16.44, 16.68]
     colors = ["#e53935", "#1565C0", "#42A5F5", "#EF6C00", "#FFA726", "#FFD54F", "#9E9E9E"]
 
-    fig, ax = plt.subplots(figsize=(16, 10))
+    fig, ax = plt.subplots(figsize=(16, 6))
     ax.set_title("Fig. 5  Performance Comparison: Proposed Method vs. Prior Art",
-                 fontsize=21, fontweight="bold", pad=16)
+                 fontsize=21, fontweight="bold", pad=14)
 
     bars = ax.bar(range(len(models)), nrmse, color=colors, edgecolor="#333", linewidth=1.2,
                   width=0.65)
@@ -353,7 +353,7 @@ def fig5_comparison():
     ax.set_xticks(range(len(models)))
     ax.set_xticklabels(models, fontsize=13)
     ax.set_ylabel("NRMSE (%)", fontsize=17)
-    ax.set_ylim(11.5, 18.0)
+    ax.set_ylim(11.5, 17.5)
     ax.legend(fontsize=14, loc="upper left")
     ax.grid(axis="y", alpha=0.35)
     ax.tick_params(axis="y", labelsize=15)
