@@ -80,7 +80,8 @@
 | Korean-700 OFF (seed42) | `...retrain_off_42_best.pt` | 14.81% |
 | Korean-700 OFF (seed43) | `...retrain_off_43_best.pt` | 14.94% |
 | Korean-700 OFF (seed44) | `...ms_n50_s18000_revin_off_seed44_best.pt` | 14.40% |
-| BB-700 ON | `...bb700_s18000_revin_on_best.pt` | 15.28% |
+| BB-700 (aug-matched) ON | `...bb700_aug_s18000_seed42_best.pt` | 14.26% |
+| BB-700 (no aug) ON | `...bb700_s18000_revin_on_best.pt` | 15.28% |
 | BB-700 OFF | `...bb700_s18000_revin_off_best.pt` | 16.44% |
 
 ### 2.2 Table 4 (N-Scaling) — 11개 체크포인트
@@ -198,10 +199,11 @@
 |------|------|:----:|
 | `src/models/` | TransformerWithGaussian + RevIN 구현 | ⭐ |
 | `src/data/` | KoreanBBPretrainingDataset 로더 | ⭐ |
-| `src/eval/` | BB 프로토콜 평가 구현 | ⭐ |
 | `src/idf/` | IDFModifier (외피/HVAC/스케줄 수정) | ⭐ |
 | `src/schedules/` | 확률적 스케줄 생성기 | ⭐ |
-| `src/transforms/` | Box-Cox, RevIN 구현 | ⭐ |
+| `src/buildings/` | 건물 archetype 정의 | ⭐ |
+
+> `src/eval/` 및 `src/transforms/` 는 별도 모듈 없이 `scripts/evaluate_bb.py` 및 `scripts/postprocess.py` 에 직접 구현됨.
 
 ---
 
@@ -285,7 +287,9 @@ python scripts/evaluate_bb.py \
   --commercial_only
 
 # 5. 편의점 218건 (Table 6)
+# --store-dir: 편의점별 서브디렉토리 + *_hourly_labeled.csv 포함 디렉토리 (비공개 데이터)
 python scripts/eval_korean_stores.py \
+  --store-dir /path/to/korean_stores \
   --checkpoint checkpoints/TransformerWithGaussian-M-v3-3k_ms_n50_s18000_revin_on_seed42_best.pt
 ```
 

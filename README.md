@@ -39,6 +39,7 @@ Jeong-Uk Kim, Department of Electrical Engineering, Sangmyung University
 
 ```bash
 pip install -r requirements.txt
+pip install -e external/BuildingsBench/
 ```
 
 ## Download Evaluation Data
@@ -49,6 +50,10 @@ bash scripts/download_bb_data.sh
 
 The BuildingsBench evaluation data (CC-BY 4.0, NREL) will be downloaded to `external/BuildingsBench_data/`.
 
+## Data Availability
+
+The 700-building Korean EnergyPlus simulation dataset (Parquet format) is included in this repository under `data/korean_bb/individual/`. Checkpoints (`.pt` files) exceed GitHub's file-size limits and must be reproduced via the training command below, or requested from the corresponding author.
+
 ## Training
 
 ```bash
@@ -57,14 +62,15 @@ python scripts/train.py \
   --train_index train_weekly_50.csv \
   --val_index val_weekly_50.csv \
   --max_steps 18000 --warmup_steps 500 \
-  --augment --bb_eval_interval 0 --seed 42
+  --augment --bb_eval_interval 0 --seed 42 \
+  --note n50_s18000_revin_on_seed42
 ```
 
 ## Evaluation
 
 ```bash
 python scripts/evaluate_bb.py \
-  --checkpoint checkpoints/best.pt \
+  --checkpoint checkpoints/TransformerWithGaussian-M-v3-3k_ms_n50_s18000_revin_on_seed42_best.pt \
   --config configs/model/TransformerWithGaussian-M-v3-3k.toml \
   --commercial_only
 ```
@@ -76,7 +82,8 @@ python scripts/evaluate_bb.py \
   title={Seven Hundred Simulations Suffice: Matching a 900,000-Building Foundation Model through Operational Diversity in Zero-Shot Load Forecasting},
   author={Kim, Jeong-Uk},
   journal={Applied Energy},
-  year={2026}
+  year={2026},
+  note={Submitted}
 }
 ```
 

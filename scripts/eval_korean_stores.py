@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
-"""Zero-shot evaluation on Korean convenience stores (100 real buildings).
-Run with bb_repro: python -X utf8 scripts/eval_korean_stores.py
+"""Zero-shot evaluation on Korean convenience stores.
+
+Usage:
+    python scripts/eval_korean_stores.py --store-dir /path/to/stores \
+        [--checkpoint checkpoints/TransformerWithGaussian-M-v3-3k_ms_n50_s18000_revin_on_seed42_best.pt]
 """
-import sys, os, torch, numpy as np, pandas as pd, tomli, time
+import sys, os, argparse, torch, numpy as np, pandas as pd, tomli, time
 from pathlib import Path
 
 if sys.platform == 'win32':
@@ -11,8 +14,15 @@ if sys.platform == 'win32':
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from src.models.transformer import model_factory
 
+parser = argparse.ArgumentParser()
+parser.add_argument('--store-dir', required=True,
+                    help='Directory containing per-store subdirectories with *_hourly_labeled.csv files')
+parser.add_argument('--checkpoint', default=None,
+                    help='Path to _best.pt checkpoint (default: Korean-700 ON seed42)')
+args = parser.parse_args()
+
 BASE = Path(__file__).parent.parent
-STORE_DIR = Path(r'H:/내 드라이브/과제수행(T&M)/작업 수행(3차년)/인증시험(녹색기후기술원)/인증시험(이상 탐지)/anomaly')
+STORE_DIR = Path(args.store_dir)
 BB_DATA = BASE / 'external' / 'BuildingsBench_data'
 
 # Load boxcox
@@ -22,7 +32,8 @@ with open(BB_DATA / 'metadata' / 'transforms' / 'boxcox.pkl', 'rb') as f:
 
 # Load model
 config_path = BASE / 'configs' / 'model' / 'TransformerWithGaussian-M-v3-3k.toml'
-ckpt_path = BASE / 'checkpoints' / 'TransformerWithGaussian-M-v3-3k_ms_n50_s18000_revin_on_seed42_bb_best.pt'
+_default_ckpt = 'TransformerWithGaussian-M-v3-3k_ms_n50_s18000_revin_on_seed42_best.pt'
+ckpt_path = Path(args.checkpoint) if args.checkpoint else BASE / 'checkpoints' / _default_ckpt
 
 with open(config_path, 'rb') as f:
     cfg = tomli.load(f)

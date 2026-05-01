@@ -22,7 +22,7 @@
 
 | Model | NRMSE | NCRPS | Seeds | Checkpoint | Config | 재현 로그 |
 |-------|:---:|:---:|:---:|----------|--------|---------|
-| BB SOTA-M | 13.27% | —† | 공식 | `external/BuildingsBench_data/checkpoints/Transformer_Gaussian_M.pt` | — | `archive/logs/bb_sota_repro_M.log` |
+| BB SOTA-M | 13.27% | —† | 공식 | `external/BuildingsBench_data/checkpoints/Transformer_Gaussian_M.pt` | — | `logs/bb_sota_repro_M.log` |
 | BB 900K+RevIN | 13.89% | 7.76% | 1 | `bb900k_revin_step590000.pt` | M-v3-3k.toml | 5090: `logs/ncrps_bb900k_revin.log` |
 | Korean-700 ON | 13.11±0.17% | 7.14±0.03%‡ | 42-46 | `*_s18000_revin_on_seed{42-46}_best.pt` | M-v3-3k.toml | 5090: `logs/ncrps_on_seed{42-46}.log` |
 | Korean-700 OFF | 14.72±0.28% | 8.29%§ | 42-44 | `*_s18000_revin_off_seed{42-44}_best.pt` (42,43 retrained) | M-v3-3k-norevin.toml | 5090: `logs/ncrps_off_seed{42,44}.log` |
