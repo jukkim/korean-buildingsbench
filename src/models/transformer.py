@@ -392,10 +392,12 @@ class LoadForecastingTransformer(BaseModel):
     def load_from_checkpoint(self, checkpoint_path: Union[str, Path]):
         ckpt = torch.load(checkpoint_path, map_location='cpu', weights_only=False)
         state_dict = ckpt.get('model', ckpt.get('model_state_dict', ckpt))
-        # DDP 'module.' prefix 제거
+        # DDP 'module.' prefix 제거 + BB SOTA key 호환 (pos_embedding → pe)
         new_state = {}
         for k, v in state_dict.items():
-            new_state[k.replace('module.', '')] = v
+            k = k.replace('module.', '')
+            k = k.replace('positional_encoding.pos_embedding', 'positional_encoding.pe')
+            new_state[k] = v
         self.load_state_dict(new_state)
 
     def unfreeze_and_get_parameters_for_finetuning(self):

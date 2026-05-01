@@ -1,0 +1,718 @@
+# 스케줄 클래스 정의 및 확률적 변동 파라미터
+# 22개 클래스 × 확률적 변동 = 1,550+ 고유 아키타입
+
+# ============================================================
+# 공통 확률적 변동 파라미터
+# ============================================================
+stochastic_defaults:
+  arrival_sigma_h: 0.5      # 출근시간 표준편차 (시간)
+  departure_sigma_h: 0.75   # 퇴근시간 표준편차
+  lunch_start_sigma_h: 0.25 # 점심시간 표준편차
+  lunch_duration_mean_h: 1.0
+  lunch_duration_sigma_h: 0.15
+  weekend_ratio_range: [0.0, 0.3]  # 주말 운영 비율
+  night_occupancy_range: [0.02, 0.10]
+  seasonal_sigma: 0.1       # 계절 변동 표준편차
+
+# ============================================================
+# 한국 공휴일
+# ============================================================
+holidays:
+  fixed:
+    - {month: 1, day: 1, name: 신정}
+    - {month: 3, day: 1, name: 삼일절}
+    - {month: 5, day: 5, name: 어린이날}
+    - {month: 6, day: 6, name: 현충일}
+    - {month: 8, day: 15, name: 광복절}
+    - {month: 10, day: 3, name: 개천절}
+    - {month: 10, day: 9, name: 한글날}
+    - {month: 12, day: 25, name: 크리스마스}
+  lunar:  # 매년 날짜 변동 → 시뮬 연도별 계산
+    - {name: 설날, days: 3}
+    - {name: 추석, days: 3}
+    - {name: 부처님오신날, days: 1}
+
+# ============================================================
+# 주거 스케줄 (4 클래스)
+# ============================================================
+residential_dual_income:
+  name: 맞벌이 가구
+  category: residential
+  base_pattern:
+    weekday:
+      # hour: occupancy_fraction
+      0: 1.0    # 취침
+      6: 0.9    # 기상
+      7: 0.5    # 출근 준비
+      8: 0.1    # 출근 완료
+      9: 0.05   # 비어있음
+      12: 0.05
+      17: 0.1   # 퇴근 시작
+      18: 0.3
+      19: 0.7   # 귀가
+      20: 0.9
+      22: 1.0   # 재실
+      23: 1.0
+    weekend:
+      0: 1.0
+      8: 0.9
+      10: 0.7   # 외출
+      12: 0.5
+      14: 0.4   # 외출 피크
+      17: 0.6
+      19: 0.8
+      21: 1.0
+      23: 1.0
+  lighting_coupled: true  # 재실 연동
+  equipment_base_w_per_m2: 3.0
+  baseload:
+    refrigerator_w: 50
+    standby_w: 30
+    common_lighting_w: 15
+    elevator_w_per_unit: 20
+
+residential_single_income:
+  name: 외벌이/주부 가구
+  category: residential
+  base_pattern:
+    weekday:
+      0: 1.0
+      7: 0.8    # 1인 출근
+      8: 0.5    # 주부 재실
+      9: 0.5
+      11: 0.4   # 외출 (마트 등)
+      13: 0.5
+      15: 0.6   # 자녀 귀가
+      17: 0.7
+      19: 0.9   # 전원 귀가
+      21: 1.0
+      23: 1.0
+    weekend:
+      0: 1.0
+      9: 0.9
+      11: 0.6
+      14: 0.5
+      17: 0.7
+      20: 0.9
+      23: 1.0
+  lighting_coupled: true
+  equipment_base_w_per_m2: 3.5
+  baseload:
+    refrigerator_w: 50
+    standby_w: 35
+    common_lighting_w: 15
+    elevator_w_per_unit: 20
+
+residential_single:
+  name: 1인 가구
+  category: residential
+  base_pattern:
+    weekday:
+      0: 1.0
+      7: 0.8
+      8: 0.3    # 출근
+      9: 0.05
+      12: 0.05
+      18: 0.1
+      19: 0.3   # 귀가 (늦음)
+      20: 0.7
+      21: 0.9
+      23: 1.0   # 야식/야간 활동
+    weekend:
+      0: 1.0
+      10: 0.8   # 늦잠
+      12: 0.6
+      14: 0.4   # 외출
+      18: 0.5
+      20: 0.8
+      23: 1.0
+  lighting_coupled: true
+  equipment_base_w_per_m2: 2.5
+  baseload:
+    refrigerator_w: 50
+    standby_w: 25
+    common_lighting_w: 10
+    elevator_w_per_unit: 15
+
+residential_elderly:
+  name: 고령 가구
+  category: residential
+  base_pattern:
+    weekday:
+      0: 1.0
+      5: 0.9    # 이른 기상
+      6: 1.0
+      9: 0.6    # 외출 (산책, 경로당)
+      11: 0.7
+      12: 0.9   # 점심
+      14: 0.7
+      16: 0.8
+      18: 1.0   # 저녁
+      20: 1.0
+      21: 1.0   # 이른 취침
+    weekend:  # 주중과 유사
+      0: 1.0
+      6: 1.0
+      9: 0.7
+      12: 0.9
+      15: 0.7
+      18: 1.0
+      21: 1.0
+  lighting_coupled: true
+  equipment_base_w_per_m2: 2.0
+  heating_setpoint_offset: 2.0  # 2°C 높게 설정 경향
+  baseload:
+    refrigerator_w: 50
+    standby_w: 20
+    common_lighting_w: 15
+    elevator_w_per_unit: 20
+
+# ============================================================
+# 사무실 스케줄 (5 클래스)
+# ============================================================
+office_government:
+  name: 정부/공공기관
+  category: office
+  base_pattern:
+    weekday:
+      0: 0.05
+      7: 0.05
+      8: 0.2
+      9: 0.85   # 정시 출근
+      12: 0.5    # 점심
+      13: 0.85
+      17: 0.6    # 정시 퇴근
+      18: 0.15
+      19: 0.05
+      23: 0.05
+    weekend:
+      0: 0.02
+      23: 0.02   # 거의 미운영
+  friday_early: true     # 금요일 16시 조기 퇴근
+  lighting_density_w_m2: 12
+  equipment_density_w_m2: 15
+  baseload:
+    server_w: 300
+    standby_w: 150
+    security_w: 100
+    common_lighting_w: 250
+    elevator_w: 200
+    ventilation_w: 100
+
+office_corporate:
+  name: 일반 대기업
+  category: office
+  base_pattern:
+    weekday:
+      0: 0.05
+      7: 0.1
+      8: 0.4
+      9: 0.8
+      12: 0.5
+      13: 0.8
+      18: 0.5    # 야근 문화
+      19: 0.3
+      20: 0.2    # 잔류
+      21: 0.1
+      22: 0.05
+      23: 0.05
+    weekend:
+      0: 0.02
+      10: 0.1    # 주말 출근 일부
+      15: 0.08
+      20: 0.02
+  lighting_density_w_m2: 14
+  equipment_density_w_m2: 20
+  baseload:
+    server_w: 500
+    standby_w: 200
+    security_w: 100
+    common_lighting_w: 300
+    elevator_w: 250
+    ventilation_w: 150
+
+office_it_startup:
+  name: IT/스타트업
+  category: office
+  base_pattern:
+    weekday:
+      0: 0.05
+      9: 0.1
+      10: 0.5    # 유연출근
+      11: 0.7
+      12: 0.5
+      13: 0.7
+      18: 0.6
+      19: 0.5
+      20: 0.4    # 늦은 퇴근
+      21: 0.3
+      22: 0.15
+      23: 0.05
+    weekend:
+      0: 0.03
+      13: 0.15   # 주말 작업
+      18: 0.1
+      23: 0.03
+  lighting_density_w_m2: 10
+  equipment_density_w_m2: 25  # IT 장비 많음
+  baseload:
+    server_w: 800
+    standby_w: 300
+    security_w: 50
+    common_lighting_w: 200
+    elevator_w: 150
+    ventilation_w: 120
+
+office_callcenter:
+  name: 콜센터/교대
+  category: office
+  base_pattern:
+    weekday:
+      0: 0.1     # 야간조
+      6: 0.15
+      8: 0.9     # 주간조
+      12: 0.7
+      13: 0.9
+      17: 0.5    # 교대
+      18: 0.6    # 야간조
+      20: 0.5
+      22: 0.2
+      23: 0.1
+    weekend:
+      0: 0.08
+      9: 0.5     # 주말 운영
+      17: 0.3
+      22: 0.08
+  lighting_density_w_m2: 14
+  equipment_density_w_m2: 18
+  baseload:
+    server_w: 600
+    standby_w: 250
+    security_w: 80
+    common_lighting_w: 300
+    elevator_w: 200
+    ventilation_w: 200
+
+office_small:
+  name: 소규모 사무실
+  category: office
+  base_pattern:
+    weekday:
+      0: 0.02
+      8: 0.1
+      9: 0.6     # 소수 인원
+      12: 0.3    # 외근
+      13: 0.5
+      17: 0.3
+      18: 0.1
+      19: 0.02
+    weekend:
+      0: 0.0
+      23: 0.0    # 완전 비운영
+  lighting_density_w_m2: 10
+  equipment_density_w_m2: 12
+  baseload:
+    server_w: 100
+    standby_w: 50
+    security_w: 30
+    common_lighting_w: 80
+    elevator_w: 100
+    ventilation_w: 50
+
+# ============================================================
+# 학교 스케줄 (3 클래스)
+# ============================================================
+school_elementary:
+  name: 초등학교
+  category: school
+  base_pattern:
+    weekday:
+      0: 0.02
+      7: 0.1
+      8: 0.7     # 등교
+      9: 0.9
+      12: 0.7    # 급식
+      13: 0.85
+      14: 0.5    # 저학년 하교
+      15: 0.2    # 고학년 하교
+      16: 0.05
+      17: 0.02
+    weekend:
+      0: 0.02
+      23: 0.02
+  months_active: [3, 4, 5, 6, 7, 9, 10, 11, 12, 1, 2]  # 방학 제외
+  summer_break: {start_month: 7, start_day: 20, end_month: 8, end_day: 31}
+  winter_break: {start_month: 12, start_day: 25, end_month: 2, end_day: 28}
+  lighting_density_w_m2: 10
+  equipment_density_w_m2: 8
+  baseload:
+    security_w: 50
+    common_lighting_w: 100
+    ventilation_w: 80
+
+school_secondary:
+  name: 중고등학교
+  category: school
+  base_pattern:
+    weekday:
+      0: 0.02
+      7: 0.3
+      8: 0.9     # 0교시
+      12: 0.7
+      13: 0.9
+      15: 0.7    # 정규 수업 종료
+      16: 0.5    # 방과후
+      17: 0.4
+      18: 0.3    # 야간자습 (고등)
+      21: 0.15
+      22: 0.05
+    weekend:
+      0: 0.02
+      9: 0.2     # 주말 자습 (고등)
+      17: 0.1
+      22: 0.02
+  summer_break: {start_month: 7, start_day: 20, end_month: 8, end_day: 25}
+  winter_break: {start_month: 12, start_day: 25, end_month: 2, end_day: 20}
+  lighting_density_w_m2: 12
+  equipment_density_w_m2: 10
+  baseload:
+    security_w: 80
+    common_lighting_w: 150
+    ventilation_w: 100
+
+school_university:
+  name: 대학교
+  category: school
+  base_pattern:
+    weekday:
+      0: 0.05
+      8: 0.2
+      9: 0.5
+      10: 0.7
+      12: 0.5
+      13: 0.7
+      15: 0.6
+      17: 0.4
+      18: 0.3    # 도서관/연구실
+      20: 0.2
+      22: 0.1
+      23: 0.05
+    weekend:
+      0: 0.03
+      10: 0.15
+      14: 0.2
+      18: 0.15
+      22: 0.05
+  summer_break: {start_month: 6, start_day: 20, end_month: 8, end_day: 31}
+  winter_break: {start_month: 12, start_day: 20, end_month: 2, end_day: 28}
+  lighting_density_w_m2: 12
+  equipment_density_w_m2: 15  # 연구장비
+  baseload:
+    server_w: 500
+    security_w: 100
+    common_lighting_w: 200
+    ventilation_w: 150
+
+# ============================================================
+# 판매시설 스케줄 (4 클래스)
+# ============================================================
+retail_mall:
+  name: 대형 쇼핑몰
+  category: retail
+  base_pattern:
+    weekday:
+      0: 0.05
+      9: 0.1
+      10: 0.4    # 오픈
+      12: 0.7
+      14: 0.8
+      17: 0.9    # 퇴근 후 피크
+      19: 0.85
+      21: 0.5
+      22: 0.2    # 마감
+      23: 0.05
+    weekend:
+      0: 0.05
+      10: 0.5
+      12: 0.85
+      14: 0.95   # 주말 피크
+      17: 0.9
+      20: 0.6
+      22: 0.15
+  lighting_density_w_m2: 18
+  equipment_density_w_m2: 10
+  baseload:
+    security_w: 200
+    common_lighting_w: 500
+    elevator_escalator_w: 400
+    ventilation_w: 300
+    refrigeration_w: 800  # 식품매장
+
+retail_department:
+  name: 백화점
+  category: retail
+  base_pattern:
+    weekday:
+      0: 0.05
+      10: 0.3
+      11: 0.6
+      12: 0.7
+      14: 0.75
+      17: 0.8
+      19: 0.6
+      20: 0.3    # 20:30 마감
+      21: 0.1
+      23: 0.05
+    weekend:
+      0: 0.05
+      10: 0.5
+      12: 0.8
+      14: 0.9
+      17: 0.85
+      20: 0.3
+      23: 0.05
+  lighting_density_w_m2: 20
+  equipment_density_w_m2: 8
+  baseload:
+    security_w: 150
+    common_lighting_w: 400
+    elevator_escalator_w: 500
+    ventilation_w: 250
+
+retail_convenience:
+  name: 편의점/24h
+  category: retail
+  base_pattern:
+    weekday:
+      0: 0.3     # 24시간 운영
+      3: 0.15
+      6: 0.2
+      8: 0.5
+      12: 0.7
+      18: 0.6
+      21: 0.5
+      23: 0.35
+    weekend:
+      0: 0.35
+      3: 0.15
+      10: 0.5
+      14: 0.6
+      18: 0.65
+      22: 0.4
+  lighting_density_w_m2: 16
+  equipment_density_w_m2: 12
+  baseload:
+    refrigeration_w: 1200  # 냉장/냉동 진열대 (24h)
+    signage_w: 100
+    security_w: 30
+    ventilation_w: 80
+
+retail_neighborhood:
+  name: 근린상가
+  category: retail
+  base_pattern:
+    weekday:
+      0: 0.02
+      9: 0.1
+      10: 0.5
+      12: 0.6
+      14: 0.5
+      17: 0.4
+      19: 0.2
+      20: 0.05
+    weekend:
+      0: 0.02
+      10: 0.3
+      13: 0.4
+      17: 0.3
+      19: 0.1
+  lighting_density_w_m2: 12
+  equipment_density_w_m2: 8
+  baseload:
+    security_w: 30
+    common_lighting_w: 50
+    ventilation_w: 40
+
+# ============================================================
+# 병원 스케줄 (3 클래스)
+# ============================================================
+hospital_general:
+  name: 종합병원
+  category: hospital
+  base_pattern:
+    weekday:
+      0: 0.3     # 야간 (입원+응급)
+      6: 0.4     # 교대
+      7: 0.6
+      8: 0.85    # 외래 시작
+      12: 0.7
+      13: 0.85
+      17: 0.6    # 외래 종료
+      18: 0.45
+      20: 0.35
+      22: 0.3
+    weekend:
+      0: 0.25
+      8: 0.4     # 응급+입원만
+      12: 0.35
+      18: 0.3
+      22: 0.25
+  lighting_density_w_m2: 16
+  equipment_density_w_m2: 25  # 의료장비 높음
+  baseload:
+    medical_equipment_w: 2000
+    server_w: 500
+    security_w: 200
+    common_lighting_w: 500
+    elevator_w: 400
+    ventilation_w: 500  # 수술실/격리 등
+
+hospital_clinic:
+  name: 의원/클리닉
+  category: hospital
+  base_pattern:
+    weekday:
+      0: 0.02
+      8: 0.1
+      9: 0.8
+      12: 0.3    # 점심 휴진
+      13: 0.3
+      14: 0.8
+      17: 0.5
+      18: 0.1
+      19: 0.02
+    weekend:
+      0: 0.02
+      9: 0.5     # 토요일 오전 진료
+      12: 0.1
+      23: 0.02
+  saturday_half: true  # 토요일 오전만
+  lighting_density_w_m2: 14
+  equipment_density_w_m2: 15
+  baseload:
+    medical_equipment_w: 300
+    security_w: 30
+    common_lighting_w: 80
+    ventilation_w: 100
+
+hospital_nursing:
+  name: 요양원
+  category: hospital
+  base_pattern:
+    weekday:
+      0: 0.6     # 24h 입소자
+      6: 0.7
+      8: 0.8
+      12: 0.85
+      14: 0.7    # 낮잠/휴식
+      17: 0.8
+      20: 0.7
+      22: 0.6
+    weekend:  # 주중과 유사
+      0: 0.6
+      8: 0.75
+      14: 0.65
+      20: 0.65
+  lighting_density_w_m2: 10
+  equipment_density_w_m2: 8
+  baseload:
+    medical_equipment_w: 200
+    security_w: 50
+    common_lighting_w: 200
+    elevator_w: 150
+    ventilation_w: 150
+
+# ============================================================
+# 호텔 스케줄 (3 클래스)
+# ============================================================
+hotel_business:
+  name: 비즈니스호텔
+  category: hotel
+  base_pattern:
+    weekday:
+      0: 0.7     # 숙박
+      6: 0.6     # 체크아웃 시작
+      8: 0.3     # 출장 외출
+      10: 0.2
+      12: 0.15
+      15: 0.25   # 체크인 시작
+      18: 0.5
+      20: 0.65
+      22: 0.7
+    weekend:
+      0: 0.4     # 주말 낮은 투숙률
+      8: 0.3
+      12: 0.15
+      18: 0.3
+      22: 0.4
+  weekday_occupancy_higher: true
+  lighting_density_w_m2: 12
+  equipment_density_w_m2: 8
+  baseload:
+    lobby_lighting_w: 300
+    elevator_w: 200
+    security_w: 100
+    ventilation_w: 200
+    laundry_w: 400
+
+hotel_tourist:
+  name: 관광호텔
+  category: hotel
+  base_pattern:
+    weekday:
+      0: 0.5
+      8: 0.4
+      10: 0.2    # 관광 외출
+      12: 0.15
+      15: 0.2
+      18: 0.45
+      20: 0.6
+      22: 0.55
+    weekend:
+      0: 0.75    # 주말 높은 투숙률
+      8: 0.6
+      10: 0.3
+      14: 0.25
+      18: 0.6
+      22: 0.7
+  weekend_occupancy_higher: true
+  lighting_density_w_m2: 14
+  equipment_density_w_m2: 10
+  baseload:
+    lobby_lighting_w: 500
+    elevator_w: 300
+    security_w: 120
+    ventilation_w: 250
+    laundry_w: 600
+    pool_spa_w: 800
+
+hotel_resort:
+  name: 리조트
+  category: hotel
+  base_pattern:
+    weekday:
+      0: 0.3     # 비수기 낮음
+      8: 0.25
+      10: 0.15
+      15: 0.2
+      18: 0.3
+      22: 0.3
+    weekend:
+      0: 0.6
+      8: 0.5
+      10: 0.3
+      15: 0.35
+      18: 0.55
+      22: 0.6
+  seasonal_variation:
+    summer_peak: 1.8   # 여름 피크
+    winter_peak: 1.5   # 스키 시즌
+    shoulder: 0.6      # 비수기
+  lighting_density_w_m2: 12
+  equipment_density_w_m2: 8
+  baseload:
+    lobby_lighting_w: 400
+    elevator_w: 200
+    security_w: 80
+    ventilation_w: 200
+    pool_spa_w: 1200

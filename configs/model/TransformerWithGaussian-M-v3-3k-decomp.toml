@@ -1,0 +1,36 @@
+# Korean_BB Transformer Medium v3 — 3K Balanced + Seasonal Decomp Config
+# EXP-014: Seasonal Decomposition + RevIN
+# 분해: trend = moving_avg(context, kernel=25), seasonal = load - trend
+# RevIN: per-instance norm on seasonal residual
+# Steps: 42K buildings × 344 windows / 128 batch × 0.35 epochs ≈ 40,000 steps
+
+[model]
+context_len = 168
+pred_len = 24
+num_encoder_layers = 3
+num_decoder_layers = 3
+d_model = 512
+nhead = 8
+dim_feedforward = 1024
+dropout = 0.0
+activation = 'gelu'
+continuous_loads = true
+continuous_head = 'gaussian_nll'
+ignore_spatial = false
+use_revin = true
+use_seasonal_decomp = true
+decomp_kernel = 25
+
+[train]
+batch_size = 128
+lr = 0.00006               # EXP-010 동일
+warmup_steps = 4000         # 40K steps의 10%
+epochs = 50
+apply_scaler_transform = 'boxcox'
+init_scale = 0.02
+grad_clip = 0.0
+val_every = 1
+patience = 15
+
+[eval]
+apply_scaler_transform = 'boxcox'

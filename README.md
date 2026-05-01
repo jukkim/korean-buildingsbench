@@ -16,7 +16,8 @@ Jeong-Uk Kim, Department of Electrical Engineering, Sangmyung University
 | BB 900K + RevIN | BB 900K | 900,000 | ON | 13.89 |
 | **Korean-700 (ours)** | **Korean sim** | **700** | **ON** | **13.11 ± 0.17** (5-seed) / **12.93** (best) |
 | Korean-700 | Korean sim | 700 | OFF | 14.72 ± 0.28 (3-seed) |
-| BB-700 | BB subset | 700 | ON | 15.28 |
+| BB-700 (aug-matched) | BB subset | 700 | ON | 14.26 |
+| BB-700 (no aug) | BB subset | 700 | ON | 15.28 |
 | BB-700 | BB subset | 700 | OFF | 16.44 |
 
 ### Zero-Shot on 218 Korean Convenience Stores
@@ -56,7 +57,7 @@ python scripts/train.py \
   --train_index train_weekly_50.csv \
   --val_index val_weekly_50.csv \
   --max_steps 18000 --warmup_steps 500 \
-  --augment --bb_eval_interval 1 --seed 42
+  --augment --bb_eval_interval 0 --seed 42
 ```
 
 ## Evaluation

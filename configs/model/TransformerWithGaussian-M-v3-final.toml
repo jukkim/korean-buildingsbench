@@ -1,0 +1,31 @@
+# Korean_BB Transformer Medium v3 — 50K Final Training Config
+# BB-M 원본 아키텍처 준수, 학습 설정 BB pretrain.py 기반
+# ~16M params, 50K buildings, 50 epochs
+
+[model]
+context_len = 168
+pred_len = 24
+num_encoder_layers = 3
+num_decoder_layers = 3
+d_model = 512
+nhead = 8
+dim_feedforward = 1024
+dropout = 0.0
+activation = 'gelu'
+continuous_loads = true
+continuous_head = 'gaussian_nll'
+ignore_spatial = false
+
+[train]
+batch_size = 128
+lr = 0.00006               # BB-M 동일
+warmup_steps = 10000        # BB 원본 (epoch-based 아님!)
+epochs = 50                 # 충분한 수렴
+apply_scaler_transform = 'boxcox'
+init_scale = 0.02
+grad_clip = 0.0             # BB 원본: gradient clipping 없음
+val_every = 1
+patience = 15               # 10→15 여유
+
+[eval]
+apply_scaler_transform = 'boxcox'

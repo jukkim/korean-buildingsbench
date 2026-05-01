@@ -31,6 +31,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from scipy.stats import norm as sp_norm
 try:
     import tomllib as tomli
 except ModuleNotFoundError:
@@ -104,15 +105,26 @@ class BBBoxCoxTransform:
             return self.scaler.transform(x.reshape(-1, 1)).reshape(x.shape)
 
     def inverse_transform(self, x):
-        """transformed → original scale"""
+        """transformed → original scale.
+        Clips to safe BC range: x_std < (1/|λ| - mean_) / scale_ to prevent NaN.
+        """
+        # NaN threshold: λ·x_raw + 1 = 0 → x_raw = 1/|λ|; in std space: (1/|λ| - mean_) / scale_
+        lam = float(self.scaler.lambdas_[0])
+        mean_ = float(self.scaler._scaler.mean_[0])
+        scale_ = float(self.scaler._scaler.scale_[0])
+        nan_threshold_std = (1.0 / abs(lam) - mean_) / scale_
+        safe_clip = nan_threshold_std * 0.95  # 5% margin
+
         if isinstance(x, torch.Tensor):
             device = x.device
             shape = x.shape
             x_np = x.cpu().numpy().reshape(-1, 1)
+            x_np = np.clip(x_np, None, safe_clip)
             inv = self.scaler.inverse_transform(x_np).reshape(shape)
             return torch.from_numpy(inv).float().to(device)
         else:
-            return self.scaler.inverse_transform(x.reshape(-1, 1)).reshape(x.shape)
+            x_np = np.clip(x.reshape(-1, 1), None, safe_clip)
+            return self.scaler.inverse_transform(x_np).reshape(x.shape)
 
 
 # ============================================================
@@ -399,13 +411,20 @@ class BBBuildingDataset(Dataset):
 
 @torch.no_grad()
 def evaluate_building(model, dataset, device, boxcox, context_len):
-    """단일 건물 → CVRMSE"""
+    """단일 건물 → CVRMSE + CRPS (Box-Cox space)"""
     if len(dataset) == 0:
         return None
 
     loader = DataLoader(dataset, batch_size=32, shuffle=False)
     all_se = []
     all_gt = []
+    all_crps = []
+
+    # Box-Cox Jacobian parameters (constant across batches)
+    # PowerTransformer: y_bc_raw = (y^λ-1)/λ, then standardized by _scaler (mean_, scale_)
+    lam = float(boxcox.scaler.lambdas_[0])
+    sc  = float(boxcox.scaler._scaler.scale_[0])   # std of raw BC values
+    mn  = float(boxcox.scaler._scaler.mean_[0])    # mean of raw BC values
 
     model.eval()
     for batch in loader:
@@ -413,28 +432,45 @@ def evaluate_building(model, dataset, device, boxcox, context_len):
             batch[k] = v.to(device)
 
         with torch.amp.autocast('cuda', enabled=device.type == 'cuda'):
-            predictions, _ = model.predict(batch)
-        targets = batch['load'][:, context_len:]
+            predictions, dist_params = model.predict(batch)
+        targets = batch['load'][:, context_len:]  # Box-Cox space
 
-        # Inverse Box-Cox
+        # dist_params: (batch, pred_len, 2) = [mu, sigma] in Box-Cox space
+        mu_bc  = dist_params[:, :, 0].cpu().numpy()
+        sig_bc = dist_params[:, :, 1].cpu().numpy().clip(1e-8, None)
+
+        # --- CVRMSE in original scale ---
         pred_inv = boxcox.inverse_transform(predictions)
-        tgt_inv = boxcox.inverse_transform(targets)
-
-        pred_np = pred_inv.squeeze(-1).cpu().numpy()
-        tgt_np = tgt_inv.squeeze(-1).cpu().numpy()
-
+        tgt_inv  = boxcox.inverse_transform(targets)
+        pred_np  = pred_inv.squeeze(-1).cpu().numpy()
+        tgt_np   = tgt_inv.squeeze(-1).cpu().numpy()
         all_se.append((pred_np - tgt_np) ** 2)
         all_gt.append(np.abs(tgt_np))
 
-    se = np.concatenate(all_se)
-    gt = np.concatenate(all_gt)
+        # --- NCRPS in original scale via Delta method ---
+        # sklearn PowerTransformer: x_std -> x_bc = x_std*scale_ + mean_ -> x_orig = (λ*x_bc+1)^(1/λ)
+        # Jacobian d(x_orig)/d(x_std) ≈ scale_ * |λ*x_bc + 1|^(1/λ - 1)
+        mu_unstd = mu_bc * sc + mn                            # unstandardized BC space
+        jac = sc * np.abs(np.clip(lam * mu_unstd + 1, 1e-8, None)) ** (1.0/lam - 1.0)
+        sigma_orig = jac * sig_bc                             # σ in original kWh scale
+        z_orig = (tgt_np - pred_np) / np.clip(sigma_orig, 1e-8, None)
+        # CRPS(N(μ,σ²), y) = σ·[z·(2Φ(z)−1) + 2φ(z) − 1/√π]
+        crps_orig = sigma_orig * (z_orig * (2 * sp_norm.cdf(z_orig) - 1)
+                                  + 2 * sp_norm.pdf(z_orig)
+                                  - 1.0 / np.sqrt(np.pi))
+        ncrps_per_step = crps_orig / (np.abs(tgt_np) + 1e-8)
+        all_crps.append(ncrps_per_step)
+
+    se   = np.concatenate(all_se)
+    gt   = np.concatenate(all_gt)
+    crps = np.concatenate(all_crps)
     mean_gt = np.mean(gt)
     if mean_gt < 1e-8:
         return None
 
-    cvrmse = float(np.sqrt(np.mean(se)) / mean_gt)
     return {
-        'cvrmse': cvrmse,
+        'cvrmse': float(np.sqrt(np.mean(se)) / mean_gt),
+        'ncrps':  float(np.mean(crps)),     # normalized CRPS in original scale (same denom as CVRMSE)
         'n_windows': len(se),
         'mean_actual': float(mean_gt),
     }
@@ -465,6 +501,7 @@ def main():
     parser.add_argument('--cpu', action='store_true', help='Force CPU (when GPU busy with training)')
     parser.add_argument('--commercial_only', action='store_true', help='Evaluate commercial buildings only (955 buildings, skip residential)')
     parser.add_argument('--bdg2_only', action='store_true', help='Evaluate BDG-2 only (611 buildings) — experiment comparison standard')
+    parser.add_argument('--bb_boxcox', action='store_true', help='Use BB original Box-Cox (for evaluating BB SOTA checkpoint with its own normalization)')
     args = parser.parse_args()
 
     # ---- Config ----
@@ -489,13 +526,17 @@ def main():
     print(f"Model loaded: {args.checkpoint}")
 
     # ---- Box-Cox transform ----
-    # Use training data's boxcox to match checkpoint normalization.
-    # BB's S3 v2.0.0 boxcox (lambda=-0.07064) differs from the checkpoint's (lambda=-0.06722).
+    # Default: use training data's boxcox to match checkpoint normalization.
+    # --bb_boxcox: force BB's original boxcox (for evaluating BB SOTA with its own normalization).
+    bb_bc_path = BB_DATA_DIR / 'metadata' / 'transforms'
     train_bc_path = Path(__file__).parent.parent / 'data' / 'korean_bb' / 'metadata' / 'transforms'
-    if train_bc_path.exists():
+    if args.bb_boxcox:
+        boxcox = BBBoxCoxTransform(bb_bc_path)
+        print("  [bb_boxcox] Using BB original Box-Cox for evaluation")
+    elif train_bc_path.exists():
         boxcox = BBBoxCoxTransform(train_bc_path)
     else:
-        boxcox = BBBoxCoxTransform(BB_DATA_DIR / 'metadata' / 'transforms')
+        boxcox = BBBoxCoxTransform(bb_bc_path)
 
     # ---- Parse BB buildings ----
     print("\nParsing BB test datasets...")
@@ -563,8 +604,8 @@ def main():
                 'building_id': bld['building_id'],
                 'dataset': bld['dataset'],
                 'building_type': bld['building_type'],
-                'metric': 'cvrmse',
-                'value': metrics['cvrmse'],
+                'cvrmse': metrics['cvrmse'],
+                'ncrps':  metrics['ncrps'],
                 'mean_actual': metrics['mean_actual'],
                 'n_windows': metrics['n_windows'],
             })
@@ -607,13 +648,17 @@ def main():
         if len(subset) == 0:
             continue
 
-        values = subset['value'].values
-        median, ci_low, ci_high = bootstrap_ci(values, n_reps=args.bootstrap_reps)
+        cvrmse_vals = subset['cvrmse'].values
+        crps_vals   = subset['ncrps'].values
+        median, ci_low, ci_high = bootstrap_ci(cvrmse_vals, n_reps=args.bootstrap_reps)
+        crps_med, crps_ci_lo, crps_ci_hi = bootstrap_ci(crps_vals, n_reps=args.bootstrap_reps)
 
         print(f"\n  {btype.upper()} ({len(subset)} buildings)")
         print(f"    CVRMSE median: {median * 100:.2f}% "
               f"(95% CI: {ci_low * 100:.2f}% - {ci_high * 100:.2f}%)")
-        print(f"    CVRMSE mean:   {values.mean() * 100:.2f}%")
+        print(f"    CVRMSE mean:   {cvrmse_vals.mean() * 100:.2f}%")
+        print(f"    NCRPS  median: {crps_med*100:.2f}% "
+              f"(95% CI: {crps_ci_lo*100:.2f}% - {crps_ci_hi*100:.2f}%)  [original scale, normalized]")
 
     # ---- BB SOTA 비교 ----
     print(f"\n  {'=' * 50}")
@@ -622,16 +667,17 @@ def main():
 
     com_df = results_df[results_df['building_type'] == 'commercial']
     if len(com_df) > 0:
-        com_median = np.nanmedian(com_df['value'].values) * 100
-        print(f"  Our model ({model_name}):     {com_median:.2f}%", flush=True)
-        print(f"  BB Transformer-M (SOTA):      13.27%  (reproduced)")
+        com_median = np.nanmedian(com_df['cvrmse'].values) * 100
+        com_ncrps  = np.nanmedian(com_df['ncrps'].values)
+        print(f"  Our model ({model_name}):     {com_median:.2f}%  NCRPS={com_ncrps*100:.2f}%", flush=True)
+        print(f"  BB Transformer-M (SOTA):      13.27%  NCRPS=4.25% (from BB framework log)")
         print(f"  BB Transformer-L:             13.31%  (paper)")
         print(f"  Persistence Ensemble:         16.68%")
         print(f"  Gap vs SOTA-M:                {com_median - 13.27:+.2f}%p")
 
     res_df = results_df[results_df['building_type'] == 'residential']
     if len(res_df) > 0:
-        res_median = np.nanmedian(res_df['value'].values) * 100
+        res_median = np.nanmedian(res_df['cvrmse'].values) * 100
         print(f"\n  {'=' * 50}")
         print(f"  BB SOTA Comparison (Residential)")
         print(f"  {'=' * 50}")
@@ -643,13 +689,14 @@ def main():
     print(f"\n  {'=' * 50}")
     print(f"  Per-Dataset Breakdown")
     print(f"  {'=' * 50}")
-    print(f"  {'Dataset':<15} {'Type':<12} {'N':>5} {'Median CVRMSE':>15}")
-    print(f"  {'-' * 50}")
+    print(f"  {'Dataset':<15} {'Type':<12} {'N':>5} {'Median CVRMSE':>15} {'Median CRPS':>13}")
+    print(f"  {'-' * 60}")
     for ds in sorted(results_df['dataset'].unique()):
         ds_df = results_df[results_df['dataset'] == ds]
         btype = ds_df['building_type'].iloc[0]
-        med = np.nanmedian(ds_df['value'].values)
-        print(f"  {ds:<15} {btype:<12} {len(ds_df):>5} {med * 100:>14.2f}%")
+        med_cv = np.nanmedian(ds_df['cvrmse'].values)
+        med_cr = np.nanmedian(ds_df['ncrps'].values)
+        print(f"  {ds:<15} {btype:<12} {len(ds_df):>5} {med_cv * 100:>14.2f}% {med_cr:>13.4f}")
 
     print(f"\n{'=' * 70}")
 

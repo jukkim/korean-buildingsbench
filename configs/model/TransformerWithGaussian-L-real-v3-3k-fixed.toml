@@ -1,0 +1,37 @@
+# Korean_BB Transformer Large (진짜 BB-L) — 수정판
+# EXP-033: warmup 비율 수정 + grad_clip=1.0 + steps=40,690 (BB 공식 1B tokens 동등)
+#
+# 수정 내역 (EXP-032 분석 기반):
+#   - grad_clip: 0.0 → 1.0  (12+12 레이어 gradient explosion 방지)
+#   - warmup_steps: 4000 고정 → steps=40690 기준 9.8% (비율 정상화)
+#   - 설명: 이전 s=6302에서 warmup=4000은 63.5%를 차지해 수렴 불가였음
+#           s=40690에서 warmup=4000은 9.8% → BB 공식 12.3%와 동등
+
+[model]
+context_len = 168
+pred_len = 24
+num_encoder_layers = 12
+num_decoder_layers = 12
+d_model = 768
+nhead = 12
+dim_feedforward = 2048
+dropout = 0.0
+activation = 'gelu'
+continuous_loads = true
+continuous_head = 'gaussian_nll'
+ignore_spatial = false
+use_revin = true
+
+[train]
+batch_size = 128
+lr = 0.00006
+warmup_steps = 4000          # 40690 steps 기준 9.8% — BB 공식 12.3%와 동등
+epochs = 50
+apply_scaler_transform = 'boxcox'
+init_scale = 0.02
+grad_clip = 1.0              # 수정: 0.0 → 1.0 (깊은 네트워크 gradient 안정화)
+val_every = 1
+patience = 15
+
+[eval]
+apply_scaler_transform = 'boxcox'

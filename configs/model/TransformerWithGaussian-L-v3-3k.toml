@@ -1,0 +1,33 @@
+# Korean_BB Transformer Large v3 — 512/6/6 (수정됨)
+# EXP-015: M(15.16%) 이후 L 사이즈 확장. SOTA-L=13.31% vs SOTA-M=13.95% (0.64%p 차이)
+# 768/12/12 → 512/6/6 수정 (42K synthetic data에 최적화, ~30M params)
+# Steps: 42K buildings × 344 windows / 128 batch × 0.354 epochs = 40,000 steps
+
+[model]
+context_len = 168
+pred_len = 24
+num_encoder_layers = 6
+num_decoder_layers = 6
+d_model = 512
+nhead = 8
+dim_feedforward = 2048
+dropout = 0.0
+activation = 'gelu'
+continuous_loads = true
+continuous_head = 'gaussian_nll'
+ignore_spatial = false
+use_revin = true
+
+[train]
+batch_size = 128
+lr = 0.00006               # BB-L 동일
+warmup_steps = 4000        # 40K steps의 10%
+epochs = 50
+apply_scaler_transform = 'boxcox'
+init_scale = 0.02
+grad_clip = 0.0
+val_every = 1
+patience = 15
+
+[eval]
+apply_scaler_transform = 'boxcox'

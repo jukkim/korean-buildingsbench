@@ -1,0 +1,121 @@
+# 아키타입 → ASHRAE ExampleFile 매핑
+#
+# EnergyPlus 24.1 ExampleFiles를 base로 사용.
+# 한국 건물에 완벽 매칭은 아니지만, HVAC/geometry 구조가 유사한 것을 선택.
+# 외피, 스케줄, 내부부하는 modifier.py에서 한국 사양으로 교체.
+
+energyplus_dir: "C:/EnergyPlusV24-1-0"
+
+archetype_mapping:
+  apartment_highrise:
+    source_idf: "ASHRAE901_ApartmentHighRise_STD2019_Denver.idf"
+    notes: "고층 아파트. RC 구조, 다세대. HVAC은 한국식으로 교체 필요."
+    hvac_overrides:
+      # 한국 아파트: 온돌+가스보일러+벽걸이에어컨
+      # ASHRAE에는 온돌이 없으므로 radiant floor + split DX 근사
+      heating_type: "radiant_floor"
+      cooling_type: "split_dx"
+
+  apartment_midrise:
+    source_idf: "ASHRAE901_ApartmentMidRise_STD2019_Denver.idf"
+    fallback_idf: "ASHRAE901_ApartmentHighRise_STD2019_Denver.idf"
+    notes: "중층 아파트 (5층). MidRise 없으면 HighRise 사용."
+
+  office:
+    source_idf: "ASHRAE901_OfficeMedium_STD2019_Denver.idf"
+    fallback_idf: "ASHRAE901_OfficeSmall_STD2019_Denver.idf"
+    notes: "중규모 업무시설. VRF 또는 칠러+FCU."
+
+  school:
+    source_idf: "ASHRAE901_SchoolPrimary_STD2019_Denver.idf"
+    notes: "초등학교 기반. 중고등/대학은 스케줄로 차별화."
+
+  retail:
+    source_idf: "ASHRAE901_RetailStandalone_STD2019_Denver.idf"
+    fallback_idf: "ASHRAE901_RetailStripmall_STD2019_Denver.idf"
+    notes: "독립 판매시설."
+
+  hospital:
+    source_idf: "ASHRAE901_Hospital_STD2019_Denver.idf"
+    notes: "종합병원. 24시간 운영, 높은 환기 요구."
+
+  hotel:
+    source_idf: "ASHRAE901_HotelSmall_STD2019_Denver.idf"
+    fallback_idf: "ASHRAE901_HotelLarge_STD2019_Denver.idf"
+    notes: "소규모 호텔. 비즈니스/관광은 스케줄로 차별화."
+
+  small_office:
+    source_idf: "ASHRAE901_OfficeSmall_STD2019_Denver.idf"
+    notes: "소규모 업무시설 (1-2층). 5-30kW급. BDG-2 public/assembly 커버."
+
+  large_office:
+    source_idf: "ASHRAE901_OfficeLarge_STD2019_Denver.idf"
+    notes: "대규모 업무시설 (12-30층). 500-1500kW급."
+
+  warehouse:
+    source_idf: "ASHRAE901_Warehouse_STD2019_Denver.idf"
+    notes: "창고시설. 저밀도 부하, 10-50kW급."
+
+  restaurant_full:
+    source_idf: "ASHRAE901_RestaurantSitDown_STD2019_Denver.idf"
+    notes: "일반음식점. 높은 장비부하 (주방). 50-100kW급."
+
+  restaurant_quick:
+    source_idf: "ASHRAE901_RestaurantFastFood_STD2019_Denver.idf"
+    notes: "패스트푸드점. 높은 장비부하. 30-70kW급."
+
+  strip_mall:
+    source_idf: "ASHRAE901_RetailStripmall_STD2019_Denver.idf"
+    notes: "근린상가. 다점포 소형 리테일. 30-60kW급."
+
+  university:
+    source_idf: "ASHRAE901_SchoolPrimary_STD2019_Denver.idf"
+    notes: "대학교. school IDF 기반, 스케줄/LHS로 차별화."
+
+# 한국 기상 데이터 (.epw) 경로
+# EnergyPlus 공식 사이트에서 다운로드:
+# https://energyplus.net/weather → Asia → South Korea
+weather_files:
+  chuncheon:
+    tmy: "weather/KOR_Gangneung.epw"
+    description: "춘천 → 강릉 대체 (중부1, 춘천 epw 미보유)"
+  wonju:
+    tmy: "weather/KOR_Cheongju.epw"
+    description: "원주 → 청주 대체 (중부1/2 경계)"
+  seoul:
+    tmy: "weather/KOR_Seoul.epw"
+    description: "서울 (중부2)"
+  incheon:
+    tmy: "weather/KOR_Incheon.epw"
+    description: "인천 (중부2)"
+  daejeon:
+    tmy: "weather/KOR_Daejeon.epw"
+    description: "대전 (중부2)"
+  sejong:
+    tmy: "weather/KOR_Daejeon.epw"
+    description: "세종 (대전 기상 공용, 중부2)"
+  busan:
+    tmy: "weather/KOR_Busan.epw"
+    description: "부산 (남부)"
+  daegu:
+    tmy: "weather/KOR_Daegu.epw"
+    description: "대구 (남부)"
+  gwangju:
+    tmy: "weather/KOR_Gwangju.epw"
+    description: "광주 (남부)"
+  jeju:
+    tmy: "weather/KOR_Jeju.epw"
+    description: "제주"
+
+# 도시 → 기후대 매핑
+city_to_climate_zone:
+  chuncheon: central_1
+  wonju: central_1
+  seoul: central_2
+  incheon: central_2
+  daejeon: central_2
+  sejong: central_2
+  busan: southern
+  daegu: southern
+  gwangju: southern
+  jeju: jeju

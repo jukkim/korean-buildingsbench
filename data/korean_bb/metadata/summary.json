@@ -1,0 +1,147 @@
+{
+  "total_buildings": 177548,
+  "by_archetype": {
+    "apartment_highrise": {
+      "count": 5074,
+      "mean_kwh": 210.95,
+      "peak_kwh_mean": 301.91,
+      "baseload_ratio_mean": 0.604
+    },
+    "apartment_midrise": {
+      "count": 9474,
+      "mean_kwh": 94.26,
+      "peak_kwh_mean": 132.9,
+      "baseload_ratio_mean": 0.599
+    },
+    "hospital": {
+      "count": 7646,
+      "mean_kwh": 1566.23,
+      "peak_kwh_mean": 2122.67,
+      "baseload_ratio_mean": 0.727
+    },
+    "hotel": {
+      "count": 9833,
+      "mean_kwh": 84.69,
+      "peak_kwh_mean": 123.71,
+      "baseload_ratio_mean": 0.724
+    },
+    "large_office": {
+      "count": 12964,
+      "mean_kwh": 2348.94,
+      "peak_kwh_mean": 3324.3,
+      "baseload_ratio_mean": 0.696
+    },
+    "office": {
+      "count": 14999,
+      "mean_kwh": 259.35,
+      "peak_kwh_mean": 413.98,
+      "baseload_ratio_mean": 0.672
+    },
+    "restaurant_full": {
+      "count": 23000,
+      "mean_kwh": 317.77,
+      "peak_kwh_mean": 382.24,
+      "baseload_ratio_mean": 0.838
+    },
+    "restaurant_quick": {
+      "count": 23000,
+      "mean_kwh": 215.78,
+      "peak_kwh_mean": 257.27,
+      "baseload_ratio_mean": 0.854
+    },
+    "retail": {
+      "count": 8025,
+      "mean_kwh": 69.94,
+      "peak_kwh_mean": 131.67,
+      "baseload_ratio_mean": 0.565
+    },
+    "school": {
+      "count": 6510,
+      "mean_kwh": 241.65,
+      "peak_kwh_mean": 402.68,
+      "baseload_ratio_mean": 0.611
+    },
+    "small_office": {
+      "count": 12070,
+      "mean_kwh": 14.09,
+      "peak_kwh_mean": 21.28,
+      "baseload_ratio_mean": 0.661
+    },
+    "strip_mall": {
+      "count": 18263,
+      "mean_kwh": 99.14,
+      "peak_kwh_mean": 157.43,
+      "baseload_ratio_mean": 0.605
+    },
+    "university": {
+      "count": 11025,
+      "mean_kwh": 265.52,
+      "peak_kwh_mean": 434.25,
+      "baseload_ratio_mean": 0.635
+    },
+    "warehouse": {
+      "count": 15665,
+      "mean_kwh": 34.05,
+      "peak_kwh_mean": 55.49,
+      "baseload_ratio_mean": 0.487
+    }
+  },
+  "by_city": {
+    "busan": {
+      "count": 34312,
+      "mean_kwh": 407.97
+    },
+    "daegu": {
+      "count": 33929,
+      "mean_kwh": 393.13
+    },
+    "gangneung": {
+      "count": 33891,
+      "mean_kwh": 392.12
+    },
+    "jeju": {
+      "count": 33751,
+      "mean_kwh": 395.09
+    },
+    "seoul": {
+      "count": 41665,
+      "mean_kwh": 360.01
+    }
+  },
+  "by_building_type": {
+    "COMMERCIAL": {
+      "count": 163000,
+      "mean_kwh": 411.02,
+      "baseload_ratio_mean": 0.692
+    },
+    "RESIDENTIAL": {
+      "count": 14548,
+      "mean_kwh": 134.96,
+      "baseload_ratio_mean": 0.601
+    }
+  },
+  "overall": {
+    "mean_kwh": 388.4,
+    "peak_kwh_mean": 544.75,
+    "baseload_ratio_mean": 0.685,
+    "baseload_ratio_median": 0.693
+  },
+  "index": {
+    "n_buildings": 177548,
+    "train_windows": 61076512,
+    "val_windows": 2485672,
+    "context_len": 168,
+    "pred_len": 24,
+    "stride": 24,
+    "train_end_hour": 8424
+  },
+  "boxcox": {
+    "method": "box-cox",
+    "lambda": 0.010614744387567043,
+    "mean": 5.246265415063799,
+    "std": 1.3769977036195655,
+    "n_samples": 1000000,
+    "offset": 1e-06,
+    "pkl_path": "C:\\Users\\User\\Desktop\\myjob\\8.simulation\\Korean_BB\\data\\korean_bb\\metadata\\transforms\\boxcox.pkl"
+  }
+}

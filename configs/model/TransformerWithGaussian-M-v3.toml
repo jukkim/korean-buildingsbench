@@ -1,0 +1,32 @@
+# Korean_BB Transformer Medium v3 — Curriculum Training Config
+# v3 패턴 갭 수정 데이터 + data augmentation 적용
+# ~18M params, batch_size=128 (v2 대비 2x)
+
+[model]
+context_len = 168
+pred_len = 24
+num_encoder_layers = 3
+num_decoder_layers = 3
+d_model = 512
+nhead = 8
+dim_feedforward = 1024
+dropout = 0.0
+activation = 'gelu'
+continuous_loads = true
+continuous_head = 'gaussian_nll'
+ignore_spatial = false
+use_revin = true
+
+[train]
+batch_size = 128         # v2 64→128 (대규모 데이터셋용)
+lr = 0.00006             # Stage A: 6e-5
+warmup_epochs = 2
+epochs = 20              # Stage별 20 epochs
+apply_scaler_transform = 'boxcox'
+init_scale = 0.02
+grad_clip = 1.0
+val_every = 1
+patience = 10
+
+[eval]
+apply_scaler_transform = 'boxcox'

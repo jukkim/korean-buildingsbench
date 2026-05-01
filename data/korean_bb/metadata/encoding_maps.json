@@ -1,0 +1,48 @@
+{
+  "cities": [
+    "busan",
+    "daegu",
+    "gangneung",
+    "jeju",
+    "seoul"
+  ],
+  "archetypes": [
+    "apartment_highrise",
+    "apartment_midrise",
+    "hospital",
+    "hotel",
+    "large_office",
+    "office",
+    "restaurant_full",
+    "restaurant_quick",
+    "retail",
+    "school",
+    "small_office",
+    "strip_mall",
+    "university",
+    "warehouse"
+  ],
+  "city_map": {
+    "busan": 0,
+    "daegu": 1,
+    "gangneung": 2,
+    "jeju": 3,
+    "seoul": 4
+  },
+  "arch_map": {
+    "apartment_highrise": 0,
+    "apartment_midrise": 1,
+    "hospital": 2,
+    "hotel": 3,
+    "large_office": 4,
+    "office": 5,
+    "restaurant_full": 6,
+    "restaurant_quick": 7,
+    "retail": 8,
+    "school": 9,
+    "small_office": 10,
+    "strip_mall": 11,
+    "university": 12,
+    "warehouse": 13
+  }
+}

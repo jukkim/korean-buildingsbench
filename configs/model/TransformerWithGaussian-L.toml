@@ -1,0 +1,30 @@
+# Korean_BB Transformer Large — BB TransformerWithGaussian-L 기반
+# ~93M params, BB SOTA 모델과 동일 구조
+
+[model]
+context_len = 168
+pred_len = 24
+num_encoder_layers = 12
+num_decoder_layers = 12
+d_model = 768
+nhead = 12
+dim_feedforward = 2048
+dropout = 0.0
+activation = 'gelu'
+continuous_loads = true
+continuous_head = 'gaussian_nll'
+ignore_spatial = false
+
+[train]
+batch_size = 32
+lr = 0.00006
+warmup_epochs = 3
+epochs = 50
+apply_scaler_transform = 'boxcox'
+init_scale = 0.02
+grad_clip = 1.0
+val_every = 1
+patience = 10
+
+[eval]
+apply_scaler_transform = 'boxcox'

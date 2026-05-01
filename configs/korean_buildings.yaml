@@ -1,0 +1,171 @@
+# Korean_BB 시뮬레이션 마스터 설정
+# 7 아키타입 × 5 vintage × 10 도시 × 2 기상
+
+# ============================================================
+# 기후대 및 도시
+# ============================================================
+climate_zones:
+  central_1:  # 중부1 - 한랭
+    cities: [chuncheon, wonju]
+    hdd18: 3200
+    cdd18: 400
+  central_2:  # 중부2 - 혼합
+    cities: [seoul, incheon, daejeon, sejong]
+    hdd18: 2800
+    cdd18: 600
+  southern:   # 남부 - 냉방 비중 높음
+    cities: [busan, daegu, gwangju]
+    hdd18: 2000
+    cdd18: 800
+  jeju:       # 제주 - 온난
+    cities: [jeju]
+    hdd18: 1400
+    cdd18: 850
+
+weather_years:
+  - tmy    # Typical Meteorological Year
+  - amy2023  # Actual 2023
+
+# ============================================================
+# 건물 아키타입 (7종)
+# ============================================================
+archetypes:
+  apartment_highrise:
+    name: 아파트 고층
+    share: 0.40
+    floors: [15, 20, 25]
+    gfa_range: [10000, 25000]  # m²
+    hvac_heating: ondol_gas_boiler
+    hvac_cooling: wall_split
+    wwr: {south: 0.45, north: 0.15, east: 0.20, west: 0.20}
+    occupancy_classes: [residential_dual_income, residential_single_income, residential_single, residential_elderly]
+    schedule_variants_per_class: 100
+
+  apartment_midrise:
+    name: 아파트 중층
+    share: 0.15
+    floors: [5]
+    gfa_range: [2000, 5000]
+    hvac_heating: ondol_gas_boiler
+    hvac_cooling: wall_split
+    wwr: {south: 0.40, north: 0.12, east: 0.18, west: 0.18}
+    occupancy_classes: [residential_dual_income, residential_single_income, residential_single, residential_elderly]
+    schedule_variants_per_class: 100
+
+  office:
+    name: 업무시설
+    share: 0.15
+    floors: [10, 15, 20]
+    gfa_range: [8000, 30000]
+    hvac_heating: vrf  # 또는 chiller_boiler_fcu
+    hvac_cooling: vrf
+    wwr: {south: 0.50, north: 0.50, east: 0.40, west: 0.40}
+    occupancy_classes: [office_government, office_corporate, office_it_startup, office_callcenter, office_small]
+    schedule_variants_per_class: 100
+
+  school:
+    name: 학교
+    share: 0.08
+    floors: [4]
+    gfa_range: [5000, 10000]
+    hvac_heating: gas_boiler
+    hvac_cooling: vrf
+    wwr: {south: 0.35, north: 0.15, east: 0.20, west: 0.20}
+    occupancy_classes: [school_elementary, school_secondary, school_university]
+    schedule_variants_per_class: 50
+
+  retail:
+    name: 판매시설
+    share: 0.08
+    floors: [3, 5]
+    gfa_range: [15000, 40000]
+    hvac_heating: chiller_boiler
+    hvac_cooling: chiller_ahu
+    wwr: {south: 0.25, north: 0.25, east: 0.25, west: 0.25}
+    occupancy_classes: [retail_mall, retail_department, retail_convenience, retail_neighborhood]
+    schedule_variants_per_class: 50
+
+  hospital:
+    name: 병원
+    share: 0.07
+    floors: [8, 12, 15]
+    gfa_range: [15000, 50000]
+    hvac_heating: chiller_boiler
+    hvac_cooling: chiller_ahu_fcu
+    wwr: {south: 0.35, north: 0.25, east: 0.25, west: 0.25}
+    occupancy_classes: [hospital_general, hospital_clinic, hospital_nursing]
+    schedule_variants_per_class: 50
+
+  hotel:
+    name: 호텔
+    share: 0.07
+    floors: [15]
+    gfa_range: [8000, 20000]
+    hvac_heating: vrf
+    hvac_cooling: vrf
+    wwr: {south: 0.30, north: 0.30, east: 0.25, west: 0.25}
+    occupancy_classes: [hotel_business, hotel_tourist, hotel_resort]
+    schedule_variants_per_class: 50
+
+# ============================================================
+# 건물 연식 (5 Vintage)
+# ============================================================
+vintages:
+  v1_pre1990:
+    name: ~1990
+    share: 0.15
+    year_range: [1970, 1990]
+    airtightness_ach: 1.0
+    hvac_efficiency_factor: 0.70  # 기준 대비
+
+  v2_1991_2000:
+    name: 1991-2000
+    share: 0.20
+    year_range: [1991, 2000]
+    airtightness_ach: 0.7
+    hvac_efficiency_factor: 0.80
+
+  v3_2001_2010:
+    name: 2001-2010
+    share: 0.25
+    year_range: [2001, 2010]
+    airtightness_ach: 0.5
+    hvac_efficiency_factor: 0.90
+
+  v4_2011_2017:
+    name: 2011-2017
+    share: 0.25
+    year_range: [2011, 2017]
+    airtightness_ach: 0.3
+    hvac_efficiency_factor: 0.95
+
+  v5_2018_plus:
+    name: 2018~
+    share: 0.15
+    year_range: [2018, 2026]
+    airtightness_ach: 0.2
+    hvac_efficiency_factor: 1.00
+
+# ============================================================
+# 시뮬레이션 설정
+# ============================================================
+simulation:
+  timestep: 4          # EnergyPlus timesteps per hour (15분)
+  output_freq: hourly  # 최종 출력 1시간
+  run_period:
+    start: "01/01"
+    end: "12/31"
+  total_hours: 8760
+
+# ============================================================
+# 출력 설정 (BB 호환)
+# ============================================================
+output:
+  format: parquet
+  columns: [timestamp, total_electricity_kwh]
+  normalization:
+    load: box-cox       # Box-Cox (global fitted)
+    weather: standard   # StandardScaler
+  context_len: 168      # 1주일
+  pred_len: 24          # 1일
+  sliding_stride: 24    # 1일
