@@ -37,5 +37,7 @@ data/korean_bb/metadata/val_weekly_6k.csv
 data/korean_bb/metadata/val_weekly_8k.csv
 data/korean_bb/metadata/val_weekly_10k.csv
 data/korean_bb/metadata/val_weekly_0k.csv
+data/korean_bb/metadata/train_weekly_6k.csv
+data/korean_bb/metadata/train_weekly_8k.csv
 data/korean_bb/metadata/train_weekly_10k.csv
 simulations/npy_tier_a/
