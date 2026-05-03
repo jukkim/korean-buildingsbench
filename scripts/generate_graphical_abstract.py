@@ -110,9 +110,9 @@ ax_bar = fig.add_axes([0.06, 0.04, 0.42, 0.38])
 
 models = ['Korean-700\n(ours)', 'BB SOTA-M\n(900K)', 'BB 900K\n+RevIN',
           'Korean-700\nRevIN OFF', 'Persistence\nEnsemble']
-values = [12.90, 13.27, 13.89, 14.24, 16.68]
+values = [13.11, 13.27, 13.89, 14.72, 16.68]
 colors = [C_BLUE, C_SOTA_RED, C_ORANGE, '#90CAF9', C_GRAY]
-errors = [0.09, 0, 0, 0.07, 0]
+errors = [0.17, 0, 0, 0.28, 0]
 
 bars = ax_bar.bar(range(len(models)), values, color=colors, width=0.65,
                   edgecolor='white', linewidth=1.5, zorder=3)
@@ -170,11 +170,11 @@ findings = [
     ('1', '0.08% data beats SOTA',
      '700 buildings > 900,000 buildings', C_BLUE_D),
     ('2', 'Data design > normalization',
-     'Design effect (2.2pp) ≈ 2× RevIN effect (1.2pp)', C_GREEN_D),
+     'Design effect (2.2pp) > RevIN effect (1.61pp)', C_GREEN_D),
     ('3', 'RevIN: scale-dependent',
-     'Helps small data (−1.3pp), hurts large (+0.6pp)', C_PURPLE),
+     'Helps small data (−1.61pp), hurts large (+0.62pp)', C_PURPLE),
     ('4', 'Rapid saturation at n=5',
-     '70 buildings already match SOTA (13.24%)', C_ORANGE),
+     '70 buildings already match SOTA (13.28%±0.12%)', C_ORANGE),
     ('5', 'Cross-climate zero-shot',
      'Korean climate → US buildings, no lat/lon needed', '#00695C'),
 ]

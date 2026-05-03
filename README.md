@@ -16,20 +16,14 @@ Jeong-Uk Kim, Department of Electrical Engineering, Sangmyung University
 | BB 900K + RevIN | BB 900K | 900,000 | ON | 13.89 |
 | **Korean-700 (ours)** | **Korean sim** | **700** | **ON** | **13.11 ± 0.17** (5-seed) / **12.93** (best) |
 | Korean-700 | Korean sim | 700 | OFF | 14.72 ± 0.28 (3-seed) |
+| US-TMY-700 (ours) | US-TMY sim | 700 | ON | 13.64 ± 0.65 (5-seed) |
 | BB-700 (aug-matched) | BB subset | 700 | ON | 14.26 |
 | BB-700 (no aug) | BB subset | 700 | ON | 15.28 |
 | BB-700 | BB subset | 700 | OFF | 16.44 |
 
-### Zero-Shot on 218 Korean Convenience Stores
-
-| Model | NRMSE (%) |
-|-------|:---------:|
-| Korean-700 (ours) | 12.30 |
-| BB SOTA-M | 13.14 |
-
 ## Paper & Reproducibility
 
-- **Paper (Applied Energy, submitted)**: [`docs/paper_final.md`](docs/paper_final.md) · [`docs/paper_final.docx`](docs/paper_final.docx)
+- **Paper (Applied Energy, submitted)**: [`docs/paper_final.md`](docs/paper_final.md) · [`docs/paper_ae.docx`](docs/paper_ae.docx)
 - **Graphical Abstract**: [`docs/graphical_abstract.png`](docs/graphical_abstract.png)
 - **File map for full reproduction**: [`docs/PAPER_FILES_MANIFEST.md`](docs/PAPER_FILES_MANIFEST.md)
 - **Results provenance (per-table checkpoint mapping)**: [`results/RESULTS_REGISTRY.md`](results/RESULTS_REGISTRY.md)

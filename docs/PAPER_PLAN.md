@@ -1,8 +1,8 @@
 # Applied Energy 논문 작성 계획 (SSOT)
 
-> 이 문서가 논문 작성의 **유일한 기준 문서**. 최종 갱신: 2026-04-21
-> 논문 최종본: `docs/paper_final.md`
-> 특허 초안: `docs/patent_draft_v1.md`
+> 이 문서가 논문 작성의 **유일한 기준 문서**. 최종 갱신: 2026-05-02
+> 논문 최종본: `docs/paper_final.md` | 저널 포맷: `docs/paper_ae.docx`
+> 특허 초안: `docs/patent_draft_v1.md` | 실험 계획: `docs/EXP039_US_TMY_LHS.md`
 
 ---
 
@@ -10,12 +10,12 @@
 
 | 항목 | 내용 |
 |------|------|
-| **타겟 저널** | Applied Energy (Elsevier, IF 12.81) 또는 Energy & AI (IF 21.0) |
-| **제목** | Seventy Simulations Suffice: Matching a 900,000-Building Foundation Model through Operational Diversity in Zero-Shot Load Forecasting |
+| **타겟 저널** | Applied Energy (Elsevier, IF 12.81) |
+| **제목** | Seven Hundred Simulations Suffice: Matching BuildingsBench through Operational Diversity in Zero-Shot Load Forecasting |
 | **저자** | Jeong-Uk Kim (단독) |
 | **소속** | Dept. of Electrical Engineering, Sangmyung University, Seoul 03016, South Korea |
-| **단어 수** | ~7,200 단어 |
-| **상태** | **초안 완료 (paper_final.md)** |
+| **단어 수** | ~6,400 단어 (230 word abstract, AE 포맷 완성) |
+| **상태** | **투고 준비 완료 (paper_ae.docx) — Exp-039 실행 후 투고 권장** |
 
 ---
 
@@ -82,7 +82,7 @@
 
 ### Multi-Seed Details (val_best, 재평가 후)
 
-**s=18000 RevIN ON (5 seeds, 42~46)**: 12.93, 13.06, 13.10, 13.39, 13.07 → **13.11 ± 0.16%**
+**s=18000 RevIN ON (5 seeds, 42~46)**: 12.93, 13.06, 13.10, 13.39, 13.07 → **13.11 ± 0.17%**
 **s=18000 RevIN OFF (3 seeds, 42~44)**: 14.81, 14.94, 14.40 → **14.72 ± 0.28%**
 **s=16000 RevIN ON (5 seeds)**: 12.89, 13.24, 13.16, 13.26, 13.12 → **13.13 ± 0.15%**
 **s=16000 RevIN OFF (3 seeds)**: 14.25, 14.34, 14.46 → **14.35 ± 0.11%**
@@ -93,7 +93,7 @@
 
 ## 3. 핵심 발견
 
-1. **700건 ≈ 900K**: Korean-700 RevIN ON 5-seed 13.11 ± 0.16% (best 12.93%) ≈ BB SOTA 13.27% — 0.08% 데이터로 SOTA 동등/초과
+1. **700건 ≈ 900K**: Korean-700 RevIN ON 5-seed 13.11 ± 0.17% (best 12.93%) ≈ BB SOTA 13.27% — 0.08% 데이터로 SOTA 동등/초과
 2. **데이터 설계 > RevIN**: data effect (2.17 pp @ ON / 1.72 pp @ OFF) > RevIN effect (1.61 pp)
 3. **RevIN은 소규모에서만 유효**: BB 900K + RevIN (13.89%) > BB 900K (13.27%) — 대규모에서 오히려 악화
 4. **위도/경도 불필요**: lat=lon=0으로 동일 성능
@@ -128,14 +128,58 @@
 - [x] 편의점 218건 (Korean-700: 12.30% / BB: 13.14%)
 - [x] N-scaling sweep (n=1~80)
 - [x] Ablation 8개
-- [x] Multi-seed (5-seed ON: 13.11±0.16, 3-seed OFF: 14.72±0.28)
+- [x] Multi-seed (5-seed ON: 13.11±0.17, 3-seed OFF: 14.72±0.28)
 - [x] 논문 초안 완성 (`docs/paper_final.md`)
 - [x] 특허 초안 + 도면 5개
 - [x] Graphical Abstract (`docs/graphical_abstract.png/pdf`)
 - [x] Figure 생성 (Fig 1~4, matplotlib)
 - [x] References 보강 (21→30개)
 - [x] 폴더 정리 + MANIFEST 작성 (2026-04-23)
-- [ ] 특허 출원 (논문 제출 전)
-- [ ] 저널 포맷 변환 (LaTeX/Word)
-- [ ] Supplementary material 준비
+- [x] 특허 출원 (2026-05-01 변리사 제출)
+- [x] 저널 포맷 변환 (`docs/paper_ae.docx`, A4/TNR 12pt/더블스페이싱/행번호)
+- [x] 논문 리뷰 반복 (GPT-4o 3차 + 철저 검증 13항목 + 방어 논리 보강)
+- [ ] **Exp-039: U.S.-TMY/LHS ablation** (`docs/EXP039_US_TMY_LHS.md`)
+- [ ] 편의점 서면 허가 확보
+- [ ] Supplementary material 준비 (선택)
 - [ ] Applied Energy 투고
+
+---
+
+## 6. Exp-039: U.S.-TMY/LHS Ablation (계획)
+
+> 상세: `docs/EXP039_US_TMY_LHS.md`
+
+**목적:** Korean weather와 LHS schedule의 confound 해소 — reviewer가 요구할 가능성이 가장 높은 실험
+
+**설계:** 기존 700개 Korean LHS IDF를 U.S. TMY 5개 도시(DC, Atlanta, Charlotte, Boston, Miami)로 재시뮬레이션. 나머지 모두 동일 (아키타입, LHS, 모델, 학습 설정, Box-Cox).
+
+**소요:** ~1일 (시뮬 4~6h + 학습 2h)
+
+**결과 시나리오:**
+- US ≈ Korean (±0.3 pp) → "operational diversity가 핵심" 증명 → 논문 강화
+- US > Korean (+0.5 pp↑) → climate 기여 있음 → 주장 약화하나 confound 해소
+
+---
+
+## 7. 원고 수정 이력 (2026-05-02)
+
+### 제목 변경
+- Before: `Seventy Simulations Suffice: Matching a 900,000-Building Foundation Model through Operational Diversity in Zero-Shot Load Forecasting`
+- After: `Seven Hundred Simulations Suffice: Matching BuildingsBench through Operational Diversity in Zero-Shot Load Forecasting`
+
+### 주요 수정 (GPT-4o 리뷰 기반, 7+5 = 12건)
+
+| 위치 | 변경 |
+|------|------|
+| Title | "Foundation Model" → "BuildingsBench" |
+| §1 | "unmetered buildings" → "buildings with limited historical data" |
+| Abstract + §1 | "U.S. and Portuguese commercial buildings" → "U.S. commercial buildings and Portuguese electricity consumers" |
+| §5.1 | "1.61 pp" → "approximately 1.6 pp in the available multi-seed comparison" |
+| §5.2 | "opposite of what power-law scaling would predict" → "differs from monotonic gains often associated with large-scale pretraining" |
+| §5.3 | "outperform U.S. ones" → "remain competitive on U.S. and Portuguese buildings" |
+| §5.3 | "RevIN appears to handle the distributional adaptation" → "RevIN helps absorb instance-level scale differences" |
+| §6 Conclusion | "most seeds surpass a foundation model" → "four of five seeds surpass the 900,000-building BuildingsBench baseline" |
+| §6 Conclusion | "1.61 pp" → "approximately 1.6 pp in the available multi-seed comparison" |
+| H5 | "Korean stores" → "Korean convenience stores" (85자) |
+| App. C | 통합 문장 → 4개 failure mode 별도 기계론적 설명 |
+| (이전 세션) | 13건 철저 검증, 3차 리뷰, 700건 프레임 전환, std 반올림 등 |

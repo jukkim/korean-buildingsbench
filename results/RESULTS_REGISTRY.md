@@ -26,6 +26,12 @@
 | BB 900K+RevIN | 13.89% | 7.76% | 1 | `bb900k_revin_step590000.pt` | M-v3-3k.toml | 5090: `logs/ncrps_bb900k_revin.log` |
 | Korean-700 ON | 13.11±0.17% | 7.14±0.03%‡ | 42-46 | `*_s18000_revin_on_seed{42-46}_best.pt` | M-v3-3k.toml | 5090: `logs/ncrps_on_seed{42-46}.log` |
 | Korean-700 OFF | 14.72±0.28% | 8.29%§ | 42-44 | `*_s18000_revin_off_seed{42-44}_best.pt` (42,43 retrained) | M-v3-3k-norevin.toml | 5090: `logs/ncrps_off_seed{42,44}.log` |
+| US-TMY-700 ON (5-seed) | 13.64±0.65% | 7.53±0.41% | 42-46 | `*_exp039_us_tmylhs_s18k_seed{42-46}_best.pt` | M-v3.toml | `logs/exp039_s18k_seed{42-46}_bb_eval.log` |
+| US-TMY-700 ON seed42 | 13.15% | 7.22% | 42 | `*_exp039_us_tmylhs_s18k_seed42_best.pt` | M-v3.toml | `logs/exp039_s18k_bb_eval.log` |
+| US-TMY-700 ON seed43 | 13.35% | 7.46% | 43 | `*_exp039_us_tmylhs_s18k_seed43_best.pt` | M-v3.toml | `logs/exp039_s18k_seed43_bb_eval.log` |
+| US-TMY-700 ON seed44 | 13.22% | 7.50% | 44 | `*_exp039_us_tmylhs_s18k_seed44_best.pt` | M-v3.toml | `logs/exp039_s18k_seed44_bb_eval.log` |
+| US-TMY-700 ON seed45 | 14.72% | 8.23% | 45 | `*_exp039_us_tmylhs_s18k_seed45_best.pt` | M-v3.toml | `logs/exp039_s18k_seed45_bb_eval.log` |
+| US-TMY-700 ON seed46 | 13.78% | 7.22% | 46 | `*_exp039_us_tmylhs_s18k_seed46_best.pt` | M-v3.toml | `logs/exp039_s18k_seed46_bb_eval.log` |
 | BB-700 (aug-matched) ON | 14.26% | 7.80% | 42 | `*_bb700_aug_s18000_seed42_best.pt` | M-v3-3k-bb.toml | 5090: `logs/ncrps_bb700_aug_seed42.log` |
 | BB-700 (no-aug) ON | 15.28% | — | 42 | `*_bb700_s18000_revin_on_best.pt` | M-v3-3k.toml | `archive/logs/bb700_evaluate_bb.log` |
 | BB-700 OFF | 16.44% | — | 42 | `*_bb700_s18000_revin_off_best.pt` | M-v3-3k-norevin.toml | `archive/logs/bb700_off_evaluate_bb.log` |
