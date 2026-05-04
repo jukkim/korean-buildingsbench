@@ -4,7 +4,12 @@
     "daegu",
     "gangneung",
     "jeju",
-    "seoul"
+    "seoul",
+    "us_atlanta",
+    "us_boston",
+    "us_charlotte",
+    "us_miami",
+    "us_washington"
   ],
   "archetypes": [
     "apartment_highrise",
@@ -27,7 +32,12 @@
     "daegu": 1,
     "gangneung": 2,
     "jeju": 3,
-    "seoul": 4
+    "seoul": 4,
+    "us_atlanta": 5,
+    "us_boston": 6,
+    "us_charlotte": 7,
+    "us_miami": 8,
+    "us_washington": 9
   },
   "arch_map": {
     "apartment_highrise": 0,

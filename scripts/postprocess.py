@@ -93,6 +93,12 @@ CITY_LATLON = {
     'gangneung': [37.7519, 128.8761],
     'jeju':      [33.4996, 126.5312],
     'ulsan':     [35.5384, 129.3114],
+    # Exp-039 U.S. cities
+    'us_washington': [38.8710, -77.0300],
+    'us_atlanta':    [33.6300, -84.4300],
+    'us_charlotte':  [35.2200, -80.9500],
+    'us_boston':      [42.3700, -71.0200],
+    'us_miami':      [25.8200, -80.3000],
 }
 
 # 아키타입 → 건물 유형 (BB: RESIDENTIAL=0, COMMERCIAL=1)

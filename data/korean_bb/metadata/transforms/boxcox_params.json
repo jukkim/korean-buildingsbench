@@ -1,9 +1,9 @@
 {
   "method": "box-cox",
-  "lambda": 0.010614744387567043,
-  "mean": 5.246265415063799,
-  "std": 1.3769977036195655,
+  "lambda": 0.0021735304035246372,
+  "mean": 5.082981353439843,
+  "std": 1.3736487224802063,
   "n_samples": 1000000,
   "offset": 1e-06,
-  "pkl_path": "./boxcox.pkl"
+  "pkl_path": "C:\\Users\\User\\Desktop\\myjob\\8.simulation\\Korean_BB\\data\\korean_bb\\metadata\\transforms\\boxcox.pkl"
 }

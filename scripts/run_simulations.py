@@ -38,7 +38,8 @@ RESULT_DIR = PROJECT_DIR / 'simulations' / 'results'
 EP_EXE = Path(os.environ.get('ENERGYPLUS_EXE', 'C:/EnergyPlusV24-1-0/energyplus.exe'))
 
 
-def find_idf_jobs(filter_str: str = '', retry_failed: bool = False):
+def find_idf_jobs(filter_str: str = '', retry_failed: bool = False,
+                   city_filter: str = '', weather_overrides: dict = None):
     """실행할 IDF 작업 목록 생성"""
     jobs = []
 
@@ -53,6 +54,11 @@ def find_idf_jobs(filter_str: str = '', retry_failed: bool = False):
             continue
 
         if filter_str and filter_str not in building_id:
+            continue
+
+        city = meta.get('city', 'seoul')
+
+        if city_filter and city != city_filter:
             continue
 
         # 결과 디렉토리
@@ -71,24 +77,28 @@ def find_idf_jobs(filter_str: str = '', retry_failed: bool = False):
             if status.get('success', False):
                 continue
 
-        # weather file 경로 해석 (idf_mapping.yaml 참조)
-        city = meta.get('city', 'seoul')
-        CITY_TO_WEATHER = {
-            'chuncheon': 'KOR_Gangneung.epw',
-            'wonju': 'KOR_Cheongju.epw',
-            'seoul': 'KOR_Seoul.epw',
-            'incheon': 'KOR_Incheon.epw',
-            'daejeon': 'KOR_Daejeon.epw',
-            'sejong': 'KOR_Daejeon.epw',
-            'busan': 'KOR_Busan.epw',
-            'daegu': 'KOR_Daegu.epw',
-            'gwangju': 'KOR_Gwangju.epw',
-            'gangneung': 'KOR_Gangneung.epw',
-            'jeju': 'KOR_Jeju.epw',
-            'ulsan': 'KOR_Ulsan.epw',
-        }
-        weather_name = CITY_TO_WEATHER.get(city, f'KOR_{city.capitalize()}.epw')
-        weather_file = PROJECT_DIR / 'weather' / weather_name
+        # weather file 경로 해석
+        if weather_overrides and city in weather_overrides:
+            weather_file = Path(weather_overrides[city])
+        elif meta.get('weather'):
+            weather_file = PROJECT_DIR / 'weather' / meta['weather']
+        else:
+            CITY_TO_WEATHER = {
+                'chuncheon': 'KOR_Gangneung.epw',
+                'wonju': 'KOR_Cheongju.epw',
+                'seoul': 'KOR_Seoul.epw',
+                'incheon': 'KOR_Incheon.epw',
+                'daejeon': 'KOR_Daejeon.epw',
+                'sejong': 'KOR_Daejeon.epw',
+                'busan': 'KOR_Busan.epw',
+                'daegu': 'KOR_Daegu.epw',
+                'gwangju': 'KOR_Gwangju.epw',
+                'gangneung': 'KOR_Gangneung.epw',
+                'jeju': 'KOR_Jeju.epw',
+                'ulsan': 'KOR_Ulsan.epw',
+            }
+            weather_name = CITY_TO_WEATHER.get(city, f'KOR_{city.capitalize()}.epw')
+            weather_file = PROJECT_DIR / 'weather' / weather_name
 
         jobs.append({
             'building_id': building_id,
@@ -199,6 +209,11 @@ def main():
                         help='IDF 디렉토리 (기본: simulations/idfs)')
     parser.add_argument('--result-dir', type=str, default='',
                         help='결과 디렉토리 (기본: simulations/results)')
+    parser.add_argument('--weather-override', type=str, default='',
+                        help='Weather override JSON file or city=epw_path pairs '
+                             '(e.g., "seoul=weather/us/DC.epw,busan=weather/us/Atlanta.epw")')
+    parser.add_argument('--city-filter', type=str, default='',
+                        help='특정 city의 IDF만 처리 (e.g., "seoul")')
     args = parser.parse_args()
 
     if not EP_EXE.exists():
@@ -213,8 +228,21 @@ def main():
     if args.result_dir:
         RESULT_DIR = Path(args.result_dir)
 
+    # Weather override 파싱
+    weather_overrides = None
+    if args.weather_override:
+        weather_overrides = {}
+        if args.weather_override.endswith('.json'):
+            with open(args.weather_override, 'r') as f:
+                weather_overrides = json.load(f)
+        else:
+            for pair in args.weather_override.split(','):
+                city_name, epw_path = pair.strip().split('=', 1)
+                weather_overrides[city_name.strip()] = epw_path.strip()
+
     # 작업 목록
-    jobs = find_idf_jobs(filter_str=args.filter, retry_failed=args.retry_failed)
+    jobs = find_idf_jobs(filter_str=args.filter, retry_failed=args.retry_failed,
+                         city_filter=args.city_filter, weather_overrides=weather_overrides)
 
     if not jobs:
         print("실행할 IDF가 없습니다.")
@@ -228,6 +256,10 @@ def main():
     print(f"  Workers: {n_workers}")
     print(f"  EnergyPlus: {EP_EXE}")
     print(f"  Output: {RESULT_DIR}")
+    if weather_overrides:
+        print(f"  Weather Override: {weather_overrides}")
+    if args.city_filter:
+        print(f"  City Filter: {args.city_filter}")
     print("=" * 70)
 
     t0 = time.time()

@@ -15,7 +15,7 @@
 | **저자** | Jeong-Uk Kim (단독) |
 | **소속** | Dept. of Electrical Engineering, Sangmyung University, Seoul 03016, South Korea |
 | **단어 수** | ~6,400 단어 (~195 word abstract) |
-| **상태** | **✅ 투고 준비 완료 (2026-05-04)** |
+| **상태** | **✅ Applied Energy 투고 완료 (APEN-S-26-12975, 2026-05-04)** |
 
 ---
 

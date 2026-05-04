@@ -294,6 +294,12 @@ The author declares no known competing financial interests or personal relations
 
 ---
 
+## Declaration of Generative AI and AI-Assisted Technologies in the Manuscript Preparation Process
+
+During the preparation of this work the author used Claude (Anthropic) in order to assist with code development for simulation post-processing, figure generation scripts, and manuscript formatting (Markdown-to-DOCX conversion). After using this tool, the author reviewed and edited the content as needed and takes full responsibility for the content of the published article.
+
+---
+
 ## References
 
 [1] Fan C, et al. A short-term building cooling load prediction method using deep learning algorithms. Appl Energy 2017;195:222–33.

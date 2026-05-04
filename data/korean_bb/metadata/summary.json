@@ -1,135 +1,155 @@
 {
-  "total_buildings": 177548,
+  "total_buildings": 193124,
   "by_archetype": {
     "apartment_highrise": {
-      "count": 5074,
-      "mean_kwh": 210.95,
-      "peak_kwh_mean": 301.91,
-      "baseload_ratio_mean": 0.604
+      "count": 10094,
+      "mean_kwh": 204.63,
+      "peak_kwh_mean": 296.94,
+      "baseload_ratio_mean": 0.647
     },
     "apartment_midrise": {
-      "count": 9474,
+      "count": 10368,
       "mean_kwh": 94.26,
-      "peak_kwh_mean": 132.9,
-      "baseload_ratio_mean": 0.599
+      "peak_kwh_mean": 132.94,
+      "baseload_ratio_mean": 0.607
     },
     "hospital": {
-      "count": 7646,
-      "mean_kwh": 1566.23,
-      "peak_kwh_mean": 2122.67,
-      "baseload_ratio_mean": 0.727
+      "count": 10085,
+      "mean_kwh": 1593.75,
+      "peak_kwh_mean": 2153.86,
+      "baseload_ratio_mean": 0.74
     },
     "hotel": {
-      "count": 9833,
-      "mean_kwh": 84.69,
-      "peak_kwh_mean": 123.71,
-      "baseload_ratio_mean": 0.724
+      "count": 10858,
+      "mean_kwh": 83.85,
+      "peak_kwh_mean": 122.96,
+      "baseload_ratio_mean": 0.727
     },
     "large_office": {
-      "count": 12964,
-      "mean_kwh": 2348.94,
-      "peak_kwh_mean": 3324.3,
+      "count": 13013,
+      "mean_kwh": 2349.13,
+      "peak_kwh_mean": 3324.41,
       "baseload_ratio_mean": 0.696
     },
     "office": {
-      "count": 14999,
-      "mean_kwh": 259.35,
-      "peak_kwh_mean": 413.98,
+      "count": 15049,
+      "mean_kwh": 259.32,
+      "peak_kwh_mean": 413.9,
       "baseload_ratio_mean": 0.672
     },
     "restaurant_full": {
-      "count": 23000,
-      "mean_kwh": 317.77,
-      "peak_kwh_mean": 382.24,
+      "count": 23050,
+      "mean_kwh": 317.81,
+      "peak_kwh_mean": 382.27,
       "baseload_ratio_mean": 0.838
     },
     "restaurant_quick": {
-      "count": 23000,
+      "count": 23050,
       "mean_kwh": 215.78,
-      "peak_kwh_mean": 257.27,
+      "peak_kwh_mean": 257.25,
       "baseload_ratio_mean": 0.854
     },
     "retail": {
-      "count": 8025,
-      "mean_kwh": 69.94,
-      "peak_kwh_mean": 131.67,
-      "baseload_ratio_mean": 0.565
+      "count": 10074,
+      "mean_kwh": 71.71,
+      "peak_kwh_mean": 133.56,
+      "baseload_ratio_mean": 0.588
     },
     "school": {
-      "count": 6510,
-      "mean_kwh": 241.65,
-      "peak_kwh_mean": 402.68,
-      "baseload_ratio_mean": 0.611
+      "count": 10060,
+      "mean_kwh": 245.63,
+      "peak_kwh_mean": 410.06,
+      "baseload_ratio_mean": 0.64
     },
     "small_office": {
-      "count": 12070,
-      "mean_kwh": 14.09,
-      "peak_kwh_mean": 21.28,
+      "count": 12120,
+      "mean_kwh": 14.1,
+      "peak_kwh_mean": 21.29,
       "baseload_ratio_mean": 0.661
     },
     "strip_mall": {
-      "count": 18263,
-      "mean_kwh": 99.14,
-      "peak_kwh_mean": 157.43,
+      "count": 18313,
+      "mean_kwh": 99.16,
+      "peak_kwh_mean": 157.45,
       "baseload_ratio_mean": 0.605
     },
     "university": {
-      "count": 11025,
+      "count": 11075,
       "mean_kwh": 265.52,
-      "peak_kwh_mean": 434.25,
+      "peak_kwh_mean": 434.21,
       "baseload_ratio_mean": 0.635
     },
     "warehouse": {
-      "count": 15665,
-      "mean_kwh": 34.05,
-      "peak_kwh_mean": 55.49,
-      "baseload_ratio_mean": 0.487
+      "count": 15915,
+      "mean_kwh": 34.16,
+      "peak_kwh_mean": 55.59,
+      "baseload_ratio_mean": 0.489
     }
   },
   "by_city": {
     "busan": {
-      "count": 34312,
-      "mean_kwh": 407.97
+      "count": 37489,
+      "mean_kwh": 415.51
     },
     "daegu": {
-      "count": 33929,
-      "mean_kwh": 393.13
+      "count": 37108,
+      "mean_kwh": 401.93
     },
     "gangneung": {
-      "count": 33891,
-      "mean_kwh": 392.12
+      "count": 36560,
+      "mean_kwh": 383.64
     },
     "jeju": {
-      "count": 33751,
-      "mean_kwh": 395.09
+      "count": 36426,
+      "mean_kwh": 386.43
     },
     "seoul": {
-      "count": 41665,
-      "mean_kwh": 360.01
+      "count": 44842,
+      "mean_kwh": 369.49
+    },
+    "us_atlanta": {
+      "count": 135,
+      "mean_kwh": 512.09
+    },
+    "us_boston": {
+      "count": 113,
+      "mean_kwh": 424.14
+    },
+    "us_charlotte": {
+      "count": 135,
+      "mean_kwh": 359.1
+    },
+    "us_miami": {
+      "count": 134,
+      "mean_kwh": 496.28
+    },
+    "us_washington": {
+      "count": 182,
+      "mean_kwh": 371.12
     }
   },
   "by_building_type": {
     "COMMERCIAL": {
-      "count": 163000,
-      "mean_kwh": 411.02,
-      "baseload_ratio_mean": 0.692
+      "count": 172662,
+      "mean_kwh": 419.43,
+      "baseload_ratio_mean": 0.694
     },
     "RESIDENTIAL": {
-      "count": 14548,
-      "mean_kwh": 134.96,
-      "baseload_ratio_mean": 0.601
+      "count": 20462,
+      "mean_kwh": 148.7,
+      "baseload_ratio_mean": 0.626
     }
   },
   "overall": {
-    "mean_kwh": 388.4,
-    "peak_kwh_mean": 544.75,
-    "baseload_ratio_mean": 0.685,
-    "baseload_ratio_median": 0.693
+    "mean_kwh": 390.74,
+    "peak_kwh_mean": 548.71,
+    "baseload_ratio_mean": 0.687,
+    "baseload_ratio_median": 0.696
   },
   "index": {
-    "n_buildings": 177548,
-    "train_windows": 61076512,
-    "val_windows": 2485672,
+    "n_buildings": 193124,
+    "train_windows": 66434656,
+    "val_windows": 2703736,
     "context_len": 168,
     "pred_len": 24,
     "stride": 24,
@@ -137,11 +157,11 @@
   },
   "boxcox": {
     "method": "box-cox",
-    "lambda": 0.010614744387567043,
-    "mean": 5.246265415063799,
-    "std": 1.3769977036195655,
+    "lambda": 0.0021735304035246372,
+    "mean": 5.082981353439843,
+    "std": 1.3736487224802063,
     "n_samples": 1000000,
     "offset": 1e-06,
-    "pkl_path": "./transforms/boxcox.pkl"
+    "pkl_path": "C:\\Users\\User\\Desktop\\myjob\\8.simulation\\Korean_BB\\data\\korean_bb\\metadata\\transforms\\boxcox.pkl"
   }
 }
