@@ -57,4 +57,4 @@ Department of Electrical Engineering\
 Sangmyung University\
 Seoul 03016, South Korea\
 E-mail: jukim@smu.ac.kr\
-ORCID: 0000-0002-3839-3845
+ORCID: 0000-0001-9576-8757

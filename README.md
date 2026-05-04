@@ -1,25 +1,25 @@
 # Korean BuildingsBench
 
-**Seven Hundred Simulations Suffice: Matching a 900,000-Building Foundation Model through Operational Diversity in Zero-Shot Load Forecasting**
+**Seven Hundred Simulations Suffice: Operational Diversity for Data-Efficient Zero-Shot Building Load Forecasting**
 
 Jeong-Uk Kim, Department of Electrical Engineering, Sangmyung University
 
 ## Key Results
 
-700 parametric EnergyPlus simulations with RevIN match and in the best-seed result exceed the BuildingsBench SOTA (900K buildings) on zero-shot commercial load forecasting — without any geographic information.
+700 parametric EnergyPlus simulations with 12D Latin Hypercube Sampling and RevIN reach benchmark-level zero-shot forecasting on 955 real commercial buildings — without any geographic information.
 
 ### Zero-Shot NRMSE (%) on 955 Commercial Buildings
 
 | Model | Training Data | N Buildings | RevIN | NRMSE (%) |
 |-------|--------------|:-----------:|:-----:|:---------:|
-| BB SOTA-M (reproduced) | BB 900K | 900,000 | OFF | 13.27 |
-| BB 900K + RevIN | BB 900K | 900,000 | ON | 13.89 |
-| **Korean-700 (ours)** | **Korean sim** | **700** | **ON** | **13.11 ± 0.17** (5-seed) / **12.93** (best) |
-| Korean-700 | Korean sim | 700 | OFF | 14.72 ± 0.28 (3-seed) |
-| US-TMY-700 (ours) | US-TMY sim | 700 | ON | 13.64 ± 0.65 (5-seed) |
-| BB-700 (aug-matched) | BB subset | 700 | ON | 14.26 |
-| BB-700 (no aug) | BB subset | 700 | ON | 15.28 |
-| BB-700 | BB subset | 700 | OFF | 16.44 |
+| BB-900K (baseline) | BB 900K | 900,000 | OFF | 13.27 |
+| BB+RevIN | BB 900K | 900,000 | ON | 13.89 |
+| **K-700 (ours)** | **Korean sim** | **700** | **ON** | **13.11 ± 0.17** (5-seed) / **12.93** (best) |
+| K-700 no RevIN | Korean sim | 700 | OFF | 14.72 ± 0.28 (3-seed) |
+| **US-700 (ours)** | **US TMY sim** | **700** | **ON** | **13.64 ± 0.65** (5-seed) |
+| BB-700 aug | BB subset | 700 | ON | 14.26 |
+| BB-700 | BB subset | 700 | ON | 15.28 |
+| BB-700 OFF | BB subset | 700 | OFF | 16.44 |
 
 ## Paper & Reproducibility
 
@@ -27,7 +27,6 @@ Jeong-Uk Kim, Department of Electrical Engineering, Sangmyung University
 - **Graphical Abstract**: [`docs/graphical_abstract.png`](docs/graphical_abstract.png)
 - **File map for full reproduction**: [`docs/PAPER_FILES_MANIFEST.md`](docs/PAPER_FILES_MANIFEST.md)
 - **Results provenance (per-table checkpoint mapping)**: [`results/RESULTS_REGISTRY.md`](results/RESULTS_REGISTRY.md)
-- **Patent draft**: [`docs/patent_draft_v1.md`](docs/patent_draft_v1.md)
 
 ## Installation
 
@@ -89,7 +88,7 @@ python scripts/evaluate_bb.py \
 
 ```bibtex
 @article{kim2026sevenhundred,
-  title={Seven Hundred Simulations Suffice: Matching a 900,000-Building Foundation Model through Operational Diversity in Zero-Shot Load Forecasting},
+  title={Seven Hundred Simulations Suffice: Operational Diversity for Data-Efficient Zero-Shot Building Load Forecasting},
   author={Kim, Jeong-Uk},
   journal={Applied Energy},
   year={2026},
@@ -99,7 +98,7 @@ python scripts/evaluate_bb.py \
 
 ## Acknowledgment
 
-This work was supported by the research project funded by the Ministry of Trade, Industry and Energy, Korea Institute of Energy Technology Evaluation and Planning (KETEP).
+This work was supported by the Korea Institute of Energy Technology Evaluation and Planning (KETEP) grant funded by the Ministry of Trade, Industry and Energy, Republic of Korea (Grant No. RS-00238487).
 
 ## License
 

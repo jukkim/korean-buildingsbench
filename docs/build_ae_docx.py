@@ -20,7 +20,7 @@ if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 from docx import Document
-from docx.shared import Pt, Cm, RGBColor
+from docx.shared import Pt, Cm, Inches, RGBColor
 from docx.enum.text import WD_LINE_SPACING, WD_ALIGN_PARAGRAPH
 from docx.oxml.ns import qn
 from docx.oxml import OxmlElement
@@ -68,14 +68,13 @@ def add_line_numbers(doc):
     """Add continuous line numbering to the section via sectPr XML."""
     for section in doc.sections:
         sect_pr = section._sectPr
-        # remove existing lnNumType if any
         for existing in sect_pr.findall(qn("w:lnNumType")):
             sect_pr.remove(existing)
         ln = OxmlElement("w:lnNumType")
         ln.set(qn("w:countBy"), "1")
-        ln.set(qn("w:restart"), "newPage")   # restart each page (Elsevier standard)
-        ln.set(qn("w:start"),   "1")
-        ln.set(qn("w:distance"), "720")      # ~1.27 cm from text
+        ln.set(qn("w:restart"), "newPage")
+        ln.set(qn("w:start"),   "0")
+        ln.set(qn("w:distance"), "720")
         sect_pr.append(ln)
 
 
@@ -101,6 +100,99 @@ def is_table_caption(para):
 
 def para_style_name(para):
     return para.style.name
+
+
+# ── Figure insertion ──────────────────────────────────────────────────────────
+FIGURE_FILES = {
+    "Fig. 1.": DOCS_DIR / "fig1_pipeline.png",
+    "Fig. 2.": DOCS_DIR / "fig2_comparison.png",
+    "Fig. 3.": DOCS_DIR / "fig3_nscaling_new.png",
+    "Fig. 4.": DOCS_DIR / "fig4_revin_asymmetry.png",
+}
+
+def insert_figures(doc):
+    """Insert figure images above their caption paragraphs in 'List of Figures'."""
+    inserted = 0
+    for para in list(doc.paragraphs):
+        txt = para.text.strip()
+        for prefix, img_path in FIGURE_FILES.items():
+            if txt.startswith(prefix) and img_path.exists():
+                new_para = doc.add_paragraph()
+                new_para.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                run = new_para.add_run()
+                run.add_picture(str(img_path), width=Cm(15.0))
+                set_para_spacing(new_para, WD_LINE_SPACING.SINGLE,
+                                 space_before_pt=12, space_after_pt=3)
+                para._element.addprevious(new_para._element)
+                inserted += 1
+                break
+    print(f"  figures inserted: {inserted}")
+
+
+# ── Spacing: blank line after tables ─────────────────────────────────────────
+def add_blank_after_tables(doc):
+    """Insert an empty paragraph after every table element in the body."""
+    body = doc.element.body
+    tables = body.findall(qn("w:tbl"))
+    count = 0
+    for tbl in tables:
+        nxt = tbl.getnext()
+        if nxt is not None and nxt.tag == qn("w:p") and (nxt.text or "").strip() == "":
+            t = "".join(nxt.itertext()).strip()
+            if t == "":
+                continue
+        blank = doc.add_paragraph("")
+        set_para_spacing(blank, WD_LINE_SPACING.DOUBLE)
+        tbl.addnext(blank._element)
+        count += 1
+    print(f"  blank after tables: {count}")
+
+
+# ── Spacing: blank line before sections ──────────────────────────────────────
+def add_blank_before_sections(doc):
+    """Insert an empty paragraph before Heading 2/3 paragraphs.
+
+    Skip if the heading immediately follows a parent Heading 2
+    (i.e. section X.1 right after section X).
+    """
+    paras = list(doc.paragraphs)
+    count = 0
+    for i, para in enumerate(paras):
+        style = para.style.name
+        if not style.startswith("Heading"):
+            continue
+        level_m = re.match(r"Heading (\d+)", style)
+        if not level_m:
+            continue
+        level = int(level_m.group(1))
+        if level < 2:
+            continue
+
+        # Check preceding non-empty paragraph
+        prev_is_parent_heading = False
+        for j in range(i - 1, -1, -1):
+            prev_txt = paras[j].text.strip()
+            if prev_txt == "":
+                continue
+            prev_style = paras[j].style.name
+            if prev_style.startswith("Heading"):
+                prev_level_m = re.match(r"Heading (\d+)", prev_style)
+                if prev_level_m and int(prev_level_m.group(1)) < level:
+                    prev_is_parent_heading = True
+            break
+
+        if prev_is_parent_heading:
+            continue
+
+        # Check if already preceded by an empty paragraph
+        if i > 0 and paras[i - 1].text.strip() == "":
+            continue
+
+        blank = doc.add_paragraph("")
+        set_para_spacing(blank, WD_LINE_SPACING.DOUBLE)
+        para._element.addprevious(blank._element)
+        count += 1
+    print(f"  blank before sections: {count}")
 
 
 # ── 3. Post-process ────────────────────────────────────────────────────────────
@@ -141,14 +233,49 @@ def postprocess(src: Path, dst: Path):
             else:
                 set_font(run, size_pt=12)
 
-    # Tables: 10pt single-spaced
+    # Tables: single-spaced, autofit to page width
     for table in doc.tables:
+        table.autofit = True
+        tbl = table._tbl
+        tblPr = tbl.tblPr if tbl.tblPr is not None else tbl.makeelement(qn('w:tblPr'), {})
+        tblW = tblPr.find(qn('w:tblW'))
+        if tblW is None:
+            tblW = tbl.makeelement(qn('w:tblW'), {})
+            tblPr.append(tblW)
+        tblW.set(qn('w:type'), 'pct')
+        tblW.set(qn('w:w'), '5000')
+        ncols = max((len(row.cells) for row in table.rows), default=0)
+        is_wide = ncols >= 7
+        font_sz = 9 if is_wide else 10
         for row in table.rows:
             for cell in row.cells:
+                if is_wide:
+                    tc = cell._tc
+                    tcPr = tc.get_or_add_tcPr()
+                    tcMar = tcPr.find(qn('w:tcMar'))
+                    if tcMar is None:
+                        tcMar = OxmlElement('w:tcMar')
+                        tcPr.append(tcMar)
+                    for side in ('left', 'right'):
+                        el = tcMar.find(qn(f'w:{side}'))
+                        if el is None:
+                            el = OxmlElement(f'w:{side}')
+                            tcMar.append(el)
+                        el.set(qn('w:w'), '30')
+                        el.set(qn('w:type'), 'dxa')
                 for para in cell.paragraphs:
                     set_para_spacing(para, WD_LINE_SPACING.SINGLE, space_after_pt=1)
                     for run in para.runs:
-                        set_font(run, size_pt=10)
+                        set_font(run, size_pt=font_sz)
+
+    # Insert figures at "List of Figures" captions
+    insert_figures(doc)
+
+    # Add blank line after each table
+    add_blank_after_tables(doc)
+
+    # Add blank line before sections (except first sub-section after a parent heading)
+    add_blank_before_sections(doc)
 
     doc.save(str(dst))
     print(f"  post-process OK → {dst.name}")
@@ -156,27 +283,25 @@ def postprocess(src: Path, dst: Path):
 
 # ── 4. Inject cover metadata paragraph ────────────────────────────────────────
 def inject_submission_info(docx_path: Path):
-    """Insert 'Submitted to Applied Energy' line after author block."""
+    """Insert 'Corresponding author' line after author block."""
     doc = Document(str(docx_path))
     for para in doc.paragraphs:
         if "jukim@smu.ac.kr" in para.text or para.text.strip().startswith("E-mail"):
-            # blank spacer paragraph
             blank = doc.add_paragraph("")
             blank._element.getparent().remove(blank._element)
             para._element.addnext(blank._element)
             set_para_spacing(blank, WD_LINE_SPACING.SINGLE, space_after_pt=0)
 
-            # submission line
             sub = doc.add_paragraph("")
             sub._element.getparent().remove(sub._element)
             blank._element.addnext(sub._element)
-            run = sub.add_run("Submitted to: Applied Energy (Elsevier)")
-            set_font(run, size_pt=12, bold=True)
+            run = sub.add_run("Corresponding author: Jeong-Uk Kim (jukim@smu.ac.kr)")
+            set_font(run, size_pt=12, italic=True)
             set_para_spacing(sub, WD_LINE_SPACING.SINGLE, space_before_pt=6, space_after_pt=6)
             break
 
     doc.save(str(docx_path))
-    print("  submission info injected")
+    print("  corresponding author info injected")
 
 
 # ── 5. Main ────────────────────────────────────────────────────────────────────

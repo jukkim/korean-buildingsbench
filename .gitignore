@@ -13,6 +13,23 @@ simulations/
 .env
 *.log
 
+# Internal project files
+CLAUDE.md
+.claude/
+
+# Patent (submitted separately)
+docs/patent_*
+scripts/generate_patent_figures.py
+
+# Internal project management
+docs/EXPERIMENT_LOG.md
+docs/IMPROVEMENT_ROADMAP.md
+docs/STATUS.md
+docs/SIMULATION_REVIEW_v3.md
+docs/EXP039_*.md
+docs/figures/
+docs/_*
+
 # Large data files — download via scripts/download_bb_data.sh or NREL EULP
 data/bb_subset/
 data/korean_bb/individual/

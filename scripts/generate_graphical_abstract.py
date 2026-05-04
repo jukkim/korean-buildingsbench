@@ -108,7 +108,7 @@ for i in range(len(boxes)-1):
 # Left: bar chart
 ax_bar = fig.add_axes([0.06, 0.04, 0.42, 0.38])
 
-models = ['Korean-700\n(ours)', 'BB SOTA-M\n(900K)', 'BB 900K\n+RevIN',
+models = ['Korean-700\n(ours)', 'BB-900K baseline\n(900K)', 'BB 900K\n+RevIN',
           'Korean-700\nRevIN OFF', 'Persistence\nEnsemble']
 values = [13.11, 13.27, 13.89, 14.72, 16.68]
 colors = [C_BLUE, C_SOTA_RED, C_ORANGE, '#90CAF9', C_GRAY]

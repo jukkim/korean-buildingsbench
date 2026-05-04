@@ -1,23 +1,26 @@
-# Seven Hundred Simulations Suffice: Matching BuildingsBench through Operational Diversity in Zero-Shot Load Forecasting
+# Seven Hundred Simulations Suffice: Operational Diversity for Data-Efficient Zero-Shot Building Load Forecasting
 
-**Author**: Jeong-Uk Kim
-**ORCID**: 0000-0002-3839-3845
-**Affiliation**: Department of Electrical Engineering, Sangmyung University, Seoul 03016, South Korea
-**E-mail**: jukim@smu.ac.kr
+Jeong-Uk Kim
+
+Department of Electrical Engineering, Sangmyung University, Seoul 03016, South Korea
+
+ORCID: 0000-0001-9576-8757
+
+E-mail: jukim@smu.ac.kr
 
 ---
 
 ## Abstract
 
-Zero-shot building load forecasting—predicting energy consumption for unseen buildings without retraining—is essential for grid balancing and demand response. BuildingsBench assembled 900,000 U.S. building simulations and achieved 13.28% NRMSE on 955 real U.S. commercial buildings and Portuguese electricity consumers, establishing data scale as the prevailing paradigm. We challenge this with 700 Korean-weather EnergyPlus simulations—fifty per archetype across 14 building types—with operational schedules sampled via 12-dimensional Latin Hypercube Sampling (LHS), using Reversible Instance Normalization (RevIN) and no geographic features. This small corpus achieves 13.11 ± 0.17% NRMSE (five-seed mean) on the same evaluation set, outperforming the 900,000-building state-of-the-art (SOTA, 13.28%) on the five-seed mean with the best seed reaching 12.93%. Controlled experiments isolating the design effect—comparing 700 LHS-designed buildings against 700 BuildingsBench-sampled buildings—show a persistent 1.15 pp advantage with matched augmentation (1.61 pp without), supporting operational diversity as a primary driver beyond RevIN or augmentation alone. Applying RevIN to the full 900K corpus degrades performance by 0.62 pp, indicating that RevIN benefits small diverse datasets but hurts large homogeneous corpora. N-scaling saturates rapidly: 70 buildings already match the SOTA (13.28 ± 0.12%). A U.S.-weather ablation—retraining on the same 700 LHS schedules with U.S. TMY weather—yields 13.64 ± 0.65%, outperforming BB-700 (14.26%) while remaining more variable than Korean-700, supporting operational diversity as a major driver while revealing residual weather sensitivity.
+Zero-shot building load forecasting—predicting energy consumption for unseen buildings without retraining—is essential for grid balancing and demand response, yet current approaches assume that large-scale synthetic corpora are required. We show that carefully designed operational diversity, rather than corpus scale alone, is sufficient for high-accuracy zero-shot forecasting. A Transformer trained on only 700 Korean-weather EnergyPlus simulations—fifty per archetype across 14 building types—with operational schedules sampled via 12-dimensional Latin Hypercube Sampling (LHS), Reversible Instance Normalization (RevIN), and no geographic features reaches BuildingsBench-level performance on 955 real U.S. commercial buildings and Portuguese electricity consumers, achieving 13.11 ± 0.17% NRMSE (five-seed mean), numerically below the reproduced 900,000-building baseline of 13.27%. Controlled experiments at matched scale consistently favor the LHS-designed corpus over matched BB-700 controls, supporting operational diversity as a primary driver beyond RevIN or augmentation alone. Applying RevIN to the full 900K corpus degrades performance in a single-run comparison, suggesting that RevIN's benefit is regime-dependent rather than universal. N-scaling saturates rapidly: 70 buildings already reach the benchmark level. A U.S.-weather ablation remains competitive and still outperforms the matched BB-700 control, supporting operational diversity as a major driver while revealing residual weather sensitivity.
 
 **Keywords**: building energy forecasting, zero-shot learning, foundation models, parametric simulation, data-centric AI, reversible instance normalization
 
 **Highlights**:
-- 700 diverse simulations achieve SOTA-level accuracy at 0.08% of training volume
-- 12-dimensional Latin Hypercube Sampling generates operationally diverse training data
-- RevIN helps small diverse data but degrades performance on large homogeneous corpora
-- U.S.-weather ablation supports operational diversity with residual climate effect
+- 700 simulations reach benchmark-level accuracy using no geographic metadata
+- 12D Latin Hypercube Sampling yields operational diversity over stock-model scale
+- RevIN helps 700-building models but degrades BB-900K retraining
+- Korean-weather training transfers zero-shot to U.S./Portuguese real buildings
 
 ---
 
@@ -33,9 +36,19 @@ We test this hypothesis directly in the building load forecasting setting. Our s
 
 We generate 700 EnergyPlus simulations (50 per archetype across 14 building types) with operational schedules sampled via 12-dimensional Latin Hypercube Sampling. The 12 parameters—covering operating hours, baseload levels, weekend patterns, ramp characteristics, equipment retention, and seasonal variation—are designed to span a broad space of plausible commercial building operations, beyond what a random stock-model sample of comparable size is likely to cover. Combined with Reversible Instance Normalization (RevIN) [8], which absorbs building-specific load magnitude and variability at inference time, this small but diverse training set achieves 13.11 ± 0.17% median NRMSE across five seeds on the BuildingsBench evaluation protocol, with the best seed reaching 12.93%. The model uses no geographic features (latitude and longitude are set to zero).
 
-Controlled experiments on matched 700-building subsets—one from our parametric simulations, one from BuildingsBench—show that the improvement cannot be attributed to RevIN alone and is strongly linked to data design. Applying RevIN to the full 900K BuildingsBench corpus worsens performance from 13.27% to 13.89%, an asymmetry suggesting that RevIN is beneficial in small-data regimes but not universally helpful at scale. The n-scaling curve shows that 70 buildings already match the SOTA at 13.28 ± 0.12%. A U.S.-weather/LHS ablation—retraining on the same 700 LHS schedules with U.S. TMY weather—yields a five-seed mean of 13.64 ± 0.65%, still outperforming the matched BB-700 control (14.26%), supporting operational diversity as a major driver while revealing residual weather sensitivity.
+Controlled experiments on matched 700-building subsets—one from our parametric simulations, one from BuildingsBench—show that the improvement cannot be attributed to RevIN alone and is strongly linked to data design. Applying RevIN to the full 900K BuildingsBench corpus worsens performance, an asymmetry suggesting that RevIN is beneficial in small-data regimes but not universally helpful at scale. The n-scaling curve shows that 70 buildings already reach the benchmark level. A U.S.-weather/LHS ablation—retraining on the same 700 LHS schedules with U.S. TMY weather—still outperforms the matched BB-700 control, supporting operational diversity as a major driver while revealing residual weather sensitivity.
 
 The comparison is not free of confounds: our simulations differ from BuildingsBench in building-code assumptions and augmentation strategy, factors that controlled experiments partially address but cannot fully disentangle. A five-seed U.S.-TMY/LHS ablation substantially reduces the climate-origin component of the confound (Section 4.2). Remaining limitations are discussed in Section 5.
+
+This paper makes four contributions:
+
+1. **Data sufficiency through design.** 700 LHS-designed simulations are sufficient for benchmark-level zero-shot accuracy on 955 real load series, achieving 13.11 ± 0.17% NRMSE with only 0.08% of the training buildings used by the 900K BuildingsBench baseline (13.27%).
+
+2. **Metadata-free zero-shot transfer.** The model uses no latitude, longitude, building type, HVAC metadata, or target-building fine-tuning. Unlike BuildingsBench, which provides latitude and longitude embeddings, all Korean-700 results set geographic coordinates to zero—and an ablation with actual Korean training coordinates shows no benefit when evaluation coordinates are unavailable (Table 5).
+
+3. **Cross-climate generalization.** Korean-weather simulations transfer to U.S. and Portuguese real load series. A U.S.-TMY ablation using the same 700 LHS schedules retains an advantage over the matched BB-700 control (13.64% vs. 14.26%), indicating that the gain is not merely a Korean-weather artifact.
+
+4. **Mechanistic evidence for operational diversity.** Equal-scale BB-700 controls with matched augmentation show a persistent 1.15 pp data-source gap. N-scaling saturates at 70–140 buildings, consistent with learning governed by the number of distinct temporal patterns rather than the number of examples.
 
 ---
 
@@ -96,9 +109,9 @@ The 12 parameters were selected to span the primary operational degrees of freed
 
 Unlike stock-model sampling—which reflects the statistical distribution of real buildings (many near typical conditions, few at extremes)—LHS ensures uniform marginal coverage in each dimension. Stock-model sampling asks "what does the building stock look like?"; LHS asks "what temporal patterns can buildings produce?"
 
-**Statistical calibration.** Four parameters—night_equipment_frac, weekly_break_prob, seasonal_amplitude, and process_load_frac—represent common operational phenomena in commercial buildings: nighttime equipment retention, weekly schedule disruptions, seasonal load variation, and constant process loads. Table 2 provides a post-hoc sanity check showing that including them brings simulated profiles closer to the aggregate distributional statistics of real buildings. Because these statistics are drawn from the public evaluation corpus, this comparison is best interpreted as distributional calibration rather than a fully blind design step; however, these parameters affect only the marginal distribution of temporal shapes in the training corpus, not any individual building's load values.
+**Post-hoc distributional comparison.** Four parameters—night_equipment_frac, weekly_break_prob, seasonal_amplitude, and process_load_frac—represent common operational phenomena in commercial buildings: nighttime equipment retention, weekly schedule disruptions, seasonal load variation, and constant process loads. Table 2 provides a post-hoc comparison showing that including them brings simulated profiles closer to the aggregate distributional statistics of real buildings. These statistics were computed after defining the 12D parameter space and were not used for model selection, hyperparameter tuning, or adjustment of the reported LHS ranges. Because the comparison statistics are drawn from the public evaluation corpus, this analysis is reported only to interpret the resulting distributional coverage and should not be interpreted as a fully blind design step; the parameters affect only the marginal distribution of temporal shapes in the training corpus, not any individual building's load values.
 
-**Table 2.** Statistical calibration of simulated vs. real building load profiles, with and without the four diversity-enhancing parameters. Metrics characterize input sequence shape (X), not prediction targets (y). Night/day ratio: nighttime-to-daytime mean load; Autocorr 168h: weekly periodicity; Baseload P95: minimum/maximum daily load; CV P5: day-to-day variability.
+**Table 2.** Post-hoc comparison of simulated and real-building load-profile statistics, with and without the four diversity-enhancing parameters. Metrics characterize input sequence shape (X), not prediction targets (y). Night/day ratio: nighttime-to-daytime mean load; Autocorr 168h: weekly periodicity; Baseload P95: minimum/maximum daily load; CV P5: day-to-day variability.
 
 | Metric | Without 4 params | With 4 params | BB Real Buildings |
 |--------|:----------------:|:-------------:|:-----------------:|
@@ -121,7 +134,7 @@ $$\hat{y} = \hat{y}_{\text{norm}} \cdot \sigma_{\text{ctx}} + \mu_{\text{ctx}}$$
 
 This removes building-specific load magnitude and variability from the learning problem, allowing the model to focus on temporal shape. RevIN is a standard technique [8] that does not modify the Transformer architecture; it operates as a pre- and post-processing layer. We apply it symmetrically in all controlled experiments, including the BuildingsBench baselines, to ensure fair comparison within our experimental framework. The comparison between our RevIN-equipped model and the original BuildingsBench (which does not use RevIN) is not strictly equivalent; we discuss this asymmetry in Section 5.1.
 
-**No geographic features.** BuildingsBench provides latitude and longitude embeddings as model inputs. We set both to zero for all buildings—both training and evaluation. The ablation in Section 4.4 replaces zero with actual Korean city coordinates for training buildings (Seoul, Busan, Daegu, Gangneung, Jeju), while evaluation buildings retain zero. This produces results indistinguishable from the zero-coordinate baseline when RevIN is active, suggesting that explicit geographic coordinates add little information once instance-level scale differences are normalized by RevIN.
+**No geographic features.** BuildingsBench provides latitude and longitude embeddings as model inputs. We set both to zero for all buildings—both training and evaluation. The ablation in Section 4.4 replaces zero with actual Korean city coordinates for training buildings (Seoul, Busan, Daegu, Gangneung, Jeju), while evaluation buildings retain zero. This produces results indistinguishable from the zero-coordinate baseline when RevIN is active (Table 5), suggesting that actual training coordinates provide no benefit when evaluation coordinates are unavailable and set to zero—the model cannot exploit geographic information it has never seen at test time, and RevIN absorbs the scale differences that coordinates might otherwise encode.
 
 ### 3.3 Training Protocol
 
@@ -133,44 +146,46 @@ Both our training and BuildingsBench use approximately 18,000 gradient steps. Bu
 
 We follow the BuildingsBench test set, sliding-window construction, and aggregation metric without modification. The test set comprises 955 real load series: 611 from U.S. commercial buildings in the Building Data Genome Project 2 (BDG-2) [26], drawn from four university and government campuses (University of California Berkeley, Arizona State University, University of Central Florida, and Washington D.C.), and 344 from Portuguese electricity consumers in the Electricity dataset [27], with 15 out-of-vocabulary buildings excluded per the original specification. The evaluation set spans four distinct U.S. climate zones (Mediterranean, semi-arid desert, humid subtropical, and humid continental) plus Southern Europe, meaning our Korean-trained model is assessed against real load series climatically and geographically far from its Korean training distribution. Per-building NRMSE is computed as sqrt(MSE) / mean(actual) and aggregated by taking the median across buildings. We use the term NRMSE (Normalized Root Mean Squared Error) to match BuildingsBench's convention; this is numerically identical to the Coefficient of Variation of RMSE (CVRMSE) when load values are non-negative, as is always the case for electricity consumption. The sliding window uses stride 24 hours, context 168 hours, and prediction horizon 24 hours.
 
-We reproduced the BuildingsBench SOTA-M result using the official checkpoint (torch 2.0.1, identical Box-Cox parameters) and obtained 13.27% NRMSE, confirming that our evaluation pipeline matches the original within 0.01 percentage points of the reported 13.28%.
+We reproduced the BuildingsBench baseline (Transformer-M) result using the official checkpoint (torch 2.0.1, identical Box-Cox parameters) and obtained 13.27% NRMSE, confirming that our evaluation pipeline matches the original within 0.01 percentage points of the reported 13.28%.
 
 ---
 
 ## 4. Experiments and Results
 
-### 4.1 Main Results
+### 4.1 Data-Efficient Zero-Shot Performance
 
 Table 3 presents the primary comparison (visualized in Fig. 2). All models use the same 15.8M-parameter Transformer-M architecture and are evaluated on the identical 955-building test set with the same NRMSE computation.
 
-**Table 3.** Main results on the 955-building evaluation set (U.S. commercial buildings and Portuguese electricity consumers). Korean-700 and US-TMY-700 (RevIN ON, aug) report five-seed mean ± std; RevIN OFF reports three-seed mean ± std; all other rows use seed = 42. NCRPS (lower is better) measures probabilistic calibration in kWh scale. †BB SOTA-M NCRPS unavailable due to Box-Cox protocol mismatch. BB-700 (aug-matched) is trained with identical optimizer, augmentation, and steps as Korean-700 to isolate the data-source effect.
+**Table 3.** Main results on the 955-building evaluation set (U.S. commercial buildings and Portuguese electricity consumers). Korean-700 (RevIN ON, aug) and US-TMY-700 (RevIN ON, aug) report five-seed mean ± std; Korean-700 (no aug, RevIN ON) and Korean-700 (RevIN OFF, aug) report three-seed mean ± std; all other rows use seed = 42. NCRPS (lower is better) measures probabilistic calibration in kWh scale. †BB-900K NCRPS unavailable due to Box-Cox protocol mismatch. BB-700 (aug-matched) is trained with identical optimizer, augmentation, and steps as Korean-700 to isolate the data-source effect.
 
-| Model | Training Data | N Buildings | RevIN | Aug | NRMSE (%) | NCRPS (%) | vs SOTA |
-|-------|--------------|:-----------:|:-----:|:---:|:----------:|:---------:|:-------:|
-| BB SOTA-M (reproduced) | BB 900K | 900,000 | OFF | OFF | 13.27 | —† | — |
-| BB 900K + RevIN | BB 900K | 900,000 | ON | OFF | 13.89 | 7.76 | +0.62 |
-| **Korean-700 (ours)** | **Korean sim** | **700** | **ON** | **ON** | **13.11 ± 0.17** | **7.14 ± 0.03** | **−0.16** |
-| Korean-700 (no aug) | Korean sim | 700 | ON | OFF | 13.67 | 8.16 | +0.40 |
-| Korean-700 | Korean sim | 700 | OFF | ON | 14.72 ± 0.28 | 8.29 | +1.45 |
-| BB-700 (aug-matched) | BB subset | 700 | ON | ON | 14.26 | 7.80 | +0.99 |
-| US-TMY-700 (ours) | U.S. TMY sim | 700 | ON | ON | 13.64 ± 0.65 | 7.53 ± 0.41 | +0.37 |
-| BB-700 (no aug) | BB subset | 700 | ON | OFF | 15.28 | — | +2.01 |
-| BB-700 | BB subset | 700 | OFF | OFF | 16.44 | — | +3.17 |
-| Persistence Ensemble | — | — | — | — | 16.68 | — | +3.41 |
+| Model | Data | N | RevIN | Aug | NRMSE (%) | NCRPS (%) | Δ baseline |
+|-------|------|------:|:-----:|:---:|:---------:|:---------:|:------:|
+| BB-900K | BB 900K | 900,000 | OFF | OFF | 13.27 | —† | — |
+| BB+RevIN | BB 900K | 900,000 | ON | OFF | 13.89 | 7.76 | +0.62 |
+| **K-700 (ours)** | **Korean sim** | **700** | **ON** | **ON** | **13.11 ± 0.17** | **7.14 ± 0.03** | **−0.16** |
+| K-700 no aug | Korean sim | 700 | ON | OFF | 13.67 ± 0.21 | 8.16 | +0.40 |
+| K-700 no RevIN | Korean sim | 700 | OFF | ON | 14.72 ± 0.28 | 8.29 | +1.45 |
+| BB-700 aug | BB subset | 700 | ON | ON | 14.26 | 7.80 | +0.99 |
+| **US-700 (ours)** | **US TMY sim** | **700** | **ON** | **ON** | **13.64 ± 0.65** | **7.53 ± 0.41** | **+0.37** |
+| BB-700 | BB subset | 700 | ON | OFF | 15.28 | — | +2.01 |
+| BB-700 OFF | BB subset | 700 | OFF | OFF | 16.44 | — | +3.17 |
+| Persist. | — | — | — | — | 16.68 | — | +3.41 |
 
-The five-seed mean of Korean-700 with RevIN and augmentation is 13.11 ± 0.17%, surpassing the BB SOTA (13.27%) by 0.16 pp; the best seed reaches 12.93% (0.34 pp improvement). To our knowledge, no prior published work has demonstrated performance in this range using fewer than 1,000 training buildings on the BuildingsBench evaluation protocol. Korean-700 without augmentation (RevIN ON, three-seed mean) achieves 13.67%—0.40 pp above the SOTA—showing that augmentation contributes 0.56 pp and is necessary to cross the SOTA threshold. Without RevIN, performance degrades further to 14.72 ± 0.28% (1.45 pp above the SOTA), though still well below the Persistence Ensemble baseline (16.68%).
+The central result is that 700 operationally diverse simulations are sufficient to reach the performance level of a 900,000-building benchmark on the same real-building evaluation set. Korean-700 achieves 13.11 ± 0.17% NRMSE (five-seed mean), numerically below the reproduced BB-900K baseline of 13.27%, with the best seed reaching 12.93%. Unlike BuildingsBench, which provides latitude and longitude embeddings as input features, all Korean-700 results set geographic coordinates to zero for both training and evaluation; this result is achieved not by adding metadata but by removing it. To our knowledge, no prior published work has demonstrated performance in this range using fewer than 1,000 training buildings on the BuildingsBench evaluation protocol. Korean-700 without augmentation (RevIN ON, three-seed mean) achieves 13.67%—0.40 pp above the baseline—showing that augmentation contributes 0.56 pp and is necessary to cross the benchmark threshold. Without RevIN, performance degrades further to 14.72 ± 0.28%, though still well below the Persistence Ensemble baseline (16.68%).
+
+A paired per-building comparison provides additional statistical support. Using five-seed averaged per-building NRMSE, Korean-700 achieves lower error than BB-900K on 680 of 955 buildings (71%); the paired bootstrap 95% CI of the median per-building difference is [0.31, 0.39] pp in favor of Korean-700 (Wilcoxon signed-rank p < 0.001). The advantage is robust across seeds, including the weakest seed (seed 45, aggregate 13.39%), which still favors Korean-700 on a majority of buildings (57%, p = 0.034). Per-seed confidence intervals and win rates are provided in the repository.
 
 The BB-700 aug-matched control—the same architecture trained on 700 randomly sampled BuildingsBench buildings with matched augmentation—achieves 14.26% with RevIN, indicating that the data source matters independently of the normalization strategy. The BB-700 no-aug RevIN ON result of 15.28% and the BB-700 RevIN OFF no-aug result of 16.44% complete the no-augmentation branch of the factorial (an aug-matched BB-700 RevIN OFF experiment was not conducted; see Section 4.2). Augmentation contributes 1.02 pp to BB data (15.28% to 14.26%), yet even the aug-matched BB-700 trails Korean-700 by 1.15 pp—a gap that cannot be explained by augmentation alone.
 
-Adding RevIN to the full BuildingsBench training pipeline degrades performance from 13.27% to 13.89%, a 0.62 percentage-point increase. RevIN helps small data (Korean-700: 14.72% three-seed mean without RevIN to 13.11% five-seed mean with RevIN, a 1.61 pp difference) but hurts large data (BB 900K: 13.27% to 13.89%, a 0.62 pp degradation). For the BB 900K + RevIN experiment, the only modification to the original BuildingsBench pipeline was adding RevIN pre/post-processing (see Appendix A.4). The mechanism behind this asymmetry is examined in Section 5.1.
+In these experiments, RevIN improves both 700-building models (Korean-700: −1.61 pp; BB-700: −1.16 pp) but degrades the BB-900K retraining run (+0.62 pp, from 13.27% to 13.89%). The only modification to the original BuildingsBench pipeline was adding RevIN pre/post-processing (Appendix A.4). The mechanism behind this asymmetry is examined in Section 5.1.
 
 ### 4.2 Decomposing the Improvement
 
-The augmentation-controlled factorial (Korean vs. BB data, RevIN ON, both at n = 700) yields two clean comparisons. With matched augmentation: Korean-700 (13.11%) outperforms BB-700 (14.26%) by 1.15 pp. Without augmentation: Korean-700 (13.67%) outperforms BB-700 (15.28%) by 1.61 pp. Both comparisons use RevIN ON, isolating the data-source effect. The data-source advantage is therefore 1.15–1.61 pp, with augmentation contributing an additional 0.56 pp to the Korean-700 result (13.67% to 13.11%) and 1.02 pp to BB-700 (15.28% to 14.26%).
+The augmentation-controlled factorial (Korean vs. BB data, RevIN ON, both at n = 700) isolates the data-source effect. Across both augmentation conditions, Korean-700 consistently outperforms matched BB-700 controls by 1.15–1.61 pp (Table 3), indicating that the gain is not an augmentation artifact. The gap is larger without augmentation (1.61 pp) and remains substantial when augmentation is matched (1.15 pp). Augmentation itself contributes 0.56 pp to Korean-700 and 1.02 pp to BB-700, but cannot close the data-source gap.
 
-The RevIN effect is 1.61 pp on Korean data (14.72% three-seed mean to 13.11% five-seed mean) and 1.16 pp on BB-700 (16.44% to 15.28%). An aug-matched BB-700 RevIN OFF experiment was not conducted; if augmentation provides a similar 1.02 pp benefit to RevIN OFF models (as it does to RevIN ON models), the estimated aug-corrected RevIN OFF data-source gap would be approximately 0.70 pp—still meaningful, though this estimate assumes augmentation effects are independent of the RevIN condition. The primary evidence for data-source advantage rests on the no-aug RevIN ON comparison (1.61 pp) and the aug-matched RevIN ON comparison (1.15 pp), both pointing consistently to data design as a major contributor.
+An aug-matched BB-700 RevIN OFF experiment was not conducted; the estimated augmentation-corrected gap is approximately 0.70 pp, though this assumes augmentation effects are independent of the RevIN condition. The primary evidence for data-source advantage rests on both augmentation conditions pointing consistently to data design as a major contributor.
 
-To isolate schedule diversity from climate effects, we retrained on the same 700 LHS-designed buildings using U.S. TMY weather files (Seoul → Washington DC, Busan → Atlanta, Daegu → Charlotte, Gangneung → Boston, Jeju → Miami; ASHRAE climate zones matched where possible). The five-seed mean of the U.S.-TMY-700 model is 13.64 ± 0.65% (seeds 42–46: 13.15%, 13.35%, 13.22%, 14.72%, 13.78%), within 0.53 pp of Korean-700 (13.11 ± 0.17%). The best seed (13.15%) falls within Korean-700 seed variability, while the five-seed mean is 0.37 pp above the BB SOTA. The higher variance (0.65% vs. 0.17%) suggests that U.S. weather introduces additional seed sensitivity. Nevertheless, the U.S.-TMY model still outperforms the matched BB-700 baseline (14.26%) by 0.62 pp, indicating that LHS-designed schedule diversity contributes substantially beyond climate origin alone, while weather choice still affects transfer stability.
+To isolate schedule diversity from climate effects, we retrained on the same 700 LHS-designed buildings using U.S. TMY weather files (Seoul → Washington DC, Busan → Atlanta, Daegu → Charlotte, Gangneung → Boston, Jeju → Miami; ASHRAE climate zones matched where possible). The five-seed mean of the U.S.-TMY-700 model is 13.64 ± 0.65% (seeds 42–46: 13.15%, 13.35%, 13.22%, 14.72%, 13.78%), within 0.53 pp of Korean-700 (13.11 ± 0.17%). The best seed (13.15%) falls within Korean-700 seed variability, while the five-seed mean is 0.37 pp above the BB-900K baseline. The higher variance (0.65% vs. 0.17%) suggests that U.S. weather introduces additional seed sensitivity. Nevertheless, the U.S.-TMY model still outperforms the matched BB-700 baseline (14.26%) by 0.62 pp, indicating that LHS-designed schedule diversity contributes substantially beyond climate origin alone, while weather choice still affects transfer stability.
 
 ### 4.3 N-Scaling Analysis
 
@@ -178,7 +193,7 @@ Table 4 and Fig. 3 show how NRMSE varies with the number of buildings per archet
 
 **Table 4.** N-scaling results (Transformer-M, RevIN ON, aug ON, s = 18,000 steps, seed = 42). Exception: n = 5 reports five-seed mean ± std (13.28 ± 0.12%). The n = 50 entry reports the seed-42 value (12.93%), corresponding to the best seed in Table 3; the five-seed mean for n = 50 is 13.11 ± 0.17%. Fig. 3 plots all 17 points including intermediate values not listed here.
 
-| n | Total Buildings | NRMSE (%) | vs SOTA |
+| n | Total Buildings | NRMSE (%) | Δ baseline |
 |:-:|:---------------:|:----------:|:-------:|
 | 1 | 14 | 14.72 | +1.45 |
 | 3 | 42 | 13.47 | +0.20 |
@@ -189,7 +204,7 @@ Table 4 and Fig. 3 show how NRMSE varies with the number of buildings per archet
 | 70 | 980 | 13.20 | -0.07 |
 | 80 | 1,120 | 13.15 | -0.12 |
 
-Performance improves sharply from n = 1 to n = 5 (14.72% seed-42 single run to 13.28% five-seed mean). By n = 3 (42 buildings), performance reaches 13.47%, within 0.20 pp of the SOTA. At n = 5 (70 buildings), the five-seed mean of 13.28 ± 0.12% matches the SOTA (13.27%) within 0.01 pp. Beyond n = 5, gains become incremental on the single-seed curve—additional buildings yield fluctuations within ±0.15 pp rather than systematic improvement.
+Performance improves sharply from n = 1 to n = 5 (14.72% seed-42 single run to 13.28% five-seed mean). By n = 3 (42 buildings), performance reaches 13.47%, within 0.20 pp of the baseline. At n = 5 (70 buildings), the five-seed mean of 13.28 ± 0.12% matches the BB-900K baseline (13.27%) within 0.01 pp. Beyond n = 5, gains become incremental on the single-seed curve—additional buildings yield fluctuations within ±0.15 pp rather than systematic improvement.
 
 The n = 5 multi-seed result (13.28 ± 0.12%) confirms that the 70-building result is not a single-seed artifact. The n = 50 five-seed mean (13.11 ± 0.17%) further improves over n = 5 (13.28 ± 0.12%) by 0.17 pp, indicating that gains remain detectable through n = 50 when averaged across multiple seeds; however, the single-seed curve shows high variance in this range (±0.15 pp), so individual runs may not consistently reflect this improvement. The scaling behavior is qualitatively different from the monotonic improvement typically assumed in large-scale pretraining. The observed curve suggests diminishing returns under the current LHS design and fixed training budget.
 
@@ -205,7 +220,7 @@ Table 5 reports the two ablations conducted under the unified evaluation protoco
 |------------|:----------:|:-----:|----------------|
 | Korean-700 RevIN ON (baseline) | 12.93 | — | Best configuration (seed 42, lat/lon = zero) |
 | RevIN OFF (3-seed mean) | 14.72 | +1.79 | RevIN contributes 1.79 pp (1.61 pp over five-seed means) |
-| Actual lat/lon coordinates | 12.93 | 0.00 | Geographic features provide no benefit with RevIN |
+| Actual lat/lon coordinates | 12.93 | 0.00 | Actual Korean training coordinates provide no benefit when evaluation coordinates are unavailable |
 
 All four additional ablations (Appendix C) degrade performance by more than 2 pp, consistent with the broader observation that excessive exposure to synthetic patterns can harm OOD transfer: using BB-fitted Box-Cox parameters maps Korean loads outside the trained range (+3.31 pp); extending training to 168K steps causes the model to memorize synthetic artifacts (+3.09 pp); scaling to 70,000 buildings with a fixed training budget leads to under-sampling (+2.42 pp); and seasonal decomposition before RevIN disrupts OOD transfer (+3.72 pp).
 
@@ -213,9 +228,11 @@ All four additional ablations (Appendix C) degrade performance by more than 2 pp
 
 ## 5. Discussion
 
-### 5.1 RevIN's Asymmetric Effect: Why It Helps Small Data but Hurts Large Data
+The central result is not merely that 700 simulations match a large benchmark, but that they do so under a harder information setting: no geographic coordinates, Korean-weather synthetic training data, and zero-shot evaluation on real U.S. and Portuguese loads. The main result is already cross-climate: Korean-weather simulations reach benchmark-level performance on U.S. and Portuguese real loads despite the climate mismatch. The U.S.-TMY ablation further shows that replacing Korean weather with U.S. weather does not erase the advantage over equal-scale BB controls, although it reduces the five-seed mean relative to Korean-700. This section examines the mechanisms behind these results.
 
-Fig. 4 illustrates the asymmetry in RevIN's effect across dataset scales. On our 700-building Korean dataset, RevIN reduces NRMSE by approximately 1.6 pp in the available multi-seed comparison (14.72% three-seed mean to 13.11% five-seed mean). On the 700-building BB subset, the reduction is 1.16 pp (16.44% to 15.28%; seed 42, single run). But on the full 900K BB corpus, RevIN increases NRMSE by 0.62 pp (13.27% to 13.89%). The same technique that is beneficial at small scale is detrimental at large scale.
+### 5.1 RevIN's Regime-Dependent Effect Across Dataset Scales
+
+Fig. 4 illustrates the asymmetry in RevIN's effect across dataset scales. RevIN improves both 700-building models (approximately 1.2–1.6 pp) but degrades the BB-900K retraining run by 0.62 pp. In this benchmark setting, the same technique is beneficial for the 700-building models but detrimental in the BB-900K retraining run.
 
 RevIN normalizes each 168-hour context window to zero mean and unit variance, stripping absolute load magnitude and within-window variance. The model then operates in a scale-free space, learning only temporal shape. With 700 LHS-designed buildings, the model has not seen enough magnitude variation to internalize it; RevIN solves this analytically. With 900,000 stock-model buildings each contributing roughly 2–3 sampled training windows on average, the model has already learned to exploit magnitude as a signal—a building consuming 500 kW at midnight behaves differently from one consuming 5 kW. Removing this information via RevIN discards something useful, producing a net loss.
 
@@ -225,13 +242,13 @@ RevIN is therefore not universally beneficial: its value depends on whether the 
 
 ### 5.2 Why Operational Diversity May Matter More Than Scale
 
-Seven hundred buildings with LHS-designed operational schedules match and in most seeds surpass 900,000 stock-model buildings on the BuildingsBench evaluation protocol (with RevIN and augmentation). Buildings-900K draws from the NREL End-Use Load Profiles for the U.S. building stock. This is a carefully constructed stock model, but a stock model nonetheless. It generates buildings whose operational parameters reflect the statistical distribution of real U.S. commercial buildings: most offices operate 08:00 to 18:00 on weekdays; most retail stores have moderate baseloads; most hospitals run continuously. Adding more buildings from this distribution increases the sample size but does not proportionally increase the diversity of temporal patterns the model encounters. Many of the 900,000 buildings share similar operational profiles because they are drawn from the same assumptions about how buildings operate.
+Seven hundred buildings with LHS-designed operational schedules reach benchmark-level performance comparable to 900,000 stock-model buildings on the BuildingsBench evaluation protocol (with RevIN and augmentation). Buildings-900K draws from the NREL End-Use Load Profiles for the U.S. building stock. This is a carefully constructed stock model, but a stock model nonetheless. It generates buildings whose operational parameters reflect the statistical distribution of real U.S. commercial buildings: most offices operate 08:00 to 18:00 on weekdays; most retail stores have moderate baseloads; most hospitals run continuously. Adding more buildings from this distribution increases the sample size but does not proportionally increase the diversity of temporal patterns the model encounters. Many of the 900,000 buildings share similar operational profiles because they are drawn from the same assumptions about how buildings operate.
 
 Our 12D LHS design takes a different approach. By sampling operational parameters uniformly across their feasible ranges, we produce buildings that occupy regions of operational space rarely seen in a stock-model sample: offices that run 24 hours with 95% baseload, schools with random weekly schedule disruptions, warehouses with strong seasonal oscillation. These extreme and unusual patterns may be rare in reality, but they teach the model about the full range of temporal dynamics that building loads can exhibit. The BuildingsBench evaluation set contains real buildings, and real buildings—especially non-standard ones like data centers, 24-hour retail, or buildings with unusual HVAC systems—may have operational patterns closer to our LHS extremes than to the stock-model center.
 
 From a scaling-law perspective, this is consistent with Shi et al. [5], who showed that scaling in time series does not follow language-model power laws. In language modeling, additional tokens more directly expand the combinatorial coverage of linguistic contexts; in building load time series, each additional building from the same stock model may add only a variation on patterns already in the training set. The marginal information content decreases rapidly.
 
-The n-scaling analysis (Table 4, Section 4.3) provides direct evidence: SOTA-level performance emerges at just 70 buildings (n = 5 per archetype), with diminishing returns on the single-seed curve beyond 140 buildings (n = 10). Once the LHS parameter space is adequately covered, additional samples add little new temporal pattern information. This saturation differs from the monotonic gains often associated with large-scale pretraining and is consistent with learning that is governed by the number of distinct temporal patterns, not the number of examples.
+The n-scaling analysis (Table 4, Section 4.3) provides direct evidence: benchmark-level performance emerges at just 70 buildings (n = 5 per archetype), with diminishing returns on the single-seed curve beyond 140 buildings (n = 10). Once the LHS parameter space is adequately covered, additional samples add little new temporal pattern information. This saturation differs from the monotonic gains often associated with large-scale pretraining and is consistent with learning that is governed by the number of distinct temporal patterns, not the number of examples.
 
 ### 5.3 Practical Implications
 
@@ -241,39 +258,27 @@ The computational cost difference is substantial. Our 700 EnergyPlus simulations
 
 The finding that geographic features are unnecessary further simplifies deployment. Building operators need only provide recent hourly electricity measurements and timestamps. No location metadata, building-type classification, climate zone, or HVAC system information is required. RevIN helps absorb instance-level scale differences, reducing the need for explicit geographic metadata.
 
-The climate mismatch is itself informative: both corpora train on single-country synthetic data (U.S. vs. South Korea) yet are evaluated on real buildings across four U.S. climate zones and Portugal. The U.S.-TMY/LHS ablation (Section 4.2) shows that LHS-designed schedules retain most of their advantage even under swapped weather: the five-seed mean of 13.64 ± 0.65% outperforms the matched BB-700 baseline (14.26%) by 0.62 pp, though it falls 0.53 pp short of Korean-700 (13.11 ± 0.17%) with notably wider seed variance. This pattern suggests that operational diversity is the larger contributor, but weather choice still affects both average performance and run-to-run stability.
+The climate mismatch is itself informative: Korean-weather simulations achieve lower NRMSE than the U.S.-stock BB-900K baseline on U.S. and Portuguese real loads. The U.S.-TMY ablation serves a different purpose: it shows that replacing Korean weather with U.S. weather preserves an advantage over the equal-scale BB-700 control, although not over the full BB-900K baseline (Section 4.2). This distinction matters—the U.S.-TMY result isolates schedule diversity from climate origin at matched scale, while the Korean-700 vs. BB-900K comparison is the primary claim. The higher seed variance of U.S.-TMY-700 suggests that weather choice affects run-to-run stability even when operational diversity is held constant.
 
 ### 5.4 Limitations
 
-Our parametric simulations differ from BuildingsBench in schedule design (12D LHS vs. stock model), climate (Korean vs. U.S. weather), building codes, and envelope parameters. At equal scale with matched augmentation, Korean data outperforms BB data by 1.15 pp (13.11% vs. 14.26%), establishing that the data source matters. The U.S.-TMY/LHS ablation (Section 4.2) substantially reduces but does not eliminate the climate-origin confound: retraining on the same 700 LHS schedules with U.S. TMY weather yields a five-seed mean of 13.64 ± 0.65%, still outperforming BB-700 (14.26%) but falling 0.53 pp short of Korean-700 (13.11 ± 0.17%) with wider seed variance. This indicates that schedule diversity is a major contributor, but weather choice retains a measurable effect on both average performance and stability. The aug-matched BB-700 RevIN OFF experiment was not conducted; the estimated augmentation-corrected gap of approximately 0.70 pp reported in Section 4.2 assumes that augmentation provides a similar benefit regardless of the RevIN condition, an assumption that has not been empirically verified.
+Our parametric simulations differ from BuildingsBench in schedule design (12D LHS vs. stock model), climate (Korean vs. U.S. weather), building codes, and envelope parameters. At equal scale with matched augmentation, Korean data outperforms BB data by 1.15 pp, establishing that the data source matters. The U.S.-TMY/LHS ablation (Section 4.2) substantially reduces but does not eliminate the climate-origin confound: U.S.-TMY-700 still outperforms BB-700 but falls short of Korean-700 with wider seed variance. This indicates that schedule diversity is a major contributor, but weather choice retains a measurable effect on both average performance and stability. The aug-matched BB-700 RevIN OFF experiment was not conducted; the estimated augmentation-corrected gap reported in Section 4.2 assumes that augmentation provides a similar benefit regardless of the RevIN condition, an assumption that has not been empirically verified.
 
-Controlled experiments address the two most likely alternative explanations. Applying RevIN to BB 900K degrades performance by 0.62 pp (13.27% to 13.89%), ruling out RevIN as the sole driver. Augmentation contributes 1.02 pp to BB-700 (15.28% to 14.26%) and 0.56 pp to Korean-700 (13.67% to 13.11%), yet the data-source gap remains at 1.15 pp with matched augmentation and widens to 1.61 pp without it. The NCRPS comparison (Korean-700: 7.14% vs. BB-700: 7.80%) reinforces the same ordering.
+Controlled experiments address the two most likely alternative explanations. Applying RevIN to BB 900K degrades performance, ruling out RevIN as the sole driver. Augmentation narrows the BB-700 gap but cannot close it (Section 4.2). The NCRPS comparison reinforces the same ordering (Table 3).
 
-Our five-seed mean of 13.11 ± 0.17% is 0.16 pp better than the BB SOTA (13.27%), a margin comparable to the inter-seed standard deviation (0.17%). BuildingsBench does not report confidence intervals, so a formal significance test is not possible; the numerical advantage is real but modest, and the stronger claim rests on the best-seed result (12.93%, 0.34 pp better). N-scaling intermediate points (n = 2–4, 6–9, 20–40, 60–80) use seed = 42; the non-monotonic variation within ±0.15 pp at larger n likely reflects seed variance rather than a systematic trend.
+The aggregate improvement over the BB-900K baseline (0.16 pp) is modest and comparable to the inter-seed standard deviation (0.17%). The paired per-building comparison (Section 4.1) confirms statistical significance (71% win rate, bootstrap CI excluding zero, p < 0.001), and even the weakest seed still favors Korean-700 on a majority of buildings. Although the margin is small, it is obtained with 1,286× fewer training buildings and no geographic metadata. N-scaling intermediate points use seed = 42; non-monotonic variation at larger n likely reflects seed variance rather than a systematic trend.
 
 All experiments use the Transformer-M architecture (15.8M parameters); generalization to PatchTST, MOIRAI, or Chronos has not been tested. On the residential segment (953 buildings), our model yields 77.71% NRMSE, comparable to the Persistence Ensemble (77.88%), confirming that zero-shot residential forecasting remains an open problem. Real-world validation beyond the BuildingsBench evaluation set (which itself comprises real metered buildings) has not been conducted; broader testing across diverse Korean building types is needed. Checkpoints are selected by validation loss on held-out Korean simulation data; no BuildingsBench test-set information influences model selection.
 
 ---
 
-## List of Figures
-
-**Fig. 1.** End-to-end pipeline: from building archetype selection and 12D LHS parameter sampling through EnergyPlus simulation, Box-Cox normalization, RevIN-equipped Transformer training, to zero-shot inference without geographic information.
-
-**Fig. 2.** Zero-shot load forecasting performance (NRMSE, %) across model configurations on the 955-building evaluation set (U.S. commercial buildings and Portuguese electricity consumers). The dashed line indicates the BB SOTA-M baseline (13.27%). Korean-700 (RevIN ON, aug) achieves a five-seed mean of 13.11% (0.16 pp below the baseline, within the inter-seed standard deviation of 0.17%) and a best-seed result of 12.93% (0.34 pp below).
-
-**Fig. 3.** N-scaling curve showing NRMSE as a function of the number of training buildings. Performance matches the SOTA from 70 buildings (n = 5), with gains becoming incremental beyond 140 buildings (n = 10). The BB SOTA-M (13.27%) baseline is shown for reference.
-
-**Fig. 4.** RevIN's asymmetric effect across dataset scales. Green arrows indicate RevIN improvement (lower NRMSE); the red arrow indicates RevIN degradation on the full 900K BuildingsBench corpus.
-
----
-
 ## 6. Conclusion
 
-Data design can substitute for scale in zero-shot building energy forecasting. Seven hundred EnergyPlus simulations, parameterized through 12-dimensional LHS to span the space of plausible commercial building operations, match and in four of five seeds surpass the 900,000-building BuildingsBench baseline. Controlled experiments at equal scale attribute the advantage primarily to data design (1.15–1.61 pp across augmentation conditions) rather than to RevIN or augmentation alone.
+Data design can substitute for scale in zero-shot building energy forecasting. Seven hundred EnergyPlus simulations, when designed for operational diversity, are sufficient for high-accuracy zero-shot building load forecasting under the BuildingsBench protocol, while using 1,286× fewer training buildings and no geographic metadata—under a harder information setting of Korean-weather synthetic data evaluated zero-shot on real U.S. and Portuguese loads. Controlled experiments at equal scale attribute the advantage primarily to data design rather than to RevIN or augmentation alone.
 
-The n-scaling saturation near 70–140 buildings challenges the assumption that building energy foundation models require massive training corpora: once the LHS parameter space is adequately sampled, additional buildings provide diminishing new temporal pattern information rather than the monotonic gains predicted by power-law scaling. RevIN's asymmetric effect—improving small LHS-designed datasets by approximately 1.6 pp in the available multi-seed comparison while degrading the 900K BuildingsBench corpus by 0.62 pp—reveals that the value of instance normalization depends on whether the training data already spans the magnitude range of the evaluation set, not simply on dataset size.
+The n-scaling saturation near 70–140 buildings challenges the assumption that building energy foundation models require massive training corpora: once the LHS parameter space is adequately sampled, additional buildings provide diminishing new temporal pattern information rather than the monotonic gains predicted by power-law scaling. RevIN's regime-dependent effect—beneficial for small diverse datasets, detrimental in the BB-900K retraining run—suggests that the value of instance normalization depends on whether the training data already spans the magnitude range of the evaluation set, not simply on dataset size.
 
-For organizations deploying zero-shot forecasting in data-sparse regions, parametric EnergyPlus simulations designed for operational diversity represent a practical and computationally inexpensive path: a single workstation day of simulation and a few GPU-hours of training, with no location metadata or building-type classification required. A five-seed U.S.-TMY/LHS ablation supports the conclusion that the improvement is not solely driven by Korean weather: U.S.-TMY-700 (13.64 ± 0.65%) still outperforms BB-700 (14.26%), though the 0.53 pp gap relative to Korean-700 and wider seed variance indicate residual weather sensitivity. The principal open questions are the limitation to commercial buildings and the augmentation asymmetry between our pipeline and BuildingsBench. These limit the generalizability of the conclusions and call for follow-up work before the approach can be recommended across all building types.
+For organizations deploying zero-shot forecasting in data-sparse regions, parametric EnergyPlus simulations designed for operational diversity represent a practical and computationally inexpensive path: a single workstation day of simulation and a few GPU-hours of training, with no location metadata or building-type classification required. A U.S.-TMY/LHS ablation supports the conclusion that the improvement is not solely driven by Korean weather, though wider seed variance indicates residual weather sensitivity. The principal open questions are the limitation to commercial buildings and the augmentation asymmetry between our pipeline and BuildingsBench. These limit the generalizability of the conclusions and call for follow-up work before the approach can be recommended across all building types.
 
 ---
 
@@ -287,7 +292,7 @@ This work was supported by the Korea Institute of Energy Technology Evaluation a
 
 ## Data Availability
 
-The simulation pipeline, model source code, and training configurations are publicly available at https://github.com/jukkim/korean-buildingsbench. The 700-building parametric simulation dataset can be regenerated from the provided pipeline (EnergyPlus IDF generation, simulation, and post-processing scripts in Section 3.1) or is available from the corresponding author upon request. Pretrained checkpoints for the primary results (Korean-700 seeds 42--46, BB-700, BB 900K + RevIN, US-TMY-700 seeds 42--46) and n-scaling intermediate points (n = 2--4, 6--9, 20, 30, 40, 60, 70, 80) are available from the corresponding author upon request. The BuildingsBench evaluation data can be downloaded from the NREL Open Energy Data Initiative (https://data.openei.org/submissions/5859) under a CC-BY 4.0 license.
+The simulation pipeline, model source code, and training configurations are publicly available at https://github.com/jukkim/korean-buildingsbench. The 700-building parametric simulation dataset can be regenerated from the provided pipeline (EnergyPlus IDF generation, simulation, and post-processing scripts in Section 3.1) or is available from the corresponding author upon request. Pretrained checkpoints for the primary results (Korean-700 seeds 42--46, BB-700, BB 900K + RevIN, US-TMY-700 seeds 42--46) and n-scaling intermediate points (n = 2--4, 6--9, 20, 30, 40, 60, 70, 80) are available from the corresponding author upon request. Per-building NRMSE results for all five seeds, the paired statistical test script (Section 4.1), the BB-700 subset building identifiers, and the 700-row LHS parameter table are included in the repository. The BuildingsBench evaluation data can be downloaded from the NREL Open Energy Data Initiative (https://data.openei.org/submissions/5859) under a CC-BY 4.0 license.
 
 ## Declaration of Competing Interest
 
@@ -392,7 +397,18 @@ Five-seed evaluation at s = 16,000 steps yields 13.13 ± 0.15%, confirming robus
 | 46 | 13.12 |
 | **Mean ± Std** | **13.13 ± 0.15** |
 
-### A.4 BB 900K + RevIN
+### A.4 Korean-700 RevIN ON, No Augmentation (s = 18,000, 3 seeds)
+
+| Seed | NRMSE (%) | NCRPS (%) |
+|:----:|:----------:|:---------:|
+| 42 | 13.48 | 7.95 |
+| 43 | 13.89 | 8.21 |
+| 44 | 13.65 | 8.31 |
+| **Mean ± Std** | **13.67 ± 0.21** | **8.16 ± 0.18** |
+
+Augmentation contributes 0.56 pp to NRMSE (13.67% → 13.11%) and 1.02 pp to NCRPS (8.16% → 7.14%).
+
+### A.5 BB 900K + RevIN
 
 The BuildingsBench 900K model was retrained from scratch with RevIN enabled (identical architecture, optimizer, and training schedule to the original). The resulting NRMSE of 13.89% on the 955-building evaluation set represents a 0.62 pp degradation relative to the original 13.27%. This single-run result uses the same seed and hyperparameters as the original BuildingsBench training.
 
@@ -410,7 +426,7 @@ The BuildingsBench 900K model was retrained from scratch with RevIN enabled (ide
 
 A 10x increase in BuildingsBench buildings (700 to 7,000) reduces NRMSE by 0.78 pp with RevIN, no aug (15.28% to 14.50%). BB-700 with augmentation (14.26%) narrowly outperforms BB-7K without augmentation (14.50%), though this comparison conflates augmentation and scale effects. Regardless, BB-700+aug (14.26%) remains 1.15 pp above Korean-700 (13.11%), and even BB-7K (14.50%) does not approach the performance of 700 LHS-designed buildings with augmentation.
 
-All results verified through unified evaluation (torch 2.0.1, autocast, identical protocol as BB SOTA reproduction).
+All results verified through unified evaluation (torch 2.0.1, autocast, identical protocol as BB-900K baseline reproduction).
 
 ---
 
@@ -418,11 +434,23 @@ All results verified through unified evaluation (torch 2.0.1, autocast, identica
 
 The four experiments below were conducted with an earlier evaluation pipeline prior to the adoption of the val_best checkpoint and unified 955-building evaluation. The directions of degradation are reliable, but exact NRMSE values carry approximately ±0.3 pp additional uncertainty relative to Table 3 and Table 5.
 
-| Experiment | NRMSE (%) | Delta vs Table 3 baseline | Note |
-|------------|:----------:|:-------------------------:|------|
-| BB Box-Cox (BB-fitted scale/location) | 16.24 | +3.31 | Korean loads mapped outside trained range |
-| 4× training tokens (168K steps, ~84 epochs) | 16.02 | +3.09 | Overfitting to synthetic artifacts |
-| 5K cap per archetype (70K buildings total) | 15.35 | +2.42 | Fixed-budget under-sampling at scale |
-| Seasonal decomposition + RevIN | 16.65 | +3.72 | Trend-seasonal separation hurts OOD transfer |
+| Experiment | NRMSE (%) | Δ baseline | Note |
+|------------|:----------:|:----------:|------|
+| BB Box-Cox | 16.24 | +3.31 | Box-Cox mismatch |
+| 4× tokens (168K steps) | 16.02 | +3.09 | Synthetic overfitting |
+| 5K cap (70K buildings) | 15.35 | +2.42 | Fixed-budget undersampling |
+| Seasonal decomp + RevIN | 16.65 | +3.72 | Seasonality disruption |
 
 Each failure mode reflects a distinct mechanism. (1) Replacing the Korean-fitted Box-Cox parameters with the BB-fitted values maps Korean load magnitudes into a different region of the transformed space, causing a systematic mismatch between the training distribution and the expected input range (+3.31 pp). (2) Extending training to 168K steps (~84 epochs over 700 buildings) allows the model to memorize simulation-specific schedule artifacts—ramp shapes, exact transition widths, and load plateaus—that do not generalize to real buildings (+3.09 pp). (3) Scaling to 70,000 buildings with the same 18,000-step budget reduces each building's contribution to roughly 0.03 sampled training windows on average, insufficient to learn building-specific patterns while still constrained by the same total optimization budget (+2.42 pp). (4) Applying seasonal decomposition before RevIN separates trend and seasonal components, disrupting the temporal shape diversity that LHS is designed to provide; when RevIN subsequently normalizes the residual, the model loses access to the periodicity signals that aid OOD generalization (+3.72 pp).
+
+---
+
+## Figures
+
+**Fig. 1.** End-to-end pipeline: from building archetype selection and 12D LHS parameter sampling through EnergyPlus simulation, Box-Cox normalization, RevIN-equipped Transformer training, to zero-shot inference without geographic information.
+
+**Fig. 2.** Zero-shot load forecasting performance (NRMSE, %) across model configurations on the 955-building evaluation set (U.S. commercial buildings and Portuguese electricity consumers). The dashed line indicates the BB-900K baseline (13.27%). Korean-700 (RevIN ON, aug) achieves a five-seed mean of 13.11%, 0.16 pp below the baseline, with the best seed reaching 12.93%. The paired per-building comparison is reported in Section 4.1.
+
+**Fig. 3.** N-scaling curve showing NRMSE as a function of the number of training buildings (seed = 42). Performance reaches the BB-900K baseline from 70 buildings (n = 5, seed 42: 13.24%, five-seed mean: 13.28 ± 0.12%), with gains becoming incremental beyond 140 buildings (n = 10). The BB-900K baseline (13.27%) is shown for reference.
+
+**Fig. 4.** RevIN's regime-dependent effect. Korean-700 bars use five-seed means; BB-700 and BB-900K bars use seed-42 runs. Green arrows indicate lower NRMSE; red indicates degradation.
