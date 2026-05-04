@@ -1,6 +1,6 @@
 # Korean_BB — Paper Files Manifest (논문 재현 가능 파일 지도)
 
-> **작성일**: 2026-04-23
+> **작성일**: 2026-04-23 | **갱신**: 2026-05-04 (투고 준비 완료)
 > **목적**: Applied Energy 논문 `docs/paper_final.md` 의 모든 수치·도표·주장 재현에 필요한 파일을 한 눈에 찾기 위한 SSOT.
 > **원칙**: 이 문서에 명시된 파일은 **절대 삭제·이동 금지**. 여기 없는 파일은 `archive/` 이동 가능.
 
@@ -10,37 +10,37 @@
 
 | 찾는 것 | 위치 |
 |---------|------|
-| 논문 최종본 | `docs/paper_final.md`, `docs/paper_final.docx` |
-| 특허 명세서 | `docs/patent_draft_v1.md`, `docs/patent_draft_v1.docx` |
+| 논문 최종본 (SSOT) | `docs/paper_final.md` |
+| 투고용 DOCX | `docs/paper_ae.docx` |
+| Highlights (별도) | `docs/Highlights.docx` |
+| Cover Letter | `docs/cover_letter.docx` |
 | 그림 4개 + Graphical Abstract | `docs/fig{1,2,3,4}_*.png/pdf`, `docs/graphical_abstract.*` |
-| 특허 도면 | `docs/patent_fig{1,2,3,4,5}_*.png` |
 | 수치 출처 전수 | `results/RESULTS_REGISTRY.md` |
 | 논문 작성 계획 | `docs/PAPER_PLAN.md` |
 | 평가 데이터 (BB 955건) | `external/BuildingsBench_data/` |
 | 평가 스크립트 | `scripts/evaluate_bb.py` |
 | Box-Cox 변환기 | `data/korean_bb/metadata/transforms/boxcox.pkl` |
+| GitHub (public) | `https://github.com/jukkim/korean-buildingsbench` |
 
 ---
 
 ## 1. 논문 문서 (Paper & Patent)
 
-### 1.1 논문 본문
+### 1.1 논문 본문 + 투고 파일
 | 파일 | 용도 | 보존 |
 |------|------|:----:|
-| `docs/paper_final.md` | 최종 논문 (Applied Energy 투고용) | ⭐ |
-| `docs/paper_final.docx` | Word 변환본 | ⭐ |
+| `docs/paper_final.md` | 최종 논문 Markdown SSOT | ⭐ |
+| `docs/paper_ae.docx` | Applied Energy 투고용 DOCX (A4/TNR 12pt/행번호) | ⭐ |
+| `docs/Highlights.docx` | 별도 Highlights 파일 (4 bullets ≤85자) | ⭐ |
+| `docs/cover_letter.docx` | Cover Letter | ⭐ |
 | `docs/PAPER_PLAN.md` | 논문 작성 SSOT (실험 계획·방어 전략) | ⭐ |
 | `docs/PAPER_FILES_MANIFEST.md` | 이 파일 | ⭐ |
 
-### 1.2 특허 문서
+### 1.2 특허 문서 (로컬 전용, GitHub에서 제거됨)
 | 파일 | 용도 | 보존 |
 |------|------|:----:|
-| `docs/patent_draft_v1.md` | 특허 명세서 (청구항 13개) | ⭐ |
-| `docs/patent_fig1_system.png` | 도 1 — 시스템 구성도 | ⭐ |
-| `docs/patent_fig2_lhs.png` | 도 2 — LHS 파라미터 생성 | ⭐ |
-| `docs/patent_fig3_revin.png` | 도 3 — RevIN + Transformer | ⭐ |
-| `docs/patent_fig4_nscaling.png` | 도 4 — N-scaling 그래프 | ⭐ |
-| `docs/patent_fig5_comparison.png` | 도 5 — 성능 비교 | ⭐ |
+| `docs/patent_draft_v1.md` | 특허 명세서 (2026-05-01 변리사 제출) | ⭐ |
+| `docs/patent_fig{1~5}_*.png` | 특허 도면 5개 | ⭐ |
 
 ### 1.3 논문 Figure (본문용)
 | 파일 | 논문 위치 | 보존 |
@@ -51,14 +51,13 @@
 | `docs/fig4_revin_asymmetry.png/pdf` | Fig 4 — RevIN 비대칭 효과 | ⭐ |
 | `docs/graphical_abstract.png/pdf` | Applied Energy 투고용 | ⭐ |
 
-### 1.4 보조 문서
+### 1.4 보조 문서 (로컬 전용, GitHub에서 제거됨)
 | 파일 | 용도 | 보존 |
 |------|------|:----:|
-| `docs/EXPERIMENT_LOG.md` | 실험 전체 기록 | ⭐ |
+| `docs/EXPERIMENT_LOG.md` | 실험 전체 기록 (EXP-001~039) | ⭐ |
 | `docs/IMPROVEMENT_ROADMAP.md` | 전략 방향 SSOT | ⭐ |
 | `docs/SIMULATION_DESIGN.md` | 시뮬레이션 설계 문서 | ⭐ |
-| `docs/SIMULATION_REVIEW_v3.md` | v3 재검토 문서 | ⭐ |
-| `docs/STATUS.md` | 10-cap 검증 결과 | ⭐ |
+| `docs/EXP039_US_TMY_LHS.md` | US-TMY ablation 실험 계획·결과 | ⭐ |
 | `results/RESULTS_REGISTRY.md` | **모든 수치의 출처 · 체크포인트 · 재현 로그 SSOT** | ⭐⭐ |
 
 ---
