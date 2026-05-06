@@ -10,12 +10,12 @@
 
 | 항목 | 내용 |
 |------|------|
-| **타겟 저널** | Applied Energy (Elsevier, IF 12.81) |
+| **타겟 저널** | ~~Applied Energy~~ → **Energy and Buildings** (Elsevier, IF 7.1, CiteScore 12.6) |
 | **제목** | Seven Hundred Simulations Suffice: Operational Diversity for Data-Efficient Zero-Shot Building Load Forecasting |
 | **저자** | Jeong-Uk Kim (단독) |
 | **소속** | Dept. of Electrical Engineering, Sangmyung University, Seoul 03016, South Korea |
 | **단어 수** | ~6,400 단어 (~195 word abstract) |
-| **상태** | **✅ Applied Energy 투고 완료 (APEN-S-26-12975, 2026-05-04)** |
+| **상태** | ⏳ **Energy and Buildings 이관 중** (APEN desk reject 2026-05-05 → E&B transfer 2026-05-06) |
 
 ---
 
@@ -142,7 +142,9 @@
 - [x] GitHub 공개 (`jukkim/korean-buildingsbench`, public)
 - [x] GitHub 정리 (CLAUDE.md·특허·내부문서 제거, README 갱신)
 - [ ] 편의점 서면 허가 확보
-- [ ] **Applied Energy 투고**
+- [x] ~~Applied Energy 투고~~ (desk reject APEN-D-26-10043, scope mismatch)
+- [x] **Energy and Buildings 이관** (Elsevier Transfer Service, 2026-05-06)
+- [ ] E&B submission 완료 이메일 확인 → Subscription 선택
 
 ---
 
