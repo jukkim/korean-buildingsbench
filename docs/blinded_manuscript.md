@@ -1,13 +1,5 @@
 # The Operational Diversity Hypothesis: Why Pattern Coverage, Not Corpus Scale, Governs Zero-Shot Building Load Forecasting
 
-Jeong-Uk Kim
-
-Department of Electrical Engineering, Sangmyung University, Seoul 03016, South Korea
-
-ORCID: 0000-0001-9576-8757
-
-E-mail: jukim@smu.ac.kr
-
 ---
 
 ## Abstract
@@ -312,7 +304,7 @@ The principal open questions are the limitation to commercial buildings, the aug
 
 ---
 
-*Declarations, acknowledgements, and author information are provided on the separate Title Page.*
+*Declarations, acknowledgements, and author information are provided on the separate Title Page as required by the double-blind review process.*
 
 ---
 
