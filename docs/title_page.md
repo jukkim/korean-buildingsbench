@@ -4,11 +4,11 @@
 
 Dear Editor-in-Chief Prof. Da Yan,
 
-I am submitting the enclosed manuscript entitled "The Operational Diversity Hypothesis: Why Pattern Coverage, Not Corpus Scale, Governs Zero-Shot Building Load Forecasting" for consideration as a Research Article in Building Simulation.
+I am submitting the enclosed manuscript entitled "Operational Diversity by Design: A Parametric Simulation Methodology for Zero-Shot Building Load Forecasting" for consideration as a Research Article in Building Simulation.
 
-This study addresses a fundamental question in building energy simulation for machine learning: does zero-shot load forecasting require massive synthetic training corpora, or can carefully designed simulations achieve comparable accuracy? We propose and test the Operational Diversity Hypothesis—that forecasting accuracy is governed by the diversity of temporal load patterns in the training data, not by corpus scale.
+This study presents a parametric simulation design methodology for zero-shot building load forecasting. We address a fundamental question: can carefully designed EnergyPlus simulations, with operational schedules sampled through 12-dimensional Latin Hypercube Sampling, substitute for massive synthetic training corpora? The methodology is grounded in the Operational Diversity Hypothesis—that forecasting accuracy is governed by the coverage of distinct temporal load patterns, not by corpus scale.
 
-Through controlled experiments using EnergyPlus simulations with 12-dimensional Latin Hypercube Sampling, we demonstrate that 700 operationally diverse buildings match the forecasting performance of a 900,000-building benchmark (BuildingsBench, NeurIPS 2023) on 955 real U.S. and Portuguese commercial buildings. Equal-scale comparisons isolate data design as the primary driver, and n-scaling analysis shows performance saturating at just 70 buildings—consistent with pattern-coverage-governed learning rather than sample-count scaling.
+The methodology defines a 12-dimensional operational schedule parameter space and uses LHS to produce training corpora that cover the space of plausible commercial building operations. We validate this approach through equal-scale controlled experiments, n-scaling analysis, cross-climate transfer tests, and comparison against the state-of-the-art 900,000-building benchmark (Emami et al., NeurIPS 2023). Just 700 LHS-designed buildings reach parity with the full benchmark on 955 real U.S. and Portuguese commercial buildings, and performance shows diminishing returns beyond 70 buildings—evidence that pattern coverage, not corpus scale, governs zero-shot generalization.
 
 We believe this work is well-suited to Building Simulation because:
 
@@ -30,7 +30,7 @@ Jeong-Uk Kim, Ph.D.
 
 ## Title
 
-The Operational Diversity Hypothesis: Why Pattern Coverage, Not Corpus Scale, Governs Zero-Shot Building Load Forecasting
+Operational Diversity by Design: A Parametric Simulation Methodology for Zero-Shot Building Load Forecasting
 
 ## Author
 
