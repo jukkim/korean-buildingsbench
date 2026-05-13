@@ -1,8 +1,8 @@
-# Applied Energy 논문 작성 계획 (SSOT)
+# 논문 작성 계획 (SSOT)
 
 > 이 문서가 논문 작성의 **유일한 기준 문서**. 최종 갱신: 2026-05-04
-> 논문 최종본: `docs/paper_final.md` | 저널 포맷: `docs/paper_ae.docx`
-> Highlights: `docs/Highlights.docx` | Cover Letter: `docs/cover_letter.docx`
+> 논문 최종본: `docs/paper_final.md` | LaTeX: `paper/main.tex`
+> Highlights: `docs/highlights_energy_ai.md` | Cover Letter: `docs/cover_letter_energy_ai.md`
 
 ---
 
@@ -10,12 +10,12 @@
 
 | 항목 | 내용 |
 |------|------|
-| **타겟 저널** | ~~Applied Energy~~ → ~~Energy and Buildings~~ → ~~Energy and AI~~ → **Building Simulation** (Springer, IF 5.5) |
+| **타겟 저널** | ~~Applied Energy~~ → ~~Energy and Buildings~~ → ~~Building Simulation~~ → **Energy and AI** (Elsevier, Gold OA) |
 | **제목** | Seven Hundred Simulations Suffice: Operational Diversity for Data-Efficient Zero-Shot Building Load Forecasting |
 | **저자** | Jeong-Uk Kim (단독) |
 | **소속** | Dept. of Electrical Engineering, Sangmyung University, Seoul 03016, South Korea |
 | **단어 수** | ~6,400 단어 (~195 word abstract) |
-| **상태** | 🔒 **Building Simulation 투고 완료** (BUIL-S-26-00752, 2026-05-08). GPT 4-round 리뷰 반영 (2026-05-13) |
+| **상태** | ⏳ **Energy and AI 투고 준비 중** (APEN→E&B→BS 연속 desk reject 후). GPT 4-round 리뷰 반영 완료 (2026-05-13) |
 
 ---
 

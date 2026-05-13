@@ -74,7 +74,7 @@ grep "Best BB Commercial CVRMSE" logs/<실험명>.log
 | 시뮬 데이터 | ✅ v1(5,750)+v2(2,097)+v3(3K~7K) + US-TMY(699) 완료 |
 | 실험 | ✅ M/L 모델 n×steps 스윕, N-scaling, Ablation, Multi-seed 전부 완료 |
 | **Exp-039 US-TMY** | ✅ 5-seed: **13.64 ± 0.65%** (LHS > weather 확인) |
-| **논문** | ✅ Building Simulation 투고 완료 (**BUIL-S-26-00752**, 2026-05-08) |
+| **논문** | ⏳ **Energy and AI 투고 준비 중** (APEN→E&B→BS 연속 desk reject, GPT 4-round 리뷰 반영 완료 2026-05-13) |
 | **논문 제목** | "Operational Diversity by Design: A Parametric Simulation Methodology for Zero-Shot Building Load Forecasting" |
 | **특허** | ✅ 2026-05-01 변리사 제출 완료 |
 | **GitHub** | ✅ `jukkim/korean-buildingsbench` public, README·figures 최신 |
@@ -295,20 +295,31 @@ python scripts/evaluate_bb.py --checkpoint <ckpt> --config configs/model/Transfo
 - [BuildingsBench (NeurIPS 2023)](https://arxiv.org/abs/2307.00142) — SOTA-M 13.28% / SOTA-L 13.31%
 - Buildings-900K: NREL EULP 550K ResStock + 350K ComStock
 
-## 제출 파일 (Building Simulation, double-blind)
+## 제출 파일 (Energy and AI 투고 준비)
 | 파일 | 용도 |
 |------|------|
-| **[docs/blinded_manuscript.docx](docs/blinded_manuscript.docx)** | **EM 업로드 — Blinded Manuscript (저자정보 없음)** |
-| **[docs/title_page.docx](docs/title_page.docx)** | **EM 업로드 — Title Page (커버레터+저자+Declarations)** |
-| **[docs/cover_letter_building_simulation.docx](docs/cover_letter_building_simulation.docx)** | **EM 업로드 — 커버레터 (별도 슬롯용)** |
-| [docs/paper_final.md](docs/paper_final.md) | SSOT (저자정보 포함, 편집용, 비제출) |
+| **[paper/main.tex](paper/main.tex)** | **LaTeX 원본 (elsarticle, GPT 4-round 리뷰 반영)** |
+| **[paper/main.pdf](paper/main.pdf)** | **컴파일된 PDF (29p)** |
+| **[docs/highlights_energy_ai.md](docs/highlights_energy_ai.md)** | **Highlights (5개, ≤85 chars)** |
+| **[docs/cover_letter_energy_ai.md](docs/cover_letter_energy_ai.md)** | **커버레터** |
+| [docs/paper_final.md](docs/paper_final.md) | SSOT (편집용, 비제출) |
+
+### 이전 제출본 (아카이브)
+| 파일 | 저널 |
+|------|------|
+| [docs/blinded_manuscript.docx](docs/blinded_manuscript.docx) | Building Simulation (double-blind) |
+| [docs/title_page.docx](docs/title_page.docx) | Building Simulation |
+| [docs/cover_letter_building_simulation.docx](docs/cover_letter_building_simulation.docx) | Building Simulation |
+| [docs/paper_final_enb_rejected_20260507.md](docs/paper_final_enb_rejected_20260507.md) | E&B |
+| [docs/paper_final_backup_20260429.md](docs/paper_final_backup_20260429.md) | Applied Energy |
 
 ## 문서
 | 문서 | 내용 |
 |------|------|
 | **[docs/PAPER_FILES_MANIFEST.md](docs/PAPER_FILES_MANIFEST.md)** | **⭐ 논문 재현 파일 지도 SSOT — 체크포인트·데이터·스크립트 위치 (2026-05-04)** |
 | **[results/RESULTS_REGISTRY.md](results/RESULTS_REGISTRY.md)** | **⭐ 논문 수치 출처 SSOT — Table별 체크포인트·재현 로그** |
-| **[docs/PAPER_PLAN.md](docs/PAPER_PLAN.md)** | **Applied Energy 논문 작성 SSOT — 실험 계획·구조·방어 전략·일정** |
+| **[docs/PAPER_PLAN.md](docs/PAPER_PLAN.md)** | **논문 작성 SSOT — 실험 계획·구조·방어 전략·일정** |
+| **[docs/REVISION_LOG_20260513.md](docs/REVISION_LOG_20260513.md)** | GPT 4-round 리뷰 반영 이력 (2026-05-13) |
 | **[docs/IMPROVEMENT_ROADMAP.md](docs/IMPROVEMENT_ROADMAP.md)** | 전략 방향 SSOT — 성능 갭 분해·의사결정 트리 (2026-03-16~) |
 | **[docs/SIMULATION_REVIEW_v3.md](docs/SIMULATION_REVIEW_v3.md)** | 2026-02-24 표준 재검토 — sim_id·Tier A·LHS풀·마이그레이션 |
 | [docs/STATUS.md](docs/STATUS.md) | (2026-02 시점, 논문 공식 수치는 RESULTS_REGISTRY 참조) |

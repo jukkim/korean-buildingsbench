@@ -7,7 +7,8 @@ This project is frozen after paper completion. Code, data, and experiments are f
 |---|---------|-----|------|--------|
 | 1 | Applied Energy | APEN-S-26-12975 | 2026-05-04 | Desk reject (scope mismatch) |
 | 2 | Energy and Buildings | ENB-D-26-03373 | 2026-05-06 | Desk reject (novelty framing) |
-| 3 | **Building Simulation** | — | 2026-05-07 (준비 완료) | **투고 예정** |
+| 3 | Building Simulation | BUIL-S-26-00752 | 2026-05-08 | Desk reject |
+| 4 | **Energy and AI** | — | 2026-05-13 (준비 중) | **투고 준비** |
 
 ## File Roles
 | File | Role |

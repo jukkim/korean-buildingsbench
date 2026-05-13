@@ -1,7 +1,7 @@
 # Revision Log — 2026-05-13 GPT 4-Round Review
 
 Post-submission refinements applied to `paper/main.tex` based on 4 rounds of GPT review.
-Paper status: Building Simulation (BUIL-S-26-00752, submitted 2026-05-08).
+Building Simulation (BUIL-S-26-00752) desk reject 후 Energy and AI 투고 준비용.
 
 ---
 
