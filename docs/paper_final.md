@@ -12,13 +12,13 @@ E-mail: jukim@smu.ac.kr
 
 ## Abstract
 
-Zero-shot building load forecasting requires simulation datasets that capture diverse real-world operational patterns. Existing approaches often rely on large building-stock databases, but less attention has been paid to how simulation data should be designed to cover temporal operating regimes. This paper proposes a parametric EnergyPlus simulation design methodology grounded in the Operational Diversity Hypothesis: zero-shot generalization depends not only on the number of simulated buildings, but also on the coverage of distinct temporal load patterns.
+Zero-shot building load forecasting requires simulation datasets that capture diverse real-world operational patterns. Existing approaches rely on large building-stock databases containing hundreds of thousands of buildings, but the relationship between dataset design and zero-shot generalization remains poorly understood. This paper develops a coverage-based interpretation of the Operational Diversity Hypothesis: zero-shot transfer appears to depend not only on sample count, but also on how broadly the training set spans the operational parameter space.
 
-The proposed methodology parameterizes commercial building operation across key schedule dimensions, including operating hours, baseload behavior, equipment retention, weekly disruptions, seasonal variation, and stochastic noise. Latin Hypercube Sampling is used to construct a compact simulation dataset that deliberately spans this operational schedule space across commercial building archetypes. The resulting simulations are combined with Reversible Instance Normalization and data augmentation to train a Transformer-based zero-shot load forecasting model.
+We define a 12-dimensional operational schedule space — spanning operating hours, baseload behavior, equipment retention, weekly disruptions, seasonal variation, and stochastic noise — and use it to motivate four empirical expectations about the advantage of design-based sampling over stock-model sampling, the onset of N-scaling plateaus, the regime-dependent effect of Reversible Instance Normalization (RevIN), and the failure mode on out-of-scope building types.
 
-Evaluation on real commercial building loads shows that the designed simulation dataset achieves benchmark-level transfer performance while requiring far fewer simulations than large stock-model pipelines. Equal-scale controls, weather-origin ablations, and dataset-size scaling experiments indicate that systematic coverage of operational patterns is a major contributor to transferability. These findings support a data-centric simulation design approach for zero-shot building load forecasting, shifting the data requirement from brute-force stock-model scaling toward targeted operational diversity.
+We instantiate this interpretation through 700 EnergyPlus simulations (50 per archetype × 14 types) with Latin Hypercube Sampling, combined with RevIN and data augmentation to train a Transformer-based forecasting model. Controlled experiments are broadly consistent with the four expectations: in a controlled single-subset comparison, the designed dataset outperforms an equal-size stock-model sample by 1.33 percentage points; N-scaling plateaus near n ≈ 5 per archetype; RevIN improves LHS-designed data but degrades stock-model data; and residential forecasting remains weak when training covers only commercial operating regimes. These results support a data-centric view of zero-shot building energy forecasting in which simulation design may matter as much as corpus size.
 
-**Keywords**: operational diversity, zero-shot forecasting, building energy, foundation models, data-centric AI, Latin Hypercube Sampling
+**Keywords**: operational diversity, zero-shot forecasting, building energy, simulation design, data-centric AI, Latin Hypercube Sampling
 
 ---
 
@@ -46,7 +46,7 @@ We instantiate this hypothesis through a concrete simulation design methodology.
 
 Both LHS and RevIN are established techniques; the contribution is demonstrating that their systematic combination reframes the data requirement for zero-shot building energy forecasting from a scale problem to a design problem. The contributions are:
 
-1. **A parametric simulation design methodology for zero-shot building load forecasting.** We define a multi-dimensional operational schedule parameter space and use LHS to promote broad coverage of temporal operating patterns across commercial building archetypes. The methodology produces a compact training dataset from EnergyPlus simulations, reducing the data-engineering effort associated with assembling national-scale stock-model datasets.
+1. **A coverage-based conceptual framework for the Operational Diversity Hypothesis.** We define the operational parameter space, introduce coverage as a useful way to describe zero-shot transferability, and use this lens to derive four empirical expectations about LHS-vs-stock-model performance, N-scaling plateau onset, RevIN's regime-dependent effect, and residential failure modes. The framework is intended as an interpretive model for the experiments rather than as a complete formal proof of generalization.
 
 2. **A data-centric validation framework for simulation design.** We evaluate the designed simulation dataset under matched training conditions, weather-origin ablations, and dataset-size scaling experiments. These controlled comparisons examine whether operational schedule coverage improves zero-shot transferability independently of confounding factors. We use the BuildingsBench evaluation protocol (Emami et al. 2023) as an external reference for zero-shot transfer performance, but the focus of this work is the design of the simulation dataset rather than benchmark competition.
 
@@ -56,33 +56,107 @@ Both LHS and RevIN are established techniques; the contribution is demonstrating
 
 ---
 
-## 2. Related Work
+## 2. Conceptual Framework
 
-### 2.1 Building Energy Forecasting and Zero-Shot Transfer
+This section introduces a coverage-based conceptual framework for the Operational Diversity Hypothesis. Its purpose is to organize the empirical findings and make the main assumptions explicit, not to claim a complete proof of zero-shot generalization.
+
+### 2.1 Definitions
+
+**Operational parameter space.** The temporal dynamics of a building's load profile are governed by an operational parameter vector $\theta \in \Theta$, where:
+
+$$\Theta = \prod_{i=1}^{d} [\theta_i^{\min}, \theta_i^{\max}] \subset \mathbb{R}^d$$
+
+In this work, $d = 12$ (Table 1). Each $\theta_i$ encodes a schedule dimension such as operating hours, baseload fraction, or equipment retention.
+
+**Load profile mapping.** For building archetype $a \in \mathcal{A}$ (with $|\mathcal{A}| = 14$) and parameter vector $\theta$, EnergyPlus defines a deterministic mapping $g: \mathcal{A} \times \Theta \to \mathcal{X}^{8760}$ producing an annual hourly load series. The forecasting model trains on sliding windows $(x_{t-L+1:t},\; x_{t+1:t+H})$ extracted from these series.
+
+**Temporal pattern.** Applying RevIN to a context window yields a normalized representation $\tilde{x}_t = (x_t - \mu_w) / \sigma_w$, where $\mu_w$ and $\sigma_w$ are the window mean and standard deviation. The functional form of $\tilde{\mathbf{x}}$ defines the temporal pattern $\phi(a, \theta) \in \mathcal{P}$. Because RevIN removes absolute scale, $\phi$ is invariant to the scale_mult parameter:
+
+$$\phi(a, \theta) = \phi(a, \theta') \quad \text{whenever} \quad \theta_i = \theta'_i \;\;\forall\; i \neq i_{\text{scale}}$$
+
+**ε-coverage.** A simulation set $S = \{(a_j, \theta_j)\}_{j=1}^{N}$ achieves ε-coverage of $\Theta$ at level:
+
+$$\mathrm{Cov}_\varepsilon(S, \Theta) = \frac{\lambda\!\left(\bigcup_{j=1}^{N} B_\varepsilon(\theta_j) \cap \Theta\right)}{\lambda(\Theta)}$$
+
+where $B_\varepsilon(\theta) = \{\theta' : \|\theta' - \theta\|_\infty \leq \varepsilon\}$ and $\lambda$ is Lebesgue measure. The minimum covering radius is $\varepsilon^*(S) = \inf\{\varepsilon > 0 : \mathrm{Cov}_\varepsilon(S,\Theta) = 1\}$.
+
+**Pattern diversity.** The diversity of $S$ is the archetype-averaged coverage:
+
+$$\mathcal{D}(S) = \frac{1}{|\mathcal{A}|}\sum_{a \in \mathcal{A}} \mathrm{Cov}_\varepsilon(S_a, \Theta), \quad S_a = \{\theta_j : a_j = a\}$$
+
+### 2.2 Assumptions
+
+**A1 (Lipschitz pattern mapping).** For each archetype $a$, the pattern mapping is Lipschitz continuous:
+
+$$d_{\mathcal{P}}(\phi(a, \theta),\; \phi(a, \theta')) \leq L_a \|\theta - \theta'\|_\infty$$
+
+with global constant $L = \max_a L_a$. This is an interpretive approximation over regions where operational perturbations do not trigger discrete control-regime changes (e.g., HVAC equipment switching or setpoint threshold crossings). Within such regions, EnergyPlus is a physics-based solver: small parameter perturbations produce smooth changes in load profiles within an archetype.
+
+**A2 (Target support).** The target distribution of real-building operating conditions satisfies $\mathrm{supp}(P_{\text{target}}) \subseteq \mathcal{A}_{\text{target}} \times \Theta$, where $\mathcal{A}_{\text{target}} \supseteq \mathcal{A}_{\text{known}}$ may include archetypes not in the training set.
+
+**A3 (Scale-shape independence under RevIN).** After RevIN normalization, the prediction error depends on $\phi(a, \theta)$ but not on the scale_mult value $s$:
+
+$$\mathbb{E}[\ell(\hat{y}, y) \mid \phi(a,\theta)] = \mathbb{E}[\ell(\hat{y}, y) \mid \phi(a,\theta), s]$$
+
+### 2.3 Coverage-Dependent Error Decomposition
+
+**Heuristic relation (informal).** Under A1–A3, the expected zero-shot transfer error of a model $f_S$ trained on simulation set $S$ can be decomposed conceptually as increasing with the covering radius of the training set:
+
+$$\mathcal{E}(f_S) \leq \hat{\mathcal{E}}_S(f_S) + L \cdot \varepsilon^*(S) + \delta_{\mathrm{arch}}$$
+
+where $\hat{\mathcal{E}}_S$ is the empirical training error, $\varepsilon^*(S)$ is the minimum covering radius of $S$, and $\delta_{\mathrm{arch}}$ accounts for target archetypes absent from $\mathcal{A}$.
+
+*Justification.* For a target building $(a^*, \theta^*)$ with $a^* \in \mathcal{A}$, the covering condition guarantees a training sample $\theta_j \in S_{a^*}$ with $\|\theta^* - \theta_j\|_\infty \leq \varepsilon^*(S)$. By the triangle inequality and A1:
+
+$$d_{\mathcal{P}}(\hat\phi_{f_S}, \phi(a^*,\theta^*)) \leq \underbrace{d_{\mathcal{P}}(\hat\phi_{f_S}, \phi(a^*,\theta_j))}_{\leq\;\hat{\mathcal{E}}_S} + \underbrace{d_{\mathcal{P}}(\phi(a^*,\theta_j), \phi(a^*,\theta^*))}_{\leq\;L\,\varepsilon^*(S)}$$
+
+For $a^* \notin \mathcal{A}$, the additional error is captured by $\delta_{\mathrm{arch}}$, the maximum pattern distance to the nearest training archetype. This decomposition is intended as an interpretive organizing principle rather than a rigorous generalization bound; the relationship between pattern-space distance $d_{\mathcal{P}}$ and forecasting loss $\ell$ is assumed rather than formally derived.
+
+The key feature of this expression is that the coverage term $L \cdot \varepsilon^*(S)$ depends on how well $S$ fills the parameter space, not only on the number of samples $N = |S|$. Two datasets with the same $N$ but different coverage can therefore be expected to generalize differently.
+
+### 2.4 Theoretical Predictions
+
+The framework suggests four testable expectations:
+
+**Prediction 1: LHS outperforms stock-model sampling at equal scale.** If two datasets have the same size but one spreads samples more broadly across the operational parameter space, the broader set should transfer better. This expectation is tested in Section 5.1 through K-700 versus BB-700.
+
+**Prediction 2: N-scaling plateau.** In a 12-dimensional schedule space, the covering radius decreases heuristically as $n^{-1/12}$ per archetype — an extremely slow function (doubling $n$ reduces $\varepsilon^*$ by only ~6%). Increasing per-archetype sample count should therefore produce rapidly diminishing returns once coarse coverage is achieved. This expectation is tested in Section 5.3.
+
+**Prediction 3: RevIN helps LHS, hurts stock-model.** When magnitude is sampled largely independently from temporal shape, RevIN should help by suppressing nuisance scale variation. When magnitude is entangled with other informative features, RevIN may remove useful signal. This expectation is tested in Section 5.5 and Table 3.
+
+**Prediction 4: Residential failure as coverage gap.** If residential operating regimes lie largely outside the commercial parameter space used for training, poor transfer should be expected. This is discussed in Section 6.4.
+
+---
+
+## 3. Related Work
+### 3.1 Building Energy Forecasting and Zero-Shot Transfer
 
 Building energy forecasting has progressed from statistical models (Amasyali and El-Gohary 2018) through gradient boosting (Chen and Guestrin 2016), recurrent networks (Hochreiter and Schmidhuber 1997), and Transformers (Vaswani et al. 2017; Nie et al. 2023). These methods achieve high per-building accuracy but require target-building training data. Transfer learning through domain adaptation (Ribeiro et al. 2018) and fine-tuning (Spencer et al. 2025) relaxes this constraint but still needs target-domain samples.
 
 The zero-shot paradigm eliminates target-building data entirely: a model trained on synthetic simulations generalizes to unseen real buildings at inference time. Emami et al. (2023) operationalized this through a 900K-building corpus drawn from the NREL EULP pipeline (Wilson et al. 2022), training a Transformer with Gaussian NLL loss for approximately 0.067 epochs—roughly 2–3 sampled windows per building—using global Box-Cox normalization (λ = −0.067). The sub-epoch training regime is consequential: additional training degraded out-of-distribution performance, which the authors interpreted as evidence that the model memorizes synthetic patterns faster than it learns transferable representations. This observation is consistent with the Operational Diversity Hypothesis—the useful information may be learned quickly because many buildings produce similar temporal patterns.
 
-### 2.2 Scaling Laws and Data Efficiency in Time Series
+### 3.2 Scaling Laws and Data Efficiency in Time Series
 
 The proliferation of general-purpose time series foundation models—TimesFM (Das et al. 2024), Chronos (Ansari et al. 2024), Lag-Llama (Rasul et al. 2023), MOIRAI (Woo et al. 2024)—has established that large-scale pretraining enables zero-shot forecasting across domains. Yao et al. (2025) found that model architecture significantly influences scaling efficiency. Most relevant to our work, Shi et al. (2024) showed that in time series, additional data does not expand the combinatorial coverage of contexts as directly as additional tokens do in language modeling. Our findings provide a concrete, domain-specific instance of this principle: in building energy, the marginal information content of additional stock-model buildings decreases rapidly because they occupy similar regions of operational schedule space.
 
-### 2.3 Data-Centric AI and Instance Normalization
+### 3.3 Data-Centric AI and Instance Normalization
 
 The data-centric AI perspective (Zha et al. 2023) holds that improving data quality is often more productive than improving model architecture. Our 12-dimensional LHS design applies this principle to the energy domain: rather than sampling from a fixed distribution, we construct a training set that fills the space of plausible operations.
 
 RevIN (Kim et al. 2022) normalizes instance-level load magnitude and variability before the encoder and restores the scale after prediction. Our finding that RevIN's benefit is regime-dependent—helpful for small diverse datasets, harmful at large scale—extends the understanding of when instance normalization helps versus hurts, connecting to broader questions about the role of magnitude information in time series models.
 
+### 3.4 Generalization Theory and Domain Adaptation
+
+Our theoretical framework builds on the classical connection between covering numbers and generalization (Anthony and Bartlett 1999) and domain adaptation theory (Ben-David et al. 2010). Ben-David et al. showed that transfer error depends on the divergence between source and target distributions; we specialize this to the building energy domain by defining divergence in terms of coverage of the operational parameter space. The Lipschitz continuity assumption (A1) is standard in approximation theory and justified by the physics-based nature of EnergyPlus. The key theoretical insight — that coverage, not count, governs generalization — parallels findings in active learning (Settles 2009) and experimental design (Sacks et al. 1989), but to our knowledge has not been applied to zero-shot building load forecasting.
+
 ---
 
-## 3. Method
-
-### 3.1 Parametric Building Simulation with LHS-Designed Operational Diversity
+## 4. Method
+### 4.1 Parametric Building Simulation with LHS-Designed Operational Diversity
 
 Training data are generated through EnergyPlus (Crawley et al. 2001) simulation of commercial buildings with parametrically varied operational schedules. The goal is not to replicate a building stock distribution but to promote broad coverage of the temporal pattern space.
 
-**Building archetypes.** We use 14 building archetypes based on DOE commercial reference building models (Deru et al. 2011) adapted to Korean building codes and climate zones: office, retail, school, hotel, hospital, apartment (midrise and highrise), small office, large office, warehouse, strip mall, restaurant (full-service and quick-service), and university. Each archetype begins from a DOE reference model with code-compliant envelope thermal properties, HVAC system sizing, and internal load densities.
+**Building archetypes.** We use 14 archetype models derived from the DOE commercial reference buildings (Deru et al. 2011), adapted to Korean building codes and climate zones. Twelve archetypes correspond directly to DOE reference types: large office, medium office, small office, stand-alone retail, strip mall, primary school, hospital, large hotel, warehouse, midrise apartment, full-service restaurant, and quick-service restaurant. Two additional archetypes—highrise apartment and university—were created by modifying the DOE midrise apartment and primary school models, respectively, with Korean-specific HVAC configurations and occupancy schedules. Four DOE reference types were not used: supermarket and outpatient healthcare were excluded because their refrigeration-dominated or medical-equipment-dominated profiles require specialized schedule parameterization; secondary school was omitted to avoid redundancy with the primary-school-derived education archetypes; and small hotel was omitted because the large hotel archetype already captures the hospitality operating regime. The apartment archetypes are multifamily residential buildings that follow building-level metering and commercial HVAC configurations, distinct from single-family residential load regimes discussed in Section 6.4. Each archetype begins from a DOE reference model geometry with code-compliant envelope thermal properties, HVAC system sizing, and internal load densities.
 
 **Climate coverage.** Simulations span five Korean cities across three climate zones: Seoul (central), Busan (southern), Daegu (southern), Gangneung (central-coastal), and Jeju (subtropical). For the U.S.-TMY ablation (Section 4.2), the same 700 schedule samples and archetypes were rerun with U.S. TMY files mapped by approximate ASHRAE climate-zone similarity: Seoul → Washington DC (4A), Busan → Atlanta (3A), Daegu → Charlotte (3A), Gangneung → Boston (5A), and Jeju → Miami (1A).
 
@@ -99,7 +173,7 @@ Training data are generated through EnergyPlus (Crawley et al. 2001) simulation 
 | ramp_hours | 0.5–4 h | Transition ramp duration |
 | equip_always_on | 30–95% | Always-on equipment fraction |
 | daily_noise_std | 5–35% | Day-to-day stochastic variation |
-| scale_mult | 0.3–3.0 | Load density multiplier |
+| scale_mult | 0.3–3.0 | Post-simulation amplitude multiplier |
 | night_equipment_frac | 30–95% | Nighttime equipment retention |
 | weekly_break_prob | 0–25% | Weekly pattern disruption probability |
 | seasonal_amplitude | 0–30% | Seasonal load oscillation amplitude |
@@ -120,7 +194,7 @@ The resulting training set ranges from 24/7 high-baseload facilities (resembling
 
 *Real Buildings = the 955-building evaluation set from the BuildingsBench benchmark (Emami et al. 2023).
 
-### 3.2 Model Architecture
+### 4.2 Model Architecture
 
 We use a standard encoder-decoder Transformer: 3 encoder and 3 decoder layers, d_model = 512, 8 attention heads, feedforward dimension 1024, totaling 15.8M parameters (Transformer-M). Input consists of 168 hourly load values with temporal features (day-of-year sinusoidal encoding, day-of-week and hour-of-day embeddings). The model predicts 24-hour-ahead Gaussian distributions through autoregressive decoding with Gaussian NLL loss. Using the same Transformer backbone as Emami et al. (2023) minimizes model-capacity confounds in the controlled comparisons.
 
@@ -128,21 +202,20 @@ We use a standard encoder-decoder Transformer: 3 encoder and 3 decoder layers, d
 
 **No geographic features.** Some zero-shot approaches provide latitude and longitude embeddings as model inputs. We set both to zero for all buildings—both training and evaluation—to test whether operational diversity alone suffices for generalization. The ablation in Section 4.4 confirms that actual coordinates provide no benefit, consistent with RevIN absorbing the scale differences that coordinates might otherwise encode.
 
-### 3.3 Training Protocol
+### 4.3 Training Protocol
 
 We apply a global Box-Cox transform (Box and Cox 1964) fitted on our simulation data (λ = −0.067). AdamW (Loshchilov and Hutter 2019) with learning rate 6 × 10⁻⁵, weight decay 0.01, cosine annealing, and 500-step warmup. Training runs for 18,000 gradient steps with batch size 128, corresponding to approximately 9 epochs over 700 buildings. Data augmentation includes window jitter (±1–6h), Gaussian noise (σ = 0.02 in Box-Cox space), and amplitude scaling (U[0.85, 1.15]).
 
 With 700 buildings and 18,000 steps, each building is seen roughly 3,300 times across window positions—in contrast to the stock-model baseline, where each of 900K buildings contributes roughly 2–3 windows. Three factors mitigate overfitting despite this repeated exposure: (1) augmentation ensures each exposure presents a different view; (2) RevIN prevents memorizing absolute load levels; (3) the high inter-building diversity from LHS ensures patterns learned from any one building generalize.
 
-### 3.4 Evaluation Protocol
+### 4.4 Evaluation Protocol
 
-We evaluate on a standardized real-building test set of 955 commercial load series (Emami et al. 2023): 611 from U.S. commercial buildings in the Building Data Genome Project 2 (BDG-2) (Miller et al. 2020), drawn from four university and government campuses spanning Mediterranean, semi-arid, humid subtropical, and humid continental climates, and 344 from Portuguese electricity consumers (Trindade 2015), with 15 out-of-vocabulary buildings excluded per the original specification. Per-building NRMSE = sqrt(MSE) / mean(actual), aggregated by median across buildings. The sliding window uses stride 24 hours, context 168 hours, and prediction horizon 24 hours. We reproduced the stock-model baseline using the official checkpoint and obtained 13.27%, confirming pipeline equivalence within 0.01 pp of the reported 13.28%.
+We evaluate on a standardized real-building test set of 955 commercial-labeled load series (Emami et al. 2023): 611 from U.S. commercial buildings in the Building Data Genome Project 2 (BDG-2) (Miller et al. 2020), drawn from four university and government campuses spanning Mediterranean, semi-arid, humid subtropical, and humid continental climates, and 344 from Portuguese electricity consumers (Trindade 2015) (labeled "commercial" in the benchmark metadata, though some may include mixed-use or residential connections), with 15 out-of-vocabulary buildings excluded per the original specification. Per-building NRMSE = sqrt(MSE) / mean(actual), aggregated by median across buildings. The Normalized Continuous Ranked Probability Score (NCRPS) is computed as NCRPS = mean(CRPS) / mean(actual load), which evaluates the quality of the predicted Gaussian distribution. Because our NCRPS implementation normalizes CRPS by mean actual load, whereas the BuildingsBench leaderboard reports RPS under its official evaluation script, we report NCRPS values only for models retrained with our pipeline. The official BB-900K RPS (5.21 on the leaderboard) should not be directly compared with our NCRPS unless evaluated with the same script. The sliding window uses stride 24 hours, context 168 hours, and prediction horizon 24 hours. We reproduced the stock-model baseline using the official checkpoint and obtained 13.27%, confirming pipeline equivalence within 0.01 pp of the reported 13.28%.
 
 ---
 
-## 4. Experiments and Results
-
-### 4.1 Equal-Scale Controlled Validation of Simulation Design
+## 5. Experiments and Results
+### 5.1 Equal-Scale Controlled Validation (Prediction 1)
 
 The central experiment tests whether the proposed simulation design methodology produces more transferable training data than stock-model sampling. Two 700-building datasets are compared under matched training conditions, with simulation data design as the primary variable of interest (Table 3, Fig. 2).
 
@@ -160,15 +233,15 @@ The central experiment tests whether the proposed simulation design methodology 
 | BB+RevIN | Ref. + RevIN | BB 900K | 900,000 | ON | OFF | 13.89 | 7.76 | +0.62 |
 | Persist. | Naive baseline | — | — | — | — | 16.68 | — | +3.41 |
 
-The equal-scale comparison provides evidence for the central claim of the proposed methodology: that deliberate design of operational diversity can produce more transferable training data than sampling from a fixed stock-model distribution. Under matched conditions (same architecture, same optimizer, same augmentation, same number of buildings, same RevIN), the LHS-designed corpus outperforms the stock-model sample by **1.33 pp** at seed 42 (12.93% vs. 14.26%). Although the stock-model control (BB-700 aug) was not evaluated across multiple seeds, the 1.33 pp gap is substantially larger than the observed inter-seed variation of Korean-700 (±0.17 pp), suggesting that the advantage is unlikely to be explained solely by seed noise. Even without augmentation, Korean-700 (13.67%) outperforms the aug-matched stock-model control by 0.59 pp, and the U.S.-weather variant (13.64%) by 0.62 pp—smaller but directionally consistent advantages. Because RevIN, augmentation, model architecture, and training budget are matched, the gap is unlikely to be explained by these factors. The primary remaining difference is the design and source of the training data, although uncontrolled factors such as building codes, envelope properties, and climate mapping cannot be fully excluded (Section 5.4).
+The equal-scale comparison provides evidence for the central claim of the proposed methodology: that deliberate design of operational diversity can produce more transferable training data than sampling from a fixed stock-model distribution. Under matched conditions (same architecture, same optimizer, same augmentation, same number of buildings, same RevIN), the LHS-designed corpus outperforms the stock-model sample by **1.33 pp** at seed 42 (12.93% vs. 14.26%). The equal-scale BB-700 comparison uses a single stock-model subset with a single training seed, and therefore does not quantify subset-selection uncertainty. The 1.33 pp advantage should be interpreted as evidence from a controlled but not fully repeated comparison: the gap is substantially larger than the observed inter-seed variation of Korean-700 (±0.17 pp), but a definitive claim would require evaluating multiple BB-700 subsets across multiple seeds. Even without augmentation, Korean-700 (13.67%) outperforms the aug-matched stock-model control by 0.59 pp, and the U.S.-weather variant (13.64%) by 0.62 pp—smaller but directionally consistent advantages. Because RevIN, augmentation, model architecture, and training budget are matched, the gap is unlikely to be explained by these factors. The primary remaining difference is the design and source of the training data, although uncontrolled factors such as building codes, envelope properties, and climate mapping cannot be fully excluded (Section 5.5).
 
-As a secondary observation, the designed dataset achieves performance comparable to the large stock-model reference (five-seed mean 13.11 ± 0.17% vs. 13.27%) without geographic metadata. A paired per-building comparison shows Korean-700 achieves lower error on 680 of 955 buildings (71%); the paired bootstrap 95% CI of the median per-building NRMSE difference is [0.31, 0.39] pp (Wilcoxon signed-rank p < 0.001). This per-building paired effect is larger than the 0.16 pp gap between aggregate medians because paired differencing removes inter-building variance.
+As a secondary observation, the designed dataset achieves performance comparable to the large stock-model reference (five-seed mean 13.11 ± 0.17% vs. 13.27%) without geographic metadata. A paired per-building comparison shows Korean-700 achieves lower error on 680 of 955 buildings (71%); the paired bootstrap 95% CI of the median per-building difference, defined as NRMSE(BB-900K) − NRMSE(K-700), is [0.31, 0.39] pp using the seed-42 K-700 checkpoint (Wilcoxon signed-rank p < 0.001). This per-building paired effect is larger than the 0.16 pp gap between aggregate medians because paired differencing removes inter-building variance.
 
-### 4.2 Weather-Origin Ablation
+### 5.2 Weather-Origin Ablation
 
 To test whether the observed benefit depends on the Korean weather files, we retrained on the same 700 LHS-designed buildings using U.S. TMY weather (Seoul → Washington DC, Busan → Atlanta, Daegu → Charlotte, Gangneung → Boston, Jeju → Miami). The five-seed mean of US-TMY-700 is 13.64 ± 0.65%, within 0.53 pp of Korean-700. The U.S.-TMY model still outperforms the equal-scale stock-model control (14.26%) by 0.62 pp, suggesting that schedule design remains beneficial after replacing the Korean weather files with approximately matched U.S. TMY files. The higher seed variance (0.65% vs. 0.17%) indicates that weather choice affects run-to-run stability.
 
-### 4.3 N-Scaling: Evidence for Pattern-Count-Governed Learning
+### 5.3 N-Scaling: Evidence for Coverage Saturation (Prediction 2)
 
 If the Operational Diversity Hypothesis is correct, performance should show diminishing returns once the LHS parameter space is adequately covered. Table 4 and Fig. 3 test this prediction.
 
@@ -185,15 +258,51 @@ If the Operational Diversity Hypothesis is correct, performance should show dimi
 | 70 | 980 | 13.20 | −0.07 |
 | 80 | 1,120 | 13.15 | −0.12 |
 
-Under the fixed 18,000-step training budget, performance improves sharply from n = 1 to n = 5 (14.72% to 13.28%), plateauing near the external reference level (13.27%) from n ≈ 5 onward. Beyond this point, gains become incremental—fluctuations within ±0.35 pp rather than clear monotonic improvement—consistent with the interpretation that the designed parameter space has been adequately covered. The best single-seed result (12.93% at n = 50) falls within this plateau, suggesting that additional samples refine existing patterns rather than introducing qualitatively new ones.
+Under the fixed 18,000-step training budget, performance improves sharply from n = 1 to n = 5 (14.72% to 13.28%), plateauing near the external reference level (13.27%) from n ≈ 5 onward. Beyond this point, gains become incremental—fluctuations within ±0.35 pp rather than clear monotonic improvement. The plateau does not by itself prove that coverage is the operative mechanism — it is also consistent with optimizer saturation under a fixed step budget, or with an architecture capacity ceiling. The observed pattern is consistent with the joint effect of coverage saturation and optimization budget allocation as described in Section 2: with $d = 12$ schedule parameters, the covering radius decreases heuristically as $n^{-1/12}$, so doubling $n$ reduces $\varepsilon^*$ by only ~6%. Once coarse coverage is achieved, additional samples mainly refine existing regions rather than introducing qualitatively new patterns.
 
-The contrast with stock-model scaling is instructive (Appendix B): increasing from 700 to 7,000 stock-model buildings improves NRMSE by only 0.78 pp (15.28% to 14.50%), and even 7,000 stock-model buildings do not approach 700 LHS-designed buildings (13.11%). This is consistent with the interpretation that additional stock-model buildings occupy similar regions of operational space.
+The contrast with stock-model scaling is instructive (Appendix B): increasing from 700 to 7,000 stock-model buildings improves NRMSE by only 0.78 pp (15.28% to 14.50%), and even 7,000 stock-model buildings do not approach 700 LHS-designed buildings (13.11%). This comparison is consistent with the interpretation that adding stock-model buildings from a concentrated generation pipeline yields smaller diversity gains than deliberately broadening operational coverage.
 
-### 4.4 Ablation Studies
+### 5.4 Illustrative Coverage Proxy
+
+To connect the conceptual framework with the performance comparisons, we compute an illustrative coverage proxy for the K-700 LHS design in the 12-dimensional normalized parameter space $[0,1]^{12}$. For a point set $S$, the proxy covering radius is estimated as $\varepsilon^*(S) = \max_{x \in T} \min_{s \in S} \|x - s\|_2$, where $T$ is a set of $10^5$ uniformly sampled test points. This analysis is descriptive: it compares LHS with simple synthetic reference samplers, not with the full BuildingsBench generation process.
+
+**Table 4b.** Covering radius comparison in $[0,1]^{12}$ ($n = 50$ points per method, $10^5$ test points).
+
+| Sampling Method | Mean distance | ε* (max) | ε* ratio vs. LHS |
+|:----------------|:-------------:|:--------:|:-----------------:|
+| K-700 LHS | 0.862 | 1.399 | 1.00 |
+| Random Uniform | 0.854 | 1.412 | 1.01 |
+| Clustered (stock-model proxy) | 1.089 | 1.985 | 1.42 |
+
+The clustered set simulates a concentrated sampler by drawing 50 points from $\mathcal{N}(\mu_{\text{typical}}, 0.15I)$ clipped to $[0,1]^{12}$, where $\mu_{\text{typical}}$ reflects typical commercial building parameters (e.g., operating start hour ≈ 8, weekday-dominant operation, moderate baseloads). Its proxy covering radius is 42% larger than LHS, meaning that in this illustrative setup the worst-case target point lies farther from the nearest training sample. We treat this result only as intuition for why broader sampling can help; it is not a direct measurement of BuildingsBench coverage.
+
+LHS and random uniform achieve similar covering radii at $n = 50$ because both produce approximately space-filling samples in high dimensions. The advantage of LHS is its guaranteed marginal uniformity: each parameter dimension is covered with exactly $n$ strata, eliminating the possibility of leaving large marginal gaps that random sampling allows with non-negligible probability. The within-set nearest-neighbor CV confirms this: LHS (CV = 0.154) is comparable to uniform (0.145) and substantially more uniform than clustered (0.201).
+
+These proxy measurements are directionally consistent with the mechanism proposed in Section 2: the performance advantage of LHS-designed data may arise from broader operational coverage rather than from larger sample size alone.
+
+#### Feature-Space Proximity Does Not Explain the Gain
+
+To assess how well each training corpus covers the distribution of real buildings, we extract eight time-series features from each building: night/day load ratio, weekend/weekday ratio, daily peak CV, operating hours, morning ramp rate, weekly autocorrelation, seasonality CV, and baseload fraction. For each of the 955 real evaluation buildings, we compute the nearest-neighbor distance to K-700 and BB-700 in this normalized 8D feature space.
+
+**Table 7.** Feature-space proximity to real buildings. Mean NN distance from each of the 955 real evaluation buildings to the nearest point in the training dataset (lower = closer to real). MMD: Maximum Mean Discrepancy with RBF kernel.
+
+| Metric | K-700 | BB-700 |
+|:-------|:-----:|:------:|
+| Mean NN distance | 0.148 | 0.109 |
+| P95 NN distance | 0.413 | 0.251 |
+| Fraction within d < 0.2 | 78.9% | 92.0% |
+| MMD to Real (RBF) | 0.609 | 0.498 |
+| Per-feature overlap (mean) | 53.7% | 82.1% |
+
+BB-700 lies closer to real buildings in feature space than K-700 across all metrics. Per-feature analysis confirms this: BB-700 covers 76% of the real operating-hours range and 84% of the weekly-autocorrelation range, whereas K-700 covers only 42% and 23%, respectively. The narrow K-700 operating-hours range reflects high baseload and nighttime equipment fractions in many LHS samples, which cause the feature extractor to classify them as near-continuous operation even when the `op_duration` parameter spans 8–24 h.
+
+This result clarifies what "coverage" means in the context of zero-shot transfer. K-700 achieves superior forecasting accuracy despite covering a narrower region of the observed feature distribution. The benefit of LHS is therefore not explained by closer marginal feature matching to the real-building distribution. Rather, LHS acts as a structured intervention over operational factors, creating disentangled temporal-pattern variation that teaches the model robust pattern decomposition across the designed operational parameter space — including extreme combinations that rarely occur in real stocks. RevIN then bridges the remaining distributional gap at inference time by removing building-specific magnitude and variability.
+
+### 5.5 Ablation Studies (Prediction 3)
 
 Table 5 reports ablations for RevIN and geographic metadata, using seed-42 for consistent comparison.
 
-**Table 5.** Ablation results (seed 42, val_best checkpoint, 955 buildings).
+**Table 5.** Ablation results (seed 42, checkpoint selected on held-out simulation validation set, evaluated on the 955 real-building test set. The validation set consists of withheld simulation buildings and does not overlap with the 955-building evaluation set).
 
 | Experiment | NRMSE (%) | Delta | Interpretation |
 |------------|:----------:|:-----:|----------------|
@@ -201,13 +310,12 @@ Table 5 reports ablations for RevIN and geographic metadata, using seed-42 for c
 | K-700 RevIN OFF | 14.81 | +1.88 | RevIN contributes 1.88 pp (seed 42); 1.6 pp across multi-seed means (Appendix A) |
 | Actual lat/lon coordinates | 12.93 | 0.00 | Geographic metadata provides no benefit |
 
-Additional ablations (Appendix C) show that using stock-model-fitted Box-Cox parameters (+3.31 pp), extended training (+3.09 pp), scaling to 70K buildings with fixed budget (+2.42 pp), and seasonal decomposition before RevIN (+3.72 pp) all degrade performance, each illustrating a distinct failure mode.
+Exploratory runs from an earlier pipeline iteration are reported in Appendix C for transparency. These runs—using stock-model-fitted Box-Cox parameters, extended training, scaling to 70K buildings, and seasonal decomposition before RevIN—all degraded performance, but because they were conducted under a different pipeline configuration, they are not used as primary evidence for the claims in this paper.
 
 ---
 
-## 5. Discussion
-
-### 5.1 Mechanistic Interpretation of RevIN's Regime-Dependent Effect
+## 6. Discussion
+### 6.1 Mechanistic Interpretation of RevIN's Regime-Dependent Effect (Prediction 3)
 
 The asymmetry in RevIN's effect across dataset scales (Fig. 4) admits a coherent mechanistic interpretation that extends beyond our specific setting.
 
@@ -217,7 +325,7 @@ A structural factor reinforces this. In stock-model corpora, magnitude is inform
 
 This finding has implications for the broader time series community: RevIN's benefit depends not just on dataset size but on the information structure of the training data—specifically, whether magnitude carries predictive information about temporal dynamics.
 
-### 5.2 Design Principles Behind Transferable Pattern Coverage
+### 6.2 Design Principles Behind Transferable Pattern Coverage
 
 The methodology's effectiveness can be traced to three design principles that together produce a training corpus with high transferability per building.
 
@@ -231,39 +339,52 @@ These principles also explain why the sub-epoch training regime observed in larg
 
 From a scaling-law perspective, this aligns with Shi et al. (2024): in building load time series, the marginal information content of additional buildings decreases rapidly when the operational diversity of the corpus is fixed. Our methodology addresses this directly by promoting broad diversity at design time.
 
-### 5.3 Practical Implications
+### 6.3 Practical Implications
 
 The reframing from scale to design has immediate practical consequences. An organization can generate several hundred parametric EnergyPlus simulations conforming to local building codes and climate, train a standard Transformer with RevIN and augmentation, and deploy zero-shot forecasting—without assembling a national building stock database.
 
 The computational cost is modest: in our implementation, 700 simulations completed in approximately 4 hours on a single workstation (10-core CPU, 64 GB RAM); training takes approximately 2 hours on a single consumer GPU (NVIDIA RTX 4090). The entire pipeline from simulation to deployed model takes less than a day. No location metadata, building-type classification, or HVAC information is required at inference time—only 168 hours of historical load data.
 
-### 5.4 Limitations
+### 6.4 Limitations (Including Prediction 4)
 
 Our parametric simulations differ from the stock-model baseline in schedule design, climate, building codes, and envelope parameters. The equal-scale controlled experiment (Section 4.1) controls for augmentation, model architecture, and training budget, but cannot fully disentangle all data-source-related confounds. The U.S.-TMY ablation substantially reduces but does not eliminate the climate-origin confound.
 
 The augmentation applied to our method (window jitter, Gaussian noise, amplitude scaling) was not part of the original stock-model training pipeline. The aug-matched control addresses this asymmetry at equal scale, but the comparison with the original baseline (which uses no augmentation) includes this confound. Even without augmentation, our method outperforms the aug-matched stock-model control (Table 3), but falls above the full-scale baseline.
 
+The equal-scale BB-700 comparison uses a single stock-model subset with a single training seed. Repeating this comparison across multiple subsets and seeds would strengthen the claim but requires approximately 50 hours of additional training; we leave this for future work. The 1.33 pp advantage over BB-700 should therefore be interpreted cautiously.
+
 The objective of this study is not to claim a large performance breakthrough, but to demonstrate that a systematically designed simulation dataset can provide competitive zero-shot transfer with substantially lower data requirements. The margin between the designed dataset and the large-scale reference is comparable to inter-seed variation (Table 3). The paired per-building comparison confirms statistical significance (Section 4.1), but the margin is small. The contribution is methodological: showing that systematic simulation design can substantially reduce reliance on brute-force dataset scaling in this benchmark setting.
 
-All experiments use a single model architecture (Transformer-M); generalization to PatchTST, MOIRAI, or other architectures has not been tested. On residential buildings, our model yields accuracy comparable to the Persistence Ensemble, confirming that zero-shot residential forecasting remains an open problem. Real-world validation beyond the evaluation set used in this study has not been conducted; broader testing across diverse building types in multiple countries is needed.
+All experiments use a single model architecture (Transformer-M); generalization to PatchTST, MOIRAI, or other architectures has not been tested.
+
+The coverage-based framework in Section 2 is deliberately simplified. It is useful for interpreting the results, but it does not estimate the true target distribution, prove asymptotic rates for the actual benchmark pipeline, or directly measure the coverage of BuildingsBench itself.
+
+On residential buildings, our model yields accuracy comparable to the Persistence Ensemble. The framework of Section 2 suggests that this is a coverage gap: residential buildings occupy a parameter space $\Theta_{\text{res}}$ that is largely disjoint from the commercial space $\Theta_{\text{com}}$ used for training — residential schedules are driven by occupant behavior rather than institutional operations, with fundamentally different baseload ratios, operating hours, and weekly patterns. In practical terms, the current design does not cover those regimes. Extending the approach to residential buildings therefore requires a separate $\Theta_{\text{res}}$ with residential-specific schedule parameters.
+
+Real-world validation beyond the evaluation set used in this study has not been conducted; broader testing across diverse building types in multiple countries is needed.
 
 ---
 
-## 6. Conclusion
+## 7. Conclusion
+We presented a coverage-based interpretation of the Operational Diversity Hypothesis for zero-shot building load forecasting. The central claim is practical rather than absolute: a compact simulation dataset can remain competitive when it is designed to span diverse operating regimes instead of merely increasing sample count. Controlled experiments are broadly consistent with this interpretation:
 
-We presented a parametric simulation design methodology for zero-shot building load forecasting, grounded in the Operational Diversity Hypothesis. The methodology defines a multi-dimensional operational schedule parameter space, uses LHS to promote broad coverage of temporal operating patterns across commercial building archetypes, and combines the resulting dataset with RevIN and data augmentation. Four lines of evidence support the approach: (1) equal-scale controlled experiments provide evidence of a consistent data-design advantage across multiple comparisons; (2) n-scaling shows diminishing returns beyond a modest number of buildings, consistent with pattern-coverage-governed learning; (3) RevIN's regime-dependent effect is mechanistically consistent with the decoupled magnitude structure of LHS-designed data; and (4) cross-climate transfer shows that the benefit persists under different weather files, reducing the likelihood that results are attributable solely to climate origin.
+(1) in the single-subset equal-scale control, the LHS-designed dataset outperforms the BB-700 stock-model sample (12.93% vs. 14.26% NRMSE) under matched training conditions; (2) N-scaling plateaus around $n \approx 5$ per archetype under the fixed training budget used here; (3) RevIN reduces NRMSE by 1.88 pp on LHS data but increases it by 0.62 pp on stock-model data, consistent with differences in how magnitude information is structured; and (4) residential forecasting remains weak when training covers only commercial operating regimes.
 
-The methodology reframes the data requirement for zero-shot building energy forecasting: from assembling a national building stock database to designing a few hundred simulations with broad operational diversity. This reduces the barrier to deployment in data-sparse regions from a data-engineering problem requiring access to national stock models to a simulation design problem solvable on a single workstation in less than a day.
+Taken together, the results suggest that the data requirement for zero-shot building energy forecasting should be framed partly as a structured parameter-intervention problem, not only as a scale problem. Feature-space analysis (Table 7) confirms that the benefit does not arise from closer distributional matching to real buildings; rather, LHS acts as a disentangled intervention over operational factors that teaches robust pattern decomposition. A dataset of 700 simulations designed for broad operational-factor variation achieves transfer performance comparable to a 900K-building stock-model corpus, reducing the entire pipeline to less than a day on a single workstation.
 
-The principal open questions are the limitation to commercial buildings, the augmentation asymmetry between training pipelines, and the untested generalization to other model architectures. Extending the operational diversity framework to residential buildings—where zero-shot performance remains at Persistence-level—is a natural next step.
+The principal open questions are extending the framework to residential buildings, testing generalization across model architectures (PatchTST, MOIRAI), measuring coverage more directly against real and stock-model datasets, and resolving the augmentation asymmetry between training pipelines.
 
 ---
 
 ## References
 
+Anthony M, Bartlett PL (1999). Neural Network Learning: Theoretical Foundations. Cambridge University Press.
+
 Amasyali K, El-Gohary NM (2018). A review of data-driven building energy consumption prediction studies. *Renewable and Sustainable Energy Reviews*, 81: 1192–1205.
 
 Ansari AF, et al. (2024). Chronos: Learning the Language of Time Series. *Transactions on Machine Learning Research*.
+
+Ben-David S, Blitzer J, Crammer K, Kuber A, Pereira F, Vaughan JW (2010). A theory of learning from different domains. *Machine Learning*, 79(1–2): 151–175.
 
 Box GEP, Cox DR (1964). An Analysis of Transformations. *Journal of the Royal Statistical Society, Series B*, 26(2): 211–252.
 
@@ -298,6 +419,10 @@ Nie Y, et al. (2023). A Time Series is Worth 64 Words: Long-term Forecasting wit
 Rasul K, et al. (2023). Lag-Llama: Towards Foundation Models for Probabilistic Time Series Forecasting. In: NeurIPS Workshop on Robustness of Foundation Models.
 
 Ribeiro M, et al. (2018). Transfer learning with seasonal and trend adjustment for cross-building energy forecasting. *Energy and Buildings*, 165: 352–363.
+
+Sacks J, Welch WJ, Mitchell TJ, Wynn HP (1989). Design and Analysis of Computer Experiments. *Statistical Science*, 4(4): 409–423.
+
+Settles B (2009). Active Learning Literature Survey. Computer Sciences Technical Report 1648, University of Wisconsin-Madison.
 
 Shi J, et al. (2024). Scaling Law for Time Series Forecasting. *Advances in Neural Information Processing Systems*, 37.
 
@@ -389,7 +514,9 @@ A 10× increase in stock-model buildings (700 to 7,000) reduces NRMSE by only 0.
 
 ---
 
-## Appendix C: Additional Ablation Results (Earlier Pipeline)
+## Appendix C: Exploratory Ablation Results (Earlier Pipeline)
+
+Exploratory ablations from an earlier pipeline iteration, reported for transparency. These results are not directly comparable to the final pipeline and are not used as primary evidence. Baseline is K-700 at 12.93%. Δ is NRMSE increase in percentage points.
 
 | Experiment | NRMSE (%) | Δ baseline | Mechanism |
 |------------|:----------:|:----------:|-----------|
