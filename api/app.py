@@ -26,7 +26,15 @@ from pydantic import BaseModel, Field
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-sys.path.insert(0, str(ROOT.parent / "reverse"))
+
+# RC-H5: korean_bb_wrapper 는 현재 reverse/modules/ 에 위치하여 강결합 상태.
+# 단독 배포 시 REVERSE_REPO_PATH 환경변수로 명시 가능. 부재 시 sibling 폴더 가정.
+_REVERSE_PATH = os.environ.get("REVERSE_REPO_PATH", str(ROOT.parent / "reverse"))
+if Path(_REVERSE_PATH).exists():
+    sys.path.insert(0, _REVERSE_PATH)
+else:
+    print(f"[korean_bb_api] WARN: reverse repo not found at {_REVERSE_PATH}. "
+          "Set REVERSE_REPO_PATH or copy reverse/modules/module_f_forecast/ here.")
 
 from modules.module_f_forecast.korean_bb_wrapper import KoreanBBForecaster
 
