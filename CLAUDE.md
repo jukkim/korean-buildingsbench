@@ -3,6 +3,8 @@
 한국 건물 환경에서 EnergyPlus 시뮬레이션으로 학습하여 에너지 사용량을 예측하는 프로젝트.
 BuildingsBench(NeurIPS'23) SOTA와 공정 비교 + 한국 특화 벤치마크 구축.
 
+> **통합 게이트웨이 (2026-05-19)**: `api/app.py` 신설 → `:8040 /predict`, `/predict_batch`. ems_transformer `:8030`이 `/v1/forecast/24h`로 프록시. 분석/학습 스크립트는 checkpoint 직접 로드도 허용. 설계 SSOT (워크스페이스 정본): [`../../docs/UNIFIED_GATEWAY_DESIGN.md`](../../docs/UNIFIED_GATEWAY_DESIGN.md)
+
 ## 현황 조회 규칙 (세션 공통)
 
 사용자가 **"현황"** 이라고 하면 4090과 5090 **양쪽 모두** 확인한다.
