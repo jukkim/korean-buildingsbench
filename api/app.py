@@ -42,10 +42,12 @@ app = FastAPI(
     description="168h→24h building load forecast — TransformerWithGaussian-M (CVRMSE 12.93%)",
 )
 
+# SE-H1 fix: 와일드카드 → 게이트웨이/로컬만
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
+    allow_origins=[],
+    allow_origin_regex=r"^https?://(127\.0\.0\.1|localhost)(:\d+)?$",
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 
@@ -60,13 +62,17 @@ def _get_forecaster() -> KoreanBBForecaster:
 
 
 class PredictRequest(BaseModel):
-    load_168h: list[float] = Field(..., description="과거 168시간 hourly 전력(kWh/h)")
+    # SE-3 / C-3 fix: OOM 방어
+    load_168h: list[float] = Field(..., min_length=168, max_length=8760,
+                                    description="과거 168~8760시간 hourly 전력(kWh/h)")
     start_time: datetime | None = Field(default=None, description="첫 컨텍스트 시점 ISO 8601")
     device: Literal["auto", "cpu", "cuda"] = "cpu"
 
 
 class BatchPredictRequest(BaseModel):
-    series: list[list[float]] = Field(..., description="여러 건물의 168h 시계열 배열")
+    # SE-3 fix: 배치 최대 1000건
+    series: list[list[float]] = Field(..., max_length=1000,
+                                      description="여러 건물의 168h 시계열 배열 (max 1000)")
     start_times: list[datetime] | None = None
     device: Literal["auto", "cpu", "cuda"] = "cpu"
 
