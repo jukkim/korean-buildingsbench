@@ -5,6 +5,13 @@ BuildingsBench(NeurIPS'23) SOTA와 공정 비교 + 한국 특화 벤치마크 �
 
 > **통합 게이트웨이 (2026-05-19)**: `api/app.py` 신설 → `:8040 /predict`, `/predict_batch`. ems_transformer `:8030`이 `/v1/forecast/24h`로 프록시. 분석/학습 스크립트는 checkpoint 직접 로드도 허용. 설계 SSOT (워크스페이스 정본): [`../../docs/UNIFIED_GATEWAY_DESIGN.md`](../../docs/UNIFIED_GATEWAY_DESIGN.md)
 
+> 📡 **시계열 책임 SSOT (8.simulation 생태계 전체 단일 책임 모델)**:
+> - `timeseries_168h_24h` / `timeseries_next_day` / `timeseries_peak_hour` / `end_use_breakdown` 모든 시계열 예측 = **본 프로젝트 책임**
+> - 모델 = TwGauss-M (`v3_3k_ms_n50_s18000_revin_on_seed42`, CVRMSE 12.93%, LOCKED `v1.0-apen-submission`)
+> - Gateway F4 라우팅 entry point = ems_transformer `:8030` → 본 프로젝트 `:8040`
+> - **ems_transformer LLM (Qwen / Exaone v2.5-final) 학습 데이터는 시계열 4 type 의도적 제외** (entry_gates 평가 가중치 0). LLM 은 회계·진단·EMS 절감 자연어 책임.
+> - 단일 SSOT 표 = [`../CLAUDE.md`](../CLAUDE.md) §"📡 시계열 책임 분담 SSOT" + [`../docs/ARCHITECTURE.md`](../docs/ARCHITECTURE.md) §F4
+
 ## 현황 조회 규칙 (세션 공통)
 
 사용자가 **"현황"** 이라고 하면 4090과 5090 **양쪽 모두** 확인한다.
