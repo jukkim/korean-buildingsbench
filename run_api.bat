@@ -1,4 +1,6 @@
 @echo off
+chcp 65001 >nul 2>&1
+setlocal EnableDelayedExpansion
 REM Korean_BB Forecast API 영구 가동 (port 8040, TwGauss-M v1.0 CVRMSE 12.93%%)
 REM Cloudflare Tunnel: 없음 — ems_transformer Gateway :8030 가 통합 진입점
 REM Gateway adapter: serving/adapters/kbb_client.py (KOREAN_BB_URL env)
