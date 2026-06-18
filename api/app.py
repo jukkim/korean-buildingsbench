@@ -38,9 +38,12 @@ else:
 
 from modules.module_f_forecast.korean_bb_wrapper import KoreanBBForecaster
 
+# 서빙 모델 = 논문 공식 LOCKED 모델 (Table 3 Korean-700 ON seed42, CVRMSE 12.93%).
+#   SSOT: CLAUDE.md(`v3_3k_ms_n50_s18000_revin_on_seed42`) + _models/registry.yaml + docs/PAPER_FILES_MANIFEST.md:74.
+#   (이전 default `bb700_s18000_revin_on_best.pt` = BB-700 무증강 15.28% → SSOT/registry 와 드리프트라 교체, 2026-06-19.)
 DEFAULT_CHECKPOINT = os.environ.get(
     "KOREAN_BB_CHECKPOINT",
-    str(ROOT / "checkpoints" / "TransformerWithGaussian-M-v3-3k_bb700_s18000_revin_on_best.pt"),
+    str(ROOT / "checkpoints" / "TransformerWithGaussian-M-v3-3k_ms_n50_s18000_revin_on_seed42_best.pt"),
 )
 DEFAULT_DEVICE = os.environ.get("KOREAN_BB_DEVICE", "cpu")
 
