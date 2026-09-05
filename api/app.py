@@ -99,6 +99,8 @@ def health() -> dict:
     }
 
 
+from . import provenance as _prov  # noqa: E402  (계보를 백엔드가 싣는다)
+
 @app.post("/predict")
 def predict(req: PredictRequest) -> dict:
     if len(req.load_168h) < 168:
@@ -106,7 +108,11 @@ def predict(req: PredictRequest) -> dict:
     arr = np.asarray(req.load_168h[-168:], dtype=np.float32).reshape(-1)
     fc = _get_forecaster()
     result = fc.forecast(arr, start_time=req.start_time)
-    return {
+    #: ⭐ 계보 3축을 **여기서** 싣는다 (2026-09-05). `model.training_data` 문자열만으로는
+    #  소비자가 시뮬/실측·관측/추론을 판별할 수 없어 게이트웨이가 상수 표로 대신
+    #  채우고 있었다 — 그러면 "자기가 넣은 걸 자기가 세는" 지표가 된다.
+    #  ⚠ 기존 `model` 블록은 안 건드린다(소비자가 읽고 있을 수 있다). 더할 뿐이다.
+    return _prov.attach({
         "model": {
             "id": "korean_bb_twgauss_m",
             "family": "transformer_with_gaussian",
@@ -114,7 +120,7 @@ def predict(req: PredictRequest) -> dict:
             "performance": {"cvrmse_pct": 12.93},
         },
         "result": result.to_dict(),
-    }
+    })
 
 
 @app.post("/predict_batch")
